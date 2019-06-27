@@ -1,0 +1,5 @@
+[book]
+authors = ["RkEclair"]
+multilingual = false
+src = "src"
+title = "C/C++講座"
