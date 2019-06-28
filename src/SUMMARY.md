@@ -1,6 +1,6 @@
 # Summary
 
-- [ようこそ](./intro.md)
+[ようこそ](./intro.md)
 - [環境構築](./setup.md)
 - [基礎](./basis/intro.md)
   - [最小限のコード](./basis/minimal.md)
