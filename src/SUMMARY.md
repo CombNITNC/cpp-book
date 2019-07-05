@@ -33,4 +33,5 @@
   - [continue](./loop/continue.md)
   - [break](./loop/break.md)
   - [for](./loop/for.md)
+  - [多重ループ](./loop/nested.md)
   - [章末問題](./loop/questions.md)
