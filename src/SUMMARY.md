@@ -41,5 +41,4 @@
   - [戻り値とreturn](./func/return.md)
   - [引数](./func/args.md)
   - [値渡し](./func/pass.md)
-  - [デフォルト引数](./func/default-args.md)
   - [章末問題](./func/questions.md)
