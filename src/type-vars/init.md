@@ -17,9 +17,10 @@
 
 ```cpp
 int count;
+count; // 未知の値が入っている
 count = 0; // これを忘れるとまずい
-++count;
-++count;
+count = count + 1;
+count = count + 1;
 // :
 // :
 ```
@@ -30,8 +31,8 @@ count = 0; // これを忘れるとまずい
 
 ```cpp
 int count = 0; // 0 から数え始めるぞ
-++count;
-++count;
+count = count + 1;
+count = count + 1;
 // :
 // :
 ```

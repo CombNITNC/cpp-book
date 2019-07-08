@@ -10,7 +10,7 @@
 int main() {
   // まだ何も使えない
   wide; // wide は使えないので、コンパイルできない
-  int wide; // wider が使えるようになる
+  int wide; // wide が使えるようになる
   { // スコープの始まり
     int narrow; // narrow 生誕
     narrow = 1;
@@ -20,12 +20,12 @@ int main() {
   {
     int narrow; // narrow 生誕
     // 上の narrow とは別の変数、偶然に同名なだけ
-    narrow = wider + 1;
+    narrow = wide + 1;
     wide = narrow;
   }
   wide; // 2
   narrow; // narrow は使えないので、コンパイルできない
-} // wider が使えなくなる
+} // wide が使えなくなる
 ```
 
 つまり、複文を使うと変数の生存期間を限定できる。

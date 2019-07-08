@@ -37,11 +37,14 @@ static_cast < 型名 > ( 式 )
 
 ```cpp
 double num = 1.46;
-// num の小数点以下を切り捨て
+
+// num の小数点以下を切り捨てする場合
 static_cast<int>(num); // => 1
-// num を小数点第1位で四捨五入
+
+// num を小数点第1位で四捨五入する場合
 static_cast<int>(num + .5); // => static_cast<int>(1.96) => 1
-// num を小数点第2位で四捨五入
+
+// num を小数点第2位で四捨五入する場合
 static_cast<int>(num * 10 + .5) / 10.;
 // => static_cast<int>(15.1) / 10.
 // => 15 / 10.
