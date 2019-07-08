@@ -8,19 +8,36 @@
 
 このように、`return` の後に続けて *式* を書く。
 
+この式は **戻り値** (もしくは返り値) というもので、関数の実行結果みたいに扱われる。
+
+この式の型を、関数の最初に書かないといけない。
+
+> *戻り値型* *関数名* ( *引数リスト* ) { *0個以上の文* }
+
+実際に使うとこんな感じ。
+
 ```cpp
-void do_nothing(bool lazy) {
+#include <iostream>
+
+// 怠けるか怠けないか
+void will_be(bool lazy) {
   if (lazy) {
-    cout << "ﾅﾏｹﾙ(・´з`・)\n";
-    return; // 関数を終了
+    std::cout << "ﾅﾏｹﾙ(・´з`・)\n";
+    return; // 関数を終了する効果しかない
   }
-  cout << "m9（・∀・）ﾊﾀﾗｹ!\n";
+  std::cout << "ﾊﾀﾗｸ!(・∀・)\n";
   return; // ←は省略してもいい
 }
 
 // テキトーな数字を返すだけ
 int random_number() {
   return 4;
+}
+
+int main() {
+  will_be(false);
+  will_be(true);
+  std::cout << random_number();
 }
 ```
 
@@ -29,7 +46,7 @@ int random_number() {
 例えば、$f(x) = x^3 + x^2 = x^2 (x + 1)$ を計算する (数学に近い) 関数はこんな風に書く。
 
 ```cpp
-double f(x) { // x^3 + x^2
+double f(double x) { // x^3 + x^2
   double x2 = x * x;
   return x2 * (x + 1);
 }
@@ -41,7 +58,7 @@ double f(x) { // x^3 + x^2
 
 実は今まで黙っていたことがある。
 
-main 関数は本当はこう書かなきゃいけなかったんだ。
+main 関数は本当はこう書かなきゃいけなかったんだよ!!!
 
 ```cpp
 int main() {
