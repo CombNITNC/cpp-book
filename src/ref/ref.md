@@ -28,6 +28,7 @@ body; // これも 3 になる
 
 ```cpp
 int body = 0, &ref = body;
+// body は int 型で、ref は int& 型になる
 ```
 
 ## 参照の伝播
