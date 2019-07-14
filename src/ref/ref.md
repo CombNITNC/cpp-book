@@ -9,10 +9,8 @@
 変数名の前にこのように `&` をつけ、同じ型の変数で初期化すると、
 
 ```cpp
-int main() {
-  int body = 0;
-  int &ref = body;
-}
+int body = 0;
+int &ref = body;
 ```
 
 変数に対して、それを *参照する型* の変数を作ることができる。
@@ -20,22 +18,16 @@ int main() {
 言い換えると、変数の純粋な別名になって、変数を間接的に変更できる。
 
 ```cpp
-int main() {
-  int body = 0;
-  int &ref = body;
-
-  ref = 3;
-
-  body; // これも 3 になる
-}
+int body = 0;
+int &ref = body;
+ref = 3;
+body; // これも 3 になる
 ```
 
 `&` は変数名の前につける。だから、同時に宣言する場合はこうなる。
 
 ```cpp
-int main ()
-  int body = 0, &ref = body;
-}
+int body = 0, &ref = body;
 ```
 
 ## 参照の伝播
