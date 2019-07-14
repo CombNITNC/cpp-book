@@ -44,6 +44,6 @@
 - [オブジェクトたち](./object/intro.md)
   - [float char 16/8/2進数リテラル](./object/other-types.md)
   - [long short signed unsigned](./object/specifier.md)
-  - [コピーとムーブ](./object/copy-move.md)
   - [クラスとインスタンス](./object/class-inst.md)
   - [メンバ関数呼び出し](./object/member-func.md)
+  - [コピーとムーブ](./object/copy-move.md)
