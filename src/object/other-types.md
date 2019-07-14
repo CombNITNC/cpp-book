@@ -10,11 +10,11 @@
 
 単精度浮動小数点数 (float、floating-point value の略) は、昔からある小数を表す型。精度が低いけれど、ごく一部の環境では稀に速く動くことがあったりするかもしれない。
 
-`double` のリテラルの後ろに、`f` をつけると `float` のリテラルになる。
+`double` のリテラルの後ろに、`f` か `F` をつけると `float` のリテラルになる。
 
 ```cpp
 float a = 1.2f;
-float b = 3.f;
+float b = 3.F;
 float c = .5f;
 ```
 
