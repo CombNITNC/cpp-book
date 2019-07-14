@@ -9,73 +9,72 @@
 これはたしかに便利だけど、*数の別名* として変数を使っていた場合は *変更できるとめんどくさいこと* になる。
 
 ```cpp
-int main() {
-  double tax = 1.08; // 税率 8% = 1.08倍
+double tax = 1.08; // 税率 8% = 1.08倍
 
-  int price = 500;
-  price *= tax;
+int price = 500;
+price *= tax;
 
-  // :
-  // :
+// :
+// :
 
-  tax = 1.10; // いつのまにか 10% に
+tax = 1.10; // いつのまにか 10% に
 
-  // :
-  // :
+// :
+// :
 
-  price = 800;
-  price *= tax; // あれ?
-}
+price = 800;
+price *= tax; // あれ?
 ```
 
 変更できることが、逆に混乱を招いたりバグを生むことがある。最近になって言われ始めたことだけど、本当だよ。
 
-型に `const` (定まった、constant の略) をつけると、`const` な型になる。変数の型のところに使えば `const` な変数が作れる。
+型に `const` (定まった、constant の略) 修飾子をつけると、`const` な型になる。変数の型のところに使えば `const` な変数が作れる。
 
 ```cpp
-int main() {
-  // 前でも後でもいい
-  int const a;
-  const int b;
-}
+// 前でも後でもいい
+int const a;
+const int b;
 ```
 
-この変数を作るときに値を入れることを 初期化 というのだけれど、この初期化のタイミングでしか値をセットできない。
+この変数を作るときに値を入れることを *初期化* というのだけれど、この初期化のタイミングでしか値をセットできない。
 
-変数を作った後は **代入できなくなる**。コンパイラがどこかでうっかり代入していないかチェックしてくれるんだ!
+そして、変数を作った後は **代入できなくなる**。コンパイラがどこかで **うっかり代入していないかチェックしてくれる** んだ!
 
 ```cpp
-int main() {
-  double const tax = 1.08; // 税率 8% = 1.08倍
+double const tax = 1.08; // 税率 8% = 1.08倍
 
-  int price = 500;
-  price *= tax;
+int price = 500;
+price *= tax;
 
-  // :
-  // :
+// :
+// :
 
-  tax = 1.10; // コンパイルできない
+tax = 1.10; // コンパイルできない
 
-  // :
-  // :
+// :
+// :
 
-  price = 800;
-  price *= tax; // 安心して tax が使える
-}
+price = 800;
+price *= tax; // 安心して tax が使える
 ```
 
 `const` の値を別の変数にコピーすることはできる。
+
+```cpp
+const int magical = 4444;
+int temp = magical;
+```
 
 引数にも `const` 指定はできる。
 
 ```cpp
 int add(int left, int right) {
-  left += ++right - --right; // (意味はない)
+  left += right - right; // (意味はない)
   return left + right;
 }
 
 int add_const(int const left, int const right) {
-  left += ++right - --right; // NG
+  left += right - right; // NG
   return left + right;
 }
 ```
