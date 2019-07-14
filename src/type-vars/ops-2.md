@@ -14,8 +14,10 @@
 
 ```cpp
 int subtotal = 0;
+
 subtotal = subtotal + 108;
 subtotal += 108; // 上と同じ
+
 subtotal = subtotal - 54;
 subtotal -= 54; // 上と同じ
 ```
@@ -29,8 +31,10 @@ subtotal -= 54; // 上と同じ
 
 ```cpp
 int count = 0;
+
 count += 1;
 ++count; // 上と同じ
+
 count -= 1;
 --count; // 上と同じ
 ```
