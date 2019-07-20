@@ -46,4 +46,3 @@
   - [long short signed unsigned](./object/specifier.md)
   - [クラスとインスタンス](./object/class-inst.md)
   - [メンバ関数呼び出し](./object/member-func.md)
-  - [コピーとムーブ](./object/copy-move.md)
