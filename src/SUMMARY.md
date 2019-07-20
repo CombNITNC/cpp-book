@@ -41,3 +41,8 @@
   - [戻り値とreturn](./func/return.md)
   - [値渡し](./func/pass.md)
   - [名前解決](./func/resolve.md)
+- [オブジェクトたち](./object/intro.md)
+  - [float char 16/8/2進数リテラル](./object/other-types.md)
+  - [long short signed unsigned](./object/specifier.md)
+  - [クラスとインスタンス](./object/class-inst.md)
+  - [メンバ関数呼び出し](./object/member-func.md)
