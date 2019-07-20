@@ -8,6 +8,7 @@
 
 型には、指定子というものをつけて型の性質を少し変化させることができるよ。
 
+
 # サイズを変える指定子
 
 ## long
@@ -41,6 +42,7 @@ double long huge = 1e1200L;
 
 `long` をつけられるのは、`int` と `double` だけ。
 
+
 ## short
 
 これは本当にめったに使わない。型の扱えるサイズが元のサイズ以下になる。
@@ -57,6 +59,7 @@ int short tiny = 3;
 // short だけだと shor int とみなされる
 short bit = 1;
 ```
+
 
 ## long long
 
@@ -75,6 +78,7 @@ int long long scaled = 20000000000LL;
 long long large = 1;
 ```
 
+
 # 符号を操作する指定子
 
 ## unsigned
@@ -92,6 +96,7 @@ unsigned int c;
 unsigned long d;
 unsigned long long e;
 ```
+
 
 ## signed
 
