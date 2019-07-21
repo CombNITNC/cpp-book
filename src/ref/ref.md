@@ -20,11 +20,17 @@ int &ref = body;
 ```cpp
 int body = 0;
 int &ref = body;
+
 ref = 3;
 body; // これも 3 になる
+
+body = 2;
+ref; // これも 2 になる
 ```
 
-`&` は変数名の前につける。だから、同時に宣言する場合はこうなる。
+`&` は変数名の前につける。
+
+だから、同時に宣言する場合はこうなる。
 
 ```cpp
 int body = 0, &ref = body;
@@ -35,7 +41,14 @@ int body = 0, &ref = body;
 
 参照型変数に入っている参照は、さらに別の参照型変数に渡せる。
 
-つまり、参照の又貸しできちゃう。
+つまり、参照は又貸しできちゃう。
+
+```cpp
+int body = 1;
+int &ref = body;
+int &ref_ref = ref;
+```
+
 
 ## 参照の引数
 
@@ -54,3 +67,12 @@ int main() {
 ```
 
 ちなみに、`std::cin` もこれを利用して変数に書き込んでいる。
+
+```cpp
+#include <iostream>
+
+int main() {
+  int input;
+  std::cin >> input; // input の参照を渡している
+}
+```
