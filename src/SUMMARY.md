@@ -46,5 +46,4 @@
   - [参照型](./ref/ref.md)
   - [const の参照](./ref/const-on-ref.md)
   - [配列型](./ref/array.md)
-  - [ポインタ](./ref/pointer.md)
-  - [ポインタ演算](./ref/ops-5.md)
+  - [文字列](./ref/cstring.md)
