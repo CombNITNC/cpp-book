@@ -4,9 +4,16 @@
 
 ---
 
-`bool` 型どうしの演算もある。値の種類が二つしかないから、全部のパターンを書いておくね。
+`bool` 型どうしの演算もある。
 
-`&&` は AND 論理積の演算子。両者が `true` のときは `true` で、それ以外は `false` になる。
+値の種類が二つしかないから、全部のパターンを書いておくね。
+
+
+## AND
+
+`&&` は AND 論理積の演算子。
+
+両者が `true` のときは `true` で、それ以外は `false` になる。
 
 ```cpp
 false && false; // => false
@@ -15,7 +22,12 @@ false && true; // => false
 true && true; // => true
 ```
 
-`||` は OR 論理和の演算子。どちらかが `true` であれば `true` で、それ以外は `false` になる。
+
+## OR
+
+`||` は OR 論理和の演算子。
+
+どちらかが `true` であれば `true` で、それ以外は `false` になる。
 
 ```cpp
 false || false; // => false
@@ -24,7 +36,12 @@ false || true; // => true
 true || true; // => true
 ```
 
-`!` は NOT 否定の演算子。`true` と `false` を逆にする。これだけは *値の頭につける演算子* だから注意。
+
+## NOT
+
+`!` は NOT 否定の演算子。
+
+`true` と `false` を逆にする。これだけは *値の頭につける演算子* だから注意。
 
 ```cpp
 !true; // => false
@@ -38,6 +55,7 @@ true || true; // => true
 
 ```cpp
 0 <= value && value <= 10; // value が 0 以上 10 以下のとき
+
 value == 0 || value == 1 || value == 3; // value が 0, 1, 3 のとき
 
 // この 3 つは同じ式。ド・モルガンの法則などによって変形してみた

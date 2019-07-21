@@ -34,9 +34,9 @@ you_are_me = false;
 
 ## 他の型から `bool` に型変換する場合
 
-0 (もしくは 0 と同じ何か) は false
+`0` (もしくは `0` と同じ何か) は `false`
 
-それ以外はすべて true
+それ以外はすべて `true`
 
 これはかなり直感的ではないので、使わないようにするよ。
 
@@ -52,12 +52,22 @@ int main() {
 }
 ```
 
-`true` や `false` のまま出力するには、`std::boolalpha` をそれより前に流し込む必要がある。
+`true` や `false` のまま出力するには、`std::boolalpha` (これは関数) をそれより前に流し込む必要がある。
 
 ```cpp
 #include <iostream>
 int main() {
   std::cout << std::boolalpha << true;
+}
+```
+
+これを取り消して元に戻す場合は、`std::noboolalpha` を流す。
+
+```cpp
+#include <iostream>
+int main() {
+  std::cout << std::boolalpha << true
+    << std::noboolalpha << true;
 }
 ```
 
