@@ -19,6 +19,7 @@ int main() {
   while(true) {
     std::cout << "カウント: " << count << "\n"
      << "1 でカウントアップ | それ以外で終了\n";
+
     int input;
     std::cin >> input;
     if (input != 1) { break; }
