@@ -51,14 +51,4 @@ int main() {
 }
 ```
 
-あんまり文字列を使うメリットはないので `std::string` を使おうね。
-
-ちなみに、`std::string` の `c_str` メンバ関数で文字列のデータとして取り扱うこともできる。
-
-ただし、`std::string` のテキスト内にヌル文字があると、文字列に変換したときにそこで途切れる。
-
-```cpp
-std::string text("Hey! Get Ready!\n");
-text.at(4) = '\0';
-std::cout << text << text.c_str();
-```
+あんまり文字列を使うメリットはないので、変更したりするときは絶対に `std::string` を使おうね。
