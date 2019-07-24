@@ -53,3 +53,8 @@
   - [配列型](./ref/array.md)
   - [文字列](./ref/cstring.md)
   - [範囲for文](./ref/range-based-for.md)
+- [標準ライブラリ 初級編](./std-beginner/intro.md)
+  - [名前空間とusing](./std-beginner/use-namespace.md)
+  - [数学的な関数](./std-beginner/cmath-numeric.md)
+  - [コンテナ](./std-beginner/container.md)
+  - [かんたんイテレータ](./std-beginner/easy-it.md)
