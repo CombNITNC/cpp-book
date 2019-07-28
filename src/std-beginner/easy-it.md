@@ -125,8 +125,9 @@ std::vector<double> input(input_n);
 for (int &element : input) {
   std::cin >> element;
 }
+```
 
-
+```
 std::map<std::string, int> score = {
   {"Ange", 510},
   {"Lize", 480},
@@ -142,4 +143,4 @@ for (std::pair<std::string, int> element : score) {
 
 イテレータの大事さがわかったかな?
 
-それでは章末問題へ!
+ちなみに、配列にイテレータがあるわけじゃないけど、特別に同じように扱えるようになっているよ。
