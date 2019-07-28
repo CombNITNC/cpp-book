@@ -69,9 +69,77 @@ data; // {4, 5}
 
 ## std::map::iterator
 
+`std::map` のイテレータクラスは `std::map::iterator`。
 
+最初の要素のイテレータは `begin`、末尾の更に後ろの存在しない要素は `end` で取得できる。
+
+イテレータでアクセスする要素の順番は、*昇順* (小さい数から大きい数、文字列とかは辞書順) になっている。
+
+なお、イテレータでアクセスした要素は、キーと値がセットになった `std::pair` クラスになっている。
+
+この場合は、`first` / `second` メンバ変数でそれぞれ *キー* / *値* を取得できる。
+
+```cpp
+std::map<int, int> data = {
+  {1, 4},
+  {5, 2}
+};
+
+std::map<int, int>::iterator head = data.begin();
+
+*head; // {1, 4}
+++head;
+*head; // {5, 2}
+(*head).second = 3;
+
+std::map<int, int>::iterator tail = data.end();
+
+*tail; // これは末尾の次の要素なので不定
+--tail;
+*tail; // {5, 3}
+--tail;
+(*tail).second; // 4
+```
+
+イテレータを引数に取ったり、戻り値として返したりするメンバ関数はあるけれど、特に有用というわけでもないので紹介しないよ。
 
 
 ## イテレータと範囲 for
 
+さて、久しぶりの *範囲 for 文* だよ。
 
+実は、範囲 for 文はイテレータがあるものなら何でも使えるよ。
+
+```cpp
+std::vector<int> data = {1, 5, 2, 3, 4};
+for (int element : data) {
+  std::cout << element << "\n";
+}
+
+std::cout << "値を何個入れるの? : ";
+int input_n = 0;
+std::cin >> input_n;
+
+// input_n 個の入力を受付る
+std::vector<double> input(input_n);
+for (int &element : input) {
+  std::cin >> element;
+}
+
+
+std::map<std::string, int> score = {
+  {"Ange", 510},
+  {"Lize", 480},
+  {"Toko", 540}
+};
+
+std::cout << "--- Score ---\n";
+for (std::pair<std::string, int> element : score) {
+  std::cout << element.first << ": "
+    << element.second << " Pt.\n";
+}
+```
+
+イテレータの大事さがわかったかな?
+
+それでは章末問題へ!
