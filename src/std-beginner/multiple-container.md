@@ -6,7 +6,9 @@
 
 ここでは、`vector` の中に `vector` を入れるのをやっていくよ。
 
-`std::vector<std::vector<int>>`
+```cpp
+std::vector<std::vector<int>>
+```
 
 このクラスを初期化するときは、こうなるよ。
 
@@ -40,7 +42,7 @@ matrix.back().back(); // 1
 
 ### 動的計画法
 
-**動的計画法** (DP、Dyanic Programming) は、数値の入力がたくさんあるときに役に立つ解法だよ。
+**動的計画法** (DP、Dyanic Programming) は、いくつかの組み合わせに関する問題で役に立つ解法だよ。
 
 まずは、*部分和問題* からいってみよう。
 
@@ -125,15 +127,23 @@ dp[0] = true;
 
 for (size_t index = 1; index <= N; ++index) {
   bool prev = dp[index - 1];
-  dp[index] = prev || A[index - 1] == 0;
+  dp[index] = prev;
+  if (A[index - 1] == 0) {
+    dp[index] = true;
+  }
 }
 
-dp.back(); // これが答え
+dp.back(); // これが答え。今回は必ず true だけど
 ```
 
 OK、もう片方の数字も変数にしよう。
 
 > 入力の `0` ~ `index` 番目までの中から組み合わせた合計に `sum` があるかどうか
+
+この答えは、かんたん な問題の答えを使って求めることができる。
+
+1. 一つ前までの数の組み合わせで `sum` が作れる
+2. 一つ前までの数の組み合わせで `sum - 一つ前の入力` が作れる
 
 さっきの `dp` を `vector<vector<bool>>` に改良する。
 
@@ -141,15 +151,15 @@ OK、もう片方の数字も変数にしよう。
 
 これは、
 
-* `dp[index - 1][sum]` が `true` になっている
-* `A[index - 1] <= sum` の場合 (↓ の添字が 0 以上になるように範囲チェック)
-  * `dp[index - 1][sum]` もしくは `dp[index - 1][sum - A[index - 1]` が `true` になっている
+1. `dp[index - 1][sum]` が `true` になっている
+2. `A[index - 1] <= sum` の場合 (↓ の添字が 0 以上になるように範囲チェック)
+  1. `dp[index - 1][sum]` もしくは `dp[index - 1][sum - A[index - 1]` が `true` になっている
 
 ときに、`dp[index][sum]` に `true` を代入する。
 
-この `dp[index - 1][sum - A[index - 1]` っていうのが、`A[index - 1]` を足す前の問題の答え。
+この `dp[index - 1][sum - A[index - 1]]` っていうのが、`A[index - 1]` を足す前の問題の答え。
 
-`sum` が増えていっているから、必ず *既に計算されている* よ。
+`sum` より前の、*既に計算されている* 答えから今の状況での答えを作っているんだよ。
 
 この `index` を `1` から `N` まで、 `sum` を `0` から `S` まで繰り返せば、`dp.back().back()` に答えが入るんだぜ。
 
@@ -161,8 +171,10 @@ dp[0][0] = true; // かんたん なやつ
 for (size_t index = 1; index <= N; ++index) {
   for (size_t sum = 0; sum <= S; ++sum) {
     bool prev = dp[index - 1][sum];
-    dp[index][sum] = prev ||
-      (A[index- 1] <= sum && dp[index - 1][sum - A[index - 1]]);
+    dp[index][sum] = prev;
+    if (A[index- 1] <= sum) {
+      dp[index][sum] = prev || dp[index - 1][sum - A[index - 1]];
+    }
   }
 }
 
@@ -221,7 +233,7 @@ int main() {
 }
 ```
 
-こんなふうに、動的計画法では **DP テーブル** と言われる多次元のコンテナを作って解くよ。
+こんなふうに、動的計画法では **DP テーブル** と言われる多次元のコンテナを作って解くことが多いよ。
 
 DP テーブルの挙動がわかりにくかったら、中身を見たい行で、こうやって出力してみるといいかも。
 
