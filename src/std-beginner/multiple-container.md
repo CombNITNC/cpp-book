@@ -92,7 +92,7 @@ int main() {
 
 この問題の一番 *かんたん* なケースを考えよう。
 
-> 入力の `0` ~ `0` 番目までの中から組み合わせた合計に `0` があるかどうか
+> 入力を `0` 個組み合わせて `0` が作れるかどうか
 
 これが一番 *かんたん* なんだけど、これは必ず `true` だよ。
 
@@ -104,20 +104,23 @@ true;
 
 片方の数字を変数にして、グレードアップしよう。
 
-> 入力の `0` ~ `index` 番目までの中から組み合わせた合計に `0` があるかどうか
+> 入力を `n` 個組み合わせで `0` が作れるかどうか
+
+この答えは、*かんたん* な問題の答えを使って求めることができる。
+
+* `n - 1` 個の組み合わせで `0` が作れるかどうか
+
+を満たせば、`n` 個の組み合わせでも必ず `0` が作れるよ。
 
 この答えを保存する `vector<bool> dp` というコンテナを用意する。
 
-`dp[i]` には、`0` ~ `i` 番目までにおける ↑ の問題の答えを格納するってこと。
+`dp[i]` には、「`i` 個組み合わせて `0` が作れるかどうか」を格納することにする。
 
-そして、
+変数 `n` を `for` で `1` から `N` まで繰り返せば、
 
-* `dp[index - 1]` が `true` になっている
-* `A[index - 1]` が `0` になっている
+1. `dp[n - 1]` が `true` になっている
 
-ときに、`dp[index]` に `true` を代入する。
-
-この `index` を `for` で `1` から `N` まで繰り返せば、`dp.back()` に答えが入る。
+ときに `dp[n]` に `true` を代入すると、`dp.back()` に答えが入る。
 
 ```cpp
 vector<bool> dp(N + 1); // dp[N] までなので 1 個余分に必要
@@ -125,12 +128,9 @@ vector<bool> dp(N + 1); // dp[N] までなので 1 個余分に必要
 // さっき求めた かんたん なやつ
 dp[0] = true;
 
-for (size_t index = 1; index <= N; ++index) {
-  bool prev = dp[index - 1];
-  dp[index] = prev;
-  if (A[index - 1] == 0) {
-    dp[index] = true;
-  }
+for (size_t n = 1; n <= N; ++n) {
+  bool prev = dp[n - 1]; // prev は previous の略で、前のやつ って意味
+  dp[n] = prev;
 }
 
 dp.back(); // これが答え。今回は必ず true だけど
@@ -138,42 +138,40 @@ dp.back(); // これが答え。今回は必ず true だけど
 
 OK、もう片方の数字も変数にしよう。
 
-> 入力の `0` ~ `index` 番目までの中から組み合わせた合計に `sum` があるかどうか
+> 入力を `n` 個組み合わせて `sum` が作れるかどうか
 
-この答えは、かんたん な問題の答えを使って求めることができる。
+この答えは、*かんたん* な問題の答えを使って求めることができる。
 
-1. 一つ前までの数の組み合わせで `sum` が作れる
-2. 一つ前までの数の組み合わせで `sum - 一つ前の入力` が作れる
+* `n - 1` 個の組み合わせで `sum` が作れるかどうか
+* `n - 1` 個の組み合わせで `sum - A[n - 1]` が作れるかどうか
 
-さっきの `dp` を `vector<vector<bool>>` に改良する。
+のどっちかを満たせば、`n` 個の組み合わせで `sum` が作れるよ。
 
-`dp[i][j]` には、`0` ~ `i` 番目までにおいて総和を `j` とした問題の答えを格納する。
+二つ目の条件は、`n` 個目の入力を選んだうえで問題の条件を満たすときを意味している。
 
-これは、
+さっきの `dp` を `vector<vector<bool>>` 型に改良する。
 
-1. `dp[index - 1][sum]` が `true` になっている
-2. `A[index - 1] <= sum` の場合 (↓ の添字が 0 以上になるように範囲チェック)
-  1. `dp[index - 1][sum]` もしくは `dp[index - 1][sum - A[index - 1]` が `true` になっている
+`dp[i][j]` には、「`i` 個の組み合わせで `j` が作れるかどうか」を格納する。
 
-ときに、`dp[index][sum]` に `true` を代入する。
+変数 `n` を `1` から `N` まで、 `sum` を `0` から `S` まで繰り返せば、
 
-この `dp[index - 1][sum - A[index - 1]]` っていうのが、`A[index - 1]` を足す前の問題の答え。
+1. `dp[n - 1][sum]` が `true` になっている
+2. `A[n - 1] <= sum` の場合 (↓ の添字が 0 以上になるように範囲チェック)
+   1. `dp[n - 1][sum]` もしくは `dp[n - 1][sum - A[n - 1]` が `true` になっている
 
-`sum` より前の、*既に計算されている* 答えから今の状況での答えを作っているんだよ。
-
-この `index` を `1` から `N` まで、 `sum` を `0` から `S` まで繰り返せば、`dp.back().back()` に答えが入るんだぜ。
+ときに、`dp[n][sum]` に `true` を代入すると、`dp.back().back()` に答えが入るんだぜ。
 
 ```cpp
 vector<vector<bool>> dp(N + 1, vector<bool>(S + 1));
 
 dp[0][0] = true; // かんたん なやつ
 
-for (size_t index = 1; index <= N; ++index) {
+for (size_t n = 1; n <= N; ++n) {
   for (size_t sum = 0; sum <= S; ++sum) {
-    bool prev = dp[index - 1][sum];
-    dp[index][sum] = prev;
-    if (A[index- 1] <= sum) {
-      dp[index][sum] = prev || dp[index - 1][sum - A[index - 1]];
+    bool prev = dp[n - 1][sum];
+    dp[n][sum] = prev;
+    if (A[n- 1] <= sum) {
+      dp[n][sum] = prev || dp[n - 1][sum - A[n - 1]];
     }
   }
 }
@@ -215,11 +213,13 @@ int main() {
 
   dp[0][0] = true;
 
-  for (size_t index = 1; index <= N; ++index) {
+  for (size_t n = 1; n <= N; ++n) {
     for (size_t sum = 0; sum <= S; ++sum) {
-      bool prev = dp[index - 1][sum];
-      dp[index][sum] = prev ||
-        (A[index - 1] <= sum && dp[index - 1][sum - A[index - 1]]);
+      bool prev = dp[n - 1][sum];
+      dp[n][sum] = prev;
+      if (A[n- 1] <= sum) {
+        dp[n][sum] = prev || dp[n - 1][sum - A[n - 1]];
+      }
     }
   }
 
