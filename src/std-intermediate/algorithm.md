@@ -187,6 +187,18 @@ std::count_if(data.begin(), data.end(), [](int elem) {
 
 ## 範囲操作
 
+### `copy`
+
+範囲を別の範囲へコピーする。
+
+```cpp
+std::vector<int> data(20), buffer(20);
+
+// data.size() <= buffer.size() にしておくように
+std::copy(data.begin(), data.end(), buffer.begin());
+```
+
+
 ### `sort`
 
 範囲を高速にソートする。第三引数に渡す関数で、並ぶ順序が変化する。
