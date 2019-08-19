@@ -66,3 +66,4 @@
   - [スタックとキュー](./std-intermediate/stack-queue.md)
   - [もっとイテレータ](./std-intermediate/more-it.md)
   - [最適化](./std-intermediate/optimize.md)
+  - [章末問題](./std-intermediate/questions.md)
