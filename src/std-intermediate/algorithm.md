@@ -23,6 +23,19 @@
 以下のコードを実行するときは、↑ が必要だよ。
 
 
+## 交換 `swap`
+
+2 つの引数の中身を入れ替える。
+
+```cpp
+int a = 0, b = 2;
+std::swap(a, b); // a は 2、b は 0 になる
+
+std::vector<int> data {2, 4}, buffer {5, 5};
+std::swap(data, buffer); // vector のようなクラスでも対応しているので使える
+```
+
+
 ## 最小と最大
 
 ### `min`
