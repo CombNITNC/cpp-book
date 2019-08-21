@@ -263,6 +263,22 @@ auto tail = std::unique(data.begin(), data.end());
 ```
 
 
+### `partition`
+
+範囲内で条件 (第三引数) を満たす要素を最初に、そうでないものを最後になるようにする。
+
+条件を満たすようにした要素の末尾のイテレータを返す。
+
+```cpp
+std::vector<int> data {1, 6, 7, 4, 3, 5};
+
+auto fence = std::partition(data.begin(), data.end(), [] (int e) {
+  return e % 2 == 0;
+}); // 偶数なら前に
+// data は {4, 6, 7, 1, 3, 5}、fence は data.begin() + 2 と同じ
+```
+
+
 ## 二分探索
 
 ### `binary_search`
@@ -312,6 +328,26 @@ std::binary_search(data.begin(), data.end(), 6, greater);
 ```
 
 あ、ちゃんとソート済みの範囲を渡さないとちゃんと動かないよ。
+
+
+### `partition_point`
+
+範囲内で条件 (第三引数) を満たさなくなる最初の要素のイテレータを返す。
+
+第三引数の条件で (`sort` や `partition` を使って) 分類されていないと、二分探索している関係でうまく動作しない。
+
+```cpp
+std::vector<int> data {
+  2, 4, 1, 2, 1, 7, 6, 8, 0
+};
+
+std::sort(data.begin(), data.end());
+// data は {0, 1, 1, 2, 2, 4, 6, 7, 8}
+
+std::partition_point(data.begin(), data.end(), [] (int e) {
+  return e <= 5;
+}); // data.begin() + 6 と同じ
+```
 
 
 # numeric
