@@ -250,6 +250,12 @@ std::vector<int> data {
 
 auto tail = std::unique(data.begin(), data.end());
 // data は {2, 5, 2, 5, 6, 2, 8, 1, 4, 4}、tail は data.end() - 2 と同じ
+```
+
+```cpp
+std::vector<int> data {
+  2, 5, 2, 5, 6, 2, 8, 1, 1, 4
+};
 
 std::sort(data.begin(), data.end());
 auto tail = std::unique(data.begin(), data.end());
@@ -274,11 +280,13 @@ auto tail = std::unique(data.begin(), data.end());
 
 という探し方。
 
-つまり、順番通りに並んでいることを前提に、**前半と後ろの二つに分けて探索する**。
+つまり、順番通りに並んでいることを前提に、**前と後ろの二つに分けて探索する**。
 
 `find_if` のように、`N` 個の範囲を一つづ探す場合は、それが探しているものかどうかを最低 `N` 回確かめる必要がある。
 
 二分探索なら、これが `log2 N` 回確かめる (8 個なら 3 回、300 個なら 8 回) だけでよい。すごいね。
+
+第三引数と等しい値が見つかった場合は `true` を、無いなら `false` を返す。
 
 ```cpp
 std::vector<int> data {
