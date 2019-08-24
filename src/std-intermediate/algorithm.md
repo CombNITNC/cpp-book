@@ -110,9 +110,11 @@ std::min(std::max(8, 5), 7);
 
 ### `all_of`
 
-範囲内の要素すべてが条件を満たすかどうか (三番目の引数の関数が実行して) 探索する。
+範囲内の要素すべてが条件を満たすかどうか探索する。
 
-結果がすべて `true` なら `true` を返し、そうでないなら `false` を返す。
+各要素を三番目の引数の関数へ渡して実行する。
+
+その結果がすべて `true` なら `true` を返し、そうでないなら `false` を返す。
 
 ```cpp
 std::vector<int> data {
@@ -133,9 +135,11 @@ std::all_of(data.begin(), data.end(), [](int elem) {
 
 ### `any_of`
 
-範囲内の要素のどれかが条件を満たすかどうか (三番目の引数の関数が実行して) 探索する。
+範囲内の要素のどれかが条件を満たすかどうか探索する。
 
-結果がすべて `false` なら `false` を返し、そうでないなら `true` を返す。
+各要素を三番目の引数の関数へ渡して実行する。
+
+その結果がすべて `false` なら `false` を返し、そうでないなら `true` を返す。
 
 ```cpp
 std::vector<int> data {
@@ -249,7 +253,7 @@ std::vector<int> data {
 };
 
 auto tail = std::unique(data.begin(), data.end());
-// data は {2, 5, 2, 5, 6, 2, 8, 1, 4, 4}、tail は data.end() - 2 と同じ
+// data は {2, 5, 2, 5, 6, 2, 8, 1, 4, 4}、tail は data.end() - 1 と同じ
 ```
 
 ```cpp
@@ -283,9 +287,9 @@ auto fence = std::partition(data.begin(), data.end(), [] (int e) {
 
 ### `binary_search`
 
-ソート済みの範囲に対して、二分探索を行う。
+ソート済みの範囲を渡すと、それで二分探索を行う。
 
-二分探索っていうのは、例えば五十音順に並んでいる辞書から探すときに、
+二分探索っていうのは、例えば五十音順に並んでいる単語カードから探すときに、
 
 1. 真ん中を開く。
 2. 探しているものだったら終わり。
@@ -463,12 +467,18 @@ int main() {
 ```cpp
 std::vector<int> imos(T);
 for (int customer = 0; customer < C; ++customer) {
-  imos[S[customer]] += 1;
-  imos[E[customer]] -= 1;
+  int S;
+  cin >> S;
+  ++imos[S];
+}
+for (int customer = 0; customer < C; ++customer) {
+  int E;
+  cin >> E;
+  --imos[E];
 }
 ```
 
-そして、`partial_sum` を書けると元のデータになるわけ。
+そして、`partial_sum` を使うと元のデータになるわけ。
 
 ```cpp
 std::vector<int> customer_n(T);
@@ -487,25 +497,27 @@ int main() {
   using namespace std;
   int C, T;
   cin >> C >> T;
-  vector<int> S(C), E(C);
-  for (int &e : S) {
-    cin >> e;
+
+  std::vector<int> imos(T);
+  for (int customer = 0; customer < C; ++customer) {
+    int S;
+    cin >> S;
+    ++imos[S];
   }
-  for (int &e : E) {
-    cin >> e;
+  for (int customer = 0; customer < C; ++customer) {
+    int E;
+    cin >> E;
+    --imos[E];
   }
 
-  vector<int> imos(T);
-  for (int customer = 0; customer < C; ++customer) {
-    imos[S[customer]] += 1;
-    imos[E[customer]] -= 1;
-  }
   vector<int> customer_n(T);
   partial_sum(imos.begin(), imos.end(), customer_n.begin());
   cout << *max_element(customer_n.begin(), customer_n.end()) << "\n";
 }
 ```
 
-最初のコードだと、C * T 回足さなきゃいけなかったけど、これは C + T 回足すだけでよくなってるよ。
+後の [最適化](./optimize.md) でやる *オーダー* の考え方を使うと、
+
+最初のコードだと *O*(CT) なのが、*O*(C + T) に改善されてる。
 
 いもす法を使った問題は、章末問題にもいくつか出すよ。

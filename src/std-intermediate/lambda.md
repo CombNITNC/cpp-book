@@ -21,7 +21,7 @@ auto doppio = 2.4; // double 型
 auto text = std::string("Hey!"); // std::string 型
 ```
 
-戻り値型では、戻り値の型から推論される。引数には使えない (そのうち使えるようになるかも)。
+戻り値型では、戻り値の型から推論される。引数の型には使えない (そのうち使えるようになるかも)。
 
 ```cpp
 auto add(int a, int b) { // int add(int, int) になる
