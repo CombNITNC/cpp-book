@@ -47,4 +47,9 @@ C/C++ の世界は楽しいよ……
 
 このサイトとプログラミングを行ったり来たりするのがめんどくさいときに、スマホでこのサイトを見ながら PC で作業とかはアリ。大アリのアリ。
 
+
+# 貢献
+
+誤字脱字の報告から表現の修正まで、[GitHub レポジトリ](https://github.com/MikuroXina/cpp-book) に Issue や Pull Request 送ってくれれば対応するのじゃ。
+
 <!--shinobi1--><script type="text/javascript" src="//xa.shinobi.jp/ufo/188681800"></script><noscript><a href="//xa.shinobi.jp/bin/gg?188681800" target="_blank"><img src="//xa.shinobi.jp/bin/ll?188681800" border="0"></a><br><span style="font-size:9px"><img style="margin:0;vertical-align:text-bottom;" src="//img.shinobi.jp/tadaima/fj.gif" width="19" height="11"> </span></noscript><!--shinobi2-->
