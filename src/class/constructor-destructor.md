@@ -41,6 +41,36 @@ CannotCons c; // エラー
 このテクニックの出番は次のページだよ。
 
 
+## コピーコンストラクタ
+
+クラスのオブジェクトを変数から変数へ *コピーするときに呼ばれるコンストラクタ* を定義できる。
+
+自身と同じ型の `const &` を受け取るコンストラクタがコピーコンストラクタになる。
+
+```cpp
+#include <iostream>
+struct SayCopy {
+  SayCopy() {}
+  SayCopy(SayCopy const&) {
+    std::cout << "コピーしたぜ!\n";
+  }
+};
+SayCopy a;
+SayCopy b = a; // コピーしたぜ!
+```
+
+定義の部分を `= default` にすれば、自動で全メンバ変数をコピーする処理にしてくれる。
+
+```cpp
+struct AutoCopy {
+  AutoCopy() {}
+  AutoCopy(AutoCopy const&) = default;
+};
+```
+
+> ムーブコンストラクタもあるけど、それはまたの機会に。
+
+
 ## 初期化子
 
 コンストラクタの引数リストとブロックの間で、メンバ変数を初期化する構文がある。
