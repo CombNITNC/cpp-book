@@ -73,5 +73,5 @@
   - [this](./class/this.md)
   - [コンストラクタ/デストラクタ](./class/constructor-destructor.md)
   - [静的メンバ](./class/static.md)
-  - [抽象クラス](./class/abstract.md)
   - [クラスの派生](./class/inherit.md)
+  - [抽象クラス](./class/abstract.md)
