@@ -70,7 +70,7 @@
 - [クラス](./class/intro.md)
   - [クラス定義](./class/define.md)
   - [メンバ定義](./class/member.md)
-  - [メンバに修飾](./class/modifier.md)
+  - [this](./class/this.md)
   - [コンストラクタ/デストラクタ](./class/constructor-destructor.md)
   - [静的メンバ](./class/static.md)
   - [抽象クラス](./class/abstract.md)
