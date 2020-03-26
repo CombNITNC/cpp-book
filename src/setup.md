@@ -126,5 +126,3 @@ macOS だと アプリケーション > ユーティリティ > ターミナル 
 # まとめ
 
 ちゃんと準備できた?できた?次章からプログラムを書いていくから、よろしくね!
-
-<!--shinobi1--><script type="text/javascript" src="//xa.shinobi.jp/ufo/188681801"></script><noscript><a href="//xa.shinobi.jp/bin/gg?188681801" target="_blank"><img src="//xa.shinobi.jp/bin/ll?188681801" border="0"></a><br><span style="font-size:9px"><img style="margin:0;vertical-align:text-bottom;" src="//img.shinobi.jp/tadaima/fj.gif" width="19" height="11"> </span></noscript><!--shinobi2-->

@@ -16,5 +16,3 @@
 - 最適化に必要な計算複雑性を把握する
 
 所要時間: 80 ~ 90 分くらい
-
-<!--shinobi1--><script type="text/javascript" src="//xa.shinobi.jp/ufo/18868180a"></script><noscript><a href="//xa.shinobi.jp/bin/gg?18868180a" target="_blank"><img src="//xa.shinobi.jp/bin/ll?18868180a" border="0"></a><br><span style="font-size:9px"><img style="margin:0;vertical-align:text-bottom;" src="//img.shinobi.jp/tadaima/fj.gif" width="19" height="11"> </span></noscript><!--shinobi2-->
