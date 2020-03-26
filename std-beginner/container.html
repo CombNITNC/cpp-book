@@ -1,0 +1,475 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>コンテナ - C/C++講座</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="../intro.html">ようこそ</a></li><li class="expanded "><a href="../setup.html"><strong aria-hidden="true">1.</strong> 環境構築</a></li><li class="expanded "><a href="../basis/intro.html"><strong aria-hidden="true">2.</strong> 基礎</a></li><li><ol class="section"><li class="expanded "><a href="../basis/minimal.html"><strong aria-hidden="true">2.1.</strong> 最小限のコード</a></li><li class="expanded "><a href="../basis/comments.html"><strong aria-hidden="true">2.2.</strong> コメント</a></li><li class="expanded "><a href="../basis/main-func.html"><strong aria-hidden="true">2.3.</strong> main 関数</a></li><li class="expanded "><a href="../basis/func-call.html"><strong aria-hidden="true">2.4.</strong> 文と関数呼び出し</a></li><li class="expanded "><a href="../basis/ops-1.html"><strong aria-hidden="true">2.5.</strong> 式と演算子 其の一</a></li><li class="expanded "><a href="../basis/compound.html"><strong aria-hidden="true">2.6.</strong> 複文とインデント</a></li><li class="expanded "><a href="../basis/cout.html"><strong aria-hidden="true">2.7.</strong> std::cout</a></li></ol></li><li class="expanded "><a href="../type-vars/intro.html"><strong aria-hidden="true">3.</strong> 型と変数</a></li><li><ol class="section"><li class="expanded "><a href="../type-vars/variables.html"><strong aria-hidden="true">3.1.</strong> 変数と識別子</a></li><li class="expanded "><a href="../type-vars/int-double.html"><strong aria-hidden="true">3.2.</strong> int / double</a></li><li class="expanded "><a href="../type-vars/init.html"><strong aria-hidden="true">3.3.</strong> 初期化</a></li><li class="expanded "><a href="../type-vars/ops-2.html"><strong aria-hidden="true">3.4.</strong> 演算子 其の二</a></li><li class="expanded "><a href="../type-vars/type-conv.html"><strong aria-hidden="true">3.5.</strong> 型変換</a></li><li class="expanded "><a href="../type-vars/scope.html"><strong aria-hidden="true">3.6.</strong> スコープ</a></li><li class="expanded "><a href="../type-vars/cin.html"><strong aria-hidden="true">3.7.</strong> std::cin</a></li><li class="expanded "><a href="../type-vars/questions.html"><strong aria-hidden="true">3.8.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../fork/intro.html"><strong aria-hidden="true">4.</strong> 分岐</a></li><li><ol class="section"><li class="expanded "><a href="../fork/bool.html"><strong aria-hidden="true">4.1.</strong> bool</a></li><li class="expanded "><a href="../fork/ops-3.html"><strong aria-hidden="true">4.2.</strong> 演算子 其の三</a></li><li class="expanded "><a href="../fork/if.html"><strong aria-hidden="true">4.3.</strong> if</a></li><li class="expanded "><a href="../fork/ops-4.html"><strong aria-hidden="true">4.4.</strong> 演算子 其の四</a></li><li class="expanded "><a href="../fork/else.html"><strong aria-hidden="true">4.5.</strong> else</a></li><li class="expanded "><a href="../fork/switch.html"><strong aria-hidden="true">4.6.</strong> switch</a></li><li class="expanded "><a href="../fork/questions.html"><strong aria-hidden="true">4.7.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../loop/intro.html"><strong aria-hidden="true">5.</strong> 反復</a></li><li><ol class="section"><li class="expanded "><a href="../loop/while.html"><strong aria-hidden="true">5.1.</strong> while</a></li><li class="expanded "><a href="../loop/do-while.html"><strong aria-hidden="true">5.2.</strong> do - while</a></li><li class="expanded "><a href="../loop/continue.html"><strong aria-hidden="true">5.3.</strong> continue</a></li><li class="expanded "><a href="../loop/break.html"><strong aria-hidden="true">5.4.</strong> break</a></li><li class="expanded "><a href="../loop/for.html"><strong aria-hidden="true">5.5.</strong> for</a></li><li class="expanded "><a href="../loop/nested.html"><strong aria-hidden="true">5.6.</strong> 多重ループ</a></li><li class="expanded "><a href="../loop/questions.html"><strong aria-hidden="true">5.7.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../func/intro.html"><strong aria-hidden="true">6.</strong> 関数を作る</a></li><li><ol class="section"><li class="expanded "><a href="../func/define.html"><strong aria-hidden="true">6.1.</strong> 関数を作る</a></li><li class="expanded "><a href="../func/args.html"><strong aria-hidden="true">6.2.</strong> 引数</a></li><li class="expanded "><a href="../func/return.html"><strong aria-hidden="true">6.3.</strong> 戻り値と return</a></li><li class="expanded "><a href="../func/pass.html"><strong aria-hidden="true">6.4.</strong> 値渡し</a></li><li class="expanded "><a href="../func/resolve.html"><strong aria-hidden="true">6.5.</strong> 名前解決</a></li></ol></li><li class="expanded "><a href="../object/intro.html"><strong aria-hidden="true">7.</strong> オブジェクトたち</a></li><li><ol class="section"><li class="expanded "><a href="../object/other-types.html"><strong aria-hidden="true">7.1.</strong> float char 16/8/2進数リテラル</a></li><li class="expanded "><a href="../object/specifier.html"><strong aria-hidden="true">7.2.</strong> long short signed unsigned</a></li><li class="expanded "><a href="../object/class-inst.html"><strong aria-hidden="true">7.3.</strong> クラスとインスタンス</a></li><li class="expanded "><a href="../object/member-func.html"><strong aria-hidden="true">7.4.</strong> メンバ関数呼び出し</a></li></ol></li><li class="expanded "><a href="../ref/intro.html"><strong aria-hidden="true">8.</strong> 参照</a></li><li><ol class="section"><li class="expanded "><a href="../ref/const.html"><strong aria-hidden="true">8.1.</strong> const</a></li><li class="expanded "><a href="../ref/ref.html"><strong aria-hidden="true">8.2.</strong> 参照型</a></li><li class="expanded "><a href="../ref/const-on-ref.html"><strong aria-hidden="true">8.3.</strong> const の参照</a></li><li class="expanded "><a href="../ref/array.html"><strong aria-hidden="true">8.4.</strong> 配列型</a></li><li class="expanded "><a href="../ref/cstring.html"><strong aria-hidden="true">8.5.</strong> 文字列</a></li><li class="expanded "><a href="../ref/range-based-for.html"><strong aria-hidden="true">8.6.</strong> 範囲for文</a></li></ol></li><li class="expanded "><a href="../std-beginner/intro.html"><strong aria-hidden="true">9.</strong> 標準ライブラリ 初級編</a></li><li><ol class="section"><li class="expanded "><a href="../std-beginner/use-namespace.html"><strong aria-hidden="true">9.1.</strong> 名前空間とusing</a></li><li class="expanded "><a href="../std-beginner/cmath-numeric.html"><strong aria-hidden="true">9.2.</strong> 数学的な関数</a></li><li class="expanded "><a href="../std-beginner/container.html" class="active"><strong aria-hidden="true">9.3.</strong> コンテナ</a></li><li class="expanded "><a href="../std-beginner/easy-it.html"><strong aria-hidden="true">9.4.</strong> かんたんイテレータ</a></li><li class="expanded "><a href="../std-beginner/multiple-container.html"><strong aria-hidden="true">9.5.</strong> 多重コンテナ</a></li><li class="expanded "><a href="../std-beginner/questions.html"><strong aria-hidden="true">9.6.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../std-intermediate/intro.html"><strong aria-hidden="true">10.</strong> 標準ライブラリ 中級編</a></li><li><ol class="section"><li class="expanded "><a href="../std-intermediate/lambda.html"><strong aria-hidden="true">10.1.</strong> ラムダ式</a></li><li class="expanded "><a href="../std-intermediate/algorithm.html"><strong aria-hidden="true">10.2.</strong> アルゴリズム関数</a></li><li class="expanded "><a href="../std-intermediate/stack-queue.html"><strong aria-hidden="true">10.3.</strong> スタックとキュー</a></li><li class="expanded "><a href="../std-intermediate/more-it.html"><strong aria-hidden="true">10.4.</strong> もっとイテレータ</a></li><li class="expanded "><a href="../std-intermediate/optimize.html"><strong aria-hidden="true">10.5.</strong> 最適化</a></li><li class="expanded "><a href="../std-intermediate/questions.html"><strong aria-hidden="true">10.6.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../class/intro.html"><strong aria-hidden="true">11.</strong> クラス</a></li><li><ol class="section"><li class="expanded "><a href="../class/define.html"><strong aria-hidden="true">11.1.</strong> クラス定義</a></li><li class="expanded "><a href="../class/member.html"><strong aria-hidden="true">11.2.</strong> メンバ定義</a></li><li class="expanded "><a href="../class/this.html"><strong aria-hidden="true">11.3.</strong> this</a></li><li class="expanded "><a href="../class/constructor-destructor.html"><strong aria-hidden="true">11.4.</strong> コンストラクタ/デストラクタ</a></li><li class="expanded "><a href="../class/static.html"><strong aria-hidden="true">11.5.</strong> 静的メンバ</a></li><li class="expanded "><a href="../class/inherit.html"><strong aria-hidden="true">11.6.</strong> クラスの派生</a></li><li class="expanded "><a href="../class/abstract.html"><strong aria-hidden="true">11.7.</strong> 抽象クラス</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">C/C++講座</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#コンテナ" id="コンテナ">コンテナ</a></h1>
+<p>みんなコンテナは持ったな!!</p>
+<hr />
+<p>今までの入力では、繰り返したとしても一つずつしか扱えなかった。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+double add(double a, double b) {
+  return a + b;
+}
+
+void ask_sum() {
+  using std::cin;
+  using std::cout;
+
+  cout &lt;&lt; &quot;合計を出力するべ。\n&quot;
+    &lt;&lt; &quot;値をスペースとかで区切って 2 つ入力してくれ。\n&quot;;
+  double first = 0, second = 0;
+  cin &gt;&gt; first &gt;&gt; second;
+
+  // 入力エラー処理テンプレ
+  while (cin.fail()) {
+    cin.clear();
+    cin.ignore();
+    cout &lt;&lt; &quot;なんかおかしいべ。もう一度入力してけろ。\n&quot;;
+    cin &gt;&gt; first &gt;&gt; second;
+  }
+
+  cout &lt;&lt; &quot;合計 = &quot; &lt;&lt; add(first, second) &lt;&lt; &quot;\n&quot;;
+}
+
+int main() {
+  while (true) {
+    ask_sum();
+
+    std::cout &lt;&lt; &quot;もうやめるかい? [y で終了]&quot;;
+    char command;
+    std::cin &gt;&gt; command;
+    if (command == 'y' || command == 'Y') {
+      break;
+    }
+  }
+}
+</code></pre>
+<p>これだと、大量のデータを集計して平均を求めたりとかができない。</p>
+<p>そこで、そういうのを扱う <strong>コンテナクラス</strong> を使う。</p>
+<p><strong>コンテナ</strong> っていうのは、いくらでも値を詰め込めるクラスのこと。</p>
+<p><code>std::string</code> もコンテナの一種といえるよ。</p>
+<p>よく使う <code>std::vector</code> から見ていこう。</p>
+<h2><a class="header" href="#stdvector" id="stdvector">std::vector</a></h2>
+<p>同じ型のデータを大量に格納するクラス。サイズを増やせる配列みたいな感じ。</p>
+<p>使うには、<code>#include &lt;vector&gt;</code> が必要。</p>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+
+int main() {
+  std::vector&lt;int&gt; data;
+}
+</code></pre>
+<p>これは <em>テンプレート</em> といって、使う側から型や値を <em>テンプレート引数</em> として渡せる仕組み。</p>
+<blockquote>
+<p><em>テンプレート名</em>  &lt; <em>テンプレート引数</em>, ... &gt;</p>
+</blockquote>
+<p>ここでは格納する型を渡すと、その型が格納できるクラスになる。</p>
+<p>つまり、</p>
+<ul>
+<li><code>std::vector&lt;int&gt;</code> は <code>int</code> が格納できるクラス</li>
+<li><code>std::vector&lt;double&gt;</code> は <code>double</code> が格納できるクラス</li>
+</ul>
+<p>ってこと。</p>
+<h3><a class="header" href="#末尾へ追加" id="末尾へ追加">末尾へ追加</a></h3>
+<p><code>push_back</code> メンバ関数は、リストの後ろに値を一つ追加する。<code>std::vector</code> が最も得意な操作。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data;
+
+data.push_back(4);
+data.push_back(3);
+data.push_back(1);
+data.push_back(0);
+data.push_back(5);
+</code></pre>
+<h3><a class="header" href="#初期化" id="初期化">初期化</a></h3>
+<p>このクラスの初期化は二種類ある。</p>
+<h4><a class="header" href="#サイズ指定" id="サイズ指定">サイズ指定</a></h4>
+<p>予め必要なサイズとその中を埋める値を指定するやり方。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; stat(20); // 20 個の 0 (正確には int{})
+std::vector&lt;double&gt; data(15, 5.0); // 15 個の 5.0
+</code></pre>
+<p>すべて同じ値にすることしかできないので、<code>0, 1, 2, 3, ...</code> みたくするときはループで要素を追加していく必要がある。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; nums;
+
+for (int i = 0; i &lt; 20; ++i) {
+  nums.push_back(i);
+}
+</code></pre>
+<p>※イテレータを学ぶともっと楽できるけれど、それはまた別のお話。</p>
+<h4><a class="header" href="#リスト" id="リスト">リスト</a></h4>
+<p>中に格納するデータをそのまま書く。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; stat = {2, 4, 0, 3};
+std::vector&lt;double&gt; data = {1.0};
+</code></pre>
+<h3><a class="header" href="#取得" id="取得">取得</a></h3>
+<p>丹精込めて詰め込んだ値を取り出そう。</p>
+<h4><a class="header" href="#サイズ" id="サイズ">サイズ</a></h4>
+<p><code>size</code> メンバ関数で詰め込んだ値の数を取得できる。</p>
+<pre><code class="language-cpp">// 何も入れていないと 0
+std::vector&lt;int&gt;().size(); // 0
+
+std::vector&lt;int&gt; data(4);
+data.size(); // 4
+</code></pre>
+<h4><a class="header" href="#要素" id="要素">要素</a></h4>
+<p><code>at</code> メンバ関数で要素の参照を取得できる。</p>
+<p>配列と同じで最初の要素は <code>0</code> 番目。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data = {4, 3, 1, 0, 5};
+
+data.at(1); // 3
+
+data.at(4) = 2; // 変更もできる
+
+// 存在しない要素。エラーで止まる
+data.at(6);
+data.at(-1) = 5;
+</code></pre>
+<p>配列と同じように <code>[]</code> でアクセスすることもできる。</p>
+<p>こちらは、存在しない要素を指定してもエラーにはならない。</p>
+<p>でも、そこに書き込もうとするとシステムがプログラムを止めることがある。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data = {4, 3, 1, 0, 5};
+
+data[1]; // 3
+
+data[4] = 2; // 変更もできる
+
+// 存在しない要素
+data.at[6]; // 値は不定
+data.at[-1] = 5; // 強制終了するかも
+</code></pre>
+<p><code>at</code> は安全だから、<code>[]</code> を使うのは実行速度が必要なときだけにしてね。</p>
+<h4><a class="header" href="#末尾要素" id="末尾要素">末尾要素</a></h4>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data = {2, 4, 5};
+</code></pre>
+<p>↑ の最後の要素にアクセスするときは、</p>
+<pre><code class="language-cpp">data.at(data.size() - 1);
+</code></pre>
+<p>なんてしなくても、</p>
+<pre><code class="language-cpp">data.back();
+</code></pre>
+<p>でできる。</p>
+<h3><a class="header" href="#末尾から削除" id="末尾から削除">末尾から削除</a></h3>
+<p><code>pop_back</code> で、リストの後ろから値を一つ削除する。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data = {4, 6, 8};
+
+data.pop_back();
+</code></pre>
+<h2><a class="header" href="#stdmap" id="stdmap">std::map</a></h2>
+<p><code>std::map</code> を使うには、<code>#include &lt;map&gt;</code> が必要。</p>
+<p>これは、値と、それを表すキー値、二つのセットをたくさん格納するクラス。</p>
+<p>キーの値を渡せば値が取得できるってしくみ。</p>
+<p>その性質上、キーが重複するような格納はできない。</p>
+<p>ちなみに、よく連想配列とか辞書配列とか言われる。</p>
+<pre><code class="language-cpp">std::map&lt;std::string, int&gt; score;
+</code></pre>
+<p>1 つ目のテンプレート引数が <em>キーの型</em> で、2 つ目のテンプレート引数が <em>対応する値の型</em>。</p>
+<p>↑ の型は、<code>std::string</code> をキーとして <code>int</code> を格納するクラス。</p>
+<h3><a class="header" href="#初期化-1" id="初期化-1">初期化</a></h3>
+<p>このクラスにはリスト初期化しかない。</p>
+<pre><code class="language-cpp">std::map&lt;int, int&gt; integer = { // 初期化リストの中に
+  {0, 1}, // 初期化リストたち
+  {1, 2},
+  {2, 3}
+};
+
+std::map&lt;std::string, int&gt; score = {
+  {&quot;Ange&quot;, 510},
+  {&quot;Lize&quot;, 480},
+  {&quot;Toko&quot;, 540}
+};
+</code></pre>
+<h3><a class="header" href="#取得-1" id="取得-1">取得</a></h3>
+<p>要素の取得には二通りの方法があって、それぞれ性質が異なる。</p>
+<h4><a class="header" href="#サイズ-1" id="サイズ-1">サイズ</a></h4>
+<p>こっちも、格納している要素の数は <code>size</code> で取得できる。</p>
+<pre><code class="language-cpp">std::map&lt;int, int&gt; data = {
+  {0, 1},
+  {1, 2},
+  {2, 3}
+};
+
+data.size(); // 3
+</code></pre>
+<h4><a class="header" href="#" id="">[]</a></h4>
+<p>配列のように <code>[ キー ]</code> で取得できる。</p>
+<p>まだそのキーの値がないときは、<code>値の型{}</code> (0 に相当するもの) が入る。</p>
+<pre><code class="language-cpp">std::map&lt;int, int&gt; matrix = {{1, 2}};
+
+matrix[1]; // 2
+
+matrix[3]; // 無いので追加。0
+
+matrix[-1] = 4; // 無いので追加。そして代入
+
+
+std::map&lt;std::string, std::string&gt; word;
+
+word[&quot;Hello&quot;]; // 無いので追加。std::string{} が入る
+
+word[&quot;Good morning&quot;] = &quot;こんばんは&quot;; // 文字列が std::string になって入る
+</code></pre>
+<p>こんな感じで、要素の挿入もこれでできちゃう。</p>
+<h4><a class="header" href="#at" id="at">at</a></h4>
+<p><code>at</code> も取得するメンバ関数。</p>
+<p><code>std::vector</code> のように、存在しないときはエラーで止まる。</p>
+<pre><code class="language-cpp">std::map&lt;char, int&gt; hex = {
+  {'A', 10},
+  {'B', 11}
+};
+
+hex.at('A'); // 10
+hex.at('C'); // エラーで止まる
+</code></pre>
+<h3><a class="header" href="#要素の確認" id="要素の確認">要素の確認</a></h3>
+<p><code>contains</code> は指定のキーが格納されているかどうかを <code>bool</code> で返す。</p>
+<pre><code class="language-cpp">std::map&lt;char, int&gt; hex = {
+  {'D', 13}
+};
+
+bool has_a = hex.contains('A');
+bool has_d = hex.contains('D');
+</code></pre>
+<p>要素があるときだけその要素を取得したいときは、上の <code>at</code> と組み合わせる。</p>
+<pre><code class="language-cpp">std::map&lt;char, int&gt; hex = {
+  {'D', 13}
+};
+
+bool has_a = hex.contains('A');
+if (has_a) {
+  int &amp;a = hex.at('A');
+
+}
+
+bool has_d = hex.contains('D');
+if (has_d) {
+  int &amp;d = hex.at('D');
+
+}
+</code></pre>
+<h3><a class="header" href="#削除" id="削除">削除</a></h3>
+<p><code>erase</code> で指定したキーの要素を削除する。</p>
+<pre><code class="language-cpp">std::map&lt;std::string, long&gt; record = {
+  {&quot;0d5e3&quot;, 4000},
+  {&quot;4ghd7&quot;, 8002},
+  {&quot;5hf71&quot;, 12032},
+};
+
+record.erase(&quot;0d5e3&quot;);
+</code></pre>
+<hr />
+<p>他にもいろんなコンテナクラスやそのメンバ関数がある。</p>
+<p>けど、その前に次のページで <strong>イテレータ</strong> について軽く触れておこう。</p>
+<p>余談だけれど、<code>std::vector&lt;bool&gt;</code> の <code>at</code> メンバ関数は、他の型と違って要素への参照を返さない。代わりに独自の型を返すので注意。一応 <code>bool</code> 型の変数に受け取ったり、代入演算子で変更はできる。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../std-beginner/cmath-numeric.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../std-beginner/easy-it.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../std-beginner/cmath-numeric.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../std-beginner/easy-it.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

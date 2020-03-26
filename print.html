@@ -1,0 +1,5630 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>C/C++講座</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="intro.html">ようこそ</a></li><li class="expanded "><a href="setup.html"><strong aria-hidden="true">1.</strong> 環境構築</a></li><li class="expanded "><a href="basis/intro.html"><strong aria-hidden="true">2.</strong> 基礎</a></li><li><ol class="section"><li class="expanded "><a href="basis/minimal.html"><strong aria-hidden="true">2.1.</strong> 最小限のコード</a></li><li class="expanded "><a href="basis/comments.html"><strong aria-hidden="true">2.2.</strong> コメント</a></li><li class="expanded "><a href="basis/main-func.html"><strong aria-hidden="true">2.3.</strong> main 関数</a></li><li class="expanded "><a href="basis/func-call.html"><strong aria-hidden="true">2.4.</strong> 文と関数呼び出し</a></li><li class="expanded "><a href="basis/ops-1.html"><strong aria-hidden="true">2.5.</strong> 式と演算子 其の一</a></li><li class="expanded "><a href="basis/compound.html"><strong aria-hidden="true">2.6.</strong> 複文とインデント</a></li><li class="expanded "><a href="basis/cout.html"><strong aria-hidden="true">2.7.</strong> std::cout</a></li></ol></li><li class="expanded "><a href="type-vars/intro.html"><strong aria-hidden="true">3.</strong> 型と変数</a></li><li><ol class="section"><li class="expanded "><a href="type-vars/variables.html"><strong aria-hidden="true">3.1.</strong> 変数と識別子</a></li><li class="expanded "><a href="type-vars/int-double.html"><strong aria-hidden="true">3.2.</strong> int / double</a></li><li class="expanded "><a href="type-vars/init.html"><strong aria-hidden="true">3.3.</strong> 初期化</a></li><li class="expanded "><a href="type-vars/ops-2.html"><strong aria-hidden="true">3.4.</strong> 演算子 其の二</a></li><li class="expanded "><a href="type-vars/type-conv.html"><strong aria-hidden="true">3.5.</strong> 型変換</a></li><li class="expanded "><a href="type-vars/scope.html"><strong aria-hidden="true">3.6.</strong> スコープ</a></li><li class="expanded "><a href="type-vars/cin.html"><strong aria-hidden="true">3.7.</strong> std::cin</a></li><li class="expanded "><a href="type-vars/questions.html"><strong aria-hidden="true">3.8.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="fork/intro.html"><strong aria-hidden="true">4.</strong> 分岐</a></li><li><ol class="section"><li class="expanded "><a href="fork/bool.html"><strong aria-hidden="true">4.1.</strong> bool</a></li><li class="expanded "><a href="fork/ops-3.html"><strong aria-hidden="true">4.2.</strong> 演算子 其の三</a></li><li class="expanded "><a href="fork/if.html"><strong aria-hidden="true">4.3.</strong> if</a></li><li class="expanded "><a href="fork/ops-4.html"><strong aria-hidden="true">4.4.</strong> 演算子 其の四</a></li><li class="expanded "><a href="fork/else.html"><strong aria-hidden="true">4.5.</strong> else</a></li><li class="expanded "><a href="fork/switch.html"><strong aria-hidden="true">4.6.</strong> switch</a></li><li class="expanded "><a href="fork/questions.html"><strong aria-hidden="true">4.7.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="loop/intro.html"><strong aria-hidden="true">5.</strong> 反復</a></li><li><ol class="section"><li class="expanded "><a href="loop/while.html"><strong aria-hidden="true">5.1.</strong> while</a></li><li class="expanded "><a href="loop/do-while.html"><strong aria-hidden="true">5.2.</strong> do - while</a></li><li class="expanded "><a href="loop/continue.html"><strong aria-hidden="true">5.3.</strong> continue</a></li><li class="expanded "><a href="loop/break.html"><strong aria-hidden="true">5.4.</strong> break</a></li><li class="expanded "><a href="loop/for.html"><strong aria-hidden="true">5.5.</strong> for</a></li><li class="expanded "><a href="loop/nested.html"><strong aria-hidden="true">5.6.</strong> 多重ループ</a></li><li class="expanded "><a href="loop/questions.html"><strong aria-hidden="true">5.7.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="func/intro.html"><strong aria-hidden="true">6.</strong> 関数を作る</a></li><li><ol class="section"><li class="expanded "><a href="func/define.html"><strong aria-hidden="true">6.1.</strong> 関数を作る</a></li><li class="expanded "><a href="func/args.html"><strong aria-hidden="true">6.2.</strong> 引数</a></li><li class="expanded "><a href="func/return.html"><strong aria-hidden="true">6.3.</strong> 戻り値と return</a></li><li class="expanded "><a href="func/pass.html"><strong aria-hidden="true">6.4.</strong> 値渡し</a></li><li class="expanded "><a href="func/resolve.html"><strong aria-hidden="true">6.5.</strong> 名前解決</a></li></ol></li><li class="expanded "><a href="object/intro.html"><strong aria-hidden="true">7.</strong> オブジェクトたち</a></li><li><ol class="section"><li class="expanded "><a href="object/other-types.html"><strong aria-hidden="true">7.1.</strong> float char 16/8/2進数リテラル</a></li><li class="expanded "><a href="object/specifier.html"><strong aria-hidden="true">7.2.</strong> long short signed unsigned</a></li><li class="expanded "><a href="object/class-inst.html"><strong aria-hidden="true">7.3.</strong> クラスとインスタンス</a></li><li class="expanded "><a href="object/member-func.html"><strong aria-hidden="true">7.4.</strong> メンバ関数呼び出し</a></li></ol></li><li class="expanded "><a href="ref/intro.html"><strong aria-hidden="true">8.</strong> 参照</a></li><li><ol class="section"><li class="expanded "><a href="ref/const.html"><strong aria-hidden="true">8.1.</strong> const</a></li><li class="expanded "><a href="ref/ref.html"><strong aria-hidden="true">8.2.</strong> 参照型</a></li><li class="expanded "><a href="ref/const-on-ref.html"><strong aria-hidden="true">8.3.</strong> const の参照</a></li><li class="expanded "><a href="ref/array.html"><strong aria-hidden="true">8.4.</strong> 配列型</a></li><li class="expanded "><a href="ref/cstring.html"><strong aria-hidden="true">8.5.</strong> 文字列</a></li><li class="expanded "><a href="ref/range-based-for.html"><strong aria-hidden="true">8.6.</strong> 範囲for文</a></li></ol></li><li class="expanded "><a href="std-beginner/intro.html"><strong aria-hidden="true">9.</strong> 標準ライブラリ 初級編</a></li><li><ol class="section"><li class="expanded "><a href="std-beginner/use-namespace.html"><strong aria-hidden="true">9.1.</strong> 名前空間とusing</a></li><li class="expanded "><a href="std-beginner/cmath-numeric.html"><strong aria-hidden="true">9.2.</strong> 数学的な関数</a></li><li class="expanded "><a href="std-beginner/container.html"><strong aria-hidden="true">9.3.</strong> コンテナ</a></li><li class="expanded "><a href="std-beginner/easy-it.html"><strong aria-hidden="true">9.4.</strong> かんたんイテレータ</a></li><li class="expanded "><a href="std-beginner/multiple-container.html"><strong aria-hidden="true">9.5.</strong> 多重コンテナ</a></li><li class="expanded "><a href="std-beginner/questions.html"><strong aria-hidden="true">9.6.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="std-intermediate/intro.html"><strong aria-hidden="true">10.</strong> 標準ライブラリ 中級編</a></li><li><ol class="section"><li class="expanded "><a href="std-intermediate/lambda.html"><strong aria-hidden="true">10.1.</strong> ラムダ式</a></li><li class="expanded "><a href="std-intermediate/algorithm.html"><strong aria-hidden="true">10.2.</strong> アルゴリズム関数</a></li><li class="expanded "><a href="std-intermediate/stack-queue.html"><strong aria-hidden="true">10.3.</strong> スタックとキュー</a></li><li class="expanded "><a href="std-intermediate/more-it.html"><strong aria-hidden="true">10.4.</strong> もっとイテレータ</a></li><li class="expanded "><a href="std-intermediate/optimize.html"><strong aria-hidden="true">10.5.</strong> 最適化</a></li><li class="expanded "><a href="std-intermediate/questions.html"><strong aria-hidden="true">10.6.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="class/intro.html"><strong aria-hidden="true">11.</strong> クラス</a></li><li><ol class="section"><li class="expanded "><a href="class/define.html"><strong aria-hidden="true">11.1.</strong> クラス定義</a></li><li class="expanded "><a href="class/member.html"><strong aria-hidden="true">11.2.</strong> メンバ定義</a></li><li class="expanded "><a href="class/this.html"><strong aria-hidden="true">11.3.</strong> this</a></li><li class="expanded "><a href="class/constructor-destructor.html"><strong aria-hidden="true">11.4.</strong> コンストラクタ/デストラクタ</a></li><li class="expanded "><a href="class/static.html"><strong aria-hidden="true">11.5.</strong> 静的メンバ</a></li><li class="expanded "><a href="class/inherit.html"><strong aria-hidden="true">11.6.</strong> クラスの派生</a></li><li class="expanded "><a href="class/abstract.html"><strong aria-hidden="true">11.7.</strong> 抽象クラス</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">C/C++講座</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#ようこそ" id="ようこそ">ようこそ</a></h1>
+<p>C/C++ の世界は楽しいよ……</p>
+<h1><a class="header" href="#はじめに" id="はじめに">はじめに</a></h1>
+<p>この C/C++ 講座では、</p>
+<ul>
+<li>初心者にわかりやすい</li>
+<li>学ぶ上での罠を除去する</li>
+<li>一つ一つゆっくり進む</li>
+</ul>
+<p>ことを目標に、プログラミング言語 C/C++ の共通部の学習を通してプログラミングをやります。やるったらたる。</p>
+<p>必要な前提知識は、義務教育ギリギリくらいの数学と、ほんの少しの論理的思考力だけ。</p>
+<h2><a class="header" href="#ロードマップ" id="ロードマップ">ロードマップ</a></h2>
+<h3><a class="header" href="#目標" id="目標">目標</a></h3>
+<ul>
+<li>C++ 初級レベルの知識の習得</li>
+<li>競技プログラミングに必要な知識の習得</li>
+<li>そこから他の言語へ繋がる概念の会得</li>
+</ul>
+<h3><a class="header" href="#中間目標リスト" id="中間目標リスト">中間目標リスト</a></h3>
+<ol>
+<li>C/C++ を実行できる環境を構築する</li>
+<li>コードを書く上での基礎知識を身につける</li>
+<li>型と変数を理解して使用する</li>
+<li>分岐処理をする</li>
+<li>反復を適した形式で記述する</li>
+<li>関数を作る</li>
+<li>参照を使って効率良く実装する</li>
+<li>他人が作ったクラスを使ってオブジェクトを作る</li>
+<li>標準ライブラリを使いこなす</li>
+</ol>
+<h1><a class="header" href="#注意" id="注意">注意</a></h1>
+<p>このサイトはスマホからでもいい感じに見られるけれど、PC で作ってね。スマホで何もかもできるわけじゃないよ。</p>
+<p>このサイトとプログラミングを行ったり来たりするのがめんどくさいときに、スマホでこのサイトを見ながら PC で作業とかはアリ。大アリのアリ。</p>
+<h1><a class="header" href="#貢献" id="貢献">貢献</a></h1>
+<p>誤字脱字の報告から表現の修正まで、<a href="https://github.com/MikuroXina/cpp-book">GitHub レポジトリ</a> に Issue や Pull Request 送ってくれれば対応するのじゃ。</p>
+<h1><a class="header" href="#環境構築" id="環境構築">環境構築</a></h1>
+<p>何も用意してなかったら、何もできないよ</p>
+<h1><a class="header" href="#今回のゴール" id="今回のゴール">今回のゴール</a></h1>
+<ul>
+<li>C/C++ について少し触れる</li>
+<li>C/C++ プログラムを書いて実行できる環境を作る</li>
+</ul>
+<p>所要時間: 20 ~ 30 分くらい</p>
+<h1><a class="header" href="#プログラムと実行形式" id="プログラムと実行形式">プログラムと実行形式</a></h1>
+<p>私達が普段触れている電子機器――スマホ、パソコン、ゲーム機――などには必ずアプリが関わっている。……いるよね？これ過去の人が読んでないよね？</p>
+<p>そいつらはみんな、「機械に何をさせるのか」っていうのを記述したもので作られている。これを (コンピュータ) プログラム という。</p>
+<p>そして、プログラムを書くことを プログラミング、プログラムを書く人を プログラマ っていう。</p>
+<h2><a class="header" href="#アプリはすべてプログラムによって作られている" id="アプリはすべてプログラムによって作られている">アプリはすべてプログラムによって作られている。</a></h2>
+<p>特に、生産的で一般的な手法として、 プログラミング言語 という独自言語のテキストを書くやり方がある。マウスだけで作るやつとかもあるけど、作ってるうちにテキストで書いたほうが楽なことに気づく。これマジ。</p>
+<p>ここでは、そのプログラミング言語の中の一つの、それなりに強い言語 C++ を使ってく。ただ、これはまあまあレベルの高いこともできるから、この言語の元になった C 言語と共通する部分しか触れないけど。</p>
+<h2><a class="header" href="#なぜ-c-なのか" id="なぜ-c-なのか">なぜ C++ なのか</a></h2>
+<ul>
+<li>C 言語から派生した C 系言語は非常に多く、学習すると それなりに広い分野で活かせる から。</li>
+<li>他の言語より、実行速度が速い 。なぜなら、プログラムをマシンが実際に動かす符号 (機械語っていうけどこれについては詳しくないので勘弁) へと変換しているから。</li>
+<li>マシンに近いこともできて、逆に高度なこともできて、ゲームも作って、あまり目立たないけど大事なシステムも作って、理論上はなんでもできる から。(悪く言えば器用貧乏)</li>
+<li>顔がでかくて、首が太くて、足が短くて、ちょっとずんぐりむっくりな感じする。(大嘘)</li>
+</ul>
+<h2><a class="header" href="#c-での作業の流れ" id="c-での作業の流れ">C++ での作業の流れ</a></h2>
+<ol>
+<li>プログラムを書く。コンパイル(下記) する言語ではよく (ソース)コード と呼ばれる。別に味はしない。拡張子は cpp や cxx。ホントはなんでもいいけど。</li>
+<li>コンパイル する。コンパイラ というアプリを使う。これにファイルを渡すと、プログラムから実行できるアプリを作る。有名なのは GNU C Compiler (gcc, g++) とか Clang (clang, clang++) とか Microsoft Visual C++ とか。</li>
+<li>コンパイルされた実行形式 (Windows だと exe とか) を動かす。</li>
+</ol>
+<h2><a class="header" href="#c-のインストール" id="c-のインストール">C++ のインストール</a></h2>
+<h3><a class="header" href="#windows-の方" id="windows-の方">Windows の方</a></h3>
+<p><a href="https://visualstudio.microsoft.com/ja/vs/community/">ここから Visual Studio 2019 for Community をインストール</a> してね。</p>
+<p>Visual Studio Installer で C++ デスクトップ開発を選択してインストールするのを忘れないように!</p>
+<h2><a class="header" href="#macos-の方" id="macos-の方">macOS の方</a></h2>
+<p><a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12">Mac App Store から Xcode をインストール</a> してね。</p>
+<p>インストールできたら一回だけ起動してね。このときに必要なものがインストールされるから。</p>
+<h2><a class="header" href="#その他特殊な-os-の方" id="その他特殊な-os-の方">その他特殊な OS の方</a></h2>
+<p>Debian 系なら <code>sudo apt-get install build-essential</code></p>
+<p>CentOS 系なら <code>yum install gcc</code></p>
+<p>それ以外は最初から入ってると思う。全部は網羅できないので勘弁してくださいφ(ﾟДﾟ )
+……って、こういう OS 使ってる人たちは絶対インストール方法知ってるでしょ。</p>
+<h2><a class="header" href="#自分が自由に使える-pc-を持っていない方" id="自分が自由に使える-pc-を持っていない方">自分が自由に使える PC を持っていない方</a></h2>
+<p><a href="https://wandbox.org">Wandbox</a> っていうウェブコンパイラがおすすめ。</p>
+<p>左上のメニューからコンパイラを切り替えられる。C++ だと gcc と clang と zapcc が使える。ちなみに C++ 以外の言語にも対応している。</p>
+<p>実行 (Run) すると、下の黒い画面の上に Share ボタンが出てくる。これを押すとその書いたコードを保存して、そのリンクを取得できる。このリンクの URL は https://wandbox.org/permlink/~ になる。</p>
+<p>便利だけど、そのうち自分の PC を持つべき。</p>
+<p>※自由に使えるっていうのは、えっちな画像を保存しても問題がない状態のことだよ。</p>
+<h1><a class="header" href="#hello-world" id="hello-world">Hello, World!</a></h1>
+<p>まずはインストールできているか確かめるよ。</p>
+<h2><a class="header" href="#windows-で-visual-studio-2019-を使う人" id="windows-で-visual-studio-2019-を使う人">Windows で Visual Studio 2019 を使う人</a></h2>
+<p>Visual Studio 2019 を起動して、新しいプロジェクトの作成 &gt; コンソールアプリ で プロジェクト を作成してね。</p>
+<p>そしたら出てきた画面のツールバーの 再生ボタン (Windows デバッガーとか書いているやつ) を押して実行。</p>
+<p><img src="./image/vs.png" alt="Compiling in Visual Studio 2019" /></p>
+<p>すると 黒いコンソール画面 が出てきて Hello, World! って表示される (はず)。そうなっていなかったり詰まったりしたら Slack とかで質問して。</p>
+<h2><a class="header" href="#それ以外の人" id="それ以外の人">それ以外の人</a></h2>
+<p>以下のプログラムをテキストエディタに コピペして、好きな名前で 保存して ね。拡張子 (ファイルの後ろの .txt とか .exe とかのやつ) を .cpp にしておけば、名前は何でもいいよ。 </p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main()  {
+  std::cout &lt;&lt; &quot;Hello World!\n&quot;;
+}
+</code></pre>
+<p>保存したら、コンパイラにプログラムを渡すよ。</p>
+<p>macOS だと アプリケーション &gt; ユーティリティ &gt; ターミナル (もしくは好きなターミナルアプリ)</p>
+<p>ほかは各自シェル</p>
+<p>を開いてね。</p>
+<p><code>cd フォルダ名</code> でプログラムがあるフォルダに移動してから、<code>g++ ファイル名</code> でコンパイルしてね。<code>a.out</code> って名前のファイルができるから、これをそのままタイプして実行!</p>
+<p><img src="./image/hyper.png" alt="Compiling in Hyper" /></p>
+<p>ッターン! <code>Hello, World!</code> って表示される (はず)。</p>
+<p>何かうまくいかなかったら Slack か口頭で 質問 して。なんかやばいから。</p>
+<h1><a class="header" href="#まとめ" id="まとめ">まとめ</a></h1>
+<p>ちゃんと準備できた?できた?次章からプログラムを書いていくから、よろしくね!</p>
+<h1><a class="header" href="#基礎" id="基礎">基礎</a></h1>
+<p>「基礎がないとどんな才能も開花することはない」</p>
+<hr />
+<p>この章で、C/C++ を扱うのに必要な知識が学べる。と、思います。</p>
+<p>他の章を読む前に、先にこの章を読んでおいたほうが身のため。読み飛ばすと間違いなく混乱することになる。基礎は大事、古事記にもそう書かれている。</p>
+<h1><a class="header" href="#この章のゴール" id="この章のゴール">この章のゴール</a></h1>
+<ul>
+<li>コンパイラがコードをどう見るかを少し知る</li>
+<li>main 関数の存在を知る</li>
+<li>関数を呼び出してみる</li>
+<li>ちょっとだけ計算してみる</li>
+<li>コメントを書けるようにする</li>
+<li>インデントのやり方を知る</li>
+<li>コンソール画面に出力できるようにする</li>
+</ul>
+<p>所要時間: 50 ~ 60 分くらい</p>
+<h1><a class="header" href="#最小限のコード" id="最小限のコード">最小限のコード</a></h1>
+<p>綴る!</p>
+<hr />
+<p>C++ での <strong>最小限</strong> のコードは、</p>
+<pre><code class="language-cpp">int main(){}
+</code></pre>
+<p>となる。これを実行しても何もしない。この <em>虚空</em> プログラムがメモリに読み込まれるだけ。</p>
+<p>こう書いても良い。</p>
+<pre><code class="language-cpp">int    main 
+( 
+)
+{
+}
+</code></pre>
+<pre><code class="language-cpp">   int
+ main
+ (   ) { }
+</code></pre>
+<p>なぜかというと、C++ では <strong>スペースや改行は自由</strong> なの。でも、意味のある英単語がくっつくのはだめ。</p>
+<pre><code class="language-cpp">intmain(){}
+</code></pre>
+<p>↑をコンパイルしようとしても <strong>失敗</strong> する。スペースとかで区切られていないから判別できなくなっちゃう。</p>
+<p>同様に、何か書き方を間違えていてコンパイラが理解できないと、エラーメッセージを <strong>吐く</strong> (テキストメッセージを出すことをたまにこう表現する)。</p>
+<p>「コンパイルできない!」「動かない!」「なんかメッセージが大量に出てきちゃった!」とかあったらどんどん質問してね。</p>
+<h1><a class="header" href="#コメント" id="コメント">コメント</a></h1>
+<p>機械はよき理解者ではない</p>
+<hr />
+<p>C/C++ では、好きなところに <strong>コメント</strong> を書くことができる。</p>
+<pre><code class="language-cpp">コメントじゃない
+// これが一行コメント
+コメントじゃない
+/*これが複数行コメント
+  ここはコメント
+ここまでコメント*/
+コメントじゃない
+// ← は次の改行までコメントになる
+/*←ここから ここまで→*/
+/* 複数行コメントは入れ子にできない /*←働かない */ ここはコメントじゃない! */
+</code></pre>
+<p>コメントは、コードからは絶対に <strong>読み取れないような情報</strong> を書くために使う。例えば、</p>
+<ul>
+<li>プログラムの中に出てくる 数の意味 を書く</li>
+<li>プログラムを こうした理由 を書く</li>
+<li>他からコピーしてきたプログラムの コピー元 URL を書く</li>
+</ul>
+<p>という感じ。</p>
+<p><strong>自分のプログラムも日が経てば他人のコード</strong> と言われるくらい誰でも把握できなくなるから、わかりやすくするのは大事。</p>
+<p>ちなみに、いくつかのサイトで書いているような <strong>「〜をしている」系コメントは要らない</strong> よ。</p>
+<p>そのうちプログラムだけを読んで、何をしているのかある程度分かるようにしなきゃいけないからね。</p>
+<h1><a class="header" href="#main-関数" id="main-関数">main 関数</a></h1>
+<p>はじまりの塔</p>
+<hr />
+<p>さっき何気に書いたこれが、C/C++ でのプログラムが 始まるところ。</p>
+<p>念のためだけど、<code>main</code> はメインと読む。マインじゃないよ。</p>
+<pre><code class="language-cpp">// ここは実行される場所じゃない
+int main() {
+  // ここに処理を書いていく
+}
+// ここは実行される場所じゃない
+</code></pre>
+<p>この <code>main</code> 関数は、プログラムにおいて <strong>唯一</strong> の始まるところ。これが無いと単独では動かない。</p>
+<p>もちろん、複数あることも許されない。</p>
+<pre><code class="language-cpp">int main() {}
+int main() {} // コンパイラ「'main' が再定義されているよー &gt;_&lt;」
+</code></pre>
+<h1><a class="header" href="#文と関数呼び出し" id="文と関数呼び出し">文と関数呼び出し</a></h1>
+<p>晩ご飯ですよ〜!</p>
+<hr />
+<p><strong>文</strong> は、処理を書くためのもの。</p>
+<pre><code class="language-cpp">;
+</code></pre>
+<p>これは何もしない文で、空 (から) 文とかヌル文とかいう。あんまり使わないけど。この <code>;</code> は文章の「。」みたいなもので、これが文の終わりになる。<code>;</code> (セミコロン) と <code>:</code> (コロン) を間違えないように。私もよく間違える。</p>
+<p>文を複数連ねて書くと、<strong>順番に実行</strong> されていく。</p>
+<pre><code class="language-cpp">; // 文1
+//   ↓
+; // 文2
+//   ↓
+; // 文3
+</code></pre>
+<p>この文を main 関数の中に 0 個以上、複数書いていく。</p>
+<pre><code class="language-cpp">int main() {
+  ; // 文1
+  ; // 文2
+  ; // 文3
+}
+</code></pre>
+<p>さて、「何もしない」を学んで終わりじゃないよ。</p>
+<p><strong>関数</strong> というものがある。これは誰かさんが作ったプログラム。これを <code>関数名 ( 渡すデータ )</code> と書くと関数を使うことができる。</p>
+<pre><code class="language-cpp">#include &lt;cstdio&gt; // この中に std::printf 関数のプログラムが入っている
+int main() {
+  std::printf(&quot; あなたのすきなことばを &quot;); // テキストは「&quot;」で囲って書く
+  std::printf(&quot; いくらでも書ける &quot;);
+  std::printf(&quot; すごい(実際すごい) &quot;);
+}
+</code></pre>
+<p>これを実行すると、どうなるかな?</p>
+<p>これを関数を <strong>呼ぶ</strong> とか <strong>呼び出す</strong> とかいう。今回は <code>std::printf</code> 関数を呼んでみた。</p>
+<p>いっしょにテキストを渡しているけれど、これを自由に書き換えてみて。黒い画面に <strong>表示されるテキストが変わる</strong> はず。</p>
+<p>ちなみに、この <code>#include &lt;~&gt;</code> は、指定したファイル (ここでは <code>cstdio</code>) をドバっと展開する。</p>
+<p>関数を呼び出すことで、世界中のいろんな人たちが作ったプログラムを使うことができる。すごい?……たぶんすごい!</p>
+<p><code>main</code> 関数も関数の一つだけど、一個しか存在できないし、呼び出すことができないようになってる (実は C 言語だと呼び出せる)。</p>
+<p>召喚できない伝説級の存在ってわけ。</p>
+<h1><a class="header" href="#式と演算子-其の一" id="式と演算子-其の一">式と演算子 其の一</a></h1>
+<p>機械に頭を使ってもらうことにしよう</p>
+<hr />
+<p>文ときたら、次は <strong>式</strong>。</p>
+<p>なんとなく SF とかでプログラムを知っている人なら、今まで書いたプログラムを見て「こんなテキスト吐くだけなんて、なんか違う!!」と思ってる?</p>
+<p>ちゃんとプログラムでも <em>計算</em> させられます。</p>
+<p>まず、プログラムで計算させる数の書き方から見ていこう。</p>
+<h2><a class="header" href="#リテラル" id="リテラル">リテラル</a></h2>
+<p><strong>リテラル</strong> っていうのは、プログラムの中に書いた、<em>見た目通りの値</em> のこと。</p>
+<pre><code class="language-cpp">0;
+1;
+3;
+12;
+54;
+108;
+</code></pre>
+<p>これを使っていく。</p>
+<h2><a class="header" href="#四則演算" id="四則演算">四則演算</a></h2>
+<pre><code class="language-cpp">1 + 1; // 2
+2 - 5; // -3
+</code></pre>
+<p>この <code>+</code> とか <code>-</code> をひっくるめて <strong>演算子</strong> という。他にも、掛け算、割り算、剰余算(割った余り)、などがあるよ。多すぎるから他の演算子は其の二や其の三に分けることにする。本当に多い。</p>
+<pre><code class="language-cpp">3 * 4; // 3 × 4 = 12。全角の記号が使えないからこれを使う。
+
+7 / 3; // 7 ÷ 3 = 2。整数の計算だよ。小学生のころの記憶を思い出せ!
+
+7 % 3; // 7 ÷ 3 = 2 あまり 1。あまりのある割り算。小学生のころの(ry
+</code></pre>
+<p>記号の優先順序も数学に近い。同じ優先順序なら左から。わかりにくいけど掛け算、割り算、剰余算は同じ優先順序。</p>
+<pre><code class="language-cpp">1 + 2 * 3; // 7
+
+6 + 4 % 2 + 3; // 9
+
+4 + 5 - 1; // 8
+
+6 / 2 / 3; // 1
+</code></pre>
+<p>この演算子と数を書いたもののことを <strong>式</strong> という。</p>
+<h2><a class="header" href="#括弧式" id="括弧式">括弧式</a></h2>
+<pre><code class="language-cpp">(1 + 2) * 5; // =&gt; 3 * 5 =&gt; 15
+
+4 / (3 + 1); // =&gt; 4 / 4 =&gt; 1
+
+(6 + 4) % (2 + 3); // =&gt; 10 % 5 =&gt; 0
+
+6 / 2 / 3; // =&gt; 3 / 3 =&gt; 1
+
+6 / (2 / 3); // =&gt; 6 / 0 =&gt; Floating point exception。0 では割れない
+</code></pre>
+<p><strong>括弧</strong> のある計算も、同じ感じで書ける。<em>括弧で囲った式</em> が <strong>優先</strong> 的に評価される。</p>
+<p>これでよくある計算はさせられるようになった、かな?まぁ、最近のコンパイラは賢いから、コンパイルするときに全部計算しちゃう。</p>
+<p>かがくのちからってすげー!</p>
+<h1><a class="header" href="#複文とインデント" id="複文とインデント">複文とインデント</a></h1>
+<p>もっと文を書くからこそ、もっと見やすく書く</p>
+<hr />
+<p><strong>複文</strong> (または <strong>ブロック</strong>) というものがある。これも文の一種。</p>
+<pre><code class="language-cpp">{
+  ; // 文1
+  ; // 文2
+}
+</code></pre>
+<p>一つでも文が書けるところには、<strong>波括弧</strong> <code>{ ~ }</code> で囲った中に複数の文を書ける。</p>
+<p>複文は <strong>何重にでもできる</strong>。いくらでも。ただ四重や五重は誰でも見づらい。そこまでいくことはそうそうないけど。</p>
+<pre><code class="language-cpp">{ { { } { { } } } { { } } }
+</code></pre>
+<p>上のように、ただ波括弧を書くだけだと <em>見づらい</em> ことこの上なし。</p>
+<p>誰にもちゃんと波括弧が始まって閉じているかどうか分からん。さっぱり分からん!</p>
+<p>そこで、波括弧の中身を <strong>スペース 2 / 4 / 8 つ</strong> か、<strong>タブ文字</strong> で字下げして見やすくする。</p>
+<pre><code class="language-cpp">{
+  {
+    {
+    }
+    {
+      {
+      }
+    }
+  }
+  {
+    {
+    }
+  }
+}
+</code></pre>
+<p>このように <strong>インデント/字下げをする</strong>。</p>
+<p>これをすると、波括弧がたくさん入れ子になったときに <strong>始まりと終わりの対応がわかるようになる</strong>。</p>
+<p>始まりと終わりをちゃんと書かないとコンパイルできないし、見づらくなっていって混沌が生まれるから <strong>インデントは必ずしよう</strong>。</p>
+<h1><a class="header" href="#stdcout" id="stdcout">std::cout</a></h1>
+<p>外の世界へ</p>
+<hr />
+<p>それでは基礎の最後に、これからすべての章で使うものを紹介する。</p>
+<h2><a class="header" href="#文字列" id="文字列">文字列</a></h2>
+<p>C/C++ でテキストを表現するときに手っ取り早いのが <strong>文字列</strong> だよ。<code>&quot;</code> で囲んだ中に、ちょっと都合の悪い文字以外なら何でも書けるよ。</p>
+<pre><code class="language-cpp">&quot;abcABC0123あいうえお!#$%&amp;'()@&quot;;
+</code></pre>
+<h2><a class="header" href="#stdcout-1" id="stdcout-1">std::cout &lt;&lt;</a></h2>
+<p>この <code>std::cout</code> は <code>&lt;&lt;</code> 演算子 (正確には <code>std::cout</code> の <code>operator&lt;&lt;</code> 関数) を使って、いろんなデータを 出力 できるよ。<code>std::cout</code> に向かって流し込むようなイメージ。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  std::cout &lt;&lt; &quot; ふつうに &quot;;
+  std::cout &lt;&lt; &quot; いろいろ &quot; &lt;&lt; &quot; つなげて &quot; &lt;&lt; &quot; しゅつりょく &quot;;
+}
+</code></pre>
+<p>これを使うには、<strong>main 関数の外の上側</strong> に、<code>#include &lt;iostream&gt;</code> と書く必要がある。</p>
+<p>これを書くと <code>iostream</code> ファイル (C++ に最初から用意されているもの) の中身をコピペしてくれる。</p>
+<p>このファイルの中に <code>std::cout</code> が入ってるわけ。</p>
+<p>最初の環境構築のときの Hello, World! もこれを使っている。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  std::cout &lt;&lt; &quot;Hello World!\n&quot;;
+}
+</code></pre>
+<p>改行するときは、<strong>改行文字</strong> <code>\n</code> (これで一文字扱い) を使う。</p>
+<p>これは、コードの中で改行のテキストを表現できないので、<code>\</code> で始まるテキストで特殊な文字を表現するの。</p>
+<p>ややこしいけど、伝統的なものなのでしょうがない。</p>
+<p>同じように、この中だと <code>&quot;</code> もそのまま表現できないから、<code>\&quot;</code> とする必要がある。</p>
+<p>こういうのを <strong>エスケープ文字</strong> という。</p>
+<p>他にもタブ文字とか行頭文字とかいろんなのがあるけど、改行 <code>\n</code> くらいしか使わないから必要なときに調べて使ってね。</p>
+<hr />
+<p>数値でもテキストでも、このように直感的に出力できる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  std::cout &lt;&lt; 1 &lt;&lt; &quot; is one\n&quot;;
+  std::cout &lt;&lt; &quot;8 * 2 = &quot; &lt;&lt; 8 * 2 &lt;&lt; &quot; (・▽・💠)しゅげぇ!\n&quot;;
+}
+</code></pre>
+<p><code>std::cout</code> はこれから <strong>黒い画面に出力するときに使う</strong> からよろしくね〜。</p>
+<h1><a class="header" href="#型と変数" id="型と変数">型と変数</a></h1>
+<p>ここが情報センターね!</p>
+<hr />
+<p>この章で、整数や小数をそれなりに取り扱えるようになる。あと入力の基本をやる。</p>
+<h1><a class="header" href="#この章のゴール-1" id="この章のゴール-1">この章のゴール</a></h1>
+<ul>
+<li>型の意味を理解する</li>
+<li>整数と浮動小数点数での演算の違いを把握する</li>
+<li>整数と浮動小数点数を相互に変換できる</li>
+<li>型を理解して変数を作る</li>
+<li>変数に使える名前の仕組みを覚える</li>
+<li>入力が受け付けられるようになる</li>
+</ul>
+<p>所要時間: 80 ~ 90 分くらい</p>
+<h1><a class="header" href="#変数と識別子" id="変数と識別子">変数と識別子</a></h1>
+<p>値を詰め込めー</p>
+<hr />
+<p>ここまでで計算させてきたけど、この演算結果を <strong>保存して再利用する</strong> ことはできなかった。悲しい。</p>
+<p>そこで、データを格納する <strong>変数</strong> を利用する。</p>
+<p>これは <em>データを詰め込める箱</em> や <em>データを置く床</em> のようなイメージ。</p>
+<blockquote>
+<p>|----|<br />
+| 12 |<br />
+|----|<br />
+↑この名前を決められる、値は変更できる</p>
+</blockquote>
+<h2><a class="header" href="#変数を作る" id="変数を作る">変数を作る</a></h2>
+<p>変数を作るには、</p>
+<blockquote>
+<p><em>型</em> <em>名前</em>;</p>
+</blockquote>
+<p>という文法で書くと使えるようになる。</p>
+<p>複文の中でこの変数を作ることを <strong>変数の宣言</strong> という。</p>
+<p>変数は <em>宣言した後でないと使えない</em>。</p>
+<p><em>型</em> のところには、変数に入れられるものを書く。整数なら <code>int</code> (integer - 整数の略) を書く。型について詳しくは次のページで。</p>
+<pre><code class="language-cpp">int main() {
+  int variable;
+}
+</code></pre>
+<p><code>variable</code> という名前の変数が生まれました!元気な男の子です!(?)</p>
+<p>変数は <code>=</code> 演算子をつかって <strong>中身を変更</strong> できる。<code>変数 = 新しい値の式</code> と書く。</p>
+<pre><code class="language-cpp">int main() {
+  variable; // C/C++ での 名前 は、宣言した後でないと使えない
+
+  int variable;
+
+  variable = 3; // 3 に意味はない。自由に変えてね
+
+  variable = variable / 2; // 1。そして代入される
+
+  0 = variable; // 埋め込んだ値 0 を変更しようとしている。コンパイルできない
+}
+</code></pre>
+<p>右の式を左の変数に入れる演算子だから、<strong>左右逆にはできない</strong> よ。方程式とは違うからね。</p>
+<p><strong>代入演算子</strong> の式は、<em>代入された変数</em> になる。</p>
+<p>これによって、同じ値を代入するときに連ねて書ける。</p>
+<p>ただし、括弧がないときは今までと違って <strong>右から順に</strong> 処理される。</p>
+<pre><code class="language-cpp">int main() {
+  int variable;
+  int variable_neo;
+
+  variable_neo = variable = 0;
+
+  variable_neo = (variable = 1); // 上と同じ順序、代入は右から順に作用する
+
+  (variable_neo = variable) = 3; // これは上の 2 つとは順序が違う
+}
+</code></pre>
+<p>中身を取り出すときは、変数の <strong>名前を他の数と同じように書く</strong>。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  int variable;
+  variable = 1;
+  variable; // 取り出しただけ
+  variable + 2; // 計算したが代入はしていない
+  variable = variable + 1; // 代入している
+  std::cout &lt;&lt; variable * 2 &lt;&lt; &quot;\n&quot;; // 出力を確かめてみよう
+  1 = variable; // NG
+}
+</code></pre>
+<p>変数の名前は、わかり易い <strong>目的に応じた名前</strong> にしておこう。<code>a</code> とか <code>x</code> とかにしているとわからなくなる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  int price; // 価格を表す変数なので
+  price = 108;
+  std::cout &lt;&lt; price &lt;&lt; &quot;\n&quot;;
+  price = price / 2;
+  std::cout &lt;&lt; price &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<p>ただ、つけられない名前もある。詳しくは下で。</p>
+<h1><a class="header" href="#識別子" id="識別子">識別子</a></h1>
+<p>C++ で自由に作って使える名前は <code>識別子</code> っていう。</p>
+<p>これは、</p>
+<ul>
+<li>英文字 (大文字と小文字は区別される)</li>
+<li>数字 (一文字目には使えない)</li>
+<li>アンダースコア _ やダラー $ 、日本語や中国語などの 特別な扱いがされない文字</li>
+<li>C/C++ で特別な意味を持つ英字句 (int、and、inline など) ではない名前</li>
+</ul>
+<p>しか使えないという制約がある。</p>
+<p>↓はすべて問題なく使用できる。英語がわからないならローマ字でもいいからわかりやすくすること。</p>
+<pre><code class="language-cpp">int price;
+int PRICE;
+int $$$;
+int something_nice;
+int a_variable_which_has_very_too_long_name;
+int YDK48;
+int eigo_ga_wakaranai;
+int nedann;
+</code></pre>
+<p>一応日本語だけの名前とかにもできるけれど、しないようにしようね。</p>
+<p>なぜかというと、もし自分の母国語を使うのが許されるとしたら、外国人はすぐに日本語や中国語やロシア語をタイプできるかな?</p>
+<pre><code class="language-cpp">int 値段;
+int Спасибо;
+int 不客氣;
+</code></pre>
+<p>↓は制約を満たしていないからコンパイルできない例だよ。憐れだねぇ。</p>
+<pre><code class="language-cpp">int 0_is_zero;
+int -minus;
+int &quot;quote&quot;;
+int and;
+int inline;
+</code></pre>
+<h1><a class="header" href="#int--double" id="int--double">int / double</a></h1>
+<p>整数と小数と</p>
+<hr />
+<p>機械にとっては、どんなデータも <code>0</code> と <code>1</code> の数列にしか見えない。</p>
+<p>もちろん人間にとってはやりづらいので、できる限り人間がいつもしている表現を扱いたいんだ。</p>
+<p>そこで <code>0</code> と <code>1</code> だけのデータを <strong>型</strong> に閉じ込めて、値の埋め込みや足し算や掛け算を簡単にできるようにしたの。</p>
+<p>偉大な発明だわー。</p>
+<p>今回はたくさんある型の中でもよく使う、</p>
+<ul>
+<li><code>int</code> (整数 - integer の略)</li>
+<li><code>double</code> (倍精度浮動小数点数 - double floating-point の略)</li>
+</ul>
+<p>を紹介するよ。</p>
+<p>ちなみに、(静的な) 型があると記述ミスによる不具合「バグ」を防ぐ働きもある。意外と大きいメリット。</p>
+<h1><a class="header" href="#int" id="int">int</a></h1>
+<p><strong>整数</strong> を扱う型。これが出てこないプログラムはそうそう無い。</p>
+<p>これがこの型のリテラル達。</p>
+<p>見やすいように自由に <code>'</code> を入れて桁区切りできる (数そのものには影響しない)。他にも (16 進数とかの) 記法があるけど、多いのでまたの機会に。</p>
+<pre><code class="language-cpp">0;
+1;
+502;
+25701;
+-2149;
+20'200'621;
+</code></pre>
+<p>使うときはこんな感じになる。</p>
+<pre><code class="language-cpp">int price = 500;
+int discout = 80;
+price = price - discount;
+</code></pre>
+<h1><a class="header" href="#double" id="double">double</a></h1>
+<p>小数と、あといくつかの数 (無限大とか) を扱う型。小数が必要な計算に使う。</p>
+<p>この型のリテラル達。小数とだいたい同じ。小数点の左側や右側が全部 <code>0</code> のときは省略できる。</p>
+<pre><code class="language-cpp">3.0;
+0.740;
+5.; // =&gt; 5.0
+.2; // =&gt; 0.2
+</code></pre>
+<p>他にも (16 進数の) 記法があるけど、そっちはまず使わない。</p>
+<p>より小さい・大きい数を書くために指数表記 (× 10 の n 乗で書いて 0 を減らす) もある。</p>
+<pre><code class="language-cpp">3000000.; // 0 何個か見づらい
+3e6; // 3 × 10 の 6 乗
+3e+6; // 上と同じ
+.005; // 0 何個か(ry
+5e-3; // 5 × 10 の -3 乗
+</code></pre>
+<p>使うときはこんな感じになる。これも普通に四則演算できる (剰余算を除いて)。</p>
+<pre><code class="language-cpp">double ratio = 1.6;
+double player_speed_x = 2.0;
+player_speed_x = player_speed_x * ratio;
+2.0 / 0.0; // =&gt; inf。エラーにならない代わりに無限大 (infinity) になる
+4.0 % .3; // コンパイルできない。double の剰余はできない
+</code></pre>
+<h1><a class="header" href="#初期化" id="初期化">初期化</a></h1>
+<p>作業する前にお掃除</p>
+<hr />
+<p>変数を作った時点では、その中に格納されている値は、前に使ったメモリ上の <strong>ゴミ</strong> が残っている。</p>
+<pre><code>... 011100101 10011010 01010101 11111111 ...
+   |a-----------------------------------|
+</code></pre>
+<p>マシン「メモリは確保したで！(ワイは中身のこと知らんけど)」</p>
+<p>だから、変数を使う前に 何か値を代入しておかないと、実行したときに謎の数値が出現しだしたりする。</p>
+<pre><code class="language-cpp">int count;
+count; // 未知の値が入っている
+count = 0; // これを忘れるとまずい
+count = count + 1;
+count = count + 1;
+// :
+// :
+</code></pre>
+<p>そこで、変数を作るとき、<strong>最初に入れておく値も</strong> 併せて書くことができる。</p>
+<p>変数の後ろに <code>= 初期値</code> を付け足すだけ。</p>
+<pre><code class="language-cpp">int count = 0; // 0 から数え始めるぞ
+count = count + 1;
+count = count + 1;
+// :
+// :
+</code></pre>
+<p>これで、既に数が入った状態の変数として作成される。</p>
+<p>こういうのを変数の <strong>初期化</strong> っていう。</p>
+<p>……値がおかしくなった時は、<em>代入している箇所すべて</em> の記述ミスを疑わなきゃいけなくなる、初期化は大事だよ。</p>
+<h1><a class="header" href="#演算子-其の二" id="演算子-其の二">演算子 其の二</a></h1>
+<p>あと二回変身を残している</p>
+<hr />
+<p>変数と型を学んだところで、変数を扱う上で便利な演算子を覚えておこう。絶対使うから。</p>
+<h1><a class="header" href="#複合代入演算子" id="複合代入演算子">複合代入演算子</a></h1>
+<p>代入演算子 <code>=</code> で変数の値を変更するときは、<em>演算した式</em> を代入するけど、同じ名前を二回書くことになってめんどくさい。</p>
+<p>プログラマーは怠惰でなくっちゃね!</p>
+<p>そこで、<em>足したものを代入</em> みたいなことをするために <strong>複合代入演算子</strong> がある。</p>
+<pre><code class="language-cpp">int subtotal = 0;
+
+subtotal = subtotal + 108;
+subtotal += 108; // 上と同じ
+
+subtotal = subtotal - 54;
+subtotal -= 54; // 上と同じ
+</code></pre>
+<p>ほとんどの値を計算する演算子 (<code>+</code> とか <code>*</code> とか) はこの複合代入が存在する。</p>
+<p>できないときは素直に代入演算子を使うしか無いけど。</p>
+<h1><a class="header" href="#インクリメントデクリメント" id="インクリメントデクリメント">インクリメント・デクリメント</a></h1>
+<p>更に、<em>1 だけ足す</em> ことや <em>1 だけ引く</em> ことに特化した演算子がある。</p>
+<pre><code class="language-cpp">int count = 0;
+
+count += 1;
+++count; // 上と同じ
+
+count -= 1;
+--count; // 上と同じ
+</code></pre>
+<p>ものや回数を数えるするときに重宝する。</p>
+<h1><a class="header" href="#型変換" id="型変換">型変換</a></h1>
+<p>ﾍｼﾝ!</p>
+<hr />
+<p>本来、違う型どうしでの計算はできないけれど、型を変換するとできるようになる。</p>
+<h1><a class="header" href="#暗黙的型変換" id="暗黙的型変換">暗黙的型変換</a></h1>
+<p>まず、違う型どうしを計算させようとしても、コンパイルできちゃう。</p>
+<p>このとき、より表現の幅が広い型へと変換される。</p>
+<p>例えば、<code>double</code> と <code>int</code> で演算するときは、<code>int</code> の方が <code>double</code> へと変換される。</p>
+<pre><code class="language-cpp">500 * 1.08; // =&gt; 500. * 1.08 =&gt; 540.
+</code></pre>
+<p>更に、変数に代入するときはその変数の型へと変換される。</p>
+<pre><code class="language-cpp">int price = 500;
+price = price * 1.08; // price * 1.08 は double だが、再び int になる
+price *= 1.08; // 上と同じ
+</code></pre>
+<h1><a class="header" href="#static_cast" id="static_cast">static_cast</a></h1>
+<p>暗黙的ではなく、明示的な型変換もある。それがこれ。</p>
+<pre><code class="language-cpp">static_cast &lt; 型名 &gt; ( 式 )
+</code></pre>
+<p>たまに使うくらいだけど、実際に使うとこんな感じ。</p>
+<pre><code class="language-cpp">double num = 1.46;
+
+// double を int にすると小数点以下が切り捨てられる
+int num2 = static_cast&lt;int&gt;(num); // =&gt; 1
+
+// int を double にすると小数点以下が 0 でスタートする
+static_cast&lt;double&gt;(num2); // 1.0
+</code></pre>
+<p>これから型変換を明示するときに使うよ。</p>
+<h1><a class="header" href="#スコープ" id="スコープ">スコープ</a></h1>
+<p>変数はいつか死ぬ</p>
+<hr />
+<p>変数は、名前の宣言があってから、その複文の終わりまでの間だけで使用できる。</p>
+<pre><code class="language-cpp">int main() {
+  // まだ何も使えない
+ 
+  wide; // wide は使えないので、コンパイルできない
+ 
+  int wide; // wide が使えるようになる
+
+  { // スコープの始まり
+ 
+    int narrow; // narrow 生誕
+    narrow = 1;
+    wide = narrow; // スコープの外側も普通に使える
+
+  } // narrow 死す
+
+  wide; // 1
+
+  {
+
+    int narrow; // narrow 生誕
+    // 上の narrow とは別の変数、偶然に同名なだけ
+    narrow = wide + 1;
+    wide = narrow;
+
+  }
+
+  wide; // 2
+
+  narrow; // narrow は使えないので、コンパイルできない
+} // wide が使えなくなる
+</code></pre>
+<p>これを <strong>スコープ</strong> という。</p>
+<p>つまり、複文を使うと変数の生存期間を限定できる。</p>
+<h1><a class="header" href="#名前が隠れる" id="名前が隠れる">名前が隠れる</a></h1>
+<p>ネストした複文の外側と内側で同名の名前がある場合は、<strong>内側のものが優先</strong> される。</p>
+<pre><code class="language-cpp">{
+  int num; // A
+  num = 0;
+  {
+    int num; // B
+    num = 3; // これは B
+  }
+  num; // 0。これは A
+}
+</code></pre>
+<p>ただし、読みにくくなるので違う名前をつけるべき。</p>
+<h1><a class="header" href="#stdcin" id="stdcin">std::cin</a></h1>
+<p>今度は入力</p>
+<hr />
+<p>いよいよ <strong>入力</strong> を扱う時が来た。今までコンパイルする前に値を埋め込んでいたけど、プログラムを実行するタイミングで値を決められるようになるってこと。</p>
+<p>ここで使うのは <code>std::cin</code> というもので、<code>std::cout</code> と同じ <code>iostream</code> ファイルに入っている。</p>
+<p>この <code>std::cin</code> は <code>&gt;&gt;</code> 演算子 (正確には <code>std::cin</code> の <code>operator&gt;&gt;</code>  関数) を使って、いろんなデータを <strong>入力</strong> できるよ。<code>std::cin</code> から <em>取り出す</em> ようなイメージ。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  int input_number;
+  std::cin &gt;&gt; input_number;
+  std::cout &lt;&lt; input_number;
+}
+</code></pre>
+<p>上の例を実行して、黒い画面で <strong>数字を入力 → Enter</strong> してみると、何が出力されるでしょうか?</p>
+<p>Wandbox の場合は、実行前に下の Stdin (標準入力 - Standard input の略) のテキスト欄に入れておくと、入力に使用されるようになってる。</p>
+<p>この <code>std::cin</code> 最大の特徴が、いろんな型でそのまま入力を受け取れるところだよ。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  std::cout &lt;&lt; &quot;円の半径を入力してください。その面積を出力します。\n&quot;;
+  double radius;
+  std::cin &gt;&gt; radius;
+  std::cout &lt;&lt; radius * radius * 3.1416;
+}
+</code></pre>
+<p><strong>複数の値を同時に受け取る</strong> こともできるよ。これは左の変数から順に入力された値が入れられるよ。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  std::cout &lt;&lt; &quot;2 つの整数を入力してください。最初の値 - 次の値 を出力します。\n&quot;;
+  int first, second;
+  std::cin &gt;&gt; first &gt;&gt; second;
+  std::cout &lt;&lt; first - second;
+}
+</code></pre>
+<p>こんな感じで <strong>計算結果を返すプログラム</strong> を自分で <strong>アレンジして書いてみよう</strong>。<code>std::cin &gt;&gt; ~</code> だけだとコンソール画面で何を入力すればいいのかわからない。先に <code>std::cout</code> で <strong>何を入力すればいいか表示</strong> したほうがいいかも。</p>
+<h1><a class="header" href="#章末問題" id="章末問題">章末問題</a></h1>
+<p>へんすうA　へんすうB　があらわれた！</p>
+<hr />
+<p>以下の問題を用意しておきました。解いてプログラミングになれましょ。</p>
+<h2><a class="header" href="#問-1" id="問-1">問 1</a></h2>
+<p>2 つの整数の入力を変数に受け取れ。</p>
+<p>そして、その和を出力せよ。</p>
+<p>ヒント:</p>
+<blockquote>
+<p>例えば、変数 a b を用意し、std::cin を用いて入力を受け取ってから、a + b を std::cout で出力する。</p>
+</blockquote>
+<p>このように動作せよ。</p>
+<p>入力:</p>
+<pre><code>3 5
+</code></pre>
+<p>出力:</p>
+<pre><code>8
+</code></pre>
+<h2><a class="header" href="#問-2" id="問-2">問 2</a></h2>
+<p>1 つの整数の入力を変数に受け取れ。</p>
+<p>そして、1 ~ その数のうち、25 で割り切れる数の個数を出力せよ。</p>
+<p>ヒント:</p>
+<blockquote>
+<p>整数 1 ~ N のうち、M で割り切れる数の個数
+⇒ N ÷ M</p>
+</blockquote>
+<p>このように動作せよ。</p>
+<p>入力:</p>
+<pre><code>2525
+</code></pre>
+<p>出力:</p>
+<pre><code>101
+</code></pre>
+<h2><a class="header" href="#問-3" id="問-3">問 3</a></h2>
+<p>1 つの整数の入力を変数に受け取れ。</p>
+<p>そして、<code>1 + 2 + ... + その数</code> を出力せよ。</p>
+<p>ヒント:</p>
+<blockquote>
+<p>整数 1 ~ N の合計
+⇒ (N + 1) × N ÷ 2</p>
+</blockquote>
+<p>このように動作せよ。</p>
+<p>入力:</p>
+<pre><code>6
+</code></pre>
+<p>出力:</p>
+<pre><code>21
+</code></pre>
+<h1><a class="header" href="#分岐" id="分岐">分岐</a></h1>
+<p>ここに線路を切り替えるレバーがあります</p>
+<hr />
+<p>この章で、機械に簡単な判断をさせることができるようになる。</p>
+<h1><a class="header" href="#この章のゴール-2" id="この章のゴール-2">この章のゴール</a></h1>
+<ul>
+<li>真偽値を理解する</li>
+<li>数値の比較演算を使いこなす</li>
+<li>真偽値が真のときのみに処理する</li>
+<li>真偽値どうしの演算を覚える</li>
+<li>真偽値で2つに分岐する</li>
+<li>整数値で複数に分岐する</li>
+</ul>
+<p>所要時間: 80 ~ 90 分くらい</p>
+<h1><a class="header" href="#bool" id="bool">bool</a></h1>
+<p>正しいか正しくないか</p>
+<hr />
+<p>新しい型 <code>bool</code> の登場だ。<em>真偽値</em> という、ある物事が <strong>正しい</strong> か <strong>正しくない</strong> かを表す値を扱う。</p>
+<p><code>true</code> は何かが正しいことを表す。</p>
+<p><code>false</code> は何かが正しくないことを表す。</p>
+<pre><code class="language-cpp">bool zero_is_0;
+zero_is_0 = true;
+bool you_are_me;
+you_are_me = false;
+</code></pre>
+<h2><a class="header" href="#整数に型変換する場合" id="整数に型変換する場合">整数に型変換する場合</a></h2>
+<p><code>false</code> =&gt; <code>0</code></p>
+<p><code>true</code> =&gt; <code>1</code></p>
+<p>整数と四則演算させようとすると、こんな感じの不思議な挙動になっちゃう。</p>
+<pre><code class="language-cpp">3 * false; // =&gt; 0
+4 + true; // =&gt; 5
+</code></pre>
+<h2><a class="header" href="#他の型から-bool-に型変換する場合" id="他の型から-bool-に型変換する場合">他の型から <code>bool</code> に型変換する場合</a></h2>
+<p><code>0</code> (もしくは <code>0</code> と同じ何か) は <code>false</code></p>
+<p>それ以外はすべて <code>true</code></p>
+<p>これはかなり直感的ではないので、使わないようにするよ。</p>
+<h2><a class="header" href="#stdcout-で出力するとき" id="stdcout-で出力するとき">std::cout で出力するとき</a></h2>
+<p><code>std::cout</code> で普通に出力しようとすると、勝手に <code>0</code> と <code>1</code> に変換されちゃう。わけがわからないよ。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  std::cout &lt;&lt; true;
+}
+</code></pre>
+<p><code>true</code> や <code>false</code> のまま出力するには、<code>std::boolalpha</code> (これは関数) をそれより前に流し込む必要がある。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  std::cout &lt;&lt; std::boolalpha &lt;&lt; true;
+}
+</code></pre>
+<p>これを取り消して元に戻す場合は、<code>std::noboolalpha</code> を流す。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  std::cout &lt;&lt; std::boolalpha &lt;&lt; true
+    &lt;&lt; std::noboolalpha &lt;&lt; true;
+}
+</code></pre>
+<p>めんどくさいけど、忘れないでおいてね。</p>
+<h1><a class="header" href="#演算子-其の三" id="演算子-其の三">演算子 其の三</a></h1>
+<p>誰かと比較される時代</p>
+<hr />
+<p>さらなる演算子、<strong>比較演算子</strong> だ。関係演算子ともいう。</p>
+<p>全部で <code>&gt;</code> <code>&lt;</code> <code>&lt;=</code> <code>&gt;=</code> <code>==</code> <code>!=</code>。多いナ!</p>
+<p>整数どうしの関係を書くと、渡された値が <strong>その関係になっているかどうか</strong> が計算結果になる。</p>
+<p>つまり、演算すると <code>bool</code> が出てくる。</p>
+<pre><code class="language-cpp">// a &lt; b ~~~ a が b より小さいかどうか
+0 &lt; 1; // true
+6 &lt; 1; // false
+
+// a &gt; b ~~~ a が b より大きいかどうか
+0 &gt; 6; // false
+1 &gt; -1; // true
+
+// a &lt;= b ~~~ a が b 以下かどうか
+1 &lt;= 0; // false
+4 &lt;= 4; // true
+
+// a &gt;= b ~~~ a が b 以上かどうか
+1 &gt;= 0; // true
+7 &gt;= 7; // true
+
+// a == b ~~~ a と b が等しいかどうか
+0 == 0; // true
+1 == -1; // false
+
+// a != b ~~~ a と b が等しくないかどうか
+2 != 6; // true
+3 != 3; // false
+</code></pre>
+<p>二文字の演算子の <code>=</code> は必ず <strong>右側</strong> と覚えよう。</p>
+<p><strong>整数の関係が正しいかどうか</strong> を、<code>bool</code> 型にできるのですごくよく使う。</p>
+<p>しっかり慣れておこう。</p>
+<h1><a class="header" href="#if" id="if">if</a></h1>
+<p>もしも〜♪(ｳﾞｪｯ)君が〜♪(ｳﾞｯ)一人なら〜♪(ｳﾞｪｯｳﾞｪｯ)</p>
+<hr />
+<p>それでは <code>if</code> 文を学ぼう。</p>
+<p>これは特殊な文で、<code>bool</code> 型の値を使って <strong>分岐する処理</strong> が書ける。</p>
+<p><code>bool</code> が C++ で二番目に活躍するぞ。</p>
+<p>文法はこう。</p>
+<p>後に文を続けて書くけど、これはもっぱら複文にする。</p>
+<blockquote>
+<p>if ( <em>真偽値の式</em> ) <em>式が true のときに実行する文</em></p>
+</blockquote>
+<p>比較演算子と組み合わせれば、<strong>条件を満たす時にする処理</strong> が書ける。</p>
+<pre><code class="language-cpp">int value;
+
+std::cin &gt;&gt; value;
+
+if (0 &lt; value) {
+  // value が 0 より大きい時だけ実行される
+  std::cout &lt;&lt; &quot;0 よりおっきい&quot;;
+}
+
+if (value &lt; 0) {
+  // value が 0 より小さい時だけ実行される
+  std::cout &lt;&lt; &quot;0 よりちっちゃい&quot;;
+}
+
+// value が 0 ぴったりのときは何も起きない
+</code></pre>
+<p>条件を満たさないときは、そのまま文が飛ばされて下に流れる。</p>
+<p><code>if</code> の波括弧の <strong>始まりを書いたら、すぐに終わりも書く</strong> ように心がけよう。</p>
+<p>更に、基礎でも書いたように <strong>インデントして</strong> 波括弧が <strong>どのくらい入れ子になっているか見やすいように</strong> すべし。</p>
+<p>他人や未来の自分がコードを見るときに非常に見づらいから。</p>
+<p>もちろん <code>if</code> の中にも <code>if</code> を書ける。</p>
+<pre><code class="language-cpp">int value;
+
+std::cin &gt;&gt; value;
+
+if (0 &lt;= value) {
+  if (value &lt;= 10) {
+    // value が 0 以上で 10 以下のときだけ実行される
+  }
+
+  // value が 0 以上であれば実行される
+
+  if (value &lt; 0) {
+    // ここが実行されることはありえない
+  }
+}
+</code></pre>
+<p>いろいろ組み合わせて試してみようぜ。</p>
+<h1><a class="header" href="#演算子-其の四" id="演算子-其の四">演算子 其の四</a></h1>
+<p>かつ、もしくは、ではない</p>
+<hr />
+<p><code>bool</code> 型どうしの演算もある。</p>
+<p>値の種類が二つしかないから、全部のパターンを書いておくね。</p>
+<h2><a class="header" href="#and" id="and">AND</a></h2>
+<p><code>&amp;&amp;</code> は AND 論理積の演算子。</p>
+<p>両者が <code>true</code> のときは <code>true</code> で、それ以外は <code>false</code> になる。</p>
+<pre><code class="language-cpp">false &amp;&amp; false; // =&gt; false
+true &amp;&amp; false; // =&gt; false
+false &amp;&amp; true; // =&gt; false
+true &amp;&amp; true; // =&gt; true
+</code></pre>
+<h2><a class="header" href="#or" id="or">OR</a></h2>
+<p><code>||</code> は OR 論理和の演算子。</p>
+<p>どちらかが <code>true</code> であれば <code>true</code> で、それ以外は <code>false</code> になる。</p>
+<pre><code class="language-cpp">false || false; // =&gt; false
+true || false; // =&gt; true
+false || true; // =&gt; true
+true || true; // =&gt; true
+</code></pre>
+<h2><a class="header" href="#not" id="not">NOT</a></h2>
+<p><code>!</code> は NOT 否定の演算子。</p>
+<p><code>true</code> と <code>false</code> を逆にする。これだけは <em>値の頭につける演算子</em> だから注意。</p>
+<pre><code class="language-cpp">!true; // =&gt; false
+!false; // =&gt; true
+</code></pre>
+<h1><a class="header" href="#比較演算子との複合" id="比較演算子との複合">比較演算子との複合</a></h1>
+<p><code>&amp;&amp;</code> や <code>||</code> は、<code>&lt;</code> とかより優先順位が低いので、<strong>条件の組み合わせ</strong> が書ける。</p>
+<pre><code class="language-cpp">0 &lt;= value &amp;&amp; value &lt;= 10; // value が 0 以上 10 以下のとき
+
+value == 0 || value == 1 || value == 3; // value が 0, 1, 3 のとき
+
+// この 3 つは同じ式。ド・モルガンの法則などによって変形してみた
+!(5 &lt;= value &amp;&amp; value &lt;= 7); // value が 5 以上 7 以下でないとき
+!(5 &lt;= value) || !(value &lt;= 7); // value が 5 以上 7 以下でないとき
+5 &gt; value || value &gt; 7; // value が 5 以上 7 以下でないとき
+</code></pre>
+<p>あんまり長いと見づらいので、そのときは <code>bool</code> 型の <strong>変数に一旦保管</strong> したほうがいいかも。</p>
+<h1><a class="header" href="#else" id="else">else</a></h1>
+<p>トロッコのレールを切り替える</p>
+<hr />
+<p><code>if</code> 文では、<em>条件を満たしたときの処理</em> だけを書けた。でも、<code>if</code> の <strong>条件を満たさないとき</strong> が少々面倒。</p>
+<pre><code class="language-cpp">bool condition; // false か true になる
+
+if (condition) {
+  // 満たすとき
+}
+
+if (!condition) {
+  // 満たさないとき
+}
+</code></pre>
+<p>この <em>満たさないとき</em> をそのまま書く構文、<code>else</code> 文がある。</p>
+<blockquote>
+<p>if ( <em>真偽値の式</em> ) <em>式が true のときの文</em></p>
+<p>else <em>式が false のときの文</em></p>
+</blockquote>
+<p>以下のように、条件を満たさないときの処理を書くことができる。</p>
+<pre><code class="language-cpp">bool condition;
+if (condition) {
+  // 満たすとき
+} else {
+  // 満たさないとき
+}
+</code></pre>
+<p>ただ <code>if</code> 文を連ねるのと、 <code>if</code> - <code>else</code> にするのとは、2 つの文の <strong>どちらかしか実行されない</strong> ところが違う。</p>
+<p><code>if</code> の場合:</p>
+<blockquote>
+<p>条件を満たすかどうか</p>
+<p>↓　　　　　　　　　↘ </p>
+<p>↓　　　　　　　　　　満たすときの処理</p>
+<p>↓　　　　　　　　　↙</p>
+<p>　　　次の処理</p>
+</blockquote>
+<p><code>if</code> - <code>else</code> の場合:</p>
+<blockquote>
+<p>条件を満たすかどうか</p>
+<p>↓　　　　　　　　　↘</p>
+<p>満たさないときの処理|満たすときの処理</p>
+<p>↓　　　　　　　　　↙</p>
+<p>　　　次の処理</p>
+</blockquote>
+<p>上の図の通り、<code>if</code> だけのときは、条件を満たさないときに何もしない。ひょっとして、ナマケモノのフレンズとか?</p>
+<h2><a class="header" href="#else-if" id="else-if">else if</a></h2>
+<p><code>else</code> の直後に <code>if</code> を書くことで、好きなだけ分岐を増やせる。</p>
+<pre><code class="language-cpp">int value;
+std::cin &gt;&gt; value;
+if (value % 15 == 0) {
+  std::cout &lt;&lt; value &lt;&lt; &quot; は 3 と 5 の倍数\n&quot;;
+} else if (value % 3 == 0) {
+  std::cout &lt;&lt; value &lt;&lt; &quot; は 3 の倍数\n&quot;;
+} else if (value % 5 == 0) {
+  std::cout &lt;&lt; value &lt;&lt; &quot; は 5 の倍数\n&quot;;
+} else {
+  std::cout &lt;&lt; value &lt;&lt; &quot; は &quot; &lt;&lt; value &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<p>​各条件は上から順に確かめられて、<code>true</code> になった条件の、直後の文だけが実行される。</p>
+<p>分岐処理を使って多様な応答をするプログラムを作ってみるといいかも。</p>
+<h1><a class="header" href="#switch" id="switch">switch</a></h1>
+<p>タコ足配線</p>
+<hr />
+<p>整数で分岐するときに、このように <strong>等しいかどうかの分岐を連ねる</strong> ということをやったりする。</p>
+<pre><code class="language-cpp">std::cout &lt;&lt; &quot;Select:\n  1. Hello.\n 2. Hi!\n other. ???\n&quot;;
+
+int select;
+
+std::cin &gt;&gt; select;
+
+if (select == 1) {
+  std::cout &lt;&lt; &quot;Hello.\n&quot;;
+} else if (select == 2) {
+  std::cout &lt;&lt; &quot;Hi!\n&quot;;
+} else {
+  std::cout &lt;&lt; &quot;???\n&quot;;
+}
+</code></pre>
+<p>これは <code>switch</code> 文で書き換えることができる。文法は以下の通り。</p>
+<blockquote>
+<p>switch ( <em>整数の式</em> ) {</p>
+<p>case <em>値</em>:</p>
+<p><em>式と値が等しいときの文</em></p>
+<p>break;</p>
+<p>:</p>
+<p>:</p>
+<p>default:</p>
+<p><em>どの case にも当てはまらないときの文</em></p>
+<p>break;</p>
+<p>}</p>
+</blockquote>
+<p>すると、<em>case に一致する値のところ</em> まで、<strong>実行する文が飛ばされる</strong>。</p>
+<p><code>case 値</code> の後ろに付いているのは、<code>;</code> ではなく <code>:</code> だよ。間違えないように。</p>
+<p>最初の例を <code>switch</code> に書き換えるとこうなる。どっちが見やすいと思う?どっちでもいいけど。</p>
+<pre><code class="language-cpp">std::cout &lt;&lt; &quot;Select:\n  1. Hello.\n 2. Hi!\n other. ???\n&quot;;
+
+int select;
+
+std::cin &gt;&gt; select;
+
+switch (select) {
+case 1:
+  std::cout &lt;&lt; &quot;Hello.\n&quot;;
+  break;
+case 2:
+  std::cout &lt;&lt; &quot;Hi!\n&quot;;
+  break;
+default:
+  std::cout &lt;&lt; &quot;???\n&quot;;
+  break;
+}
+</code></pre>
+<p>まぁ見ての通り、ちょっと見づらいからあまり使わない。</p>
+<p>よほどのことがない限りは普通に <code>if</code> - <code>else if</code> - <code>else if</code> - ... ってする。</p>
+<p>あと、<code>switch</code> 文は整数にしか使えない!</p>
+<p>この <code>break</code> (処理を脱出する特殊な文) が無いときは、そのまま下へ処理が流れていく。<code>break</code> を忘れないように。</p>
+<pre><code class="language-cpp">switch (input) {
+case 0: {
+    // input が 0 のとき
+  }
+  // break しないと……
+case 1: {
+    // input が 0 か 1 のとき
+  }
+  break;
+default:
+  // それ以外のとき
+  break;
+}
+</code></pre>
+<p><code>break</code> の解説は次の章でやる。</p>
+<p>これは本来の使い方ってわけでもないからね。</p>
+<h1><a class="header" href="#章末問題-1" id="章末問題-1">章末問題</a></h1>
+<p>あっちこっちそっち</p>
+<hr />
+<p>以下の問題を用意しておきました。解いてプログラミングになれましょ。</p>
+<h2><a class="header" href="#例題-1" id="例題-1">例題 1</a></h2>
+<p>2 つの整数の入力を変数に受け取れ。</p>
+<p>そして、その大きい方を出力せよ。</p>
+<p>このように動作せよ。</p>
+<p>入力:</p>
+<pre><code>3 5
+</code></pre>
+<p>出力:</p>
+<pre><code>5
+</code></pre>
+<h3><a class="header" href="#解き方" id="解き方">解き方</a></h3>
+<p>まず、解く方針を考える。</p>
+<ol>
+<li>変数を 2 つ用意しておく</li>
+<li>1 つ目の数値を変数に受け取る</li>
+<li>2 つ目の数値を別の変数に受け取る</li>
+<li>2 つの変数を比較する</li>
+<li><code>if</code> で分岐して大きいほうを出力</li>
+</ol>
+<p>これを実装してみる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  int a, b;
+  std::cin &gt;&gt; a &gt;&gt; b;
+  if (a &lt; b) {
+    std::cout &lt;&lt; b;
+  } else {
+    std::cout &lt;&lt; a;
+  }
+}
+</code></pre>
+<p>いろいろ入力してみて期待通りに動くことを確認する。</p>
+<p>不具合があったら、原因を特定して書き直す。</p>
+<p>これが基本。</p>
+<h2><a class="header" href="#問-1-1" id="問-1-1">問 1</a></h2>
+<p>2 つの整数の入力を変数に受け取れ。</p>
+<p>そして、その小さい方を出力せよ。</p>
+<p>このように動作せよ。</p>
+<p>入力:</p>
+<pre><code>3 5
+</code></pre>
+<p>出力:</p>
+<pre><code>3
+</code></pre>
+<h2><a class="header" href="#問-2-1" id="問-2-1">問 2</a></h2>
+<p>1 つの小数の入力を変数に受け取れ。</p>
+<p>そして、その小数点以下を切り上げて出力せよ。</p>
+<p>ヒント:</p>
+<blockquote>
+<p>まず、小数点以下を切り捨てた値と元の値の差を計算する。
+これが 0 ではないときが、切り上げる条件。</p>
+</blockquote>
+<p>このように動作せよ。</p>
+<p>入力:1</p>
+<pre><code>2.002
+</code></pre>
+<p>出力1:</p>
+<pre><code>3
+</code></pre>
+<p>入力2:</p>
+<pre><code>-1.03
+</code></pre>
+<p>出力2:</p>
+<pre><code>0
+</code></pre>
+<p>入力3:</p>
+<pre><code>4
+</code></pre>
+<p>出力3:</p>
+<pre><code>4
+</code></pre>
+<h1><a class="header" href="#反復" id="反復">反復</a></h1>
+<p>なんどもなんども</p>
+<hr />
+<p>この章で、機械に繰り返しをさせることができるようになる。</p>
+<h1><a class="header" href="#この章のゴール-3" id="この章のゴール-3">この章のゴール</a></h1>
+<ul>
+<li>反復のしくみと条件を理解する</li>
+<li>反復と条件の判断のタイミングを把握する</li>
+<li>反復内の処理を次に進める文を覚える</li>
+<li>反復内の処理を抜ける文を覚える</li>
+<li>より抽象的な反復を使えるようにする</li>
+</ul>
+<p>所要時間: 80 ~ 90 分くらい</p>
+<h1><a class="header" href="#while" id="while">while</a></h1>
+<p>ずーっと、ただし条件がある</p>
+<hr />
+<p>今までのプログラムは、上から順に実行されるけどその処理は全部手で書いていた。</p>
+<p>めんどくさいけどこれはしょうがない。</p>
+<blockquote>
+<p>処理A1;</p>
+<p>処理B1;</p>
+<p>処理A2; // 同じような処理……</p>
+<p>処理B2;</p>
+<p>処理A3; // また同じような処理だ!</p>
+<p>処理B3;</p>
+</blockquote>
+<p>そのまま書くと、</p>
+<ul>
+<li>修正するときは全部直さなきゃいけない</li>
+<li>何をやっているのかが見づらい</li>
+<li>指定回数の繰り返しが実現できない</li>
+</ul>
+<p>などなど問題が出てくる。</p>
+<p>しかも機械に単純作業をさせるとなると、間違いなく <strong>繰り返し</strong> が必要なんだ。信じてくれ。</p>
+<p>この繰り返しをさせる文が、<code>while</code> 文。</p>
+<p>文法はこんな感じ。</p>
+<blockquote>
+<p>while ( <em>条件式</em> ) <em>繰り返す文</em></p>
+</blockquote>
+<p><code>while</code> (わいる、みたいに読む) は英語で <em>~である間</em> って意味だよ。</p>
+<p>この条件式が <code>true</code> かどうかチェックして、繰り返す文を実行する。</p>
+<p>実際に使うとこうなる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  int a = 0;
+  while (a &lt; 10) {
+    std::cout &lt;&lt; a &lt;&lt; &quot;\n&quot;;
+    a += 2;
+  }
+  // 繰り返しが終わるとここにジャンプしてくる
+}
+</code></pre>
+<p>条件式→繰り返す文→条件式→繰り返す文→…… という順序で動作する。</p>
+<p>実行してみると、</p>
+<pre><code>0
+2
+4
+6
+8
+</code></pre>
+<p>ってなるはず。順に追ってみよう。</p>
+<p>ループ1回目</p>
+<blockquote>
+<p><code>a</code> は <code>0</code></p>
+<p><code>a &lt; 10</code> は <code>true</code> なので中身を実行する</p>
+<p><code>a</code> を出力</p>
+<p><code>a += 2</code> を実行</p>
+</blockquote>
+<p>ループ2回目</p>
+<blockquote>
+<p><code>a</code> は <code>2</code></p>
+<p><code>a &lt; 10</code> は <code>true</code> なので中身を実行する</p>
+<p><code>a</code> を出力</p>
+<p><code>a += 2</code> を実行</p>
+</blockquote>
+<p>という感じで繰り返されて、</p>
+<p>ループ6回目</p>
+<blockquote>
+<p><code>a</code> は <code>10</code></p>
+<p><code>a &lt; 10</code> は <code>false</code> なので中身を実行しない</p>
+<p><code>while</code> の次へジャンプ</p>
+<p>プログラム終了</p>
+</blockquote>
+<p>という流れ。何度も読み返して、ゆっくり慣れていってね!</p>
+<h2><a class="header" href="#条件式" id="条件式">条件式</a></h2>
+<p>最初から条件式が <code>false</code> だと、中の <strong>処理は一回も実行されない</strong> ってこと。</p>
+<pre><code class="language-cpp">while (false) {
+  std::cout &lt;&lt; &quot;(´д｀)\n&quot;;
+}
+</code></pre>
+<p>逆に、<code>true</code> だと中から抜け出せない <strong>無限ループ</strong> になる。</p>
+<pre><code class="language-cpp">while (true) {
+  std::cout &lt;&lt; &quot;You are an idiot\n☺　☺　☺\n&quot;;
+}
+</code></pre>
+<p>こうなっても <strong>抜け出す手段はある</strong> けど、それは次の次のページ。</p>
+<p><code>true</code> のときに実行されるから注意!私でも逆にしちゃうことはあるけど。</p>
+<h1><a class="header" href="#do---while" id="do---while">do - while</a></h1>
+<p>まぁまずはお茶でも飲んで</p>
+<hr />
+<p>さっきの <code>while</code> は、判断してから実行してた。</p>
+<p>でもたまーに実行してから判断したいときもある。</p>
+<p>それをするのが <code>do</code> - <code>while</code> 文。</p>
+<p>文法はこんな感じ。</p>
+<blockquote>
+<p>do <em>実行する文</em> while( <em>条件式</em> );</p>
+</blockquote>
+<p><strong>評価と実行の順序が逆</strong> なのが最大の特徴。</p>
+<p>つまり、最低でも一回以上は処理が実行されるということ。</p>
+<p>実際に使うとこんな感じ。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  int input;
+  do {
+    std::cout &lt;&lt; &quot;0 よりも大きい整数を入力してね\n&quot;;
+    std::cin &gt;&gt; input;
+  } while (!(0 &lt; input));
+  do {
+    std::cout &lt;&lt; &quot;やあ!\n&quot;;
+    --input;
+  } while(0 &lt; input);
+}
+</code></pre>
+<p>入力をやり直させるときに使うこともできる。</p>
+<p>ただ、<code>while</code> よりは使わない。使える場面がそんなにないし。</p>
+<p>だから説明もこれで終わりだよ。</p>
+<h1><a class="header" href="#continue" id="continue">continue</a></h1>
+<p>また次のループで逢いましょう</p>
+<hr />
+<p>ループには <em>判断</em> と <em>処理</em> の繰り返ししかないと思った?</p>
+<p>さすがにそれだと不便だから、いくつかの <strong>制御する文</strong> があるよ。</p>
+<p>この <code>continue</code> 文は、処理を途中でやめて <strong>処理の最後の文の後ろに移る</strong> 文だよ。</p>
+<p>下に書いたようなプログラムを実行してみればわかると思う。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  int count = 0;
+  while (count &lt;= 10) { 
+    ++count;
+    if (count % 3 == 0) {
+      continue; // A へとジャンプ
+    }
+    std::cout &lt;&lt; count &lt;&lt; &quot; &quot;;
+    // A
+  }
+}
+</code></pre>
+<p>ループ内の処理を中断するのにうってつけ。</p>
+<p>これから <em>アルゴリズム</em> ―― 問題を解くための定式化された手順を考えるときにもちょくちょく出てくるから、頭の片隅にはおいておこう。</p>
+<h1><a class="header" href="#break" id="break">break</a></h1>
+<p>全て壊すんだ</p>
+<hr />
+<p><code>continue</code> に続いて、<code>break</code> もループ制御する文だよ。</p>
+<p>そういえば <code>switch</code> 文のときにもでてきてたね。</p>
+<p>これは、直近の <strong>ループを終了する文</strong> だよ。</p>
+<p>実際に使うとこんな感じ。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  int count = 0;
+  while(true) {
+    std::cout &lt;&lt; &quot;カウント: &quot; &lt;&lt; count &lt;&lt; &quot;\n&quot;
+     &lt;&lt; &quot;1 でカウントアップ | それ以外で終了\n&quot;;
+
+    int input;
+    std::cin &gt;&gt; input;
+    if (input != 1) { break; }
+    ++count;
+  }
+}
+</code></pre>
+<p>繰り返しをとりあえず無限ループにしておいて、終了を <code>if</code> と <code>break</code> にするのはよくやる。</p>
+<pre><code class="language-cpp">bool should_exit = false;
+while (true) {
+  if (should_exit) { break; }
+  // :
+  // :
+}
+</code></pre>
+<p><code>switch</code> 文でも、文の中から抜け出すときに使われているけど、別物として覚えたほうがいいよ。</p>
+<h1><a class="header" href="#for" id="for">for</a></h1>
+<p>フォウ、フォーウ！ファッ！</p>
+<hr />
+<p><code>for</code> 文は、<code>while</code> よりも数段上の <strong>上位互換</strong>。それも尋常ではないレベルで。</p>
+<p>文法はこんな感じ。心して読んでくれ。</p>
+<blockquote>
+<p>for ( <em>初期化式</em> ; <em>条件式</em> ; <em>更新式</em> ) <em>実行する文</em></p>
+</blockquote>
+<p>なかなかにクセのある文法だけど、伝統工芸品的なものなのでしょうがない。多分来世紀にも残る。</p>
+<h2><a class="header" href="#処理の順序" id="処理の順序">処理の順序</a></h2>
+<p><code>for</code> 文に三つある式たちには実行順序がある。以下のプログラムを例に処理を追いかけてみよう。</p>
+<pre><code class="language-cpp">int main() {
+  int i;
+  for (i = 0; i &lt; 3; ++i) { /* ~ */ }
+}
+</code></pre>
+<p>ループ前</p>
+<blockquote>
+<p><em>初期化式</em> <code>i = 0</code> を実行</p>
+</blockquote>
+<p>ループ 1 回目</p>
+<blockquote>
+<p><code>i</code> は <code>0</code></p>
+<p><em>条件式</em> <code>i &lt; 3</code> が <code>true</code> なのでループ続行</p>
+<p>処理 (今回は空) を実行</p>
+<p><em>更新式</em> <code>++i</code> を実行</p>
+</blockquote>
+<p>が繰り返されていき、</p>
+<p>ループ 4 回目</p>
+<blockquote>
+<p><code>i</code> は <code>3</code></p>
+<p><em>条件式</em> <code>i &lt; 3</code> が <code>false</code> なのでループ終了</p>
+</blockquote>
+<p>というふうに全部で 3 回処理が実行される。</p>
+<h3><a class="header" href="#for-で-continue" id="for-で-continue">for で continue</a></h3>
+<p><code>for</code> の中でも <code>continue</code> が使える。</p>
+<p>これを実行してみよう。</p>
+<pre><code class="language-cpp">for (int count = 1; count &lt;= 10; ++count) {
+  if (count % 3 == 0) {
+    continue; // A へとジャンプ
+  }
+  std::cout &lt;&lt; count &lt;&lt; &quot; &quot;;
+  // A
+}
+</code></pre>
+<p>次の <em>評価式</em>、続いて <em>条件式</em> の実行に移るのがわかったかな?</p>
+<h2><a class="header" href="#実例" id="実例">実例</a></h2>
+<p>実際に使うとこんな感じ。初期化式の中で変数を作ることもできるので、こう書いてもいい。</p>
+<pre><code class="language-cpp">//               これ↓が繰り返す回数になっている
+for (int i = 0; i &lt; 3; ++i) {
+  ; // 何かする
+}
+</code></pre>
+<p>数を数えつつ繰り返すのに最適。よく使うのでしっかり書きなれておいてほしい。</p>
+<p>ちなみに、この <code>i</code> のようにループの制御に使っている変数を <em>制御変数</em> と言ったりする。</p>
+<h3><a class="header" href="#カウントアップの例" id="カウントアップの例">カウントアップの例</a></h3>
+<p><code>0</code> から <code>10</code> まで数え上げる。</p>
+<pre><code class="language-cpp">for (int count = 0; count &lt; 10; ++count) { }
+</code></pre>
+<p><code>1</code> から <code>5</code> まで数え上げる。上とは <strong>条件式の演算子が違う</strong> ので注意!</p>
+<pre><code class="language-cpp">for (int count = 1; count &lt;= 5; ++count) {}
+</code></pre>
+<h3><a class="header" href="#カウントダウンの例" id="カウントダウンの例">カウントダウンの例</a></h3>
+<p><code>11</code> から <code>0</code> まで数え下げる。上とは <strong>更新式の演算子が違う</strong> ので注意!</p>
+<pre><code class="language-cpp">for (int count = 11; 0 &lt; count; --count) { }
+</code></pre>
+<p><code>7</code> から <code>2</code> まで数え上げる。</p>
+<pre><code class="language-cpp">for (int count = 7; 2 &lt;= count; --count) {}
+</code></pre>
+<p>回数を指定した繰り返しにおいて、ふんだんに使うので絶対に覚えてね?</p>
+<p>ちなみに、最近はループする文が <code>for</code> だけのプログラミング言語もある。</p>
+<h1><a class="header" href="#多重ループ" id="多重ループ">多重ループ</a></h1>
+<p>繰り返しを繰り返す</p>
+<hr />
+<p>もちろん、ループ内でもループを書くことができる。</p>
+<pre><code class="language-cpp">for ( /* ~ */ ) {
+  for ( /* ~ */ ) {
+
+  }
+}
+</code></pre>
+<p>これを <strong>二重ループ</strong> とか、更に何個も連ねるのを <strong>多重ループ</strong> とかいう。</p>
+<p>外側で <code>10</code> 回、内側で <code>10</code> 回繰り返すと、<code>10 × 10 = 100</code> 回繰り返す。</p>
+<p>外側で <code>N</code> 回、内側で <code>M</code> 回繰り返すと、<code>N × M</code> 回繰り返す。</p>
+<p>以下、よくやる使い方を紹介しておく。</p>
+<h2><a class="header" href="#二つの値の組み合わせをすべて網羅する場合" id="二つの値の組み合わせをすべて網羅する場合">二つの値の組み合わせをすべて網羅する場合</a></h2>
+<p>ここでは、与えられた半径 <code>radius</code> に対して、その半径の円の中に、中心から敷き詰めた正方形のタイルの数を数えてみる。</p>
+<p><img src="loop/../image/tiles_and_circle.png" alt="Tiles and circle" /></p>
+<pre><code class="language-cpp">double radius = 1.42; // 約 √2、標準入力でもいいけど今回は決め打ち
+int count = 0;
+int limit = radius + 0.5;
+// まず X と Y が + の方向の点だけ数える
+for (int x = 1; x &lt;= limit; ++x) {
+  for (int y = 1; y &lt;= limit; ++y) {
+    if (x * x + y * y &lt; radius * radius) { // 円の方程式 x^2 + y^2 &lt; r^2 をしている
+      ++count;
+    }
+  }
+}
+// 4 倍にする
+count = count * 4 ;
+</code></pre>
+<p>一応この例では、<code>x</code> のループの中に <code>y</code> のループを書いてもいいし、<code>y</code> のループの中に <code>x</code> のループを書いてもいい。</p>
+<h2><a class="header" href="#複数行に渡ってパターンを画面に出力する場合" id="複数行に渡ってパターンを画面に出力する場合">複数行に渡って、パターンを画面に出力する場合</a></h2>
+<p>一行ずつに着目して考えると良い。</p>
+<p>今回は、<code>&quot;#&quot;</code> を黒点、<code>&quot; &quot;</code> を白点として、画面に半径 <code>radius</code> の円を描いてみる。</p>
+<p>今の行の <code>y</code> 座標がわかっていると仮定しよう。これはあとで追加する <em>外側の <code>for</code> ループ</em> の制御変数だよ。</p>
+<p><code>x</code> 座標を増やしていくループを書く。</p>
+<pre><code class="language-cpp">for (int x = -radius; x &lt;= radius; ++x) {
+  // x^2 + y^2 &lt;= r^2
+  if (x * x + y * y &lt;= radius * radius) {
+    std::cout &lt;&lt; &quot;#&quot;;
+  } else {
+    std::cout &lt;&lt; &quot; &quot;;
+  }
+}
+</code></pre>
+<p>こんな感じの一行を考えたら、それを繰り返す場合を考える。</p>
+<pre><code class="language-cpp">for (int y = -radius; y &lt;= radius; ++y) {
+  // ここは一行の処理が始まる前
+  for (int x = -radius; x &lt;= radius; ++x) {
+    // x^2 + y^2 &lt;= r^2
+    if (x * x + y * y &lt;= radius * radius) {
+      std::cout &lt;&lt; &quot;#&quot;;
+    } else {
+      std::cout &lt;&lt; &quot; &quot;;
+    }
+  }
+  // ここは一行の処理が終わった後
+  // この改行を忘れないように
+  std::cout &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<p>行を繰り返すので、外側の <code>for</code> はこれだけ。</p>
+<p>これで完成。実行してみると、<em>きれいな円</em> が見れるはず。他にもいろいろやってみてね。</p>
+<p>この場合は、ループの内側と外側を逆にしたりはできない。</p>
+<p>横方向 (行) の出力を縦に繰り返しているからね。</p>
+<p>順序を逆にするわかるけど、表示が崩れちゃう。</p>
+<h1><a class="header" href="#多重ループのときの-break" id="多重ループのときの-break">多重ループのときの break</a></h1>
+<p>多重ループしたときの <code>break</code> は、その直近、つまり内側のループしか抜けられないので注意。</p>
+<pre><code class="language-cpp">while (true) {
+  while(true) {
+    break;
+  }
+  // break したらここに来る
+}
+// このままだと無限ループだぁ
+</code></pre>
+<p>外側のループとかを抜ける方法は次の章でやるよ。</p>
+<p>そういう処理はただのループでは向いてないはずだからね。</p>
+<h1><a class="header" href="#章末問題-2" id="章末問題-2">章末問題</a></h1>
+<p>ぐるぐまわーる</p>
+<hr />
+<p>以下の問題を用意しておきました。解いてプログラミングになれましょ。</p>
+<h2><a class="header" href="#例題-1-1" id="例題-1-1">例題 1</a></h2>
+<p>1 つの整数の入力を受け取れ。</p>
+<p>そして、1 からその数までを、一つづつ増やしながら出力せよ。</p>
+<p>入力が 1 より小さいときは何も出力しないこと。</p>
+<p>このように動作せよ。</p>
+<p>入力1:</p>
+<pre><code>8
+</code></pre>
+<p>出力1:</p>
+<pre><code>12345678
+</code></pre>
+<p>入力2:</p>
+<pre><code>-1
+</code></pre>
+<p>出力2:</p>
+<pre><code>
+</code></pre>
+<h3><a class="header" href="#解き方-1" id="解き方-1">解き方</a></h3>
+<p>方針を考えてみよっか。</p>
+<ol>
+<li>入力を受け取る変数を 1 つ用意する。</li>
+<li>入力を変数に受け取る。</li>
+<li>制御変数を用意し、1 で初期化する。</li>
+<li>制御変数が入力以下であればループする。
+<ol>
+<li>制御変数の数値を出力する。</li>
+<li>制御変数を 1 増やす。</li>
+</ol>
+</li>
+</ol>
+<p>実装してみよう。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  int input;
+  std::cin &gt;&gt; input;
+  int count = 1;
+  while(count &lt;= input) {
+    std::cout &lt;&lt; count;
+    ++count;
+  }
+}
+</code></pre>
+<p>ちなみに、<code>for</code> で書くとこうなる。こちらが書けるようになろう。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+  int input;
+  std::cin &gt;&gt; input;
+  for (int count = 1; count &lt;= input; ++count) {
+    std::cout &lt;&lt; count;
+  }
+}
+</code></pre>
+<h2><a class="header" href="#問-1-2" id="問-1-2">問 1</a></h2>
+<p><strong>階乗</strong> というのは、<strong>1 からその数までをすべて掛けた数</strong> のこと。</p>
+<p>例えば、<em>3 の階乗</em> は <em>1 × 2 × 3 = 6</em> になる。</p>
+<p>1 つの自然数の入力を受け取れ。そして、その階乗を出力せよ。</p>
+<p>このように動作せよ。</p>
+<p>入力:</p>
+<pre><code>8
+</code></pre>
+<p>出力:</p>
+<pre><code>40320
+</code></pre>
+<p>※入力に 17 以上の値を入れると結果がおかしくなると思うけど、その対処法は別の回でやるよ。</p>
+<h2><a class="header" href="#問-2-2" id="問-2-2">問 2</a></h2>
+<p>まず、英語圏には &quot;Fizz Buzz&quot; という数を数える言葉遊びがありまして、</p>
+<blockquote>
+<p>1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz  ...</p>
+</blockquote>
+<p>みたいになる。3 の倍数は &quot;Fizz&quot;、5 の倍数は &quot;Buzz&quot;、15 の倍数は &quot;FizzBuzz&quot;、それ以外はそのまま答える遊び。</p>
+<p>今回はこれをプログラムで再現してみる。</p>
+<p>機械は失敗しないので。</p>
+<p>1 つの整数の入力を受け取れ。</p>
+<p>そして、その数まで &quot;Fizz Buzz&quot; を行え。</p>
+<p>このように動作せよ。</p>
+<p>入力:</p>
+<pre><code>11
+</code></pre>
+<p>出力:</p>
+<pre><code>1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11
+</code></pre>
+<h1><a class="header" href="#関数を作る" id="関数を作る">関数を作る</a></h1>
+<p>処理をキリのいいところでぶった斬れ</p>
+<hr />
+<p>この章で、機械にさせる処理を分離して再利用できるようになる。</p>
+<h1><a class="header" href="#この章のゴール-4" id="この章のゴール-4">この章のゴール</a></h1>
+<ul>
+<li>関数の役割を理解する。</li>
+<li>関数の名前が持つ性質を把握する。</li>
+<li>引数と戻り値を使いこなす。</li>
+<li>値渡しの挙動を理解する。</li>
+</ul>
+<p>所要時間: 80 ~ 90 分くらい</p>
+<h1><a class="header" href="#関数を作る-1" id="関数を作る-1">関数を作る</a></h1>
+<p>$f(x) = ...$</p>
+<hr />
+<p>今までは、どんな処理もぜーんぶ main 関数の中に書いてきた。</p>
+<p>しかも、その中の処理の一環で、他の人が作った関数を呼び出したりもしてた。<code>std::cout &lt;&lt;</code> とかは関数だよ?</p>
+<p>今度は、我々が関数を作る番だ。</p>
+<p>関数の一つや二つ、パパっと作れるようになろう。</p>
+<p>プログラミングでの関数には、</p>
+<ol>
+<li>ただ処理を分けるだけ</li>
+<li>計算処理を体系的にまとめる</li>
+</ol>
+<p>の二通りがあるんだけど、このページでは 1 をやって、次のページからは 2 を掘り下げていくよ。</p>
+<p>1 にあたる関数の文法はこう。</p>
+<blockquote>
+<p>void <em>名前</em> ()<br />
+{<br />
+<em>0個以上の文</em><br />
+}</p>
+</blockquote>
+<p>実際に定義するとこんな感じ。</p>
+<pre><code class="language-cpp">void gather_friends() {
+  std::cout &lt;&lt; &quot;サッカーしようぜ\n&quot;;
+}
+//　↑ と ↓ の順序は逆でも OK
+void treat_as_ball() {
+  std::cout &lt;&lt; &quot;お前ボールな\n&quot;;
+}
+
+int main() {
+  gather_friends();
+  treat_as_ball();
+}
+</code></pre>
+<p>この <code>void</code> (ボイド、日本語にすると虚無) は型の一種なんだけど、ここに型を書いている理由は <a href="func/./return.html">戻り値とreturn</a> でやるよ。</p>
+<h1><a class="header" href="#引数" id="引数">引数</a></h1>
+<p>いんすう派は賢いな</p>
+<hr />
+<p>関数を作ったとはいえ、<em>ずっと同じ処理をするだけの関数</em> じゃいろいろ不便。でしょ?</p>
+<p>そこで、引数 (ひきすう) というものを作って、この呼び出すと同時に値を渡してもらうことができる。</p>
+<p>この引数リストは、関数の文法で、</p>
+<blockquote>
+<p>void <em>名前</em> ( <em>引数リスト</em> )</p>
+<p>{</p>
+<p><em>0個以上の文</em></p>
+<p>}</p>
+</blockquote>
+<p>この <strong>丸括弧の中</strong> に <code>,</code> で区切って変数のように書く。</p>
+<p>例えば、こんな感じになる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+// 数を出力する
+void print_number(int number) {
+  std::cout &lt;&lt; &quot;Number: &quot; &lt;&lt; number &lt;&lt; &quot;\n&quot;;
+}
+
+// 2 つの数の合計が正の数ならそれを出力する
+void print_sum_if_positive(int alpha, int beta) {
+  int sum = alpha + beta;
+  if (0 &lt; sum) {
+    print_number(sum);
+  }
+}
+
+int main() {
+  // 数値を変えて遊んでみよう
+  print_number(63);
+  print_number(-43);
+  print_sum_if_positive(63, -43); // 複数の値は , で区切って渡す
+}
+</code></pre>
+<p>関数が受け取る予定の、名前を付けた引数は <strong>仮引数</strong> という。</p>
+<p>対して、関数に渡す実際の値は <strong>実引数</strong> という。</p>
+<p>まぁ、あんまり使わない用語だけれどね。</p>
+<h1><a class="header" href="#戻り値-とreturn" id="戻り値-とreturn">戻り値 とreturn</a></h1>
+<p>（っ'-')╮ =͟͟͞͞0110110011000001 ﾌﾞｫﾝ</p>
+<hr />
+<p><code>return</code> 文は、関数が、実行してきた誰かに <em>値を返す</em> 文。</p>
+<p>この文を処理すると <strong>関数の実行は終了する</strong>。</p>
+<p>このように、<code>return</code> の後に続けて <em>式</em> を書く。</p>
+<p>この式は <strong>戻り値</strong> (もしくは返り値) というもので、関数の実行結果みたいに扱われる。</p>
+<p>この式の型である <strong>戻り値型</strong> を、関数の最初に書かないといけない。</p>
+<blockquote>
+<p><em>戻り値型</em> <em>関数名</em> ( <em>引数リスト</em> ) { <em>0個以上の文</em> }</p>
+</blockquote>
+<p>実際に使うとこんな感じ。</p>
+<p>そうそう、この戻り値型が <code>void</code> だと、値を返さない。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+// 怠けるか怠けないか
+void will_be(bool lazy) {
+  if (lazy) {
+    std::cout &lt;&lt; &quot;ﾅﾏｹﾙ(・´з`・)\n&quot;;
+    return; // 関数を終了する効果しかない
+  }
+  std::cout &lt;&lt; &quot;ﾊﾀﾗｸ!(・∀・)\n&quot;;
+  return; // ←は省略してもいい
+}
+
+// テキトーな数字を返すだけ
+int random_number() {
+  return 4;
+}
+
+int main() {
+  will_be(false);
+  will_be(true);
+  std::cout &lt;&lt; random_number();
+}
+</code></pre>
+<p>もっぱら、計算結果を返すのに使う。</p>
+<p>例えば、$f(x) = x^3 + x^2 = x^2 (x + 1)$ を計算する (数学に近い) 関数はこんな風に書く。</p>
+<pre><code class="language-cpp">double f(double x) { // x^3 + x^2
+  double x2 = x * x;
+  return x2 * (x + 1);
+}
+</code></pre>
+<p>さぁ、いろんな種類の値を送り返してやろう。</p>
+<h2><a class="header" href="#main-関数に関するお詫び" id="main-関数に関するお詫び">main 関数に関するお詫び(?)</a></h2>
+<p>実は今まで黙っていたことがある。</p>
+<p>main 関数は本当はこう書かなきゃいけなかったんだよ!!!</p>
+<pre><code class="language-cpp">int main() {
+  return 0;
+}
+</code></pre>
+<p>ΩΩΩ&lt;な、なんだってー!?</p>
+<p>この <code>0</code> はプログラムの正常終了を表してる。<code>0</code> 以外を返すと異常終了として扱われる。</p>
+<p><code>return 0;</code> を省略すると、これが最後に自動で挿入される。だから書かなくてもいいってワケ。</p>
+<h1><a class="header" href="#値渡し" id="値渡し">値渡し</a></h1>
+<p>書き写してから作業</p>
+<hr />
+<p>かしこい人はすでに気づいていたかもしれないけれど、引数は変数みたいに変更できちゃう。</p>
+<pre><code class="language-cpp">// トリッキーに階乗を計算
+int fraction(int n) {
+  int fraction = 1;
+  for (; 1 &lt; n; --n) { fraction *= n; }
+  return fraction;
+}
+</code></pre>
+<p>でも、変更しても外の変数の値は変わらない。</p>
+<p>これは、変数の中の値だけを渡しているから。</p>
+<pre><code class="language-cpp">void substitute2(int var) {
+  var = 2; // は?
+}
+
+int main() {
+  int box = 0;
+  substitute2(box);
+  std::cout &lt;&lt; box; // たしかみてみろ!
+}
+</code></pre>
+<p>こういう挙動を <strong>値渡し</strong> っていう。</p>
+<p>引数に渡されるのは変数そのものじゃないので、変なコードを書かないようにね。</p>
+<p>変数のようなものを引数に渡す方法は次の章でやるよ。</p>
+<blockquote>
+<p>じゃあ戻り値も値が渡されているのかと思うだろうけど、こっちは戻り値が使われるところに直接代入されている。そのほうが効率いいんだってさ。</p>
+</blockquote>
+<h1><a class="header" href="#名前解決" id="名前解決">名前解決</a></h1>
+<p>コンパイラ「誰よその関数!」</p>
+<hr />
+<p>いろいろいじくりまわしていた人は気づいているかもしれないけれど、</p>
+<p>このように <strong>関数の定義を main 関数よりも下に書く</strong> と、</p>
+<pre><code class="language-cpp">int main() {
+  hey(2);
+}
+
+void hey(int num) {}
+</code></pre>
+<p>呼び出した行でコンパイラが</p>
+<blockquote>
+<p>~ って名前は宣言されていません</p>
+</blockquote>
+<p>みたいなエラーを吐く。</p>
+<p>C++ での名前は、すでに <strong>宣言していないと使用できない</strong>。今どきの言語では上でも下でもいいのだけれど。</p>
+<p><em>定義は宣言でもある</em> ので、main 関数より上で関数を定義していれば問題なかった。</p>
+<p>でも、どうしても下側に書きたい場合は、ちゃんと <strong>宣言</strong> だけをすることができる。</p>
+<p>文法はこんな感じ。</p>
+<blockquote>
+<p><em>戻り値の型</em> <em>関数名</em> ( <em>引数リスト</em> ) ;</p>
+</blockquote>
+<p>関数の定義と少し違っていて、文を書く部分は <code>;</code> になっている。</p>
+<p>さっきのを書き足すとこうなる。</p>
+<pre><code class="language-cpp">void foo(double ratio); // どんな引数なのか名前で示す
+void hey(int); // 引数名は省略してもいい
+
+int main() {
+  hey(2);
+  foo(3.0);
+}
+
+void hey(int) {} // ちなみに使わない引数名も省略できる
+
+#include &lt;iostream&gt;
+
+void foo(double ratio) {
+  std::cout &lt;&lt; &quot;Ratio: &quot; &lt;&lt; ratio &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<h1><a class="header" href="#オブジェクトたち" id="オブジェクトたち">オブジェクトたち</a></h1>
+<p>データのかたまり</p>
+<hr />
+<p>この章で、多様なデータ型を扱うことができるようになる。</p>
+<h1><a class="header" href="#この章のゴール-5" id="この章のゴール-5">この章のゴール</a></h1>
+<ul>
+<li>いろいろな型に触れる</li>
+<li>型につけられる指定子を覚える</li>
+<li>クラスを使いインスタンスを作る</li>
+<li>インスタンスのメンバ関数を呼び出す</li>
+</ul>
+<p>所要時間: 80 ~ 90 分くらい</p>
+<h1><a class="header" href="#float-char-1682進数リテラル" id="float-char-1682進数リテラル">float char 16/8/2進数リテラル</a></h1>
+<p>たまに使うやつら</p>
+<hr />
+<p>ここでは、絶対に必要ではないけれどたまに使う型やリテラルを紹介する。</p>
+<h2><a class="header" href="#float" id="float">float</a></h2>
+<p>単精度浮動小数点数 (float、floating-point value の略) は、昔からある小数とかを表す型。精度が低いけれど、ごく一部の環境では稀に速く動くことがあったりするかもしれない。</p>
+<p><code>double</code> のリテラルの後ろに、<code>f</code> か <code>F</code> をつけると <code>float</code> のリテラルになる。</p>
+<pre><code class="language-cpp">float a = 1.2f;
+float b = 3.F;
+float c = .5f;
+</code></pre>
+<p>前にも言ったけど、<code>double</code> は倍精度浮動小数点数。フツーはこっちを使う。</p>
+<h2><a class="header" href="#char" id="char">char</a></h2>
+<p><code>char</code> は文字を表現するのに使われる <strong>整数</strong> 型。といっても、英文字や一部半角記号 (詳しくは <a href="https://ja.wikipedia.org/wiki/ASCII">ASCII</a> を参照) を表す数字しか格納できない。</p>
+<pre><code class="language-cpp">char ch = 65; // ASCII で A にあたる数
+std::cout &lt;&lt; ch; // A
+</code></pre>
+<p><code>'</code> で囲った中に表現可能な文字を書くと、対応する整数に変換される。</p>
+<p>文字通りの <code>char</code> の値にできるので、こっちを使うべき。</p>
+<pre><code class="language-cpp">char ch = 'A'; // 65 と同等
+std::cout &lt;&lt; ch; // A
+</code></pre>
+<p>日本語の一文字とかは容量が足りなくて単体で格納できない。</p>
+<p>一応そのための別の型や表現手段はあるけれど、かなり複雑なやつなのに役に立たないので説明しないよ。</p>
+<h2><a class="header" href="#1682進数リテラル" id="1682進数リテラル">16/8/2進数リテラル</a></h2>
+<p>コンピュータで扱う数字は、よく <strong>2進数</strong> を扱う。これをプログラム中に直接書くときに、もっと見やすくするためのもの。</p>
+<p><em>進数</em> というのは、桁上りする数のこと。例えば普段使っている <em>10進数</em> だと、<code>0 1 2 ... 9</code> まで行って <code>10 11 ...</code> ってなる。<code>9</code> の次で桁が上がっているわけね。</p>
+<p>これが <em>16進数</em> だと、<code>0 1 2 ... 9 a b c d e f</code> までの数字があって、<code>10 11 ... 1a 1b ... 1f 20</code> となっていく。</p>
+<p><code>0x</code> で始まると <em>16進数</em> で、<code>0</code> で始まると <em>8進数</em> で、<code>0b</code> で始まると <em>2進数</em> になる。</p>
+<pre><code class="language-cpp">// 16進数
+0xaf; // =&gt; 175
+0xff762a; // =&gt; 16741930
+
+// 8進数
+051; // =&gt; 41
+0176324; // =&gt; 64724
+
+// 2進数
+0b1001; // =&gt; 9
+0b10001110; // =&gt; 142
+</code></pre>
+<h1><a class="header" href="#long-short-signed-unsigned" id="long-short-signed-unsigned">long short signed unsigned</a></h1>
+<p>長いの短いの付いてないの</p>
+<hr />
+<p>今回も、ちょっとマイナー寄りな感じ。</p>
+<p>型には、指定子というものをつけて型の性質を少し変化させることができるよ。</p>
+<h1><a class="header" href="#サイズを変える指定子" id="サイズを変える指定子">サイズを変える指定子</a></h1>
+<h2><a class="header" href="#long" id="long">long</a></h2>
+<p><code>long</code> は、それなりによく使う指定子。型の扱えるサイズが元のサイズ以上になる。</p>
+<p>だいたいの環境だと、<code>int</code> は <code>±2 の 31 乗 (約21億)</code> まで扱えるんだけれど、<code>long int</code> は <code>±2 の 63 乗 (約922京)</code> まで扱えちゃう。</p>
+<p>前にやった <em>階乗の計算</em> みたいな、<strong>大きい数値の計算だと必須</strong>。</p>
+<p>リテラルの後ろに <code>l</code> か <code>L</code> をつけると、<code>long</code> なリテラルになる。</p>
+<pre><code class="language-cpp">int normal = 21034;
+long int big = 64683521l;
+int long huge = 1029482019312L;
+
+// long だけだと long int とみなされる
+long large = 5l;
+</code></pre>
+<p>あと、<code>double</code> にも <code>long</code> をつけられる。</p>
+<p><code>double</code> は <code>約 ±1.79 × 10 の 308 乗</code> まで扱えるけれど、<code>long double</code> は <code>約 ±1.18 × 10 の 4932 乗</code> まで扱える。すごいけど、環境によっては動かないこともあるので注意。</p>
+<pre><code class="language-cpp">double normal = 1e8;
+long double big = 1e60l;
+double long huge = 1e1200L;
+</code></pre>
+<p><code>long</code> をつけられるのは、<code>int</code> と <code>double</code> だけ。</p>
+<h2><a class="header" href="#short" id="short">short</a></h2>
+<p>これは本当にめったに使わない。型の扱えるサイズが元のサイズ以下になる。</p>
+<p>だいたいの環境だと、<code>-32768</code> ~ <code>32767</code> まで扱える。</p>
+<p><code>short</code> にリテラル用の記法は無い。悲しいね。</p>
+<pre><code class="language-cpp">int normal = 12000;
+short int small = 21;
+int short tiny = 3;
+
+// short だけだと shor int とみなされる
+short bit = 1;
+</code></pre>
+<h2><a class="header" href="#long-long" id="long-long">long long</a></h2>
+<p>頭悪い書き方だけど、<code>long</code> 以上のサイズになる <code>long long</code> もある。これも環境によっては動かない。</p>
+<p>だいたいの環境だと、<code>約 ±9.22 × 10 の 18 乗</code> まで扱える。</p>
+<p>リテラルの後ろに <code>ll</code> か <code>LL</code> をつけると、<code>long</code> なリテラルになる。</p>
+<pre><code class="language-cpp">long long int big = 20000000000LL;
+long int long huge = 20000000000LL;
+int long long scaled = 20000000000LL;
+
+// long long だけだと long long int とみなされる
+long long large = 1;
+</code></pre>
+<h1><a class="header" href="#符号を操作する指定子" id="符号を操作する指定子">符号を操作する指定子</a></h1>
+<h2><a class="header" href="#unsigned" id="unsigned">unsigned</a></h2>
+<p><code>unsigned</code> (日本語で符号なし) は、型が <strong>プラスしか表現できなくなる</strong>。<em>整数型にだけ</em> 付けられる。</p>
+<p>その代わりに、マイナスに使っていたサイズがプラスに使われるので、二倍の数値が扱える。</p>
+<p>……まぁ二倍くらいの差しかないので、なにか別のこと (後の章でやるビット演算とか) くらいにしか使わない。</p>
+<pre><code class="language-cpp">unsigned char a;
+unsigned short b;
+unsigned int c;
+unsigned long d;
+unsigned long long e;
+</code></pre>
+<h2><a class="header" href="#signed" id="signed">signed</a></h2>
+<p><code>signed</code> (日本語で符号あり) は、普通のときと変わらない。指定はしなくてもいい。</p>
+<pre><code class="language-cpp">signed int a;
+</code></pre>
+<p>実は <code>char</code> が <code>signed</code> なのか <code>unsigned</code> なのかは <em>環境によって変わる</em> ので、そのへんを厳密にしたいときには使う。</p>
+<pre><code class="language-cpp">signed char a = 127;
+unsigned char b = 255;
+</code></pre>
+<h1><a class="header" href="#クラスとインスタンス" id="クラスとインスタンス">クラスとインスタンス</a></h1>
+<p>クラスの世界へようこそ</p>
+<hr />
+<p>ここから、<strong>クラス</strong> をどんどんやっていく。当たり前のように使うことになるから覚えよう。</p>
+<p>あ、教室のことじゃないよ。</p>
+<p>言語に最初からあるものじゃなくて、ちょっと特殊な <em>プログラム内で作った型</em>。しかも既にたくさん用意されている。</p>
+<p>今回は <code>string</code> ファイルの <code>std::string</code> クラスを使ってみよう。</p>
+<p>これはテキストを変数に格納して操作できるクラスだよ。</p>
+<p>他にもいろんなクラスはあるけど、まずこれで慣れよう。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+  std::string s;
+
+  std::cout &lt;&lt; s; // まだ何も出ない
+}
+</code></pre>
+<p>うん。変数はいつもどおり。</p>
+<p>この変数 <code>s</code> には、ここで初登場の特殊なものが入る。</p>
+<p>この入ったものをクラスに対して <strong>インスタンス</strong> という。</p>
+<p>インスタンスを変数に入れずに直接作ることもできる。</p>
+<p>その場合は関数呼び出しのように、クラスを使う。</p>
+<pre><code class="language-cpp">std::string(); // インスタンスが作られるが変数には入らない
+std::string text = std::string(); // 変数に初期化
+std::string label; // ↑はなくても同じ
+
+// これは関数の宣言
+std::string question(); // 動くけど変数ではない
+</code></pre>
+<p>クラスは、<strong>インスタンスを作る関数またはその型</strong> だと思って大丈夫。</p>
+<p>インスタンスを作るのにも初期化ができる。</p>
+<p><code>std::string</code> には <em>文字列</em> を渡して初期化できる。</p>
+<p>初期化には 3 種類の構文がある。どれを使うかはお好みで。</p>
+<pre><code class="language-cpp">// 関数風
+std::string morning = std::string(&quot;Good morning!\n&quot;);
+
+// 渡す初期値が一つだけのとき使える
+std::string afternoon = &quot;Good afternoon.\n&quot;;
+
+// 変数風
+std::string evening(&quot;Good evening...\n&quot;);
+
+std::cout &lt;&lt; morning &lt;&lt; afternoon &lt;&lt; evening;
+</code></pre>
+<p>ちなみに、この文法は今までの型にもちゃんと使える。</p>
+<pre><code class="language-cpp">int a = int(2);
+
+int b = 3;
+
+int c(4);
+
+std::cout &lt;&lt; a &lt;&lt; b &lt;&lt; c;
+</code></pre>
+<h1><a class="header" href="#メンバ関数呼び出し" id="メンバ関数呼び出し">メンバ関数呼び出し</a></h1>
+<p>関数が生えてる!?</p>
+<hr />
+<p>いよいよインスタンスの本領発揮タイムだよ。</p>
+<p>インスタンスは、<code>.</code> に続けて、そのクラスのその <strong>インスタンスについてる関数を呼び出せる</strong> よ。</p>
+<p>この関数のことを、そのクラスの <em>メンバ関数</em> っていう。</p>
+<p>試しに <code>std::string</code> クラスだと、こんなメンバ関数を呼び出せる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+  std::string text = &quot;Hello&quot;;
+  std::cout &lt;&lt; text &lt;&lt; &quot;\n&quot;; // Hello
+
+
+  // append、末尾に追加
+  text.append(&quot;, World&quot;);
+  std::cout &lt;&lt; text &lt;&lt; &quot;\n&quot;; // Hello, World
+
+  text += &quot;, World&quot;; // 上と同じ (このクラスの機能)
+  std::cout &lt;&lt; text &lt;&lt; &quot;\n&quot;; // Hello, World, World
+
+  text.append(2, '!'); // 2 個の '!'
+  std::cout &lt;&lt; text &lt;&lt; &quot;\n&quot;; // Hello, World, World!!
+
+
+  // insert、指定位置に挿入
+  // 注意! 位置は 0 から数える
+  text.insert(0, &quot;&gt;&gt; &quot;); // 0 番目に &quot;&gt;&gt; &quot;
+  std::cout &lt;&lt; text &lt;&lt; &quot;\n&quot;; // &gt;&gt; Hello, World, World!!
+
+  text.insert(22, 3, '.'); // 22 番目に 3 個の '.'
+  std::cout &lt;&lt; text &lt;&lt; &quot;\n&quot;; // &gt;&gt; Hello, World, World...!!
+
+
+  // replace、指定範囲を書き換え
+  text.replace(0, 1, &quot;&quot;); // 0 番目から 1 文字を &quot;&quot; に
+  std::cout &lt;&lt; text &lt;&lt; &quot;\n&quot;; // &gt; Hello, World, World...!!
+  
+  text.replace(14, 10, 2, '~'); // 14 番目から 10 文字を 2 個の '~' に
+  std::cout &lt;&lt; text &lt;&lt; &quot;\n&quot;; // &gt; Hello, World~~!!
+
+
+  std::string sub; // 保管用にもう一個
+  // substr、指定範囲をコピー
+  sub = text.substr(2); // 2 番目から最後まで
+  std::cout &lt;&lt; sub &lt;&lt; &quot;\n&quot;; // Hello, World~~!!
+
+  sub = sub.substr(7, 5); // 7 番目から 5 文字まで
+  std::cout &lt;&lt; sub &lt;&lt; &quot;\n&quot;; // World
+}
+</code></pre>
+<p>こいつらを使いこなすだけでも、基本的なテキスト処理ができちゃう。</p>
+<p>この <code>std::string</code> は別に暗記とかしなくてもいいよ。ネットで調べればいくらでも出てくる。</p>
+<p><strong>クラスのインスタンス</strong> から <strong>メンバ関数を呼び出す</strong> 流れだけは忘れないでね。</p>
+<h1><a class="header" href="#参照" id="参照">参照</a></h1>
+<p>オメーだよオメー</p>
+<hr />
+<p>この章で、変数の効率的な扱いができるようになる。</p>
+<h1><a class="header" href="#この章のゴール-6" id="この章のゴール-6">この章のゴール</a></h1>
+<ul>
+<li>const の性質と必要性を習得する</li>
+<li>参照を使いこなしてデータの無駄なコピーを防ぐ</li>
+<li>定数の参照を使用する</li>
+<li>配列を理解する</li>
+<li>文字列の仕様を把握する</li>
+</ul>
+<p>所要時間: 80 ~ 90 分くらい</p>
+<h1><a class="header" href="#const" id="const">const</a></h1>
+<p>そのままの君でいて</p>
+<hr />
+<p>今までの <em>変数</em> は、スコープ内であれば文字通りどこでも値を書き換えることができた。</p>
+<p>できたんだ。</p>
+<p>これはたしかに便利だけど、<em>数の別名</em> として変数を使っていた場合は <em>変更できるとめんどくさいこと</em> になる。</p>
+<pre><code class="language-cpp">double tax = 1.08; // 税率 8% なので 1.08倍
+
+int price = 500;
+price *= tax;
+
+// :
+// :
+
+tax = 1.10; // いつのまにか 10% に
+
+// :
+// :
+
+price = 800;
+price *= tax; // あれ?
+</code></pre>
+<p>変更できることが、逆に混乱を招いたりバグを生むことがある。</p>
+<p>そこで型に <code>const</code> (定まった、constant の略) 修飾子をつけると、<code>const</code> な型になる。変数の型のところに使えば <code>const</code> な変数が作れる。</p>
+<pre><code class="language-cpp">// 前でも後でもいい
+int const a;
+const int b;
+int const c, d; // 同時に 2 つ
+</code></pre>
+<p>この変数を作るときに値を入れることを <em>初期化</em> というのだけれど、この初期化のタイミングでしか値をセットできない。</p>
+<p>そして、変数を作った後は <strong>代入できなくなる</strong>。コンパイラがどこかで <strong>うっかり代入していないかチェックしてくれる</strong> んだ!</p>
+<pre><code class="language-cpp">double const tax = 1.08; // 税率 8% = 1.08倍
+
+int price = 500;
+price *= tax;
+
+// :
+// :
+
+tax = 1.10; // コンパイルできない
+
+// :
+// :
+
+price = 800;
+price *= tax; // 安心して tax が使える
+</code></pre>
+<p><code>const</code> の値を別の変数にコピーすることはできる。</p>
+<pre><code class="language-cpp">const int magical = 4444;
+int temp = magical;
+</code></pre>
+<p>引数にも <code>const</code> 指定はできる。</p>
+<pre><code class="language-cpp">int add(int left, int right) {
+  left += right - right; // (意味はない)
+  return left + right;
+}
+
+int add_const(int const left, int const right) {
+  left += right - right; // NG
+  return left + right;
+}
+</code></pre>
+<p>現時点では役に立たないけど、次の次のページで応用的に使う。</p>
+<h1><a class="header" href="#参照型" id="参照型">参照型</a></h1>
+<p><a href="ref/./ref.html">こちら</a> を参照してください</p>
+<hr />
+<p><code>const</code> に続いて、こっちも型を拡張する機能だよ。</p>
+<p>変数名の前にこのように <code>&amp;</code> をつけ、同じ型の変数で初期化すると、</p>
+<pre><code class="language-cpp">int body = 0;
+int &amp;ref = body;
+</code></pre>
+<p>変数に対して、それを <em>参照する型</em> の変数を作ることができる。</p>
+<p>言い換えると、変数の純粋な別名になって、変数を間接的に変更できる。</p>
+<pre><code class="language-cpp">int body = 0;
+int &amp;ref = body;
+
+ref = 3;
+body; // これも 3 になる
+
+body = 2;
+ref; // これも 2 になる
+</code></pre>
+<p><code>&amp;</code> は変数名の前につける。</p>
+<p>だから、同時に宣言する場合はこうなる。</p>
+<pre><code class="language-cpp">int body = 0, &amp;ref = body;
+// body は int 型で、ref は int&amp; 型になる
+</code></pre>
+<h2><a class="header" href="#参照の伝播" id="参照の伝播">参照の伝播</a></h2>
+<p>参照型変数に入っている参照は、さらに別の参照型変数に渡せる。</p>
+<p>つまり、参照は又貸しできちゃう。</p>
+<pre><code class="language-cpp">int body = 1;
+int &amp;ref = body;
+int &amp;ref_ref = ref;
+</code></pre>
+<h2><a class="header" href="#参照の引数" id="参照の引数">参照の引数</a></h2>
+<p>引数にした場合、関数の外にある変数を直接変更できる。</p>
+<pre><code class="language-cpp">int write_2(int &amp;target) {
+  target = 2;
+}
+
+int main() {
+  int number = 0;
+  write_2(number);
+  numer; // 2
+}
+</code></pre>
+<p>ちなみに、<code>std::cin</code> もこれを利用して変数に書き込んでいる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+  int input;
+  std::cin &gt;&gt; input; // input の参照を渡している
+}
+</code></pre>
+<h1><a class="header" href="#const-の参照" id="const-の参照">const の参照</a></h1>
+<p>( →_→)ｱｸｾｽ!</p>
+<hr />
+<p>今度は <code>const</code> と参照を組み合わせてみよう。</p>
+<pre><code class="language-cpp">int value = 0;
+int const &amp;ref = value;
+
+// いろいろしてみる
+int read = ref; // OK、読み込める
+ref = 2; // NG、書き込めない
+</code></pre>
+<p>このように、<strong><code>const</code> な変数への参照</strong> という扱いになる。</p>
+<p><em>他の変数から値を読み取るだけ</em> の場合に、コピーを防ぐときに使う感じ。</p>
+<pre><code class="language-cpp">#include &lt;string&gt;
+
+std::string add_quote(std::string const&amp; message) {
+  return &quot;「&quot; + message + &quot;」&quot;; // ここでは複製される
+}
+
+std::string add_quote_copy(std::string message) { // ここで複製されて
+  return &quot;「&quot; + message + &quot;」&quot;; // 更にここで複製される
+}
+
+#include &lt;iostream&gt;
+
+int main() {
+  std::string text = &quot;abc&quot;;
+  {
+    std::string quote_text = add_quote(text); // text は複製されない
+    std::cout &lt;&lt; quote_text &lt;&lt; &quot;\n&quot;;
+  }
+  {
+    std::string quote_text = add_quote_copy(text); // text は複製される
+    std::cout &lt;&lt; quote_text &lt;&lt; &quot;\n&quot;;
+  }
+}
+</code></pre>
+<p>この例は一回しかコピーが起こらないので大した違いはないけど、</p>
+<p>大量のデータを扱い始めると問題が顕現してくる。</p>
+<p>ただし、<code>int</code> みたいな小さいサイズのを <code>const&amp;</code> で渡してもあんまり美味しくない。</p>
+<ul>
+<li>参照型のサイズ (大抵 <code>unsigned long</code> と同じ) より大きいサイズのもの</li>
+<li>複製する必要がないのにコピーすると遅いもの</li>
+</ul>
+<p>とかにはよく効く。</p>
+<h1><a class="header" href="#配列型" id="配列型">配列型</a></h1>
+<p>一列に並べ〜!</p>
+<hr />
+<p>今までの型だと、一つの値を一つづつ丁寧に扱うことしかできなかった。</p>
+<p>ここでは、扱う数が決まっている、それなりの量のデータを格納するときの型について書くよ。</p>
+<p><strong>配列型</strong> は、データを格納する <strong>要素</strong> を指定した数だけ持つ。</p>
+<p>文法はこう。</p>
+<blockquote>
+<p><em>格納する型</em> <em>名前</em> [ <em>要素数</em> ]</p>
+</blockquote>
+<pre><code class="language-cpp">int array[10]; // int が 10 個分
+</code></pre>
+<h2><a class="header" href="#初期化-1" id="初期化-1">初期化</a></h2>
+<p>この型で初期化するときには、<strong>リスト初期化</strong> が使える。</p>
+<p>これは以下のように、<code>{</code> から <code>}</code> の間に、<code>,</code> で区切って値を入れたものを初期値にする書き方だよ。</p>
+<h3><a class="header" href="#要素数を指定して同じ長さのリストを用意する場合" id="要素数を指定して同じ長さのリストを用意する場合">要素数を指定して、同じ長さのリストを用意する場合</a></h3>
+<p>その長さぴったりの配列型の変数が作られる。</p>
+<pre><code class="language-cpp">int nums[5] = {0, 2, 4, 8, 1};
+</code></pre>
+<p><code>nums</code> はこんな感じになる。</p>
+<table><thead><tr><th>位置</th><th>値</th></tr></thead><tbody>
+<tr><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>2</td></tr>
+<tr><td>2</td><td>4</td></tr>
+<tr><td>3</td><td>8</td></tr>
+<tr><td>4</td><td>1</td></tr>
+</tbody></table>
+<p><strong>インデックス</strong> (位置を表す数字) は <code>0</code> から始まる。これ大事。</p>
+<h3><a class="header" href="#要素数を指定しない場合" id="要素数を指定しない場合">要素数を指定しない場合</a></h3>
+<p>リスト側と同じ要素数になる。</p>
+<pre><code class="language-cpp">int nums[] = {0, 4, 5};
+//       ↑ に 3 を入れたのと同じ
+</code></pre>
+<h3><a class="header" href="#要素数よりリストの数が少ない場合" id="要素数よりリストの数が少ない場合">要素数より、リストの数が少ない場合</a></h3>
+<p>リスト側で足りない部分には、<code>0</code> に相当するものが入る。</p>
+<pre><code class="language-cpp">int buffer[15] = {}; // 残りすべては 0
+double vertexes[20] = {1.0, 1.0, 1.0}; // 残りは 0.0
+</code></pre>
+<h2><a class="header" href="#要素にアクセス" id="要素にアクセス">要素にアクセス</a></h2>
+<p>作った配列は、ちゃんとその中身を触ることができる。</p>
+<p>配列に格納されている値のことを <strong>要素</strong> っていうよ。</p>
+<p>要素にアクセスするときは、<code>[</code> と <code>]</code> の間に <strong>インデックス</strong> を入れる。</p>
+<pre><code class="language-cpp">int nums[5] = {1, 4, 5, 7};
+
+nums[0]; // 1
+nums[3]; // 5
+
+nums[2] = 2;
+nums[4] = 8;
+</code></pre>
+<p>変数も入れられるので、こういうこともできる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+  int nums[5] = {1, 4, 5, 7};
+  for (int i = 0; i &lt; 5; ++i) { // i は 0 から 4 へ
+    int const &amp;nums_i = nums[i]; // i 番目の nums
+    std::cout &lt;&lt; &quot;nums[&quot; &lt;&lt; i &lt;&lt; &quot;] ~~~ &quot; &lt;&lt; nums_i &lt;&lt; &quot;\n&quot;;
+  }
+}
+</code></pre>
+<p>まぁこれからこの配列型を使う機会はほとんどない。</p>
+<p>けれど、<strong>複数の値を格納したり取り出したりする感覚</strong> を少しつかんでもらえたらいいな。</p>
+<p>ちなみに、ここでやった <strong>リスト初期化</strong> は今までの型にも使える。</p>
+<pre><code class="language-cpp">int a = {}; // 0 と同じ
+double b = {2.0};
+</code></pre>
+<h1><a class="header" href="#文字列-1" id="文字列-1">文字列</a></h1>
+<p>ちなみに string は日本語で糸なんだけど、いまいちイメージに合わないので文字列と訳す</p>
+<hr />
+<p>何気なく使っていた <code>&quot;これ&quot;</code> だけど、もう少し解説しておく。</p>
+<p>この文字列 (C++ では C文字列 ともいわれる) は、連続した <code>char</code> の塊。</p>
+<p><strong>ヌル文字</strong> という文字 (<code>'\0'</code>) があならず最後に来る。</p>
+<pre><code class="language-cpp">char text[] = { 'B', 'E', 'A', '\0' };
+</code></pre>
+<p>↑ と ↓ は同じ!</p>
+<pre><code class="language-cpp">char text[] = &quot;BEA&quot;; // こう見えて 4 要素ある
+</code></pre>
+<p>配列と違ってヌル文字が必ずあるので、長さに依存しない、こんなループ処理が書ける。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+  char text[] = &quot;BEA&quot;;
+  for (int i = 0; text[i] != '\0'; ++i) {
+    ++text[i]; // 文字が一つ次に進む
+  }
+  std::cout &lt;&lt; text; // CFB
+}
+</code></pre>
+<p>ただ、文字列だと文字を足したりくっつけたりとかはできない。</p>
+<p>同じことは <code>std::string</code> でもできる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+  std::string text = &quot;BEA&quot;;
+  for (int i = 0; i &lt; text.size(); ++i) {
+    ++text.at(i); // at メンバ関数で要素にアクセス
+  }
+  std::cout &lt;&lt; text; // CFB
+}
+</code></pre>
+<p>あんまり文字列を使うメリットはないので、変更したりするときは絶対に <code>std::string</code> を使おうね。</p>
+<h1><a class="header" href="#範囲for文" id="範囲for文">範囲for文</a></h1>
+<p>もっと楽に回る</p>
+<hr />
+<p>ここで、非常に便利な制御文を紹介するよ。</p>
+<p>C++ やるなら、これが使えるとすごく楽になるからね。</p>
+<h2><a class="header" href="#文法" id="文法">文法</a></h2>
+<p><strong>範囲 for 文</strong> は、データに対する繰り返しが楽にかける <code>for</code> だよ。</p>
+<blockquote>
+<p>for ( <em>変数</em> : <em>反復するもの</em> ) <em>繰り返す文</em></p>
+</blockquote>
+<p>これは、</p>
+<ol>
+<li><em>反復するもの</em> から値を一つづつ取り出して変数の中に入れる。</li>
+<li><em>繰り返す文</em> を実行する。↑ の変数が使える。</li>
+</ol>
+<p>というもの。</p>
+<h2><a class="header" href="#実例-1" id="実例-1">実例</a></h2>
+<p>実際に使うとこんな感じ。</p>
+<p>まず、配列に使える。</p>
+<pre><code class="language-cpp">int nums[] = {4, 2, 3};
+
+for (int element : nums) { // コピーで取り出して、
+  std::cout &lt;&lt; element &lt;&lt; &quot; &quot;; // 一つづつ出力
+}
+
+for (int &amp;element : nums) { // 参照で取り出して、
+  --element; // 一つ減らす
+}
+
+// もう一度出力
+for (int element : nums) {
+  std::cout &lt;&lt; element &lt;&lt; &quot; &quot;;
+}
+</code></pre>
+<p><code>std::string</code> にも (クラス側が対応しているから) 使える。</p>
+<pre><code class="language-cpp">std::string text(&quot;Hello&quot;);
+
+for (char part : text) { // コピーで取り出しても、
+  ++part; // 変更は反映されない
+}
+
+std::cout &lt;&lt; text &lt;&lt; &quot;\n&quot;;
+
+for (char &amp;part : text) { // 参照で取り出すことで、
+  ++part; // 変更できる
+}
+
+std::cout &lt;&lt; text &lt;&lt; &quot;\n&quot;;
+</code></pre>
+<p>これもしっかり練習して使いこなせるようになっておこう。</p>
+<h1><a class="header" href="#標準ライブラリ-初級編" id="標準ライブラリ-初級編">標準ライブラリ 初級編</a></h1>
+<p>値を詰め込め!</p>
+<hr />
+<p>この章で、C++ ならではの便利ないろはができるようになる。</p>
+<h1><a class="header" href="#この章のゴール-7" id="この章のゴール-7">この章のゴール</a></h1>
+<ul>
+<li>名前空間とその意義を理解する</li>
+<li>数学的な関数たちを大体知っておく</li>
+<li>テンプレートクラスの使い方を把握する</li>
+<li>コンテナを使って任意長のデータを扱う</li>
+<li>初等的なイテレータでコンテナにアクセスする</li>
+</ul>
+<p>所要時間: 80 ~ 90 分くらい</p>
+<h1><a class="header" href="#名前空間とusing" id="名前空間とusing">名前空間とusing</a></h1>
+<p>:: をぶっ壊す!</p>
+<hr />
+<p>もう気づいていると思うけれど、</p>
+<p>今まで使ってきた標準ライブラリのものを見てみると、</p>
+<p><code>std::cout</code> とか <code>std::string</code> みたいに <code>std::</code> が付いてる。</p>
+<p>これは、<code>std</code> という <strong>名前空間</strong> に入っているから付けなくちゃいけない。</p>
+<p><code>名前空間::名前</code> というふうに名前を使うようになっている。</p>
+<p>自分が作った変数や関数と名前が被ってもいいようにしているんだ。</p>
+<p>ここでは、名前空間の作り方は教えないよ。</p>
+<p>その代わりに、何回も <code>std::</code> って書かなくていいようにする方法を紹介するね。</p>
+<h2><a class="header" href="#using-宣言" id="using-宣言">using 宣言</a></h2>
+<p><code>using 名前空間::名前;</code> と書くと、それ以降で <strong>その名前を使うときは <code>名前空間::</code> を省略できる</strong> ようになる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+// ちなみに、iostream ファイルの中で #include &lt;string&gt; されている
+
+int main() {
+  std::cout &lt;&lt; &quot;Hi!\n&quot;;
+  using std::cout;
+  cout &lt;&lt; &quot;Shorter.\n&quot;;
+
+  std::string text(&quot;Longer.&quot;);
+  using std::string;
+  cout &lt;&lt; string(&quot;Short!&quot;);
+}
+</code></pre>
+<h2><a class="header" href="#using-ディレクティブ" id="using-ディレクティブ">using ディレクティブ</a></h2>
+<p><code>using namespace 名前空間;</code> と書くと、それ以降 <strong>すべてで <code>名前空間::</code> を省略できる</strong> ようになる。</p>
+<p>ただ、予期しない名前被りを起こしやすいので使い所には注意。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+  std::cout &lt;&lt; &quot;Hi!\n&quot;;
+  using namespace std;
+  cout &lt;&lt; &quot;Shorter.\n&quot;;
+
+  std::string text(&quot;Longer.&quot;);
+
+  cout &lt;&lt; string(&quot;Short!&quot;);
+}
+</code></pre>
+<p>こっちより using 宣言を使うべきだけど、競技プログラミングとかで少ないタイプにしたいなら使ってもいいよ。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+  using namespace std;
+  cout.tie(nullptr);
+}
+</code></pre>
+<h1><a class="header" href="#数学的な関数" id="数学的な関数">数学的な関数</a></h1>
+<p>y = (√sin x)^3</p>
+<hr />
+<p>ここでは、C++ 標準ライブラリに入ってる数学的な関数を解説するよ。</p>
+<p>理論的な処理をするときは、それなりの頻度で使う。</p>
+<h1><a class="header" href="#cmath" id="cmath">cmath</a></h1>
+<p>C++ では、<code>double</code> (とその他の型) で計算する数学の関数が用意されている。</p>
+<p>それらを使うには、<code>cmath</code> ファイルを <code>#include</code> する必要があるよ。</p>
+<pre><code class="language-cpp">#include &lt;cmath&gt;
+</code></pre>
+<p>以下のコードを動かすときは ↑ を忘れないでね。</p>
+<h2><a class="header" href="#pow" id="pow">pow</a></h2>
+<p><code>std::pow(x, y)</code> のときに <code>x の y 乗</code> を計算する。英語で power (~乗) の略。</p>
+<pre><code class="language-cpp">std::cout &lt;&lt; &quot;2 ^ 3 = &quot; &lt;&lt; std::pow(2, 3)
+  &lt;&lt; &quot;\n8 ^ 1.2 = &quot; &lt;&lt; std::pow(8, 1.2)
+  &lt;&lt; &quot;\n4 ^ 0.5 = &quot; &lt;&lt; std::pow(4, 0.5);
+</code></pre>
+<h2><a class="header" href="#sqrt" id="sqrt">sqrt</a></h2>
+<p>引数の平方根 (英語で Square-root を略して sqrt) を計算する。</p>
+<pre><code class="language-cpp">std::cout &lt;&lt; &quot;√9 = &quot; &lt;&lt; std::sqrt(9)
+  &lt;&lt; &quot;\n√8 = &quot; &lt;&lt; std::sqrt(8)
+  &lt;&lt; &quot;\n√-1 = &quot; &lt;&lt; std::sqrt(-1);
+  // sqrt(-1) は Not A Number エラーになる
+</code></pre>
+<h2><a class="header" href="#round--ceil--floor--trunc" id="round--ceil--floor--trunc">round / ceil / floor / trunc</a></h2>
+<p>小数を整数にする関数 4 つをまとめて紹介。</p>
+<p><code>round</code> (日本語で丸める) は四捨五入を計算する。負の数でも 0 から遠い方向に丸める。</p>
+<pre><code class="language-cpp">using std::round;
+round(2.0); // 2
+round(2.1); // 2
+round(2.5); // 3
+round(2.9); // 3
+round(-2.0); // -2
+round(-2.1); // -2
+round(-2.5); // -3
+round(-2.9); // -3
+</code></pre>
+<p><code>ceil</code> (日本語で天井) は天井関数。その数以上の整数にする。</p>
+<pre><code class="language-cpp">using std::ceil;
+ceil(2.0); // 2
+ceil(2.1); // 3
+ceil(2.5); // 3
+ceil(2.9); // 3
+ceil(-2.0); // -2
+ceil(-2.1); // -2
+ceil(-2.5); // -2
+ceil(-2.9); // -2
+</code></pre>
+<p><code>floor</code> (日本語で床) は床関数。その数以下の整数にする。</p>
+<pre><code class="language-cpp">using std::floor;
+floor(2.0); // 2
+floor(2.1); // 2
+floor(2.5); // 2
+floor(2.9); // 2
+floor(-2.0); // -2
+floor(-2.1); // -3
+floor(-2.5); // -3
+floor(-2.9); // -3
+</code></pre>
+<p><code>trunc</code> (truncate は日本語で切り捨て) は切り捨て関数。小数点以下を消す。</p>
+<pre><code class="language-cpp">using std::floor;
+floor(2.0); // 2
+floor(2.1); // 2
+floor(2.5); // 2
+floor(2.9); // 2
+floor(-2.0); // -2
+floor(-2.1); // -2
+floor(-2.5); // -2
+floor(-2.9); // -2
+</code></pre>
+<p>全部覚えなくてもいいけど、小数に 4 種類の丸め方があることを知ってたら幸せになれるかも。</p>
+<h2><a class="header" href="#sin--cos--tan" id="sin--cos--tan">sin / cos / tan</a></h2>
+<p>みんな大好き三角関数。引数の単位はラジアンだから注意。</p>
+<pre><code class="language-cpp">std::sin(3.14); // だいたい 0
+std::sin(1.57); // だいたい 1
+
+std::cos(3.14); // だいたい -1
+std::cos(1.57); // だいたい 0
+
+std::tan(3.14); // だいたい 0
+std::tan(1.57); // だいたい inf
+</code></pre>
+<p>他にもいろんな関数がある。日本語のサイトだと <a href="https://cpprefjp.github.io/reference/cmath.html#trigonometric-functions">ここ</a> とか見るといいかも。</p>
+<h1><a class="header" href="#numeric" id="numeric">numeric</a></h1>
+<p><code>int</code> のような整数について計算する関数もあるけれど、これらは <code>numeric</code> にある。</p>
+<pre><code class="language-cpp">#include &lt;numeric&gt;
+</code></pre>
+<p>以下のコードを動かすときは ↑ を忘れないでね。</p>
+<h2><a class="header" href="#gcd" id="gcd">gcd</a></h2>
+<p><code>gcd</code> (Greatest Common Divisor の略) は最大公約数を計算する。</p>
+<pre><code class="language-cpp">using std::gcd;
+gcd(2, 3); // 1
+gcd(6, 12); // 6
+gcd(36, 48); // 12
+</code></pre>
+<h2><a class="header" href="#lcm" id="lcm">lcm</a></h2>
+<p><code>lcm</code> (Least Common Multiple の略) は最小公倍数を計算する。</p>
+<pre><code class="language-cpp">using std::lcm;
+lcm(2, 3); // 6
+lcm(6, 12); // 12
+lcm(36, 48); // 144
+</code></pre>
+<h1><a class="header" href="#コンテナ" id="コンテナ">コンテナ</a></h1>
+<p>みんなコンテナは持ったな!!</p>
+<hr />
+<p>今までの入力では、繰り返したとしても一つずつしか扱えなかった。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+double add(double a, double b) {
+  return a + b;
+}
+
+void ask_sum() {
+  using std::cin;
+  using std::cout;
+
+  cout &lt;&lt; &quot;合計を出力するべ。\n&quot;
+    &lt;&lt; &quot;値をスペースとかで区切って 2 つ入力してくれ。\n&quot;;
+  double first = 0, second = 0;
+  cin &gt;&gt; first &gt;&gt; second;
+
+  // 入力エラー処理テンプレ
+  while (cin.fail()) {
+    cin.clear();
+    cin.ignore();
+    cout &lt;&lt; &quot;なんかおかしいべ。もう一度入力してけろ。\n&quot;;
+    cin &gt;&gt; first &gt;&gt; second;
+  }
+
+  cout &lt;&lt; &quot;合計 = &quot; &lt;&lt; add(first, second) &lt;&lt; &quot;\n&quot;;
+}
+
+int main() {
+  while (true) {
+    ask_sum();
+
+    std::cout &lt;&lt; &quot;もうやめるかい? [y で終了]&quot;;
+    char command;
+    std::cin &gt;&gt; command;
+    if (command == 'y' || command == 'Y') {
+      break;
+    }
+  }
+}
+</code></pre>
+<p>これだと、大量のデータを集計して平均を求めたりとかができない。</p>
+<p>そこで、そういうのを扱う <strong>コンテナクラス</strong> を使う。</p>
+<p><strong>コンテナ</strong> っていうのは、いくらでも値を詰め込めるクラスのこと。</p>
+<p><code>std::string</code> もコンテナの一種といえるよ。</p>
+<p>よく使う <code>std::vector</code> から見ていこう。</p>
+<h2><a class="header" href="#stdvector" id="stdvector">std::vector</a></h2>
+<p>同じ型のデータを大量に格納するクラス。サイズを増やせる配列みたいな感じ。</p>
+<p>使うには、<code>#include &lt;vector&gt;</code> が必要。</p>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+
+int main() {
+  std::vector&lt;int&gt; data;
+}
+</code></pre>
+<p>これは <em>テンプレート</em> といって、使う側から型や値を <em>テンプレート引数</em> として渡せる仕組み。</p>
+<blockquote>
+<p><em>テンプレート名</em>  &lt; <em>テンプレート引数</em>, ... &gt;</p>
+</blockquote>
+<p>ここでは格納する型を渡すと、その型が格納できるクラスになる。</p>
+<p>つまり、</p>
+<ul>
+<li><code>std::vector&lt;int&gt;</code> は <code>int</code> が格納できるクラス</li>
+<li><code>std::vector&lt;double&gt;</code> は <code>double</code> が格納できるクラス</li>
+</ul>
+<p>ってこと。</p>
+<h3><a class="header" href="#末尾へ追加" id="末尾へ追加">末尾へ追加</a></h3>
+<p><code>push_back</code> メンバ関数は、リストの後ろに値を一つ追加する。<code>std::vector</code> が最も得意な操作。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data;
+
+data.push_back(4);
+data.push_back(3);
+data.push_back(1);
+data.push_back(0);
+data.push_back(5);
+</code></pre>
+<h3><a class="header" href="#初期化-2" id="初期化-2">初期化</a></h3>
+<p>このクラスの初期化は二種類ある。</p>
+<h4><a class="header" href="#サイズ指定" id="サイズ指定">サイズ指定</a></h4>
+<p>予め必要なサイズとその中を埋める値を指定するやり方。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; stat(20); // 20 個の 0 (正確には int{})
+std::vector&lt;double&gt; data(15, 5.0); // 15 個の 5.0
+</code></pre>
+<p>すべて同じ値にすることしかできないので、<code>0, 1, 2, 3, ...</code> みたくするときはループで要素を追加していく必要がある。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; nums;
+
+for (int i = 0; i &lt; 20; ++i) {
+  nums.push_back(i);
+}
+</code></pre>
+<p>※イテレータを学ぶともっと楽できるけれど、それはまた別のお話。</p>
+<h4><a class="header" href="#リスト" id="リスト">リスト</a></h4>
+<p>中に格納するデータをそのまま書く。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; stat = {2, 4, 0, 3};
+std::vector&lt;double&gt; data = {1.0};
+</code></pre>
+<h3><a class="header" href="#取得" id="取得">取得</a></h3>
+<p>丹精込めて詰め込んだ値を取り出そう。</p>
+<h4><a class="header" href="#サイズ" id="サイズ">サイズ</a></h4>
+<p><code>size</code> メンバ関数で詰め込んだ値の数を取得できる。</p>
+<pre><code class="language-cpp">// 何も入れていないと 0
+std::vector&lt;int&gt;().size(); // 0
+
+std::vector&lt;int&gt; data(4);
+data.size(); // 4
+</code></pre>
+<h4><a class="header" href="#要素" id="要素">要素</a></h4>
+<p><code>at</code> メンバ関数で要素の参照を取得できる。</p>
+<p>配列と同じで最初の要素は <code>0</code> 番目。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data = {4, 3, 1, 0, 5};
+
+data.at(1); // 3
+
+data.at(4) = 2; // 変更もできる
+
+// 存在しない要素。エラーで止まる
+data.at(6);
+data.at(-1) = 5;
+</code></pre>
+<p>配列と同じように <code>[]</code> でアクセスすることもできる。</p>
+<p>こちらは、存在しない要素を指定してもエラーにはならない。</p>
+<p>でも、そこに書き込もうとするとシステムがプログラムを止めることがある。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data = {4, 3, 1, 0, 5};
+
+data[1]; // 3
+
+data[4] = 2; // 変更もできる
+
+// 存在しない要素
+data.at[6]; // 値は不定
+data.at[-1] = 5; // 強制終了するかも
+</code></pre>
+<p><code>at</code> は安全だから、<code>[]</code> を使うのは実行速度が必要なときだけにしてね。</p>
+<h4><a class="header" href="#末尾要素" id="末尾要素">末尾要素</a></h4>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data = {2, 4, 5};
+</code></pre>
+<p>↑ の最後の要素にアクセスするときは、</p>
+<pre><code class="language-cpp">data.at(data.size() - 1);
+</code></pre>
+<p>なんてしなくても、</p>
+<pre><code class="language-cpp">data.back();
+</code></pre>
+<p>でできる。</p>
+<h3><a class="header" href="#末尾から削除" id="末尾から削除">末尾から削除</a></h3>
+<p><code>pop_back</code> で、リストの後ろから値を一つ削除する。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data = {4, 6, 8};
+
+data.pop_back();
+</code></pre>
+<h2><a class="header" href="#stdmap" id="stdmap">std::map</a></h2>
+<p><code>std::map</code> を使うには、<code>#include &lt;map&gt;</code> が必要。</p>
+<p>これは、値と、それを表すキー値、二つのセットをたくさん格納するクラス。</p>
+<p>キーの値を渡せば値が取得できるってしくみ。</p>
+<p>その性質上、キーが重複するような格納はできない。</p>
+<p>ちなみに、よく連想配列とか辞書配列とか言われる。</p>
+<pre><code class="language-cpp">std::map&lt;std::string, int&gt; score;
+</code></pre>
+<p>1 つ目のテンプレート引数が <em>キーの型</em> で、2 つ目のテンプレート引数が <em>対応する値の型</em>。</p>
+<p>↑ の型は、<code>std::string</code> をキーとして <code>int</code> を格納するクラス。</p>
+<h3><a class="header" href="#初期化-3" id="初期化-3">初期化</a></h3>
+<p>このクラスにはリスト初期化しかない。</p>
+<pre><code class="language-cpp">std::map&lt;int, int&gt; integer = { // 初期化リストの中に
+  {0, 1}, // 初期化リストたち
+  {1, 2},
+  {2, 3}
+};
+
+std::map&lt;std::string, int&gt; score = {
+  {&quot;Ange&quot;, 510},
+  {&quot;Lize&quot;, 480},
+  {&quot;Toko&quot;, 540}
+};
+</code></pre>
+<h3><a class="header" href="#取得-1" id="取得-1">取得</a></h3>
+<p>要素の取得には二通りの方法があって、それぞれ性質が異なる。</p>
+<h4><a class="header" href="#サイズ-1" id="サイズ-1">サイズ</a></h4>
+<p>こっちも、格納している要素の数は <code>size</code> で取得できる。</p>
+<pre><code class="language-cpp">std::map&lt;int, int&gt; data = {
+  {0, 1},
+  {1, 2},
+  {2, 3}
+};
+
+data.size(); // 3
+</code></pre>
+<h4><a class="header" href="#" id="">[]</a></h4>
+<p>配列のように <code>[ キー ]</code> で取得できる。</p>
+<p>まだそのキーの値がないときは、<code>値の型{}</code> (0 に相当するもの) が入る。</p>
+<pre><code class="language-cpp">std::map&lt;int, int&gt; matrix = {{1, 2}};
+
+matrix[1]; // 2
+
+matrix[3]; // 無いので追加。0
+
+matrix[-1] = 4; // 無いので追加。そして代入
+
+
+std::map&lt;std::string, std::string&gt; word;
+
+word[&quot;Hello&quot;]; // 無いので追加。std::string{} が入る
+
+word[&quot;Good morning&quot;] = &quot;こんばんは&quot;; // 文字列が std::string になって入る
+</code></pre>
+<p>こんな感じで、要素の挿入もこれでできちゃう。</p>
+<h4><a class="header" href="#at" id="at">at</a></h4>
+<p><code>at</code> も取得するメンバ関数。</p>
+<p><code>std::vector</code> のように、存在しないときはエラーで止まる。</p>
+<pre><code class="language-cpp">std::map&lt;char, int&gt; hex = {
+  {'A', 10},
+  {'B', 11}
+};
+
+hex.at('A'); // 10
+hex.at('C'); // エラーで止まる
+</code></pre>
+<h3><a class="header" href="#要素の確認" id="要素の確認">要素の確認</a></h3>
+<p><code>contains</code> は指定のキーが格納されているかどうかを <code>bool</code> で返す。</p>
+<pre><code class="language-cpp">std::map&lt;char, int&gt; hex = {
+  {'D', 13}
+};
+
+bool has_a = hex.contains('A');
+bool has_d = hex.contains('D');
+</code></pre>
+<p>要素があるときだけその要素を取得したいときは、上の <code>at</code> と組み合わせる。</p>
+<pre><code class="language-cpp">std::map&lt;char, int&gt; hex = {
+  {'D', 13}
+};
+
+bool has_a = hex.contains('A');
+if (has_a) {
+  int &amp;a = hex.at('A');
+
+}
+
+bool has_d = hex.contains('D');
+if (has_d) {
+  int &amp;d = hex.at('D');
+
+}
+</code></pre>
+<h3><a class="header" href="#削除" id="削除">削除</a></h3>
+<p><code>erase</code> で指定したキーの要素を削除する。</p>
+<pre><code class="language-cpp">std::map&lt;std::string, long&gt; record = {
+  {&quot;0d5e3&quot;, 4000},
+  {&quot;4ghd7&quot;, 8002},
+  {&quot;5hf71&quot;, 12032},
+};
+
+record.erase(&quot;0d5e3&quot;);
+</code></pre>
+<hr />
+<p>他にもいろんなコンテナクラスやそのメンバ関数がある。</p>
+<p>けど、その前に次のページで <strong>イテレータ</strong> について軽く触れておこう。</p>
+<p>余談だけれど、<code>std::vector&lt;bool&gt;</code> の <code>at</code> メンバ関数は、他の型と違って要素への参照を返さない。代わりに独自の型を返すので注意。一応 <code>bool</code> 型の変数に受け取ったり、代入演算子で変更はできる。</p>
+<h1><a class="header" href="#かんたんイテレータ" id="かんたんイテレータ">かんたんイテレータ</a></h1>
+<p>くるくるまわーる</p>
+<hr />
+<p><strong>イテレータ</strong> (iterator、反復子) は、コンテナの要素にアクセスするための、<em>コンテナクラス付属のクラス</em>。</p>
+<p>コンテナクラスに対して、その要素を見る窓のようなクラスだよ。</p>
+<p>このインスタンスに演算子を使うことで、</p>
+<ul>
+<li>要素の参照を取得する (<code>*</code> 単項演算子)</li>
+<li>次の要素に移動する (<code>++</code> / <code>+</code> 演算子)</li>
+<li>前の要素に移動する (<code>--</code> / <code>-</code> 演算子)</li>
+</ul>
+<p>などなどといったことができる。</p>
+<p>とりあえず、実際にコンテナクラスのイテレータに触れていこう。</p>
+<h2><a class="header" href="#stdvectoriterator" id="stdvectoriterator">std::vector::iterator</a></h2>
+<p><code>std::vector</code> のイテレータクラスは <code>std::vector::iterator</code>。</p>
+<p>最初の要素のイテレータは <code>begin</code>、末尾の更に後ろの存在しない要素は <code>end</code> で取得できる。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data = {1, 4, 5, 2};
+
+std::vector&lt;int&gt;::iterator head = data.begin();
+
+*head; // 1
+++head;
+*head; // 4
+*head = 3;
+
+std::vector&lt;int&gt;::iterator tail = data.end();
+
+*tail; // これは末尾の次の要素なので不定
+--tail;
+*tail; // 2
+--tail;
+--tail;
+*tail; // 3
+</code></pre>
+<p>いくつかのメンバ関数は、引数にイテレータを取る。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data = {4, 2, 2, 3};
+
+// insert は イテレータ の位置以降を後ろにずらして、そこに 値 を入れる
+data.insert(data.begin() + 1, 5); // 1 番目に 5 を挿入
+
+data; // {4, 5, 2, 2, 3}
+
+// erase は イテレータ の指す要素を削除して、それ以降を前に詰める
+data.erase(data.begin() + 2); // 2 番目を削除
+
+data; // {4, 5, 2, 3}
+
+// erase は イテレータの範囲 (以上, 未満) を削除するものもある
+data.erase(data.begin() + 2, data.begin() + 4); // 2 番目以上 4 番目未満を削除
+
+data; // {4, 5}
+</code></pre>
+<h2><a class="header" href="#stdmapiterator" id="stdmapiterator">std::map::iterator</a></h2>
+<p><code>std::map</code> のイテレータクラスは <code>std::map::iterator</code>。</p>
+<p>最初の要素のイテレータは <code>begin</code>、末尾の更に後ろの存在しない要素は <code>end</code> で取得できる。</p>
+<p>イテレータでアクセスする要素の順番は、<em>昇順</em> (小さい数から大きい数、文字列とかは辞書順) になっている。</p>
+<p>なお、イテレータでアクセスした要素は、キーと値がセットになった <code>std::pair</code> クラスになっている。</p>
+<p>このクラスからは、<code>first</code> / <code>second</code> メンバ変数でそれぞれ <em>キー</em> / <em>値</em> を取得できる。</p>
+<pre><code class="language-cpp">std::map&lt;int, int&gt; data = {
+  {1, 4},
+  {5, 2}
+};
+
+std::map&lt;int, int&gt;::iterator head = data.begin();
+
+*head; // {1, 4}
+++head;
+*head; // {5, 2}
+(*head).second = 3;
+
+std::map&lt;int, int&gt;::iterator tail = data.end();
+
+*tail; // これは末尾の次の要素なので不定
+--tail;
+*tail; // {5, 3}
+--tail;
+(*tail).first; // 1
+</code></pre>
+<p>イテレータを引数に取ったり、戻り値として返したりするメンバ関数はあるけれど、特に有用というわけでもないので紹介しないよ。</p>
+<h2><a class="header" href="#イテレータと範囲-for" id="イテレータと範囲-for">イテレータと範囲 for</a></h2>
+<p>さて、久しぶりの <em>範囲 <code>for</code> 文</em> だよ。</p>
+<p>実は、範囲 <code>for</code> 文はイテレータがあるものなら何でも使えるよ。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data = {1, 5, 2, 3, 4};
+for (int element : data) {
+  std::cout &lt;&lt; element &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<pre><code class="language-cpp">std::cout &lt;&lt; &quot;値を何個入れるの? : &quot;;
+int input_n = 0;
+std::cin &gt;&gt; input_n;
+
+// input_n 個の入力を受付る
+std::vector&lt;double&gt; input(input_n);
+for (int &amp;element : input) {
+  std::cin &gt;&gt; element;
+}
+</code></pre>
+<pre><code class="language-cpp">std::map&lt;std::string, int&gt; score = {
+  {&quot;Ange&quot;, 510},
+  {&quot;Lize&quot;, 480},
+  {&quot;Toko&quot;, 540}
+};
+
+std::cout &lt;&lt; &quot;--- Score ---\n&quot;;
+for (std::pair&lt;std::string, int&gt; element : score) {
+  std::cout &lt;&lt; element.first &lt;&lt; &quot;: &quot;
+    &lt;&lt; element.second &lt;&lt; &quot; Pt.\n&quot;;
+}
+</code></pre>
+<p>イテレータの大事さがわかったかな?</p>
+<p>ちなみに、配列にイテレータがあるわけじゃないけど、特別に同じように扱えるようになっているよ。</p>
+<h1><a class="header" href="#多重コンテナ" id="多重コンテナ">多重コンテナ</a></h1>
+<p>コンテナを開けると、そこはコンテナだった</p>
+<hr />
+<p>ここでは、<code>vector</code> の中に <code>vector</code> を入れるのをやっていくよ。</p>
+<pre><code class="language-cpp">std::vector&lt;std::vector&lt;int&gt;&gt;
+</code></pre>
+<p>このクラスを初期化するときは、こうなるよ。</p>
+<pre><code class="language-cpp">std::vector&lt;std::vector&lt;int&gt;&gt; matrix(2, // 2 個の ↓
+  std::vector&lt;int&gt;(2, 1) // 2 個の 1
+);
+</code></pre>
+<p>アクセスするときも、<code>at</code> が 2 個出てくる。</p>
+<pre><code class="language-cpp">std::vector&lt;std::vector&lt;int&gt;&gt; matrix(2,
+  std::vector&lt;int&gt;(2, 1)
+);
+
+matrix.at(0).at(0); // 1
+matrix.at(1).back(); // 1
+matrix.back().back(); // 1
+</code></pre>
+<p>こういうのを <em>多重</em>、もしくは <strong>多次元</strong> なコンテナっていう。</p>
+<h2><a class="header" href="#使い所" id="使い所">使い所</a></h2>
+<p>多次元のコンテナは、小難しい問題を速く解くプログラムを作るときに重宝する。</p>
+<p>ここではその例題をいくつか示してくよ。</p>
+<h3><a class="header" href="#動的計画法" id="動的計画法">動的計画法</a></h3>
+<p><strong>動的計画法</strong> (DP、Dyanic Programming) は、いくつかの組み合わせに関する問題で役に立つ解法だよ。</p>
+<p>まずは、<em>部分和問題</em> からいってみよう。</p>
+<p>こんな感じの問題だよ。</p>
+<blockquote>
+<p>入力:</p>
+<pre><code>N
+S
+A1 A2 A3 ... AN
+</code></pre>
+<ul>
+<li><code>N</code> は 入力 <code>A1, A2, A3, ...</code> の総数を表す整数</li>
+<li><code>S</code> はただの整数</li>
+<li><code>A1, A2, A3, ...</code> は正の整数</li>
+</ul>
+<p>問題:</p>
+<p><code>A1, A2, A3, ...</code> の中からいくつかを組み合わせて合計して、ぴったり <code>S</code> にすることができるか求める。</p>
+<p><code>S</code> にできる場合は <code>&quot;YES&quot;</code>、できない場合は <code>&quot;NO&quot;</code> に、改行を加えて出力せよ。</p>
+</blockquote>
+<p>まずは <em>入力</em> を受け取るとこを書く。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+  using std::cin;
+  using std::vector;
+  
+  int N, S;
+  cin &gt;&gt; N &gt;&gt; S;
+  
+  vector&lt;int&gt; A(N);
+  for (auto &amp;elem : A) {
+    cin &gt;&gt; elem;
+  }
+
+  // ここからは、ココに書き足すコードだけを示すよ
+}
+</code></pre>
+<p>こういうパッと見て解き方がさっぱり分からん問題は、<strong>かんたんなケースを考えてから難しくしていく</strong> のがいい。</p>
+<p><strong>一段階むずかしい問題の答え</strong> に、<strong>よりかんたんな問題の答えを使って答える</strong> 考え方が大事だよ。</p>
+<p>この問題の一番 <em>かんたん</em> なケースを考えよう。</p>
+<blockquote>
+<p>入力を <code>0</code> 個組み合わせて <code>0</code> が作れるかどうか</p>
+</blockquote>
+<p>これが一番 <em>かんたん</em> なんだけど、これは必ず <code>true</code> だよ。</p>
+<pre><code class="language-cpp">true;
+</code></pre>
+<p>虚無の合計だけど、とりあえず <code>0</code> だと考える。いいね?</p>
+<p>片方の数字を変数にして、グレードアップしよう。</p>
+<blockquote>
+<p>入力を <code>n</code> 個組み合わせで <code>0</code> が作れるかどうか</p>
+</blockquote>
+<p>この答えは、<em>かんたん</em> な問題の答えを使って求めることができる。</p>
+<ul>
+<li><code>n - 1</code> 個の組み合わせで <code>0</code> が作れるかどうか</li>
+</ul>
+<p>を満たせば、<code>n</code> 個の組み合わせでも必ず <code>0</code> が作れるよ。</p>
+<p>この答えを保存する <code>vector&lt;bool&gt; dp</code> というコンテナを用意する。</p>
+<p><code>dp[i]</code> には、「<code>i</code> 個組み合わせて <code>0</code> が作れるかどうか」を格納することにする。</p>
+<p>変数 <code>n</code> を <code>for</code> で <code>1</code> から <code>N</code> まで繰り返せば、</p>
+<ol>
+<li><code>dp[n - 1]</code> が <code>true</code> になっている</li>
+</ol>
+<p>ときに <code>dp[n]</code> に <code>true</code> を代入すると、<code>dp.back()</code> に答えが入る。</p>
+<pre><code class="language-cpp">vector&lt;bool&gt; dp(N + 1); // dp[N] までなので 1 個余分に必要
+
+// さっき求めた かんたん なやつ
+dp[0] = true;
+
+for (size_t n = 1; n &lt;= N; ++n) {
+  bool prev = dp[n - 1]; // prev は previous の略で、前のやつ って意味
+  dp[n] = prev;
+}
+
+dp.back(); // これが答え。今回は必ず true だけど
+</code></pre>
+<p>OK、もう片方の数字も変数にしよう。</p>
+<blockquote>
+<p>入力を <code>n</code> 個組み合わせて <code>sum</code> が作れるかどうか</p>
+</blockquote>
+<p>この答えは、<em>かんたん</em> な問題の答えを使って求めることができる。</p>
+<ul>
+<li><code>n - 1</code> 個の組み合わせで <code>sum</code> が作れるかどうか</li>
+<li><code>n - 1</code> 個の組み合わせで <code>sum - A[n - 1]</code> が作れるかどうか</li>
+</ul>
+<p>のどっちかを満たせば、<code>n</code> 個の組み合わせで <code>sum</code> が作れるよ。</p>
+<p>二つ目の条件は、<code>n</code> 個目の入力を選んだうえで問題の条件を満たすときを意味している。</p>
+<p>さっきの <code>dp</code> を <code>vector&lt;vector&lt;bool&gt;&gt;</code> 型に改良する。</p>
+<p><code>dp[i][j]</code> には、「<code>i</code> 個の組み合わせで <code>j</code> が作れるかどうか」を格納する。</p>
+<p>変数 <code>n</code> を <code>1</code> から <code>N</code> まで、 <code>sum</code> を <code>0</code> から <code>S</code> まで繰り返せば、</p>
+<ol>
+<li><code>dp[n - 1][sum]</code> が <code>true</code> になっている</li>
+<li><code>A[n - 1] &lt;= sum</code> の場合 (↓ の添字が 0 以上になるように範囲チェック)
+<ol>
+<li><code>dp[n - 1][sum]</code> もしくは <code>dp[n - 1][sum - A[n - 1]</code> が <code>true</code> になっている</li>
+</ol>
+</li>
+</ol>
+<p>ときに、<code>dp[n][sum]</code> に <code>true</code> を代入すると、<code>dp.back().back()</code> に答えが入るんだぜ。</p>
+<pre><code class="language-cpp">vector&lt;vector&lt;bool&gt;&gt; dp(N + 1, vector&lt;bool&gt;(S + 1));
+
+dp[0][0] = true; // かんたん なやつ
+
+for (size_t n = 1; n &lt;= N; ++n) {
+  for (size_t sum = 0; sum &lt;= S; ++sum) {
+    bool prev = dp[n - 1][sum];
+    dp[n][sum] = prev;
+    if (A[n- 1] &lt;= sum) {
+      dp[n][sum] = prev || dp[n - 1][sum - A[n - 1]];
+    }
+  }
+}
+
+dp.back().back(); // 答えじゃ!
+</code></pre>
+<p>最後の仕上げに、出力を作ってっと。</p>
+<pre><code class="language-cpp">using std::cout;
+
+if (dp.back().back()) {
+  cout &lt;&lt; &quot;YES\n&quot;;
+} else {
+  cout &lt;&lt; &quot;NO\n&quot;;
+}
+</code></pre>
+<p>これで完成。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+  using std::cin;
+  using std::vector;
+
+  int N, S;
+  cin &gt;&gt; N &gt;&gt; S;
+
+  vector&lt;int&gt; A(N);
+  for (auto &amp;elem : A) {
+    cin &gt;&gt; elem;
+  }
+
+  vector&lt;vector&lt;bool&gt;&gt; dp(N + 1, vector&lt;bool&gt;(S + 1));
+
+  dp[0][0] = true;
+
+  for (size_t n = 1; n &lt;= N; ++n) {
+    for (size_t sum = 0; sum &lt;= S; ++sum) {
+      bool prev = dp[n - 1][sum];
+      dp[n][sum] = prev;
+      if (A[n- 1] &lt;= sum) {
+        dp[n][sum] = prev || dp[n - 1][sum - A[n - 1]];
+      }
+    }
+  }
+
+  using std::cout;
+
+  if (dp.back().back()) {
+    cout &lt;&lt; &quot;YES\n&quot;;
+  } else {
+    cout &lt;&lt; &quot;NO\n&quot;;
+  }
+}
+</code></pre>
+<p>こんなふうに、動的計画法では <strong>DP テーブル</strong> と言われる多次元のコンテナを作って解くことが多いよ。</p>
+<p>DP テーブルの挙動がわかりにくかったら、中身を見たい行で、こうやって出力してみるといいかも。</p>
+<pre><code class="language-cpp">for (std::vector&lt;bool&gt; const &amp;column : dp) {
+  for (bool elem : column) {
+    std::cout &lt;&lt; elem &lt;&lt; &quot;|&quot;;
+  }
+  std::cout &lt;&lt; &quot;\n&quot;;
+}
+std::cout &lt;&lt; &quot;\n\n&quot;;
+</code></pre>
+<p>章末問題では、この応用となる <em>ナップサック問題</em> を出すから、解いてみてね。</p>
+<h1><a class="header" href="#章末問題-3" id="章末問題-3">章末問題</a></h1>
+<hr />
+<p>以下の問題を用意しておきました。解いてプログラミングになれましょ。</p>
+<h2><a class="header" href="#例題-1-2" id="例題-1-2">例題 1</a></h2>
+<p>部分和数え上げ問題だぁよ。</p>
+<blockquote>
+<p>入力:</p>
+<pre><code>N
+S
+A1 A2 A3 ... AN
+</code></pre>
+<ul>
+<li><code>N</code> は 入力 <code>A1, A2, A3, ...</code> の総数を表す整数</li>
+<li><code>S</code> はただの整数</li>
+<li><code>A1, A2, A3, ...</code> は正の整数</li>
+</ul>
+<p>問題:</p>
+<p><code>A1, A2, A3, ...</code> の中からいくつかを組み合わせて合計して、ぴったり <code>S</code> にすることができる場合の数を求める。</p>
+<p><code>S</code> にできる場合の数を出力せよ。</p>
+</blockquote>
+<p>入力:</p>
+<pre><code>5
+12
+7 5 3 1 8
+</code></pre>
+<p>出力:</p>
+<pre><code>2
+</code></pre>
+<h3><a class="header" href="#解き方-2" id="解き方-2">解き方</a></h3>
+<p>DP (動的計画法) を使うと楽だよ。</p>
+<p>今回もかんたんなケースから考えよう。</p>
+<blockquote>
+<p><code>0</code> 個組み合わせた合計に <code>0</code> がある場合の数</p>
+</blockquote>
+<p>この場合の数は <code>1</code> 通りだよ。</p>
+<pre><code class="language-cpp">1;
+</code></pre>
+<p>片方の数字を変数にして、グレードアップしよう。</p>
+<blockquote>
+<p><code>n</code> 個組み合わせた合計に <code>0</code> がある場合の数</p>
+</blockquote>
+<p>この答えを保存する <code>vector&lt;long&gt; dp</code> というコンテナを用意する。</p>
+<p>※ <code>long</code> にしてあるのは、組み合わせの数は大きくなる (<em>組み合わせ爆発</em> する、<a href="https://www.youtube.com/watch?v=Q4gTV4r0zRs">参考動画</a>) ことが多いから。それでも足りないなら、大きい数で割った余りにする (この場合は問題文に書いてある) か、<code>long long</code> やいくらでも入る整数 (多倍長整数) 型を使うことになる。</p>
+<p><code>dp[i]</code> には、<code>i</code> 個組み合わせた場合の数を格納するってこと。</p>
+<p>変数 <code>n</code> を <code>1</code> から <code>N</code> まで繰り返して、</p>
+<p><code>dp[n]</code> に <code>dp[n - 1]</code> を代入すれば、<code>dp.back()</code> に答えが入る。</p>
+<pre><code class="language-cpp">vector&lt;long&gt; dp(N + 1); // dp[N] までなので 1 個余分に必要
+
+// さっき求めた かんたん なやつ
+dp[0] = 1;
+
+for (size_t n = 1; n &lt;= N; ++n) {
+  dp[n] = dp[n - 1];
+}
+
+dp.back(); // これが答え、って必ず １ やん
+</code></pre>
+<p>OK、もう片方の数字も変数にしよう。</p>
+<blockquote>
+<p><code>n</code> 個組み合わせた合計に <code>sum</code> がある場合の数</p>
+</blockquote>
+<p>さっきの <code>dp</code> を <code>vector&lt;vector&lt;long&gt;&gt;</code> に改良する。</p>
+<p><code>dp[i][j]</code> には、<code>i</code> 個組み合わせた総和が <code>j</code> になる場合の数を格納する。</p>
+<p>変数 <code>n</code> を <code>1</code> から <code>N</code> まで、 <code>sum</code> を <code>0</code> から <code>S</code> まで繰り返せば、</p>
+<ol>
+<li><code>dp[n][sum]</code> に <code>dp[n - 1][sum]</code> を代入する。</li>
+<li><code>A[n - 1] &lt;= sum</code> の場合 (↓ の添字が 0 以上になるように範囲チェック)
+<ol>
+<li><code>dp[n][sum]</code> を <code>dp[n - 1][sum - A[n - 1]</code> の数だけ増やす。</li>
+</ol>
+</li>
+</ol>
+<p>で、<code>dp.back().back()</code> に答えが入る。</p>
+<pre><code class="language-cpp">vector&lt;vector&lt;long&gt;&gt; dp(N + 1, vector&lt;long&gt;(S + 1));
+
+dp[0][0] = 1;
+
+for (size_t n = 1; n &lt;= N; ++n) {
+  for (size_t sum = 0; sum &lt;= S; ++sum) {
+    dp[n][sum] = dp[n - 1][sum];
+    if (A[n - 1] &lt;= sum) {
+      dp[n][sum] += dp[n - 1][sum - A[n - 1]];
+    }
+  }
+}
+
+dp.back().back(); // 答えがでたぁ
+</code></pre>
+<p>最終的に、こうなる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+  using std::cin;
+  using std::vector;
+
+  int N, S;
+  cin &gt;&gt; N &gt;&gt; S;
+
+  vector&lt;int&gt; A(N);
+  for (auto &amp;elem : A) {
+    cin &gt;&gt; elem;
+  }
+
+  vector&lt;vector&lt;long&gt;&gt; dp(N + 1, vector&lt;long&gt;(S + 1));
+
+  dp[0][0] = 1;
+
+  for (size_t n = 1; n &lt;= N; ++n) {
+    for (size_t sum = 0; sum &lt;= S; ++sum) {
+      dp[n][sum] = dp[n - 1][sum];
+      if (A[n - 1] &lt;= sum) {
+        dp[n][sum] += dp[n - 1][sum - A[n - 1]];
+        /* DP テーブル 観賞用
+        for (std::vector&lt;long&gt; const &amp;column : dp) {
+          for (long elem : column) {
+            std::cout &lt;&lt; elem &lt;&lt; &quot;|&quot;;
+          }
+          std::cout &lt;&lt; &quot;\n&quot;;
+        }
+        std::cout &lt;&lt; &quot;\n\n&quot;;
+        */
+      }
+    }
+  }
+
+  using std::cout;
+
+  cout &lt;&lt; dp.back().back() &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<h2><a class="header" href="#問-1-3" id="問-1-3">問 1</a></h2>
+<p><em>ナップサック問題</em> だよ。</p>
+<blockquote>
+<p>入力:</p>
+<pre><code>N
+C
+V1 V2 V3 ... VN
+W1 W2 W3 ... WN
+</code></pre>
+<ul>
+<li><code>N</code> は 入力 <code>V1, V2, V3, ...</code> と <code>W1, W2, W3, ...</code> の総数を表す整数</li>
+<li><code>C</code> は正の整数</li>
+<li><code>VN</code> と <code>WN</code> は正の整数</li>
+</ul>
+<p>問題:</p>
+<p>ナップサックに、効率よくモノを詰め込みたいんだけど、</p>
+<p>このナップサックでは <code>C</code> 以上の重さになると運べない。</p>
+<p><code>V[i]</code> は <code>i</code> 番目のモノの 価値 を表している。</p>
+<p><code>W[i]</code> は <code>i</code> 番目のモノの 重さ を表している。</p>
+<p>重さの合計が <code>C</code> を超えないように &amp; 価値が最大になるようにモノを選んだときの、<em>価値の合計</em> を求める。</p>
+<p>この <em>価値の合計</em> を出力せよ。</p>
+</blockquote>
+<p>入力:</p>
+<pre><code>6
+8
+3 2 6 1 3 85
+2 1 3 2 1 5
+</code></pre>
+<p>出力:</p>
+<pre><code>91
+</code></pre>
+<p>答えは (価値, 重さ) = (6, 3), (85, 5)</p>
+<p>ヒント:</p>
+<p>DP テーブルを使うのなら、</p>
+<p><code>dp[n - 1][weight - W[n - 1]] + V[n - 1]</code> が、<code>n</code> 個目のモノを詰め込む問題での答え。</p>
+<h2><a class="header" href="#問-2-3" id="問-2-3">問 2</a></h2>
+<p><strong>共通部分列</strong> というのがありまして、</p>
+<p>例えば <code>&quot;AGCAT&quot;</code> と <code>&quot;GAC&quot;</code> の共通部分列は、</p>
+<pre><code>*A* G *C* A T
+G *A* *C*
+
+
+A *G* *C* A T
+*G* A *C*
+
+A *G* C *A* T
+*G* *A* C
+</code></pre>
+<p>で、<code>&quot;AC&quot;, &quot;GC&quot;, &quot;GA&quot;</code> というふうな感じ。</p>
+<p>二つの列から、同じになるようにそれぞれ文字を消したときの列ってこと。</p>
+<p>※ちなみにこの A G C T は DNA の塩基配列。遺伝子のパターンを調べるのにも役立つ問題ってこと。</p>
+<p>この共通部分列の中で最も長いやつを、<strong>最長共通部分列</strong> (LCS、Longest Common Subsequence) っていう。まんまだね。</p>
+<p>それじゃ、この <em>最長共通部分列の長さ</em> をプログラムで求めましょ。</p>
+<blockquote>
+<p>入力:</p>
+<pre><code>S
+T
+</code></pre>
+<ul>
+<li><code>S</code> と <code>T</code> は文字列</li>
+</ul>
+<p>問題:</p>
+<p><code>S</code> と <code>T</code> の 最長共通部分列の長さ を出力せよ。</p>
+</blockquote>
+<p>入力:</p>
+<pre><code>abcde
+acbef
+</code></pre>
+<p>出力:</p>
+<pre><code>3
+</code></pre>
+<p>LCS は <code>&quot;ace&quot;</code>, <code>&quot;abe&quot;</code></p>
+<p>ヒント:</p>
+<p>DP テーブルには、<code>i</code> 文字目までの <code>S</code> と <code>j</code> 文字目までの <code>T</code> の <em>LCSの長さ</em> を <code>dp[i][j]</code> で格納するといいかも。</p>
+<p>こうしておくと、</p>
+<ol>
+<li><code>dp[i][j] = std::max(dp[i - 1][j], dp[i][j - 1])</code> </li>
+<li><code>S[i - 1] == T[j - 1]</code> の場合
+<ol>
+<li><code>dp[i][j] = std::max(dp[i][j], dp[i - 1][j - 1] + 1)</code> </li>
+</ol>
+</li>
+</ol>
+<p>ってすれば求まる。</p>
+<h1><a class="header" href="#標準ライブラリ-中級編" id="標準ライブラリ-中級編">標準ライブラリ 中級編</a></h1>
+<p>値を捌け!</p>
+<hr />
+<p>この章で、C++ の魔力をそれなりに使えるようになる。</p>
+<h1><a class="header" href="#この章のゴール-8" id="この章のゴール-8">この章のゴール</a></h1>
+<ul>
+<li>型推論の必要性を学ぶ</li>
+<li>ラムダ式を書けるようにする</li>
+<li>関数を引数として渡す</li>
+<li>特殊なコンテナを触る</li>
+<li>イテレータの比較と、さまざまな分類を理解する</li>
+<li>最適化に必要な計算複雑性を把握する</li>
+</ul>
+<p>所要時間: 80 ~ 90 分くらい</p>
+<h1><a class="header" href="#ラムダ式" id="ラムダ式">ラムダ式</a></h1>
+<p>|出口|　λ............ﾄﾎﾞﾄﾎﾞ</p>
+<hr />
+<h2><a class="header" href="#auto" id="auto"><code>auto</code></a></h2>
+<p><code>auto</code> はこれから学ぶのに必要な知識なので、一緒に解説しておく。</p>
+<p><code>auto</code> は、少し特殊な型だよ。変数ではその初期値から、その型を推論するんだ。</p>
+<pre><code class="language-cpp">auto number = 0; // int 型
+auto bigger = 0L; // long 型
+auto wonderful = 0LL; // long long 型
+
+auto single = 1.2f; // float 型
+auto doppio = 2.4; // double 型
+
+auto text = std::string(&quot;Hey!&quot;); // std::string 型
+</code></pre>
+<p>戻り値型では、戻り値の型から推論される。引数の型には使えない (そのうち使えるようになるかも)。</p>
+<pre><code class="language-cpp">auto add(int a, int b) { // int add(int, int) になる
+  return a + b; // int + int は int だからね
+}
+
+auto sub(int a, int b) -&gt; int { // auto と書いても、-&gt; の後に明示できる
+  return a - b;
+}
+</code></pre>
+<p>長ったらしいイテレータクラスには、めちゃくちゃ有効。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data;
+
+std::vector&lt;int&gt;::iterator head = data.begin(); // 長い
+auto tail = data.end(); // 短い
+</code></pre>
+<h2><a class="header" href="#ラムダ式-1" id="ラムダ式-1">ラムダ式</a></h2>
+<p>いままでの関数は <code>main</code> 関数の外にぽつぽつと書いてた。</p>
+<p>ラムダ式を使うと、<code>main</code> 関数といった <strong>関数の中ででも関数が作れる</strong>。</p>
+<p>文法はこう。</p>
+<blockquote>
+<p>[] { <em>0 個以上の文</em> }</p>
+</blockquote>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+  [] {
+    std::cout &lt;&lt; &quot;Hello!\n&quot;;
+  };
+}
+</code></pre>
+<h3><a class="header" href="#呼び出し" id="呼び出し">呼び出し</a></h3>
+<p>これは関数を作っただけで特に実行していない。</p>
+<p>普通の関数と同じように、後ろに <code>()</code> をつけて呼び出せば実行できる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+  [] {
+    std::cout &lt;&lt; &quot;Hello!\n&quot;;
+  }();
+}
+</code></pre>
+<h3><a class="header" href="#変数への代入" id="変数への代入">変数への代入</a></h3>
+<p>ラムダ式はれっきとした <strong>式</strong> であり、変数に代入できちゃう。特定の型はないけれど、<code>auto</code> 型変数は使える。</p>
+<pre><code class="language-cpp">auto func = [] {
+  std::cout &lt;&lt; &quot;wow wow! &quot;;
+};
+func();
+func();
+</code></pre>
+<h3><a class="header" href="#引数を受け取る" id="引数を受け取る">引数を受け取る</a></h3>
+<p>ラムダ式で引数を受け取るときは、<code>[]</code> と <code>{}</code> の間に、普通の関数と同じように引数リストを書く。</p>
+<blockquote>
+<p>[] ( <em>引数リスト</em> ) { <em>0 個以上の文</em> }</p>
+</blockquote>
+<pre><code class="language-cpp">auto show = [] (int x) {
+  std::cout &lt;&lt; &quot;X is &quot; &lt;&lt; x &lt;&lt; &quot;\n&quot;;
+};
+show(2);
+show(40);
+</code></pre>
+<p>引数がないときは、引数リストの <code>()</code> は省略できるってだけ。その方が見やすいのかな?</p>
+<h3><a class="header" href="#値を戻す" id="値を戻す">値を戻す</a></h3>
+<p>ラムダ式で戻り値を作るときでも、特に型の指定は要らない。</p>
+<pre><code class="language-cpp">auto add = [] (int a, int b) { return a + b; };
+add(2, 4);
+add(3, add(5, 8));
+</code></pre>
+<p>引数リストの <code>)</code> の後ろに <code>-&gt; 型</code> って書いて明示することもできる。</p>
+<pre><code class="language-cpp">auto sub = [] (int a, int b) -&gt; int { return a - b; }
+sub(4, 2);
+sub(sub(8, 5), 1);
+</code></pre>
+<h3><a class="header" href="#ラムダキャプチャ" id="ラムダキャプチャ">ラムダキャプチャ</a></h3>
+<p>ラムダ式が書いてあるスコープと同じところの変数にアクセスする場合は、</p>
+<p><strong>ラムダキャプチャ</strong> を書くことで、使用できるようになる。</p>
+<p>ラムダキャプチャを書くのは、<code>[]</code> の中だよ。そのためにあるからね。</p>
+<h4><a class="header" href="#コピーキャプチャ" id="コピーキャプチャ">コピーキャプチャ</a></h4>
+<p><code>[]</code> の中に変数名をそのまま書くと、</p>
+<p>その変数の数値をコピーして <em>ラムダ式で作った関数が値を保持する</em>。</p>
+<pre><code class="language-cpp">auto adder(int a) { // 関数を返す関数
+  return [a] (int b) {
+    return a + b;
+  };
+  // 関数の処理が終わると引数の a はもう使えなくなるはず
+}
+
+int main() {
+  auto add3 = adder(3);
+  // add3 は、a の値をコピーした 3 と引数を足して返す
+  add3(2); // 5
+  add3(4); // 7
+  auto add10 = adder(10);
+  add10(4); // 14
+}
+</code></pre>
+<h4><a class="header" href="#参照キャプチャ" id="参照キャプチャ">参照キャプチャ</a></h4>
+<p>コピーキャプチャの文法で、変数名の前に <code>&amp;</code> をつけると参照キャプチャになる。</p>
+<p>コピーキャプチャとは違って変数の値を変えられる。</p>
+<pre><code class="language-cpp">int count = 0;
+auto counter = [&amp;count] { ++count; };
+auto show = [count] { std::cout &lt;&lt; &quot;Count: &quot; &lt;&lt; count &lt;&lt; &quot;\n&quot;; }
+counter();
+counter();
+counter();
+show();
+</code></pre>
+<p>ただし、使えなくなっているはずの変数にもアクセスできてしまう。挙動は不定になる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+auto lazy_presenter(int a) { // 関数を返す関数
+  return [&amp;a] () {
+    std::cout &lt;&lt; a &lt;&lt; &quot;\n&quot;; // おかしな動作をするかもしれない
+  };
+  // 関数の処理が終わると引数の a はもう使えなくなるはず
+}
+
+int main() {
+  auto presenter = lazy_presenter(2);
+  presenter();
+}
+</code></pre>
+<p>ラムダキャプチャは他にも機能があるけれど、それはまたの機会に。</p>
+<h1><a class="header" href="#アルゴリズム関数" id="アルゴリズム関数">アルゴリズム関数</a></h1>
+<p>てを　よこに　あら　あぶない　あたまを　さげれば　ぶつかりません</p>
+<hr />
+<h1><a class="header" href="#algorithm" id="algorithm">algorithm</a></h1>
+<p><code>algorithm</code> 標準ライブラリには、</p>
+<p>イテレータと関数 (もっぱらラムダ式) を受け取って、</p>
+<p>そのイテレータに処理を行う関数がたくさん用意されている。</p>
+<p>ここでは、その中でよく使う関数を紹介していく。</p>
+<p>全部見たい人は <a href="https://cpprefjp.github.io/reference/algorithm.html">ここ</a> とか見るといいかも。</p>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+</code></pre>
+<p>以下のコードを実行するときは、↑ が必要だよ。</p>
+<h2><a class="header" href="#交換-swap" id="交換-swap">交換 <code>swap</code></a></h2>
+<p>2 つの引数の中身を入れ替える。</p>
+<pre><code class="language-cpp">int a = 0, b = 2;
+std::swap(a, b); // a は 2、b は 0 になる
+
+std::vector&lt;int&gt; data {2, 4}, buffer {5, 5};
+std::swap(data, buffer); // vector のようなクラスでも対応しているので使える
+</code></pre>
+<h2><a class="header" href="#最小と最大" id="最小と最大">最小と最大</a></h2>
+<h3><a class="header" href="#min" id="min"><code>min</code></a></h3>
+<p>2 つの引数を比較して、小さい方を返す。</p>
+<pre><code class="language-cpp">std::min(2, 4); // 2
+std::min(-4.5, -3.5); // -4.5
+std::min(std::string(&quot;Vanessa&quot;), std::string(&quot;Ivy&quot;)); // Ivy
+</code></pre>
+<h3><a class="header" href="#min_element" id="min_element"><code>min_element</code></a></h3>
+<p>範囲の中を比較して最も小さいものを返す。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  4, 8, -1, 2, 5, 5, 2, 3
+};
+
+std::min_element(data.begin(), data.end()); // -1
+std::min_element(data.begin() + 3, data.end()); // 2
+std::min_element(data.end() - 8, data.begin() + 2); // 4
+</code></pre>
+<h3><a class="header" href="#max" id="max"><code>max</code></a></h3>
+<p>2 つの引数を比較して、大きい方を返す。</p>
+<pre><code class="language-cpp">std::min(2, 4); // 4
+std::min(-4.5, -3.5); // -3.5
+std::min(std::string(&quot;Vanessa&quot;), std::string(&quot;Ivy&quot;)); // Vanessa
+</code></pre>
+<h3><a class="header" href="#max_element" id="max_element"><code>max_element</code></a></h3>
+<p>範囲の中を比較して最も大きいものを返す。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  4, 8, -1, 2, 5, 5, 2, 3
+};
+
+std::min_element(data.begin(), data.end()); // 8
+std::min_element(data.begin() + 3, data.end()); // 5
+std::min_element(data.end() - 8, data.begin() + 2); // 8
+</code></pre>
+<h3><a class="header" href="#clamp" id="clamp"><code>clamp</code></a></h3>
+<p>最初の引数を、二番目の引数以上、三番目の引数以下に抑え込む。</p>
+<pre><code class="language-cpp">std::clamp(2, 5, 7); // 5
+std::clamp(6, 5, 7); // 6
+std::clamp(8, 5, 7); // 7
+
+// これと同じ
+std::min(std::max(2, 5), 7);
+std::min(std::max(6, 5), 7);
+std::min(std::max(8, 5), 7);
+</code></pre>
+<h2><a class="header" href="#範囲探索" id="範囲探索">範囲探索</a></h2>
+<h3><a class="header" href="#all_of" id="all_of"><code>all_of</code></a></h3>
+<p>範囲内の要素すべてが条件を満たすかどうか探索する。</p>
+<p>各要素を三番目の引数の関数へ渡して実行する。</p>
+<p>その結果がすべて <code>true</code> なら <code>true</code> を返し、そうでないなら <code>false</code> を返す。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  4, 8, -1, 2, 5, 5, 2, 3
+};
+
+std::all_of(data.begin(), data.end(), [](int elem) {
+  return -2 &lt; elem;
+}); // true
+std::all_of(data.begin(), data.end(), [](int elem) {
+  return elem == 2;
+}); // false
+std::all_of(data.begin(), data.end(), [](int elem) {
+  return elem &lt;= 4;
+}); // false
+</code></pre>
+<h3><a class="header" href="#any_of" id="any_of"><code>any_of</code></a></h3>
+<p>範囲内の要素のどれかが条件を満たすかどうか探索する。</p>
+<p>各要素を三番目の引数の関数へ渡して実行する。</p>
+<p>その結果がすべて <code>false</code> なら <code>false</code> を返し、そうでないなら <code>true</code> を返す。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  4, 8, -1, 2, 5, 5, 2, 3
+};
+
+std::any_of(data.begin(), data.end(), [](int elem) {
+  return -2 &lt; elem;
+}); // true
+std::any_of(data.begin(), data.end(), [](int elem) {
+  return elem == 2;
+}); // true
+std::any_of(data.begin(), data.end(), [](int elem) {
+  return elem &lt;= 4;
+}); // true
+</code></pre>
+<h3><a class="header" href="#find_if" id="find_if"><code>find_if</code></a></h3>
+<p>範囲内で条件 (第三引数) を満たす要素のイテレータを返す。</p>
+<p>見つからなければ第二引数のイテレータを返す。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  4, 8, -1, 2, 5, 5, 2, 3
+};
+
+std::find_if(data.begin(), data.end(), [](int elem) {
+  return elem == 2;
+}); // data.begin() + 3 と同じ
+std::find_if(data.begin(), data.end(), [](int elem) {
+  return elem &lt; 0;
+}); // data.begin() + 2 と同じ
+std::find_if(data.begin(), data.end(), [](int elem) {
+  return 10 &lt;= elem;
+}); // data.end() と同じ
+</code></pre>
+<h3><a class="header" href="#count_if" id="count_if"><code>count_if</code></a></h3>
+<p>範囲内で条件 (第三引数) を満たす要素の数を返す。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  4, 8, -1, 2, 5, 5, 2, 3
+};
+
+std::count_if(data.begin(), data.end(), [](int elem) {
+  return elem == 2;
+}); // 2
+std::count_if(data.begin(), data.end(), [](int elem) {
+  return elem &lt; 0;
+}); // 1
+std::count_if(data.begin(), data.end(), [](int elem) {
+  return 10 &lt;= elem;
+}); // 0
+</code></pre>
+<h2><a class="header" href="#範囲操作" id="範囲操作">範囲操作</a></h2>
+<h3><a class="header" href="#copy" id="copy"><code>copy</code></a></h3>
+<p>範囲を別の範囲へコピーする。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data(20), buffer(20);
+
+// data.size() &lt;= buffer.size() にしておくように
+std::copy(data.begin(), data.end(), buffer.begin());
+</code></pre>
+<h3><a class="header" href="#sort" id="sort"><code>sort</code></a></h3>
+<p>範囲を高速にソートする。第三引数に渡す関数で、並ぶ順序が変化する。</p>
+<p>渡された関数を <code>op</code> とすると、<code>op(要素、次の要素)</code> が <code>true</code> になるようにソートする。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  2, 5, 2, 5, 6, 2, 8, 1, 1, 4
+};
+
+std::sort(data.begin(), data.end());
+// data は {1, 1, 2, 2, 2, 4, 5, 5, 6, 8} になる
+
+std::sort(data.begin(), data.end(), [] (int a, int b) {
+  return a &gt; b;
+});
+// data は {8, 6, 5, 5, 4, 2, 2, 2, 1, 1} になる
+</code></pre>
+<h3><a class="header" href="#unique" id="unique"><code>unique</code></a></h3>
+<p>隣り合った要素が重複しないように、範囲の先頭へ要素を集める。集めた後、新しい末尾のイテレータを返す。</p>
+<p>ソート済みの場合は、独立した要素がすべて取り除かれることになる。</p>
+<p>ソートしていない場合は、隣り合った要素は異なるようになる。</p>
+<p>重複している要素を削除するわけではないよ。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  2, 5, 2, 5, 6, 2, 8, 1, 1, 4
+};
+
+auto tail = std::unique(data.begin(), data.end());
+// data は {2, 5, 2, 5, 6, 2, 8, 1, 4, 4}、tail は data.end() - 1 と同じ
+</code></pre>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  2, 5, 2, 5, 6, 2, 8, 1, 1, 4
+};
+
+std::sort(data.begin(), data.end());
+auto tail = std::unique(data.begin(), data.end());
+// data は {1, 2, 4, 5, 6, 8, 5, 5, 6, 8}、tail は data.end() - 4 と同じ
+</code></pre>
+<h3><a class="header" href="#partition" id="partition"><code>partition</code></a></h3>
+<p>範囲内で条件 (第三引数) を満たす要素を最初に、そうでないものを最後になるようにする。</p>
+<p>条件を満たすようにした要素の末尾のイテレータを返す。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {1, 6, 7, 4, 3, 5};
+
+auto fence = std::partition(data.begin(), data.end(), [] (int e) {
+  return e % 2 == 0;
+}); // 偶数なら前に
+// data は {4, 6, 7, 1, 3, 5}、fence は data.begin() + 2 と同じ
+</code></pre>
+<h2><a class="header" href="#二分探索" id="二分探索">二分探索</a></h2>
+<h3><a class="header" href="#binary_search" id="binary_search"><code>binary_search</code></a></h3>
+<p>ソート済みの範囲を渡すと、それで二分探索を行う。</p>
+<p>二分探索っていうのは、例えば五十音順に並んでいる単語カードから探すときに、</p>
+<ol>
+<li>真ん中を開く。</li>
+<li>探しているものだったら終わり。</li>
+<li>探しているものがより前にあるなら、
+<ol>
+<li>前半分を見て、最初に戻る。</li>
+</ol>
+</li>
+<li>探しているものがより後にあるなら、
+<ol>
+<li>後ろ半分を見て、最初に戻る。</li>
+</ol>
+</li>
+</ol>
+<p>という探し方。</p>
+<p>つまり、順番通りに並んでいることを前提に、<strong>前と後ろの二つに分けて探索する</strong>。</p>
+<p><code>find_if</code> のように、<code>N</code> 個の範囲を一つづ探す場合は、それが探しているものかどうかを最低 <code>N</code> 回確かめる必要がある。</p>
+<p>二分探索なら、これが <code>log2 N</code> 回確かめる (8 個なら 3 回、300 個なら 8 回) だけでよい。すごいね。</p>
+<p>第三引数と等しい値が見つかった場合は <code>true</code> を、無いなら <code>false</code> を返す。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  2, 4, 1, 2, 1, 7, 6, 8, 0
+};
+
+std::sort(data.begin(), data.end());
+
+std::binary_search(data.begin(), data.end(), 6);
+</code></pre>
+<p>ソートを判断している関数が異なる場合は、その関数も第四引数に渡す必要がある。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  2, 4, 1, 2, 1, 7, 6, 8, 0
+};
+auto greater = [] (int a, int b) { return a &gt; b; };
+
+std::sort(data.begin(), data.end(), greater);
+
+std::binary_search(data.begin(), data.end(), 6, greater);
+</code></pre>
+<p>あ、ちゃんとソート済みの範囲を渡さないとちゃんと動かないよ。</p>
+<h3><a class="header" href="#partition_point" id="partition_point"><code>partition_point</code></a></h3>
+<p>範囲内で条件 (第三引数) を満たさなくなる最初の要素のイテレータを返す。</p>
+<p>第三引数の条件において、</p>
+<p>「前半は条件を満たしていて、後半は条件を満たさない」</p>
+<p>となっていないと、二分探索している関係でうまく動作しないよ。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  2, 4, 1, 2, 1, 7, 6, 8, 0
+};
+
+std::sort(data.begin(), data.end());
+// data は {0, 1, 1, 2, 2, 4, 6, 7, 8}
+
+std::partition_point(data.begin(), data.end(), [] (int e) {
+  return e &lt;= 5;
+}); // data.begin() + 6 と同じ
+</code></pre>
+<h1><a class="header" href="#numeric-1" id="numeric-1">numeric</a></h1>
+<p><code>numeric</code> 標準ライブラリには、整数計算用のアルゴリズム関数もある。</p>
+<p>全部見たい人は <a href="https://cpprefjp.github.io/reference/numeric.html">ここ</a> とか見るといいかも。</p>
+<h3><a class="header" href="#iota" id="iota"><code>iota</code></a></h3>
+<p>範囲を第三引数から始まる連番にする。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; nums(20);
+std::iota(nums.begin(), nums.end(), 0);
+// nums は {0, 1, 2, 3, ..., 19}
+
+std::vector&lt;char&gt; alphas(26);
+std::iota(alphas.begin(), alphas.end(), 'A');
+// alphas は {A, B, C, D, ..., Z}
+</code></pre>
+<h3><a class="header" href="#accumulate" id="accumulate"><code>accumulate</code></a></h3>
+<p>範囲の要素と初期値を全部足した合計を返す。戻り値の型は第三引数の型と同じになる。</p>
+<p>第四引数の関数で、足す以外の演算に変えることもできる。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  2, 4, 1, 2, 1, 7, 6, 8, 0
+};
+
+auto sum = std::accumulate(data.begin(), data.end(), 0L); // long 型で 31
+auto product = std::accumulate(data.begin(), data.end(), 1LL, [] (int a, int b) {
+  return a * b;
+}); // long long 型で 0
+</code></pre>
+<h3><a class="header" href="#partial_sum" id="partial_sum"><code>partial_sum</code></a></h3>
+<p>各要素を前の要素からの合計にして、第三引数のイテレータへ順番に書き込む。↑ と同じく、最後の引数の関数で演算を変えることもできる。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {
+  1, 0, 0, -1, 2, 1, 0, -3, 0
+};
+std::vector&lt;int&gt; result(data.size());
+
+std::partial_sum(data.begin(), data.end(), result.begin());
+// result は {1, 1, 1, 0, 2, 3, 3, 0, 0} になる
+</code></pre>
+<p>ちょっと例題を解いてみよう。</p>
+<p>以下は <a href="https://imoz.jp/algorithms/imos_method.html">こちら</a> から引用。</p>
+<blockquote>
+<p>あなたは喫茶店を経営しています．</p>
+<p>あなたの喫茶店を訪れたそれぞれのお客さん i (0≤i&lt;C) について入店時刻 Si と出店時刻 Ei が与えられます（0≤Si&lt;Ei≤T）．
+同時刻にお店にいた客の数の最大値 M はいくつでしょうか．</p>
+<p>ただし，同時刻に出店と入店がある場合は出店が先に行われるものとします．</p>
+</blockquote>
+<p>入力の形式はこう。</p>
+<pre><code>C
+S1, S2, ..., Si, ..., SC
+E1, E2, ..., Ei, ..., EC
+</code></pre>
+<p>とりあえず、各時刻の客の数を格納して、客が滞在する時間をすべて累積していく方法でやってみる。</p>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+  using namespace std;
+  int C, T;
+  cin &gt;&gt; C &gt;&gt; T;
+  vector&lt;int&gt; S(C), E(C);
+  for (int &amp;e : S) {
+    cin &gt;&gt; e;
+  }
+  for (int &amp;e : E) {
+    cin &gt;&gt; e;
+  }
+
+  vector&lt;int&gt; customer_n(T);
+  for (int customer = 0; customer &lt; C; ++customer) {
+    for (int time = S[customer]; time &lt; E[customer]; ++time) {
+      customer_n[time] += 1;
+    }
+  }
+  cout &lt;&lt; *std::max_element(customer_n.begin(), customer_n.end()) &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<p>いもす法という解法でこれを解こうとすると、<code>partial_sum</code> が非常に役に立つ。</p>
+<p>いもす法では、「滞在する時間」のような連続する状態を、始端を <code>+1</code>、終端を <code>-1</code> して客の出入りだけを格納するよ。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; imos(T);
+for (int customer = 0; customer &lt; C; ++customer) {
+  int S;
+  cin &gt;&gt; S;
+  ++imos[S];
+}
+for (int customer = 0; customer &lt; C; ++customer) {
+  int E;
+  cin &gt;&gt; E;
+  --imos[E];
+}
+</code></pre>
+<p>そして、<code>partial_sum</code> を使うと元のデータになるわけ。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; customer_n(T);
+std::partial_sum(imos.begin(), imos.end(), customer_n.begin());
+</code></pre>
+<p>コード全体はこう改善される。</p>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;numeric&gt;
+
+int main() {
+  using namespace std;
+  int C, T;
+  cin &gt;&gt; C &gt;&gt; T;
+
+  std::vector&lt;int&gt; imos(T);
+  for (int customer = 0; customer &lt; C; ++customer) {
+    int S;
+    cin &gt;&gt; S;
+    ++imos[S];
+  }
+  for (int customer = 0; customer &lt; C; ++customer) {
+    int E;
+    cin &gt;&gt; E;
+    --imos[E];
+  }
+
+  vector&lt;int&gt; customer_n(T);
+  partial_sum(imos.begin(), imos.end(), customer_n.begin());
+  cout &lt;&lt; *max_element(customer_n.begin(), customer_n.end()) &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<p>後の <a href="std-intermediate/./optimize.html">最適化</a> でやる <em>オーダー</em> の考え方を使うと、</p>
+<p>最初のコードだと <em>O</em>(CT) なのが、<em>O</em>(C + T) に改善されてる。</p>
+<p>いもす法を使った問題は、章末問題にもいくつか出すよ。</p>
+<h1><a class="header" href="#スタックとキュー" id="スタックとキュー">スタックとキュー</a></h1>
+<p>L! I! F! O!</p>
+<hr />
+<p>ここでは、ちょっと変わったコンテナとその使い道を紹介していく。</p>
+<h2><a class="header" href="#stack" id="stack">stack</a></h2>
+<p>データを後ろからのみ入れることができて、後ろから逆の順序でしか取り出せないコンテナ。</p>
+<p>データを皿のように積み上げていくイメージ。</p>
+<p>ここでのスタックは MTG の用語じゃないよ。</p>
+<pre><code>↑ 取ったり ↓ 乗せたり
+ーーー
+| 2 |
+ーーー
+| 0 | こことか
+ーーー
+| 1 | ここは取り出せない
+ーーー
+</code></pre>
+<p><code>#include &lt;stack&gt;</code> が必要。</p>
+<pre><code class="language-cpp">// vector と同じで格納する型はテンプレート引数
+std::stack&lt;int&gt; S;
+
+// push でスタックに一つ「積む」
+S.push(2); // {2}
+
+// pop でスタックから一つ取り除く
+S.pop(); // { }
+
+S.push(4); // {4}
+S.push(3); // {4, 3}
+S.pop(); // {4}
+S.push(1); // {4, 1}
+
+// empty で空かどうかを bool で取得
+while (!S.empty()) {
+  // top でスタックの一番上 (後ろ) を取得
+  auto top = S.top();
+  S.pop();
+  std::cout &lt;&lt; top &lt;&lt; &quot; &quot;;
+}
+</code></pre>
+<p>これは、やることを積んでおいて逆順に解決していくのに使うよ。</p>
+<h3><a class="header" href="#例題" id="例題">例題</a></h3>
+<p>例題をやってみる。</p>
+<blockquote>
+<p>入力:</p>
+<pre><code>N
+T
+</code></pre>
+<ul>
+<li><code>N</code> は <code>0</code> 以上 <code>T の長さ</code> 未満の整数</li>
+<li><code>T</code> は文字列</li>
+</ul>
+<p><code>'('</code> と <code>')'</code> で構成された文字列が与えられる。</p>
+<p><code>'('</code> と <code>')'</code> は必ず対応付け (開いて閉じること) がされている。</p>
+<p>文字列 <code>T</code> の <code>N</code> 番目の位置 (0 始まり) の  <code>'('</code> または <code>')'</code> に対応している、反対向きの括弧の位置 (0 始まり) を探す。</p>
+<p>その位置を出力せよ。</p>
+</blockquote>
+<p>例えば、入力が</p>
+<pre><code>5
+((())(()()))(())
+</code></pre>
+<p>の場合は、</p>
+<pre><code>( ( ( ) ) ( ( ) ( ) ) )  ( (  ) )
+0                     11 12     15
+  1     4                  13 14
+    2 3
+          5         10
+            6 7
+                8 9
+</code></pre>
+<p>と対応付けられるので、<code>10</code> を出力する。</p>
+<ol>
+<li>文字列の中の文字を一つづつ見る
+<ol>
+<li>括弧が始まっている
+<ol>
+<li>その位置を <code>stack</code> に乗せて次の文字へ</li>
+</ol>
+</li>
+<li><code>stack</code> の <code>top</code>、もしくは今見ている位置が <code>N</code> に等しいかどうか見る
+<ol>
+<li>等しければ反対側にあたる位置を出力して終了</li>
+</ol>
+</li>
+<li>括弧が終わっている (他の文字がないので常に <code>true</code>)
+<ol>
+<li><code>stack</code> を一つ取る</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>と解けば楽ちん。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;stack&gt;
+
+int main() {
+  int N;
+  std::string T;
+  std::cin &gt;&gt; N &gt;&gt; T;
+
+  std::stack&lt;int&gt; brace_index;
+  for (size_t i = 0; i &lt; T.size(); ++i) {
+    if (T[i] == '(') {
+      brace_index.push(i);
+      continue;
+    }
+    if (i == N) {
+      std::cout &lt;&lt; brace_index.top() &lt;&lt; &quot;\n&quot;;
+      break;
+    }
+    if (brace_index.top() == N) {
+      std::cout &lt;&lt; i &lt;&lt; &quot;\n&quot;;
+      break;
+    }
+    brace_index.pop();
+  }
+}
+</code></pre>
+<h2><a class="header" href="#queue" id="queue">queue</a></h2>
+<p>データを入れると、入れた順番でしか取り出せないコンテナ。</p>
+<p>要素は後ろから追加する。</p>
+<p>要素の取得と削除は前側からしかできない。</p>
+<p><code>#include &lt;queue&gt;</code> が必要。</p>
+<pre><code class="language-cpp">std::queue&lt;int&gt; Q;
+
+// push と pop があるけど stack とは違う
+
+Q.push(2); // {2}
+Q.pop(); // { }
+Q.push(4); // {4}
+Q.push(3); // {4, 3}
+Q.pop(); // {3}
+Q.push(1); // {3, 1}
+
+// empty で空かどうかを bool で取得
+while (!Q.empty()) {
+  // front でキューの先頭を取得
+  auto head = Q.front();
+  Q.pop();
+  std::cout &lt;&lt; head &lt;&lt; &quot; &quot;;
+}
+</code></pre>
+<h3><a class="header" href="#例題-1" id="例題-1">例題</a></h3>
+<p>それじゃあ毎度おなじみ例題だよ。</p>
+<blockquote>
+<p>入力:</p>
+<pre><code>V E S G
+src1 dst1
+src2 dst2
+:
+srcE dstE
+</code></pre>
+<ul>
+<li><code>V</code> と <code>E</code> は正の整数</li>
+<li><code>S</code> と <code>G</code> は <code>0</code> 以上 <code>E</code> 未満の整数</li>
+<li><code>srcE</code> と <code>dstE</code> は <code>0</code> 以上 <code>V</code> 未満の整数</li>
+</ul>
+<p><code>V</code> 個の異空間がある。</p>
+<p>異空間どうしの間には二つの空間をつなぐ一方通行のポータルがあり、<code>src</code> 番目の空間から <code>dst</code> 番目の空間に向かってだけ移動できる。</p>
+<p>ポータルを利用して、<code>S</code> 番目の空間から <code>G</code> 番目の空間へ移動できるかどうか求めよ。</p>
+<p>移動できる場合は <code>&quot;YES&quot;</code>、できない場合は <code>&quot;NO&quot;</code> を改行を加えて出力せよ。</p>
+<hr />
+<p>入力例1:</p>
+<pre><code>5 8 0 4
+0 1
+1 2
+2 3
+3 4
+0 2
+0 3
+1 0
+1 3
+</code></pre>
+<p>出力例1:</p>
+<pre><code>YES
+</code></pre>
+<hr />
+<p>入力例2:</p>
+<pre><code>3 4 0 1
+0 2
+0 2
+2 0
+2 2
+</code></pre>
+<p>出力例2:</p>
+<pre><code>NO
+</code></pre>
+</blockquote>
+<p>それじゃあ入力を受け付けよう。</p>
+<pre><code class="language-cpp">using std::cin;
+int V, E, S, G;
+cin &gt;&gt; V &gt;&gt; E &gt;&gt; S &gt;&gt; G;
+
+// adj[i] を i 番目の空間から入れるポータルの行き先リストとする
+std::vector&lt;std::vector&lt;size_t&gt;&gt; adj(V);
+for (int i = 0; i &lt; E; ++i) {
+  int src, dst;
+  cin &gt;&gt; src &gt;&gt; dst;
+  adj[src].push_back(dst);
+}
+</code></pre>
+<p>これでデータは用意できた。あとは、</p>
+<ol>
+<li>最初の空間である <code>S</code> をキューに <code>push</code></li>
+<li>キューが空になるまで繰り返し
+<ol>
+<li>キューの <code>front</code> を <code>now</code> として取り出し、<code>pop</code></li>
+<li><code>now</code> が <code>G</code> なら
+<ol>
+<li>到達可能なので終了</li>
+</ol>
+</li>
+<li><code>now</code> が <em>通過済み</em> なら次のキューの要素へ飛ばす</li>
+<li><code>now</code> を <em>通過済み</em> とメモする</li>
+<li><code>now</code> の <code>portals</code> の各要素を <code>next</code> として見る
+<ol>
+<li><code>next</code> が <em>通過済み</em> ではないものなら
+<ol>
+<li><code>next</code> をキューに <code>push</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>で判断できる。</p>
+<p>問題に書いてある <em>入力例1</em> でこのアルゴリズムの動作の確認をしてみる。</p>
+<blockquote>
+<ol>
+<li><code>now</code> は <code>0</code>。<em>通過済み</em> にする。
+<ol>
+<li><code>now</code> から行けるのは <code>1</code>、<code>2</code>、<code>3</code>。すべて <code>push</code>。</li>
+</ol>
+</li>
+<li><code>now</code> は <code>1</code>。<em>通過済み</em> にする。
+<ol>
+<li><code>now</code> から行けるのは <code>0</code>、<code>2</code>、<code>3</code>。このうち <code>2</code>、<code>3</code> を <code>push</code>。</li>
+</ol>
+</li>
+<li><code>now</code> は <code>2</code>。<em>通過済み</em> にする。
+<ol>
+<li><code>now</code> から行けるのは <code>3</code>。これを <code>push</code>。</li>
+</ol>
+</li>
+<li><code>now</code> は <code>3</code>。<em>通過済み</em> にする。
+<ol>
+<li><code>now</code> から行けるのは <code>4</code>。これを <code>push</code>。</li>
+</ol>
+</li>
+<li><code>now</code> は <code>2</code>。<code>push</code> できるものはない。</li>
+<li><code>now</code> は <code>3</code>。<code>push</code> できるものはない。</li>
+<li><code>now</code> は <code>3</code>。<code>push</code> できるものはない。</li>
+<li><code>now</code> は <code>4</code>。到達できちゃった。</li>
+</ol>
+</blockquote>
+<p>こういう手近な方法から幅広く探していくのを、<strong>幅優先探索</strong> (BFS、Breadth First Search) という。キューを使うことが多い。</p>
+<pre><code class="language-cpp">bool reachable = false;
+
+std::vector&lt;bool&gt; passed(E); // 通過済みかどうかのメモ用
+
+std::queue&lt;size_t&gt; bfs;
+bfs.push(S);
+
+while (!bfs.empty()) {
+  auto now = bfs.front();
+  bfs.pop();
+  
+  if (G == now) {
+    reachable = true;
+    break;
+  }
+
+  // 通過済みなので更新する必要がない場合
+  if (passed[now]) {
+    continue;
+  }
+  
+  passed[now] = true;
+  for (auto next : adj[now]) {
+    if (!passed[next]) {
+      bfs.push(next);
+    }
+  }
+}
+</code></pre>
+<p>仕上げに出力を書いて終わり。</p>
+<pre><code class="language-cpp">using std::cout;
+if (reachable) {
+  cout &lt;&lt; &quot;YES\n&quot;;
+} else {
+  cout &lt;&lt; &quot;NO\n&quot;;
+}
+</code></pre>
+<p>全体はこうなる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+
+int main() {
+  using std::cin;
+  int V, E, S, G;
+  cin &gt;&gt; V &gt;&gt; E &gt;&gt; S &gt;&gt; G;
+
+  std::vector&lt;std::vector&lt;size_t&gt;&gt; adj(V);
+  for (int i = 0; i &lt; E; ++i) {
+    int src, dst;
+    cin &gt;&gt; src &gt;&gt; dst;
+    adj[src].push_back(dst);
+  }
+  
+  bool reachable = false;
+
+  std::vector&lt;bool&gt; passed(E); // 通過済みかどうかのメモ用
+
+  std::queue&lt;size_t&gt; bfs;
+  bfs.push(S);
+
+  while (!bfs.empty()) {
+    auto now = bfs.front();
+    bfs.pop();
+
+    if (G == now) {
+      reachable = true;
+      break;
+    }
+
+    // 通過済みなので更新する必要がない場合
+    if (passed[now]) {
+      continue;
+    }
+
+    passed[now] = true;
+    for (auto next : adj[now]) {
+      if (!passed[next]) {
+        bfs.push(next);
+      }
+    }
+  }
+
+  using std::cout;
+  if (reachable) {
+    cout &lt;&lt; &quot;YES\n&quot;;
+  } else {
+    cout &lt;&lt; &quot;NO\n&quot;;
+  }
+}
+</code></pre>
+<p>こういった幅優先探索は、迷路やパズルを解いたり、ゲームの対戦用 CPU を作ったりといったことにまで応用できるよ。</p>
+<p>ちなみに、<em>入力例2</em> のようにループする状況のために <code>passed</code> で記録する必要がある。逆にループしない場合は <code>passed</code> をチェック/記録する必要はない。</p>
+<h2><a class="header" href="#priority_queue" id="priority_queue">priority_queue</a></h2>
+<p>データを入れると自動で降順 (大きい→小さい順) にソートされて、その片端からしか取り出せないコンテナ。</p>
+<p>これは <code>#include &lt;queue&gt;</code> が必要。<code>std::queue</code> と同じ <code>queue</code> ファイルに入ってる。</p>
+<pre><code class="language-cpp">std::priority_queue&lt;int&gt; Q;
+
+// push と pop があるけど他のとはかなり違う
+
+Q.push(2); // {2}
+Q.push(4); // {2, 4}
+Q.push(3); // {2, 3, 4}
+Q.push(1); // {1, 2, 3, 4}
+
+// empty で空かどうかを bool で取得
+while(!Q.empty()) {
+  // top でキューの末尾を取得
+  auto head = Q.top();
+  // pop で末尾を削除
+  Q.pop();
+  std::cout &lt;&lt; head &lt;&lt; &quot; &quot;;
+}
+</code></pre>
+<p>ソートの順番を変えるには、テンプレート引数にソートに使う関数型も渡す。</p>
+<p>デフォルトは <code>std::less</code> になっている。これは <code>&lt;</code> 演算子の意味があり、<code>前の要素 &lt; 次の要素</code> になるようにソートする。</p>
+<p>逆に <code>std::greater</code> は <code>&gt;</code> 演算子の意味があり、<code>前の要素 &gt; 次の要素</code> になるようにソートする。</p>
+<p>基本的にこのどっちかを第三テンプレート引数に渡す。</p>
+<p>何故か第三引数だから、第二引数のコンテナ型の指定もしなきゃいけない。これは <code>std::vector</code> でいい。</p>
+<pre><code class="language-cpp">std::priority_queue&lt;
+  int, // 要素型
+  std::vector&lt;int&gt;, // std::vector&lt;要素型&gt; で OK
+  std::greater&lt;&gt; // ソートに使う関数型、テンプレート引数は空でいい
+&gt; Q;
+
+Q.push(2); // {2}
+Q.push(4); // {4, 2}
+Q.push(3); // {4, 3, 2}
+Q.push(1); // {4, 3, 2, 1}
+</code></pre>
+<h3><a class="header" href="#例題-2" id="例題-2">例題</a></h3>
+<p>それでは例題を (ry</p>
+<blockquote>
+<p>入力:</p>
+<pre><code>V E S G
+src1 dst1 duration1
+src2 dst2 duration2
+:
+srcE dstE durationE
+</code></pre>
+<ul>
+<li><code>V</code> と　<code>E</code> は正の整数</li>
+<li><code>S</code> と <code>G</code> は <code>0</code> 以上 <code>E</code> 未満の整数</li>
+<li><code>srcE</code> と <code>dstE</code> は <code>0</code> 以上 <code>V</code> 未満の整数</li>
+<li><code>durationE</code> は正の整数</li>
+</ul>
+<p><code>V</code> 個の異空間がある。</p>
+<p>異空間どうしの間には二つの空間をつなぐ一方通行のポータルがあり、<code>src</code> 番目の空間から <code>dst</code> 番目の空間に向かってだけ移動できる。</p>
+<p>この移動には、<code>duration</code> 秒時間がかかる。</p>
+<p>ポータルを利用すると、<code>S</code> 番目の空間から <code>G</code> 番目の空間へ必ず移動できる。</p>
+<p>この移動にかかる最小時間と、改行を出力せよ。</p>
+<p>入力例1:</p>
+<pre><code>3 3 0 2
+0 2 40
+0 1 10
+1 2 20
+</code></pre>
+<p>出力例1:</p>
+<pre><code>30
+</code></pre>
+<hr />
+<p>入力例2:</p>
+<pre><code>6 9 0 4
+0 1 7
+0 2 9
+0 5 14
+1 3 15
+2 3 11
+2 5 2
+5 4 9
+3 4 6
+1 2 10
+</code></pre>
+<p>出力例2:</p>
+<pre><code>20
+</code></pre>
+</blockquote>
+<p>入力の処理は、<code>durationE</code> に対応するぶんを変える。</p>
+<pre><code class="language-cpp">using std::cin;
+int V, E, S, G;
+cin &gt;&gt; V &gt;&gt; E &gt;&gt; S &gt;&gt; G;
+
+std::vector&lt;std::vector&lt;size_t&gt;&gt; adj(V);
+std::vector&lt;std::vector&lt;int&gt;&gt; cost(V, std::vector&lt;int&gt;(V));
+for (int i = 0; i &lt; E; ++i) {
+  int src, dst, duration;
+  cin &gt;&gt; src &gt;&gt; dst &gt;&gt; duration;
+  adj[src].push_back(dst);
+  cost[src][dst] = duration; // src から dst へかかる時間をこう表現することにする
+}
+</code></pre>
+<p>さっきの <code>queue</code> を使った幅優先探索と似たやり方で解ける。察していると思うけど、今回は <code>priority_queue</code> のほうがいい。</p>
+<p>これを使うと、こんなアルゴリズムになる。</p>
+<ol>
+<li>最初の空間である <code>S</code> 番目のイテレータをキューに <code>push</code></li>
+<li>キューが空になるまで繰り返し
+<ol>
+<li>キューの <code>top</code> を <code>cost</code>, <code>now</code> として取り出し、<code>pop</code></li>
+<li><code>now</code> の <code>portals</code> の各要素を <code>next</code> として見る
+<ol>
+<li><code>now</code> の <code>cost_from_S</code> と、<code>next</code> と同じインデックスの <code>portal_costs</code> を足す (見ている <code>now</code>)。これを <code>new_cost</code> とする</li>
+<li><code>new_cost</code> が <code>next</code> の <code>cost_from_S</code> より小さいい場合
+<ol>
+<li><code>next</code> の <code>cost_from_S</code> に <code>new_cost</code> を代入</li>
+<li><code>next</code> をキューに <code>push</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>このアルゴリズムを、発明者にちなんでダイクストラ法っていう。</p>
+<pre><code class="language-cpp">// 最短距離のメモ用。最大値にしておいて、これから小さくしていく
+std::vector&lt;int&gt; cost_from_S(V, 
+  std::numeric_limits&lt;int&gt;::max() // 型の最大値を取得する関数
+);
+cost_from_S[S] = 0;
+
+// pair に コストとインデックスを格納する
+std::priority_queue&lt;
+  std::pair&lt;int, size_t&gt;,
+  std::vector&lt;std::pair&lt;int, size_t&gt;&gt;,
+  std::greater&lt;&gt;
+&gt; Q;
+Q.push({0, S});
+
+while (!Q.empty()) {
+  auto pair = Q.top();
+  int now_cost = pair.first;
+  size_t now = pair.second;
+  Q.pop();
+
+  // cost_from_S[now] を更新する必要がない場合
+  if (cost_from_S[now] &lt; now_cost) {
+    continue;
+  }
+
+  for (auto next : adj[now]) {
+    auto new_cost = now_cost + cost[now][next];
+    if (new_cost &lt; cost_from_S[next]) {
+      cost_from_S[next] = new_cost;
+      Q.push({cost_from_S[next], next});
+    }
+  }
+}
+</code></pre>
+<p>あとは出力しておわり。</p>
+<pre><code class="language-cpp">std::cout &lt;&lt; cost_from_S[G] &lt;&lt; &quot;\n&quot;;
+</code></pre>
+<p>全体はこうなった。私にでも何日かかかるくらい難しかったから、サクサクできたならすごいよ。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+
+int main() {
+  using std::cin;
+  int V, E, S, G;
+  cin &gt;&gt; V &gt;&gt; E &gt;&gt; S &gt;&gt; G;
+
+  std::vector&lt;std::vector&lt;size_t&gt;&gt; adj(V);
+  std::vector&lt;std::vector&lt;int&gt;&gt; cost(V, std::vector&lt;int&gt;(V));
+  for (int i = 0; i &lt; E; ++i) {
+    int src, dst, duration;
+    cin &gt;&gt; src &gt;&gt; dst &gt;&gt; duration;
+    adj[src].push_back(dst);
+    cost[src][dst] = duration;
+  }
+
+  // 最短距離のメモ用。最大値にしておいて、これから小さくしていく
+  std::vector&lt;int&gt; cost_from_S(V, 
+    std::numeric_limits&lt;int&gt;::max() // 型の最大値を取得する関数
+  );
+  cost_from_S[S] = 0;
+
+  // pair に コストとインデックスを格納する
+  std::priority_queue&lt;
+    std::pair&lt;int, size_t&gt;,
+    std::vector&lt;std::pair&lt;int, size_t&gt;&gt;,
+    std::greater&lt;&gt;
+  &gt; Q;
+  Q.push({0, S});
+
+  while (!Q.empty()) {
+    auto pair = Q.top();
+    int now_cost = pair.first;
+    size_t now = pair.second;
+    Q.pop();
+
+    // cost_from_S[now] を更新する必要がない場合
+    if (cost_from_S[now] &lt; now_cost) {
+      continue;
+    }
+
+    for (auto next : adj[now]) {
+      auto new_cost = now_cost + cost[now][next];
+      if (new_cost &lt; cost_from_S[next]) {
+        cost_from_S[next] = new_cost;
+        Q.push({cost_from_S[next], next});
+      }
+    }
+  }
+
+  std::cout &lt;&lt; cost_from_S[G] &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<p>こういうふうに経路について処理する、<em>グラフ理論</em> に関する問題を章末問題に出しておくね。</p>
+<h1><a class="header" href="#もっとイテレータ" id="もっとイテレータ">もっとイテレータ</a></h1>
+<p>それいけ!イテレータ</p>
+<hr />
+<p>ここでは、まだ紹介しきれていなかったイテレータの性質について触れていくよ。</p>
+<h2><a class="header" href="#イテレータからメンバへのアクセス" id="イテレータからメンバへのアクセス">イテレータからメンバへのアクセス</a></h2>
+<p>インスタンスをコンテナに格納すると、</p>
+<p>そのイテレータからインスタンスにアクセスして、そこからメンバへアクセスすることが多くなる。</p>
+<pre><code class="language-cpp">std::vector&lt;std::string&gt; texts(10, &quot;Hello&quot;);
+
+auto it = texts.begin();
+
+(*it).at(3) = 'i';
+++it;
+
+(*it).size();
+++it;
+
+(*it).substr(1, 2);
+</code></pre>
+<p>「イテレータ→インスタンス→メンバ」を「イテレータ→メンバ」と書ける演算子として、<code>-&gt;</code> (矢印とかアローとか読む) 演算子がある。</p>
+<pre><code class="language-cpp">std::vector&lt;std::string&gt; texts(10, &quot;Hello&quot;);
+
+auto it = texts.begin();
+
+it-&gt;at(3) = 'i';
+++it;
+
+it-&gt;size();
+++it;
+
+it-&gt;substr(1, 2);
+</code></pre>
+<h2><a class="header" href="#イテレータの距離" id="イテレータの距離">イテレータの距離</a></h2>
+<p><code>std::distance</code> 関数は、同じコンテナに対するイテレータの距離を求めることができる。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {2, 1, 1, 4};
+
+std::distance(data.begin(), data.end()); // 4
+
+auto it = data.begin();
+++it;
+++it;
+std::distance(it, data.begin()); // -2
+</code></pre>
+<h2><a class="header" href="#イテレータの比較" id="イテレータの比較">イテレータの比較</a></h2>
+<p>イテレータにはいくつか種類があるけれど、どんなイテレータでも <code>==</code> と <code>!=</code> 演算子で同じかどうかを比較できる。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data {2};
+
+auto it = data.begin();
+
+it == data.begin(); // true
+it != data.end(); // true
+
+++it;
+
+it == data.begin(); // false
+it != data.end(); // false
+</code></pre>
+<h2><a class="header" href="#begin--end-関数" id="begin--end-関数">begin / end 関数</a></h2>
+<p>どんな型に対しても、<code>std::begin</code> / <code>std::end</code> 関数 (メンバ関数ではなく普通の関数) に値を渡すとその始端/終端を取得できる。</p>
+<pre><code class="language-cpp">int array[3] {2, 4, 5}; // 配列はクラスではないので、メンバ関数はない
+
+auto it = std::begin(array); // しかしイテレータ相当のものはある
+
+*it; // 2
+++it;
+
+*it = 3;
+it += 2;
+
+it == std::end(array); // true
+</code></pre>
+<h2><a class="header" href="#イテレータの種類" id="イテレータの種類">イテレータの種類</a></h2>
+<p>標準ライブラリだけでも、それなりのイテレータクラスがある。それらを分類する呼び方があるので、例を示しながら紹介しておく。</p>
+<h3><a class="header" href="#出力イテレータ" id="出力イテレータ">出力イテレータ</a></h3>
+<ul>
+<li>値を書き込める</li>
+<li>進める (それ以前の要素は無効になる)</li>
+</ul>
+<p>ようなイテレータのこと。</p>
+<pre><code class="language-cpp">*it = 2;
+auto tmp = it;
+++it; // tmp のイテレータは要素にアクセスできなくなる
+</code></pre>
+<p><code>std::ostream_iterator</code>、<code>std::back_insert_iterator</code> などが該当する。</p>
+<pre><code class="language-cpp">// 出力ストリーム (std::cout など) を出力イテレータにするクラス
+// テンプレート引数に出力する型が必要
+std::ostream_iterator&lt;int&gt; out(std::cout);
+
+*out = 2; // std::cout &lt;&lt; 2; と同じ
+*out = 3; // std::cout &lt;&lt; 2; と同じ
+
+++out; // インクリメントしても何も起きない
+
+// 第二引数に文字列を渡すと、書き込むときにそれも流す
+std::ostream_iterator&lt;int&gt; out_line(std::cout, &quot;,\n&quot;);
+
+*out_line = 4; // std::cout &lt;&lt; 4 &lt;&lt; &quot;,\n&quot;; と同じ
+
+
+std::vector&lt;int&gt; data {4, 3, 5, 5, 1, 2};
+
+std::copy(data.begin(), data.end(),
+  std::ostream_iterator&lt;int&gt;(std::cout, &quot;, &quot;)
+); // らくらく出力
+</code></pre>
+<pre><code class="language-cpp">std::vector&lt;int&gt; data;
+auto in = std::back_inserter(data); // back_insert_iterator を作る関数
+
+// back_insert_iterator は、代入するとそれが push_back される
+*in = 2; // data は {2}
+*in = 4; // data は {2, 4}
+
+++in; // インクリメントしても何も起こらない
+</code></pre>
+<h3><a class="header" href="#入力イテレータ-inputiterator" id="入力イテレータ-inputiterator">入力イテレータ (InputIterator)</a></h3>
+<ul>
+<li>値を読み出せる</li>
+<li>進める (それ以前の要素は無効になる)</li>
+</ul>
+<p>ようなイテレータのこと。</p>
+<pre><code class="language-cpp">auto instance = *it;
+it-&gt;m; // メンバーへのアクセスも値の読み出し
+auto tmp = it;
+++it; // tmp の中身は無効になる
+</code></pre>
+<p><code>std::istream_iterator</code> や、だいたいのコンテナのイテレータが該当する。</p>
+<pre><code class="language-cpp">std::istream_iterator&lt;int&gt; in(std::cin);
+
+int A = *in;
+int B = *in;
+// A == B になる
+
+++in; // インクリメントで次の入力を読み込む
+
+int C = *in;
+
+++in; // もう入力がない場合は無効なイテレータになる
+</code></pre>
+<pre><code class="language-cpp">int N;
+std:cin &gt;&gt; N;
+
+std::vector&lt;int&gt; data;
+data.reserve(N); // 要素は作らないが事前にメモリを確保するメンバ関数
+// ↑ で後々の back_insert_iterator による push_back が高速化される
+
+auto data_in = std::back_inserter(data);
+
+std::istream_iterator&lt;int&gt; in(std::cin), nullin; // 引数無しで作った nullin は最初から無効なイテレータ
+
+// ↓ は in == nullin になるまで動く
+std::copy(in, nullin, data_in); // らくらく入力
+</code></pre>
+<h3><a class="header" href="#前方向イテレータ" id="前方向イテレータ">前方向イテレータ</a></h3>
+<ul>
+<li>値を読み出せる</li>
+<li>値を書き込める (const 型のイテレータの場合はできない)</li>
+<li>進める</li>
+<li>等しいかどうか他のイテレータと比較できる</li>
+</ul>
+<p>ようなイテレータのこと。</p>
+<pre><code class="language-cpp">auto data = *it;
+*it = 1;
+auto tmp = it;
+++it;
+tmp == it; // false
+</code></pre>
+<p>入力イテレータもこれに含まれる。書き込める場合は出力イテレータもこれに含まれる。</p>
+<p><code>std::list::iterator</code> などがこれにあたる。まず使わないけど (例も出さない)。</p>
+<h3><a class="header" href="#双方向イテレータ" id="双方向イテレータ">双方向イテレータ</a></h3>
+<ul>
+<li>値を読み出せる</li>
+<li>値を書き込める (const 型のイテレータの場合はできない)</li>
+<li>進める</li>
+<li>戻れる</li>
+<li>等しいかどうか他のイテレータと比較できる</li>
+</ul>
+<p>ようなイテレータのこと。</p>
+<p>前方向イテレータもこれに含まれる。</p>
+<p><code>std::deque::iterator</code> などがこれにあたる。</p>
+<pre><code class="language-cpp">// std::deque は std::queue の中身などに使われている
+std::deque&lt;int&gt; d {4, 6, 5, 2, 2, 1};
+auto it = d.begin();
+++it;
+*it = 3;
+--it;
+*it; // 4
+it == d.begin(); // true
+</code></pre>
+<h3><a class="header" href="#ランダムアクセスイテレータ" id="ランダムアクセスイテレータ">ランダムアクセスイテレータ</a></h3>
+<ul>
+<li>値を読み出せる</li>
+<li>値を書き込める (const 型のイテレータの場合はできない)</li>
+<li>進める</li>
+<li>戻れる</li>
+<li>繰り返しを使わずに任意の位置に移動できる</li>
+<li>整数で任意の位置に移動してアクセスできる</li>
+<li>他のイテレータとあらゆる比較ができる</li>
+</ul>
+<p>ようなイテレータのこと。</p>
+<p>双方向イテレータもこれに含まれる。</p>
+<p><code>std::vector::iterator</code> などがこれにあたる。</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; d {3, 1, 5, 3, 1};
+auto it = d.begin();
+++it;
+*it; // 1
+--it;
+*it; // 3
+it += 4;
+*it = 2;
+it -= 2;
+d.begin() &lt; it; // true
+it &lt;= d.end(); // true
+it == d.end(); // false
+it != d.begin(); // true
+
+it[2]; // 2。*(it + 2); と同じ
+it[-2]; // 3。*(it - 2); と同じ
+</code></pre>
+<hr />
+<p>こういったイテレータの分類は、今後の説明でちょいちょい使うよ。すぐには覚えなくていいからね。</p>
+<h1><a class="header" href="#最適化" id="最適化">最適化</a></h1>
+<p>クリア・マインド</p>
+<hr />
+<p>ここでは、書いたプログラムの実行効率と、その改善に必要な前提知識をやっていくよ。</p>
+<p>速いプログラムが書けるようになろう。</p>
+<h2><a class="header" href="#アルゴリズムの優劣" id="アルゴリズムの優劣">アルゴリズムの優劣</a></h2>
+<p>まず簡単な例として、<code>1</code> から <code>n</code> までの総和を求める関数を考えよう。</p>
+<p>言われたとおりに <code>1</code> から <code>n</code> まで足すのであれば、こうすることになる。</p>
+<pre><code class="language-cpp">int sum_from_1_to(int n) {
+  int sum = 0:
+  for (int i = 1; i &lt; n; ++i) {
+    sum += i;
+  }
+  return sum;
+}
+</code></pre>
+<p>でも、「<code>1</code> から <code>n</code> までの総和 = <code>(n + 1) * n / 2</code>」という数学知識を知っていれば、こう書くだけでいい。</p>
+<pre><code class="language-cpp">int sum_from_1_to(int n) {
+  // 1 から n までの総和の式 : (n + 1) * n / 2
+  return (n + 1) * n / 2;
+}
+</code></pre>
+<p>上のプログラムは <code>n</code> 回ループをしているので、<code>n</code> が大きくなるほど計算に時間がかかる。</p>
+<p>下のプログラムは <code>n</code> がどれだけ大きくなっても、同じ計算しかしないので計算にかかる時間は変わらない。</p>
+<p>下のプログラムの方が優れているのは、言うまでもないよね?</p>
+<h2><a class="header" href="#入力で爆発する計算量" id="入力で爆発する計算量">入力で爆発する計算量</a></h2>
+<p>もう少し、入力の大きさがより計算する量に影響を及ぼす例を見ていこう。</p>
+<p><code>n</code> 番目の <a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A3%E3%83%9C%E3%83%8A%E3%83%83%E3%83%81%E6%95%B0">フィボナッチ数</a> を計算する関数を作ってみる。</p>
+<pre><code class="language-cpp">long fibonacci(int n) {
+  if (n &lt;= 0) {
+    return 0;
+  }
+  if (n == 1) {
+    return 1;
+  }
+  return fibonacci(n - 2) + fibonacci(n - 1);
+}
+</code></pre>
+<p>フィボナッチ数は二つ前と一つ前のフィボナッチ数を足せばいいので、</p>
+<p><code>fibonacci(n - 2) + fibonacci(n - 1)</code> と書いて、関数の中で自分自身の関数を実行 (<em>再帰呼び出し</em>) している。</p>
+<p>試しに、この関数に <code>6</code> の入力が入ったときの動作を追いかけてみよう。</p>
+<blockquote>
+<ol>
+<li><code>fibonacci(6)</code> は <code>fibonacci(4) + fibonacci(5)</code> を実行
+<ol>
+<li><code>fibonacci(4)</code> は <code>fibonacci(2) + fibonacci(3)</code> を実行
+<ol>
+<li><code>fibonacci(2)</code> は <code>fibonacci(0) + fibonacci(1)</code> を実行
+<ol>
+<li><code>fibonacci(0)</code> は <code>1</code> を返す</li>
+<li><code>fibonacci(1)</code> は <code>1</code> を返す</li>
+</ol>
+</li>
+<li><code>fibonacci(3)</code> は <code>fibonacci(1) + fibonacci(2)</code> を実行
+<ol>
+<li><code>fibonacci(1)</code> は <code>1</code> を返す</li>
+<li><code>fibonacci(2)</code> は <code>fibonacci(0) + fibonacci(1)</code> を実行
+<ol>
+<li><code>fibonacci(0)</code> は <code>1</code> を返す</li>
+<li><code>fibonacci(1)</code> は <code>1</code> を返す</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><code>fibonacci(5)</code> は <code>fibonacci(3) + fibonacci(4)</code> を実行
+<ol>
+<li><code>fibonacci(3)</code> は <code>fibonacci(1) + fibonacci(2)</code> を実行
+<ol>
+<li><code>fibonacci(1)</code> は <code>1</code> を返す</li>
+<li><code>fibonacci(2)</code> は <code>fibonacci(0) + fibonacci(1)</code> を実行
+<ol>
+<li><code>fibonacci(0)</code> は <code>1</code> を返す</li>
+<li><code>fibonacci(1)</code> は <code>1</code> を返す</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><code>fibonacci(4)</code> は <code>fibonacci(2) + fibonacci(3)</code> を実行
+<ol>
+<li><code>fibonacci(2)</code> は <code>fibonacci(0) + fibonacci(1)</code> を実行
+<ol>
+<li><code>fibonacci(0)</code> は <code>1</code> を返す</li>
+<li><code>fibonacci(1)</code> は <code>1</code> を返す</li>
+</ol>
+</li>
+<li><code>fibonacci(3)</code> は <code>fibonacci(1) + fibonacci(2)</code> を実行
+<ol>
+<li><code>fibonacci(1)</code> は <code>1</code> を返す</li>
+<li><code>fibonacci(2)</code> は <code>fibonacci(0) + fibonacci(1)</code> を実行
+<ol>
+<li><code>fibonacci(0)</code> は <code>1</code> を返す</li>
+<li><code>fibonacci(1)</code> は <code>1</code> を返す</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>↑ の <code>fibonacci(3)</code> や <code>fibonacci(4)</code> に注目。</p>
+<p>こいつらはもう既に計算されているのに、何回も同じ処理がされている。</p>
+<p>実際、上のプログラムは簡潔だけれどめちゃくちゃ計算が遅い。</p>
+<p><code>6</code> 番目を計算するだけでも <code>24</code> 回も関数呼び出ししているからね。</p>
+<p><code>n</code> 番目の計算には <code>黄金比の n 乗</code> の呼び出しが必要になってる。</p>
+<blockquote>
+<p>※関数呼び出しは、足し算や変数の読み書きと比べるとちょっと時間がかかる。何十回もする場合はチリツモで遅い。</p>
+</blockquote>
+<p>なので、↓ のようにループで書いたほうが速い。</p>
+<pre><code class="language-cpp">long fibonacci(int n) {
+  if (n &lt;= 0) {
+    return 0;
+  }
+  long back_back = 0, back = 0, current = 1;
+  for (auto i = 1; i &lt; n; ++i) {
+    back_back = back;
+    back = current;
+    current = back_back + back;
+  }
+  return current;
+}
+</code></pre>
+<p>あと、数学的な知識があるなら数式で計算できる。</p>
+<pre><code class="language-cpp">#include &lt;cmath&gt;
+
+// n が 0 未満でも動作する
+long fibonacci(int n) {
+  using std::round;
+  using std::pow;
+  using std::sqrt;
+  // round ((((1 + √5) / 2)^n - ((1 - √5) / 2)^n) / √5)
+  return round(
+    (pow((1 + sqrt(5)) / 2, n) - pow((1 - sqrt(5)) / 2, n)) / sqrt(5)
+  );
+}
+</code></pre>
+<p>さすがに ↑ のコードは Wikipedia 見て書いたよ。数学者じゃないし……。</p>
+<h2><a class="header" href="#ランダウの記号" id="ランダウの記号">ランダウの記号</a></h2>
+<p>こういう計算にかかる時間を表す記号として、<em>O</em> を使った記法がある。</p>
+<p><em>O</em> のあとに続く括弧の中身でその計算の複雑さを示すものさしだよ。</p>
+<p><em>O</em>(1) みたいに書く。</p>
+<p><em>O</em> は <strong>オーダー</strong> と読む。</p>
+<p>以下は入力を <code>n</code> としたときの記法だよ。</p>
+<table><thead><tr><th>記法</th><th>名前</th><th>該当するアルゴリズム例</th></tr></thead><tbody>
+<tr><td><em>O</em>(1)</td><td>定数時間</td><td>多項式の計算、整数の偶奇判定</td></tr>
+<tr><td><em>O</em>(log n)</td><td>対数時間</td><td>二分探索</td></tr>
+<tr><td><em>O</em>(n)</td><td>線形時間</td><td>コンテナの全探索 (一重ループ)</td></tr>
+<tr><td><em>O</em>(n log n)</td><td>線形対数時間</td><td>(優れた)ソートアルゴリズム、高速フーリエ変換</td></tr>
+<tr><td><em>O</em>(n^a), 1 &lt; a</td><td>多項式時間</td><td>データの探索 (a 重ループ)</td></tr>
+<tr><td><em>O</em>(2^n)</td><td>指数時間</td><td></td></tr>
+<tr><td>:</td><td>:</td><td>:</td></tr>
+</tbody></table>
+<p>他にも呼び方はあるけれど、あんまり出てこないので省略。</p>
+<p>それでは、書いたプログラムがどの <em>O</em> なのか見ていこう。</p>
+<h3><a class="header" href="#定数時間" id="定数時間">定数時間</a></h3>
+<p><code>n</code> が偶数かどうか <code>bool</code> で返す関数。処理は一定。</p>
+<pre><code class="language-cpp">bool is_even(long n) {
+  return n % 2 == 0;
+}
+</code></pre>
+<hr />
+<p><code>n</code> の符号を返す関数。分岐があっても処理は一定 (最大 2 回)。</p>
+<pre><code class="language-cpp">int sign(int n) {
+  if (n &lt; 0) {
+    return -1;
+  }
+  if (0 &lt; n) {
+    return 1;
+  }
+  return 0;
+}
+</code></pre>
+<hr />
+<p>こういうのは <em>O</em>(1) だよ。</p>
+<h3><a class="header" href="#線形時間" id="線形時間">線形時間</a></h3>
+<p><code>1</code> から <code>n</code> までをすべて足す関数。</p>
+<p>これは必ず <code>n</code> 回の足し算をする。</p>
+<pre><code class="language-cpp">int sum_from_1_to(int n) {
+  int sum = 0:
+  for (int i = 1; i &lt; n; ++i) {
+    sum += i;
+  }
+  return sum;
+}
+</code></pre>
+<hr />
+<p><code>data</code> の中から <code>target</code> があるかどうか探索する関数。</p>
+<p>これは、最大で <code>data.size()</code> 回の比較をするので <em>O</em>(n)。</p>
+<p>データによっては <code>1</code> 回で終わることもあるけれど、</p>
+<p>どんなデータが来るかはわからないので最悪の状況を考えなきゃだめ。</p>
+<pre><code class="language-cpp">bool exists(std::vector&lt;int&gt; const &amp;data, int target) {
+  for (auto &amp;e : data) {
+    if (e == target) {
+      return true;
+    }
+  }
+  return false;
+}
+</code></pre>
+<hr />
+<p><code>0</code> から <code>end</code> 以下の偶数を順に出力する関数。</p>
+<p><code>end / 2</code> 回出力しているけれど、</p>
+<p><code>end</code> と処理回数が比例していることは変わらないので、これも <em>O</em>(n)。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+void print_even(int end) {
+  for (int i = 0; i &lt;= end; i += 2) {
+    std::cout &lt;&lt; i &lt;&lt; &quot;\n&quot;;
+  }
+}
+</code></pre>
+<hr />
+<p>だから、こいつらは <em>O</em>(n) にあたるよ。</p>
+<h3><a class="header" href="#平方-二乗-時間" id="平方-二乗-時間">平方 (二乗) 時間</a></h3>
+<p><code>n</code> × <code>n</code> の掛け算表を出力する関数。</p>
+<p><code>9</code> を渡せば九九表になる。</p>
+<p><code>n^2</code> の計算と出力をしてる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;iomanip&gt; // std::setw 関数が入っている
+
+void print_mul_table(int n) {
+  auto width = std::to_string(n * n).size();
+  for (int y = 1; y &lt;= n; ++y) {
+    for (int x = 1; x &lt;= n; ++x) {
+      // std::setw は直後の入力を右寄せで幅を付ける
+      // 実行してみれば分かるかも
+      std::cout &lt;&lt; std::setw(width) &lt;&lt; x * y &lt;&lt; &quot;, &quot;;
+    }
+    std::cout &lt;&lt; &quot;\n&quot;;
+  }
+}
+</code></pre>
+<hr />
+<p><code>vertexes</code> は、<code>pair&lt;int, int&gt;</code> の座標を格納している。</p>
+<p>この座標どうしの距離をすべて調べて、最も小さい距離を返す関数。</p>
+<p><code>vertexes.size()</code> を <code>n</code> とすると、<code>n (n - 1) / 2</code> 回の距離計算と比較をしている。</p>
+<pre><code class="language-cpp">double min_dist_between(std::vector&lt;std::pair&lt;int, int&gt;&gt; const &amp;vertexes) {
+  double min_dist = 1 / 0.0;
+  for (auto it = vertexes.begin(); it &lt; vertexes.end() - 1; ++it) {
+    for (auto to_comp = it + 1; to_comp &lt; vertexes.end(); ++to_comp) {
+      using std::pow;
+      using std::sqrt;
+      double dist = sqrt(pow(it-&gt;first - to_comp-&gt;first, 2) + pow(it-&gt;second - to_comp-&gt;second, 2));
+      if (dist &lt; min_dist) {
+        min_dist = dist;
+      }
+    }
+  }
+  return min_dist;
+}
+</code></pre>
+<hr />
+<p>こういうのは <em>O</em>(n^2) だね。</p>
+<h2><a class="header" href="#主張なアルゴリズムの計算量" id="主張なアルゴリズムの計算量">主張なアルゴリズムの計算量</a></h2>
+<p>最近のコンピュータは、だいたい 1 秒間で 10 の 7~8 乗 (<code>1e7~8</code>) 回の計算ができる。</p>
+<p>競技プログラミングの問題には以下のように入力の制約が書かれているので、それで試算できる。</p>
+<blockquote>
+<p>実行時間制限: 2 sec / メモリ制限: 1024MB</p>
+<p>(中略)</p>
+<h2><a class="header" href="#問題文" id="問題文">問題文</a></h2>
+<p>英小文字からなる文字列 <code>S</code> が与えられます。以下の条件をみたす最大の正整数 <code>K</code> を求めてください。</p>
+<ul>
+<li><code>S</code> の空でない <code>K</code> 個の文字列への分割 <code>S = S_1 S_2 ... S_K</code> で
+あって <code>S_i ≠ S_i+1 (1 ≦ i ≦ K - 1)</code> を満たすものが存在する。</li>
+</ul>
+<p>ただし、<code>S_1, S_2, ..., S_K</code> をこの順に連結して得られる文字列のことを
+<code>S_1 S_2 ... S_K</code> によって表しています。</p>
+<h2><a class="header" href="#制約" id="制約">制約</a></h2>
+<ul>
+<li><code>1 ≦ |S| ≦ 2 × 10^5</code></li>
+<li><code>S</code> は英小文字からなる</li>
+</ul>
+</blockquote>
+<p><a href="https://atcoder.jp/contests/agc037/tasks/agc037_a">AtCoder Grand Contest 037 A - Dividing a String</a> より引用</p>
+<p>この問題の場合は、文字列 <code>S</code> の長さが <code>2e5</code> 以下となっている。</p>
+<p>制限時間が 2 秒なので、<code>2e8</code> 回以上の計算は間に合わなくなりそう。</p>
+<p>多分 <em>O</em>(|S|^2) のプログラムだと制限時間に間に合わない。</p>
+<p><em>O</em>(|S|) で解くように考えないといけない (実際解ける)。</p>
+<p>こういう感じで考えるとプログラムを書く時間の無駄がないかも。</p>
+<p>逆に余裕があるなら、ちょっと時間のかかるプログラムでも早く書けるなら書いたほうがいいっていう感じ。</p>
+<h1><a class="header" href="#章末問題-4" id="章末問題-4">章末問題</a></h1>
+<hr />
+<p>以下の問題を用意しておきました。解いてプログラミングになれましょ。</p>
+<h2><a class="header" href="#例題-1-3" id="例題-1-3">例題 1</a></h2>
+<p>与えられた数が素数かどうか判定する関数を実装せよ。</p>
+<pre><code class="language-cpp">bool is_prime(long n) {
+  // ここに書く
+  return true;
+}
+</code></pre>
+<h3><a class="header" href="#解き方-3" id="解き方-3">解き方</a></h3>
+<p>愚直に <code>2</code> から <code>n</code> 未満までのどの数でも割り切れないかどうか調べるとこうなる。</p>
+<pre><code class="language-cpp">bool is_prime(long n) {
+  for (long i = 2; i &lt; n; ++i) {
+    if (n % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+</code></pre>
+<p><em>O</em>(n) もかかる。(正確には入力の桁数で数えるのが正しいので <em>O</em>(2^n))</p>
+<p>でも、<code>√n</code> 以下の数までで割れるかどうか調べるだけでいい。</p>
+<pre><code class="language-cpp">bool is_prime(long n) {
+  for (long i = 2; i * i &lt;= n; ++i) {
+    if (n % i == 0) {
+      return false;
+    }
+  }
+  return true;
+}
+</code></pre>
+<p>これなら <em>O</em>(√n) ですむ。</p>
+<p>実際はもうちょっと効率の良いやり方もあるけれど、大抵はこのくらいで大丈夫。</p>
+<h2><a class="header" href="#問-1-4" id="問-1-4">問 1</a></h2>
+<p>こんな入力がされる。</p>
+<pre><code>N M
+V1
+V2
+V3
+:
+VN
+Q1
+Q2
+Q3
+:
+QM
+</code></pre>
+<ul>
+<li><code>N</code> は <code>V</code> の個数を表す整数。</li>
+<li><code>M</code> は <code>Q</code> の個数を表す整数。</li>
+<li><code>V</code> は整数。</li>
+<li><code>Q</code> は <code>0</code> 以上 <code>N</code> 未満の整数。</li>
+</ul>
+<p><code>Q</code> 番目 (<code>0</code> 始まり) の <code>V</code> が偶数なら <code>1</code>、奇数なら <code>0</code> を、<code>Q</code> と同じ順番で出力せよ。</p>
+<p>入力例:</p>
+<pre><code>5 8
+3
+1
+7
+8
+-2
+2
+2
+3
+0
+4
+1
+1
+2
+</code></pre>
+<p>出力例:</p>
+<pre><code>00101000
+</code></pre>
+<h2><a class="header" href="#問-2-4" id="問-2-4">問 2</a></h2>
+<p><code>V</code> 個の異空間どうしが、<code>E</code> 個のポータルで繋がれている。</p>
+<p><code>0</code> 番目の空間から、<code>V - 1</code> 番目の空間へ移動したい。</p>
+<p>ポータルをたくさん通ってしまうと何らかの負荷が大きいので、</p>
+<p>ポータルを通る回数をできるだけ少なくしたい。</p>
+<p>最小で何回通ればいいか計算しよう。</p>
+<pre><code>E V
+src1 dst1
+src2 dst2
+:
+srcE dstE
+</code></pre>
+<ul>
+<li><code>E</code> は <code>src</code> と <code>dst</code> の個数を表す整数</li>
+<li><code>V</code> は正の整数</li>
+<li><code>src</code> と <code>dst</code> は <code>0</code> 以上 <code>V</code> 未満の整数</li>
+<li><code>0</code> 番目の空間から <code>V - 1</code> 番目の空間まで到達できないような入力はない。</li>
+</ul>
+<p>各ポータルは <code>src</code> 番目の空間から <code>dst</code> 番目の空間につながっている。</p>
+<p>ポータルを通る最小の回数を出力せよ。</p>
+<p>入力例:</p>
+<pre><code>5 5
+0 1
+1 2
+1 4
+4 3
+3 5
+</code></pre>
+<p>出力例</p>
+<pre><code>4
+</code></pre>
+<h3><a class="header" href="#ヒント" id="ヒント">ヒント</a></h3>
+<p>幅優先探索をしながら、「その空間に到達できる最小の通った回数」をメモするようにしてみよう。</p>
+<h2><a class="header" href="#問-3-1" id="問-3-1">問 3</a></h2>
+<p>なんか知らんけど迷路に迷い込んでいるみたい。</p>
+<p>都合のいいことに迷路の地図がある。</p>
+<p>お小水も近いので早く脱出したい。</p>
+<p>現在地からゴールまでの最短経路を求めよう。</p>
+<pre><code>W H
+Ix Iy
+maze_1_1 maze_1_2 .. maze_1_W
+maze_2_1 maze_2_2 .. maze_2_W
+:        :           :
+maze_H_1 maze_H_2 .. maze_H_W
+</code></pre>
+<ul>
+<li><code>W</code> と <code>H</code> は <code>0</code> 以上 <code>2e3</code> 以下の整数</li>
+<li><code>Ix</code> は <code>0</code> 以上 <code>W</code> 未満の整数</li>
+<li><code>Iy</code> は <code>0</code> 以上 <code>H</code> 未満の整数</li>
+<li><code>maze</code> は文字で、<code>'#'</code> か <code>' '</code> のどちらか</li>
+<li>最短経路が二通り以上ある / 存在しないような入力はない。</li>
+</ul>
+<p><code>W</code> は迷路の幅で、<code>H</code> は迷路の高さ。</p>
+<p>左上を <code>(x, y) = (0, 0)</code> として、現在位置は <code>(Ix, Iy)</code> である。</p>
+<p>ゴールは外周の空いたマスならどこでもいい。</p>
+<p>通る道を <code>'.'</code> にして出力せよ。</p>
+<p>入力例:</p>
+<pre><code>10 10
+1 1
+##########
+# ## #   #
+# #  # # #
+# #    # #
+# # # ## #
+#   # #  #
+# #   # ##
+# # # # ##
+#   # #  #
+######## #
+</code></pre>
+<p>出力例:</p>
+<pre><code>##########
+#.## #...#
+#.#  #.#.#
+#.#....#.#
+#.#.# ##.#
+#...# #..#
+# #   #.##
+# # # #.##
+#   # #..#
+########.#
+</code></pre>
+<h3><a class="header" href="#ヒント-1" id="ヒント-1">ヒント</a></h3>
+<p>探索している座標を <code>(x, y)</code> とすると、</p>
+<p><code>x == 0 || y == 0 || x == W - 1 || y == H - 1</code> のときに探索が終了する。</p>
+<p>幅優先探索をしながら、「そのマスに最短で到達できるときの通ってきた方向」をするといいかも。</p>
+<h1><a class="header" href="#クラス" id="クラス">クラス</a></h1>
+<p>プログラムはかくして分離された——</p>
+<hr />
+<p>この章で、プログラムを分けることができるようになる。</p>
+<h1><a class="header" href="#この章のゴール-9" id="この章のゴール-9">この章のゴール</a></h1>
+<ul>
+<li>クラスをテンポよく作る</li>
+<li>必要なメンバを定義する</li>
+<li>メンバを公開/非公開にする</li>
+<li>コンストラクタ/デストラクタを定義する</li>
+<li>静的メンバの使い所を押さえる</li>
+<li>抽象クラスを定義する</li>
+<li>クラスを派生する</li>
+</ul>
+<p>所要時間: 120 ~ 130 分くらい</p>
+<h1><a class="header" href="#クラス定義" id="クラス定義">クラス定義</a></h1>
+<p>世界に一つだけの型</p>
+<hr />
+<p>今までは <code>int</code> や <code>double</code> のような言語に用意されている型でプログラムを書いてきた。</p>
+<p>一応そういう型だけでもプログラミングできるけど、同じような変数の組み合わせに同じような処理書くことが多くなってくる。</p>
+<pre><code class="language-cpp">int player1_x, player1_y;
+int player2_x, player2_y;
+if (player1_x &lt; player2_x &amp;&amp; player1_y &lt; player2_y) { ... }
+</code></pre>
+<p><strong>クラス</strong> を定義することで、<strong>変数のまとまりとそれに対する処理</strong> をこんな感じで書くことができる。</p>
+<pre><code class="language-cpp">struct Point {
+  int x, y;
+  bool is_upper_left(Point const &amp;p) const {
+    return x &lt; p.x &amp;&amp; y &lt; p.y;
+  }
+};
+</code></pre>
+<p>クラスの定義構文はこんな感じ。</p>
+<pre><code class="language-cpp">class クラス名 {
+  メンバ1;
+  メンバ2;
+  :
+  :
+};
+// または、
+struct クラス名 {
+  メンバ1;
+  メンバ2;
+  :
+  :
+};
+</code></pre>
+<p><code>class</code> と <code>struct</code> ではメンバの扱いが少し異なる。
+詳しくは次の次のページで解説するよ。</p>
+<h1><a class="header" href="#クラスを作る基準" id="クラスを作る基準">クラスを作る基準</a></h1>
+<p>ただ、何でもかんでもクラスにすればいいってわけじゃない。</p>
+<p>プログラムでやっている <strong>処理を責務ごとに分ける</strong> という、少し特殊な考え方が必要になる。</p>
+<h2><a class="header" href="#プログラムでよく登場する概念" id="プログラムでよく登場する概念">プログラムでよく登場する概念</a></h2>
+<p>ゲームを例にすると、キャラクターの座標、コントロール、アニメーションとかがよく登場する。</p>
+<p>そういうものを責務ごとで予めクラスに分けておくと、機能を追加/変更するときに分かりやすくなる。</p>
+<h2><a class="header" href="#変更される頻度に差がある部分" id="変更される頻度に差がある部分">変更される頻度に差がある部分</a></h2>
+<p>同じくゲームを例にすると、ゲームのルールやロジックの処理よりも、画面やキャラクターデータの方が変化しやすい。</p>
+<p>こういう場合、ロジックとキャラクターデータ、ロジックと画面を一緒のクラスにすると複数の役割が混ざっていることになる。こいつらはそれぞれ別のクラスにしておかないといけない。</p>
+<p>実際に C++ で書くときは <em>抽象クラス</em> を使うことになるけど、それは 5 ページ先のお話。</p>
+<h1><a class="header" href="#メンバ定義" id="メンバ定義">メンバ定義</a></h1>
+<p>ﾅｶｰﾏ</p>
+<hr />
+<p>クラスにメンバを定義すると、インスタンスからメンバにアクセスできる。</p>
+<h1><a class="header" href="#メンバ変数" id="メンバ変数">メンバ変数</a></h1>
+<p>メンバ変数を定義すると、クラスのオブジェクトがそれを所有するようになる。</p>
+<pre><code class="language-cpp">class Position {
+  int x, y;
+  double norm;
+  :
+  :
+};
+Position p; // p は x、y、norm とかを持っている
+</code></pre>
+<h1><a class="header" href="#メンバ関数" id="メンバ関数">メンバ関数</a></h1>
+<p>メンバ関数を定義すると、クラスのオブジェクトに関数がくっつく (厳密には所有じゃない)。</p>
+<pre><code class="language-cpp">class Position {
+  void add(Position const&amp;) { /* ... */ }
+  double abs() const {// ← の const 修飾をつけると、オブジェクトが const のときだけ呼び出せる
+   // ...
+  }
+  :
+  :
+};
+Position p; // p に add、norm などの関数がくっついている
+</code></pre>
+<h1><a class="header" href="#アクセス指定子-public--private" id="アクセス指定子-public--private">アクセス指定子 public / private</a></h1>
+<p>メンバには公開と非公開があって、公開されているメンバしか外部から触れない。</p>
+<p>それぞれ、<strong>アクセス指定</strong> をすることで設定できる。</p>
+<h2><a class="header" href="#public" id="public">public</a></h2>
+<p><code>public</code> と指定したメンバのみ、クラスの外からアクセスできる。</p>
+<pre><code class="language-cpp">class Counter {
+  // ...
+public: // これ以降で定義したメンバは全て public になる
+  void add(int n) {
+    safeAdd(n); // 後述の private なメンバ関数
+  }
+  int getCount() const { // メンバ変数を変えない場合は const を付けるのが C++er
+     return count;
+  } 
+};
+Counter c;
+c.add(2);
+auto const count = c.getCount();
+</code></pre>
+<p><code>struct</code> で作ったクラスのデフォルトの指定子でもある。</p>
+<pre><code class="language-cpp">struct Chunk {
+  int a;
+  int b;
+};
+Chunk c;
+c.a = 2;
+auto b = c.b;
+</code></pre>
+<h2><a class="header" href="#private" id="private">private</a></h2>
+<p><code>private</code> と指定したメンバは、同じクラスのメンバからしかアクセスできない。</p>
+<pre><code class="language-cpp">class Counter {
+private: // これ以降で定義したメンバは全て private になる
+  int count;
+
+  void safeAdd(int n) {
+    if (0 &lt; n &amp;&amp; count + n &lt; 100) {
+      count += n;
+    }
+  }
+  // ...
+};
+</code></pre>
+<p>メンバは基本的にこの指定子にする。メンバ関数が少ない方が分かりやすいからね。</p>
+<p><code>class</code> で作ったクラスのデフォルトの指定子でもある。</p>
+<blockquote>
+<p>本当はもう一つアクセス指定子があるんだけど、それは無くてもいいのでまた別の機会に</p>
+</blockquote>
+<p><strong>メンバ変数はできる限り <code>private</code> に</strong> して、その変更はメンバ関数で行うこと。
+クラスのメリットの一つに、<strong>メンバ変数の値をメンバ関数内で正常なままに制御できる</strong> って所があるからね。
+メンバ変数をいじるときは、<strong>メンバ関数を通してそこから変更する</strong> ようにしてね。</p>
+<h1><a class="header" href="#this" id="this">this</a></h1>
+<p>ほら、コレだよコレ</p>
+<hr />
+<p>メンバ関数では、<code>this</code> という特別な値が使える。</p>
+<p>こいつはメンバ関数を呼び出すのに使ったオブジェクトのポインタだ。</p>
+<pre><code class="language-cpp">struct Hoge {
+  void foo() {
+    this;
+  }
+};
+Hoge hoge;
+hoge.foo(); // この場合の this は &amp;hoge と同じ
+
+Hoge{}.foo(); // この場合の this が指す実体は、式が終わるとなくなる
+</code></pre>
+<p>他のメンバへのアクセスは <code>this</code> を介しているけれど、省略できちゃう。</p>
+<pre><code class="language-cpp">class Position {
+  int _x, _y;
+public:
+   int x() const {
+     return this-&gt;_x; // 本当はこうする
+   }
+   int y() const {
+     return _y; // this-&gt; は省略できるってだけ
+   }
+};
+</code></pre>
+<p><code>this</code> がどこから来ているのかイメージしにくかったら、こういうプログラムなんだと思ってみてね。</p>
+<pre><code class="language-cpp">struct Hoge {};
+void foo(Hoge +this) { /* ... */ }
+
+Hoge hoge;
+foo(&amp;hoge);
+</code></pre>
+<h1><a class="header" href="#コンストラクタデストラクタ" id="コンストラクタデストラクタ">コンストラクタ/デストラクタ</a></h1>
+<p>トラクター</p>
+<hr />
+<p>クラスには <strong>コンストラクタ</strong> と <strong>デストラクタ</strong> という <em>特殊なメンバ関数</em> を定義することができる。</p>
+<h1><a class="header" href="#コンストラクタ" id="コンストラクタ">コンストラクタ</a></h1>
+<p><strong>オブジェクトを作るときに自動で呼ばれる</strong> メンバ関数で、<strong>メンバ変数の初期化</strong> とかをする。</p>
+<pre><code class="language-cpp">struct Cons {
+  Cons(); // コンストラクは、クラス名と同じ名前で戻り値型を書かない
+};
+Cons c; // Cons のコンストラクタが呼ばれる。
+</code></pre>
+<p>引数のあるコンストラクタも作れる。</p>
+<p>逆に、引数が必要ないコンストラクタを <em>デフォルトコンストラクタ</em> って言う。</p>
+<pre><code class="language-cpp">struct Cons {
+  Cons(int) {}
+};
+Cons a(1), b{2}, c = 3;
+</code></pre>
+<p>逆に、コンストラクタを <code>private</code> にしちゃうとクラスのメンバからしかクラスのオブジェクトを構築できなくなる。</p>
+<pre><code class="language-cpp">class CannotCons {
+  CannotCons() {}
+};
+CannotCons c; // エラー
+</code></pre>
+<p>このテクニックの出番は次のページだよ。</p>
+<h2><a class="header" href="#コピーコンストラクタ" id="コピーコンストラクタ">コピーコンストラクタ</a></h2>
+<p>クラスのオブジェクトを変数から変数へ <em>コピーするときに呼ばれるコンストラクタ</em> を定義できる。</p>
+<p>自身と同じ型の <code>const &amp;</code> を受け取るコンストラクタがコピーコンストラクタになる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+struct SayCopy {
+  SayCopy() {}
+  SayCopy(SayCopy const&amp;) {
+    std::cout &lt;&lt; &quot;コピーしたぜ!\n&quot;;
+  }
+};
+SayCopy a;
+SayCopy b = a; // コピーしたぜ!
+</code></pre>
+<p>定義の部分を <code>= default</code> にすれば、自動で全メンバ変数をコピーする処理にしてくれる。</p>
+<pre><code class="language-cpp">struct AutoCopy {
+  AutoCopy() {}
+  AutoCopy(AutoCopy const&amp;) = default;
+};
+</code></pre>
+<blockquote>
+<p>ムーブコンストラクタもあるけど、それはまたの機会に。</p>
+</blockquote>
+<h2><a class="header" href="#初期化子" id="初期化子">初期化子</a></h2>
+<p>コンストラクタの引数リストとブロックの間で、メンバ変数を初期化する構文がある。</p>
+<p>コンストラクタの引数でメンバ変数を初期化するときに便利。</p>
+<pre><code class="language-cpp">class Position {
+  int _x, _y;
+
+public:
+  Position() : _x(0), _y(0) {}
+
+  // : の後に メンバ変数名(初期値) をカンマ区切りで書く
+  Position(int x, int y) : _x(x), _y(y) {}
+};
+</code></pre>
+<h2><a class="header" href="#初期化リスト" id="初期化リスト">初期化リスト</a></h2>
+<p><code>std::initializer_list</code> というものをコンストラクタの引数で受け取るようにすると、初期化リストに対応したクラスが作れる。</p>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+
+class IntList {
+  std::vector&lt;int&gt; vec;
+public:
+  IntList(std::initializer_list&lt;int&gt; list) : vec(list) {}
+};
+
+IntList list {1, 4, 2, 3, 5, 2, 3};
+</code></pre>
+<h1><a class="header" href="#デストラクタ" id="デストラクタ">デストラクタ</a></h1>
+<p><strong>オブジェクトが使えなくなるときに自動で呼ばれる</strong> メンバ関数で、<strong>リソースの解放</strong> とかをする。</p>
+<p>大抵は書かなくて良いが、コンストラクタとかでやった処理をの後始末に使う。</p>
+<pre><code class="language-cpp">#include &lt;cstdio&gt;
+
+class Des {
+  FILE *handler;
+
+  Des() {
+    // ファイルを開く fopen 関数
+    handler = std::fopen(&quot;nanntoka.txt&quot;, &quot;r&quot;);
+    // ファイル操作した後は fclose を呼んでファイルを閉じるべき
+  }
+  ~Des() {
+    // この Des が破棄されるとファイルも閉じられる
+    std::fclose(handler);
+  }
+};
+
+{
+  Des des; // ファイルが開かれる
+} // ファイルが閉じられる
+</code></pre>
+<h1><a class="header" href="#静的メンバ" id="静的メンバ">静的メンバ</a></h1>
+<p>えっちではない</p>
+<hr />
+<p>今までのメンバはクラスのオブジェクトに関するものだった。</p>
+<p><strong>静的メンバ</strong> という、クラスの名前に所属しているメンバも定義できる。</p>
+<p>静的メンバは、<code>static</code> を前に付けて定義する。</p>
+<h1><a class="header" href="#静的メンバ関数" id="静的メンバ関数">静的メンバ関数</a></h1>
+<p>特定のオブジェクトを作る処理を静的メンバ関数にするとよい。</p>
+<p>というのも、静的メンバ関数もメンバなので作ったオブジェクトのメンバ変数をいじれるから。</p>
+<pre><code class="language-cpp">class Position {
+  int _x, _y;
+  bool _is_null;
+
+  Position() : _x(0), _y(0), _is_null(false) {}
+public:
+  static Position coordinate(int x, int y) {
+    Position p;
+    p._x = x;
+    p._y = y;
+    return p;
+  }
+
+  static Position null() {
+    Position p;
+    p._is_null = true;
+    return p;
+  }
+  // ...
+};
+</code></pre>
+<h1><a class="header" href="#静的メンバ変数" id="静的メンバ変数">静的メンバ変数</a></h1>
+<p>クラスのオブジェクト全体で共有する変数になる。</p>
+<pre><code class="language-cpp">class Wood {
+  static std::string texturePath = &quot;assets/wood_1.png&quot;;
+};
+
+// 静的メンバ変数はクラス内だと宣言になるので、定義が別に必要
+// クラスにある名前は クラス名::メンバ名 になる
+std::string Wood::texturePath = &quot;assets/wood_1.png&quot;;
+</code></pre>
+<p>以下はシングルトンパターンと言う、オブジェクトが一つしか存在しないようにする書き方。</p>
+<p>コピーコンストラクタを消して、勝手にコピーできないようにしている。</p>
+<pre><code class="language-cpp">class Singleton {
+  static Singleton _instance;
+
+  Singleton() {}
+  Singleton(Singleton const&amp;) = delete; // コピーコンストラクタを delete
+  // ...
+public:
+  static Singleton&amp; instance() { return _instance; }
+  // ...
+};
+Singleton Singleton::_instance;
+</code></pre>
+<h1><a class="header" href="#クラスの派生" id="クラスの派生">クラスの派生</a></h1>
+<p>血統書付き</p>
+<hr />
+<p>ここに、<code>class A</code> がある。こいつを使って話を進めるぜ。</p>
+<pre><code class="language-cpp">class A {
+public:
+  void a();
+private:
+  void b();
+};
+</code></pre>
+<p>クラスは <strong>派生</strong> ができる。これは、他のクラスのメンバを自分に写す言語機能だ。</p>
+<p>書き方はこんな感じ。アクセス指定子は普通 <code>public</code> にする。</p>
+<pre><code class="language-cpp">// : の後に アクセス指定子 クラス名 をカンマ区切りで
+class B : public A { // B は A の派生クラスになった
+public:
+  void c() {
+    a(); // 自分のメンバみたいに使える
+    b(); // エラー、private なものは見れない
+  }
+};
+</code></pre>
+<h2><a class="header" href="#アップキャスト" id="アップキャスト">アップキャスト</a></h2>
+<p>派生したクラスのオブジェクトは、<strong>派生元のクラスの参照やポインタとしても扱える</strong>。</p>
+<pre><code class="language-cpp">B b;
+A &amp;ref = b;
+ref.a(); // OK
+</code></pre>
+<h2><a class="header" href="#派生はしない方が良い" id="派生はしない方が良い">派生はしない方が良い</a></h2>
+<p>ただ、派生は <em>他のクラスに強く依存してしまう</em> ので、できる限り避けなければならないぞ。</p>
+<p>次のページでやる <em>抽象クラス</em> の派生となると話は別だけど。</p>
+<p>大抵は普通に <strong>メンバ変数として他クラスのオブジェクトを持てば良い</strong>。</p>
+<pre><code class="language-cpp">class B {
+  A a;
+
+public:
+  void c() {
+    a.a();
+    a.b(); // エラー、private なものは当然見れない
+  }
+};
+</code></pre>
+<h1><a class="header" href="#抽象クラス" id="抽象クラス">抽象クラス</a></h1>
+<p>ふわふわ〜</p>
+<hr />
+<h1><a class="header" href="#virtual" id="virtual">virtual</a></h1>
+<p>メンバ関数には、<code>virtual</code> という指定ができる。こんな関数を仮想関数っていう。</p>
+<pre><code class="language-cpp">class A {
+  virtual void a() {}
+};
+</code></pre>
+<h2><a class="header" href="#オーバーライド" id="オーバーライド">オーバーライド</a></h2>
+<p>クラスを派生するときに、派生元クラスと同じ形のメンバ関数を定義して上書きできる。</p>
+<p>試しに、普通の関数を上書きしたクラスを用意して、そのオブジェクトを親クラスの型にぶち込んでみる。</p>
+<pre><code class="language-cpp">struct A { void a() { std::cout &lt;&lt; &quot;A\n&quot;; } };
+struct B : public A { void a() { std::cout &lt;&lt; &quot;B\n&quot;; } };
+
+B b;
+A &amp;ref = b;
+ref.a(); // A
+</code></pre>
+<p>うん。オブジェクトは <code>struct B</code> のものなのに、<code>struct A</code> のメンバ関数を呼び出している。</p>
+<p>これは、型が <code>struct A</code> になってるからメンバもそっちなんだと解決される。</p>
+<p>この定義の上書きを <strong>オーバーライド</strong> って言う。</p>
+<p>仮想関数でも同じことをやってみよう。</p>
+<pre><code class="language-cpp">// virtual の指定は派生元だけで OK
+struct A { virtual void a() { std::cout &lt;&lt; &quot;A\n&quot;; } };
+struct B : public A { void a() { std::cout &lt;&lt; &quot;B\n&quot;; } };
+
+B b;
+A &amp;ref = b;
+ref.a(); // B
+</code></pre>
+<p>あれ、<code>struct B</code> のメンバ関数が呼ばれた。</p>
+<p>つまり、仮想関数にすると、実際のオブジェクトのメンバ関数が呼ばれるわけだ。</p>
+<p>ちなみに、<code>override</code> を付けるとオーバーライドできていないときにコンパイラがエラーを出してくれる。</p>
+<pre><code class="language-cpp">struct A {
+  virtual void a() { std::cout &lt;&lt; &quot;A\n&quot;; }
+};
+struct B : public A {
+  void a() override { std::cout &lt;&lt; &quot;B\n&quot;; }
+};
+</code></pre>
+<h2><a class="header" href="#純粋仮想関数" id="純粋仮想関数">純粋仮想関数</a></h2>
+<p>仮想関数を定義するときに、定義の部分を <code>= 0</code> ってすると <strong>純粋仮想関数</strong> になる。</p>
+<pre><code class="language-cpp">class A {
+  virtual void a() = 0;
+};
+</code></pre>
+<p>純粋仮想関数が含まれるクラスは <strong>抽象クラス</strong> として扱われるよ。</p>
+<p>抽象クラスは、オブジェクトを作ることができなくなるよ。</p>
+<pre><code class="language-cpp">A a; // エラー
+</code></pre>
+<p>でも、参照やポインタを扱うことはできる。</p>
+<pre><code class="language-cpp">void invoke(A &amp;ref) {
+  ref.a();
+}
+</code></pre>
+<p>さっきみたいに、仮想関数をオーバーライドして使うのが前提になってるんだ。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

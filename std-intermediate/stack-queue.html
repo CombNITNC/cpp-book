@@ -1,0 +1,781 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>スタックとキュー - C/C++講座</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="../intro.html">ようこそ</a></li><li class="expanded "><a href="../setup.html"><strong aria-hidden="true">1.</strong> 環境構築</a></li><li class="expanded "><a href="../basis/intro.html"><strong aria-hidden="true">2.</strong> 基礎</a></li><li><ol class="section"><li class="expanded "><a href="../basis/minimal.html"><strong aria-hidden="true">2.1.</strong> 最小限のコード</a></li><li class="expanded "><a href="../basis/comments.html"><strong aria-hidden="true">2.2.</strong> コメント</a></li><li class="expanded "><a href="../basis/main-func.html"><strong aria-hidden="true">2.3.</strong> main 関数</a></li><li class="expanded "><a href="../basis/func-call.html"><strong aria-hidden="true">2.4.</strong> 文と関数呼び出し</a></li><li class="expanded "><a href="../basis/ops-1.html"><strong aria-hidden="true">2.5.</strong> 式と演算子 其の一</a></li><li class="expanded "><a href="../basis/compound.html"><strong aria-hidden="true">2.6.</strong> 複文とインデント</a></li><li class="expanded "><a href="../basis/cout.html"><strong aria-hidden="true">2.7.</strong> std::cout</a></li></ol></li><li class="expanded "><a href="../type-vars/intro.html"><strong aria-hidden="true">3.</strong> 型と変数</a></li><li><ol class="section"><li class="expanded "><a href="../type-vars/variables.html"><strong aria-hidden="true">3.1.</strong> 変数と識別子</a></li><li class="expanded "><a href="../type-vars/int-double.html"><strong aria-hidden="true">3.2.</strong> int / double</a></li><li class="expanded "><a href="../type-vars/init.html"><strong aria-hidden="true">3.3.</strong> 初期化</a></li><li class="expanded "><a href="../type-vars/ops-2.html"><strong aria-hidden="true">3.4.</strong> 演算子 其の二</a></li><li class="expanded "><a href="../type-vars/type-conv.html"><strong aria-hidden="true">3.5.</strong> 型変換</a></li><li class="expanded "><a href="../type-vars/scope.html"><strong aria-hidden="true">3.6.</strong> スコープ</a></li><li class="expanded "><a href="../type-vars/cin.html"><strong aria-hidden="true">3.7.</strong> std::cin</a></li><li class="expanded "><a href="../type-vars/questions.html"><strong aria-hidden="true">3.8.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../fork/intro.html"><strong aria-hidden="true">4.</strong> 分岐</a></li><li><ol class="section"><li class="expanded "><a href="../fork/bool.html"><strong aria-hidden="true">4.1.</strong> bool</a></li><li class="expanded "><a href="../fork/ops-3.html"><strong aria-hidden="true">4.2.</strong> 演算子 其の三</a></li><li class="expanded "><a href="../fork/if.html"><strong aria-hidden="true">4.3.</strong> if</a></li><li class="expanded "><a href="../fork/ops-4.html"><strong aria-hidden="true">4.4.</strong> 演算子 其の四</a></li><li class="expanded "><a href="../fork/else.html"><strong aria-hidden="true">4.5.</strong> else</a></li><li class="expanded "><a href="../fork/switch.html"><strong aria-hidden="true">4.6.</strong> switch</a></li><li class="expanded "><a href="../fork/questions.html"><strong aria-hidden="true">4.7.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../loop/intro.html"><strong aria-hidden="true">5.</strong> 反復</a></li><li><ol class="section"><li class="expanded "><a href="../loop/while.html"><strong aria-hidden="true">5.1.</strong> while</a></li><li class="expanded "><a href="../loop/do-while.html"><strong aria-hidden="true">5.2.</strong> do - while</a></li><li class="expanded "><a href="../loop/continue.html"><strong aria-hidden="true">5.3.</strong> continue</a></li><li class="expanded "><a href="../loop/break.html"><strong aria-hidden="true">5.4.</strong> break</a></li><li class="expanded "><a href="../loop/for.html"><strong aria-hidden="true">5.5.</strong> for</a></li><li class="expanded "><a href="../loop/nested.html"><strong aria-hidden="true">5.6.</strong> 多重ループ</a></li><li class="expanded "><a href="../loop/questions.html"><strong aria-hidden="true">5.7.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../func/intro.html"><strong aria-hidden="true">6.</strong> 関数を作る</a></li><li><ol class="section"><li class="expanded "><a href="../func/define.html"><strong aria-hidden="true">6.1.</strong> 関数を作る</a></li><li class="expanded "><a href="../func/args.html"><strong aria-hidden="true">6.2.</strong> 引数</a></li><li class="expanded "><a href="../func/return.html"><strong aria-hidden="true">6.3.</strong> 戻り値と return</a></li><li class="expanded "><a href="../func/pass.html"><strong aria-hidden="true">6.4.</strong> 値渡し</a></li><li class="expanded "><a href="../func/resolve.html"><strong aria-hidden="true">6.5.</strong> 名前解決</a></li></ol></li><li class="expanded "><a href="../object/intro.html"><strong aria-hidden="true">7.</strong> オブジェクトたち</a></li><li><ol class="section"><li class="expanded "><a href="../object/other-types.html"><strong aria-hidden="true">7.1.</strong> float char 16/8/2進数リテラル</a></li><li class="expanded "><a href="../object/specifier.html"><strong aria-hidden="true">7.2.</strong> long short signed unsigned</a></li><li class="expanded "><a href="../object/class-inst.html"><strong aria-hidden="true">7.3.</strong> クラスとインスタンス</a></li><li class="expanded "><a href="../object/member-func.html"><strong aria-hidden="true">7.4.</strong> メンバ関数呼び出し</a></li></ol></li><li class="expanded "><a href="../ref/intro.html"><strong aria-hidden="true">8.</strong> 参照</a></li><li><ol class="section"><li class="expanded "><a href="../ref/const.html"><strong aria-hidden="true">8.1.</strong> const</a></li><li class="expanded "><a href="../ref/ref.html"><strong aria-hidden="true">8.2.</strong> 参照型</a></li><li class="expanded "><a href="../ref/const-on-ref.html"><strong aria-hidden="true">8.3.</strong> const の参照</a></li><li class="expanded "><a href="../ref/array.html"><strong aria-hidden="true">8.4.</strong> 配列型</a></li><li class="expanded "><a href="../ref/cstring.html"><strong aria-hidden="true">8.5.</strong> 文字列</a></li><li class="expanded "><a href="../ref/range-based-for.html"><strong aria-hidden="true">8.6.</strong> 範囲for文</a></li></ol></li><li class="expanded "><a href="../std-beginner/intro.html"><strong aria-hidden="true">9.</strong> 標準ライブラリ 初級編</a></li><li><ol class="section"><li class="expanded "><a href="../std-beginner/use-namespace.html"><strong aria-hidden="true">9.1.</strong> 名前空間とusing</a></li><li class="expanded "><a href="../std-beginner/cmath-numeric.html"><strong aria-hidden="true">9.2.</strong> 数学的な関数</a></li><li class="expanded "><a href="../std-beginner/container.html"><strong aria-hidden="true">9.3.</strong> コンテナ</a></li><li class="expanded "><a href="../std-beginner/easy-it.html"><strong aria-hidden="true">9.4.</strong> かんたんイテレータ</a></li><li class="expanded "><a href="../std-beginner/multiple-container.html"><strong aria-hidden="true">9.5.</strong> 多重コンテナ</a></li><li class="expanded "><a href="../std-beginner/questions.html"><strong aria-hidden="true">9.6.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../std-intermediate/intro.html"><strong aria-hidden="true">10.</strong> 標準ライブラリ 中級編</a></li><li><ol class="section"><li class="expanded "><a href="../std-intermediate/lambda.html"><strong aria-hidden="true">10.1.</strong> ラムダ式</a></li><li class="expanded "><a href="../std-intermediate/algorithm.html"><strong aria-hidden="true">10.2.</strong> アルゴリズム関数</a></li><li class="expanded "><a href="../std-intermediate/stack-queue.html" class="active"><strong aria-hidden="true">10.3.</strong> スタックとキュー</a></li><li class="expanded "><a href="../std-intermediate/more-it.html"><strong aria-hidden="true">10.4.</strong> もっとイテレータ</a></li><li class="expanded "><a href="../std-intermediate/optimize.html"><strong aria-hidden="true">10.5.</strong> 最適化</a></li><li class="expanded "><a href="../std-intermediate/questions.html"><strong aria-hidden="true">10.6.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../class/intro.html"><strong aria-hidden="true">11.</strong> クラス</a></li><li><ol class="section"><li class="expanded "><a href="../class/define.html"><strong aria-hidden="true">11.1.</strong> クラス定義</a></li><li class="expanded "><a href="../class/member.html"><strong aria-hidden="true">11.2.</strong> メンバ定義</a></li><li class="expanded "><a href="../class/this.html"><strong aria-hidden="true">11.3.</strong> this</a></li><li class="expanded "><a href="../class/constructor-destructor.html"><strong aria-hidden="true">11.4.</strong> コンストラクタ/デストラクタ</a></li><li class="expanded "><a href="../class/static.html"><strong aria-hidden="true">11.5.</strong> 静的メンバ</a></li><li class="expanded "><a href="../class/inherit.html"><strong aria-hidden="true">11.6.</strong> クラスの派生</a></li><li class="expanded "><a href="../class/abstract.html"><strong aria-hidden="true">11.7.</strong> 抽象クラス</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">C/C++講座</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#スタックとキュー" id="スタックとキュー">スタックとキュー</a></h1>
+<p>L! I! F! O!</p>
+<hr />
+<p>ここでは、ちょっと変わったコンテナとその使い道を紹介していく。</p>
+<h2><a class="header" href="#stack" id="stack">stack</a></h2>
+<p>データを後ろからのみ入れることができて、後ろから逆の順序でしか取り出せないコンテナ。</p>
+<p>データを皿のように積み上げていくイメージ。</p>
+<p>ここでのスタックは MTG の用語じゃないよ。</p>
+<pre><code>↑ 取ったり ↓ 乗せたり
+ーーー
+| 2 |
+ーーー
+| 0 | こことか
+ーーー
+| 1 | ここは取り出せない
+ーーー
+</code></pre>
+<p><code>#include &lt;stack&gt;</code> が必要。</p>
+<pre><code class="language-cpp">// vector と同じで格納する型はテンプレート引数
+std::stack&lt;int&gt; S;
+
+// push でスタックに一つ「積む」
+S.push(2); // {2}
+
+// pop でスタックから一つ取り除く
+S.pop(); // { }
+
+S.push(4); // {4}
+S.push(3); // {4, 3}
+S.pop(); // {4}
+S.push(1); // {4, 1}
+
+// empty で空かどうかを bool で取得
+while (!S.empty()) {
+  // top でスタックの一番上 (後ろ) を取得
+  auto top = S.top();
+  S.pop();
+  std::cout &lt;&lt; top &lt;&lt; &quot; &quot;;
+}
+</code></pre>
+<p>これは、やることを積んでおいて逆順に解決していくのに使うよ。</p>
+<h3><a class="header" href="#例題" id="例題">例題</a></h3>
+<p>例題をやってみる。</p>
+<blockquote>
+<p>入力:</p>
+<pre><code>N
+T
+</code></pre>
+<ul>
+<li><code>N</code> は <code>0</code> 以上 <code>T の長さ</code> 未満の整数</li>
+<li><code>T</code> は文字列</li>
+</ul>
+<p><code>'('</code> と <code>')'</code> で構成された文字列が与えられる。</p>
+<p><code>'('</code> と <code>')'</code> は必ず対応付け (開いて閉じること) がされている。</p>
+<p>文字列 <code>T</code> の <code>N</code> 番目の位置 (0 始まり) の  <code>'('</code> または <code>')'</code> に対応している、反対向きの括弧の位置 (0 始まり) を探す。</p>
+<p>その位置を出力せよ。</p>
+</blockquote>
+<p>例えば、入力が</p>
+<pre><code>5
+((())(()()))(())
+</code></pre>
+<p>の場合は、</p>
+<pre><code>( ( ( ) ) ( ( ) ( ) ) )  ( (  ) )
+0                     11 12     15
+  1     4                  13 14
+    2 3
+          5         10
+            6 7
+                8 9
+</code></pre>
+<p>と対応付けられるので、<code>10</code> を出力する。</p>
+<ol>
+<li>文字列の中の文字を一つづつ見る
+<ol>
+<li>括弧が始まっている
+<ol>
+<li>その位置を <code>stack</code> に乗せて次の文字へ</li>
+</ol>
+</li>
+<li><code>stack</code> の <code>top</code>、もしくは今見ている位置が <code>N</code> に等しいかどうか見る
+<ol>
+<li>等しければ反対側にあたる位置を出力して終了</li>
+</ol>
+</li>
+<li>括弧が終わっている (他の文字がないので常に <code>true</code>)
+<ol>
+<li><code>stack</code> を一つ取る</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>と解けば楽ちん。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;stack&gt;
+
+int main() {
+  int N;
+  std::string T;
+  std::cin &gt;&gt; N &gt;&gt; T;
+
+  std::stack&lt;int&gt; brace_index;
+  for (size_t i = 0; i &lt; T.size(); ++i) {
+    if (T[i] == '(') {
+      brace_index.push(i);
+      continue;
+    }
+    if (i == N) {
+      std::cout &lt;&lt; brace_index.top() &lt;&lt; &quot;\n&quot;;
+      break;
+    }
+    if (brace_index.top() == N) {
+      std::cout &lt;&lt; i &lt;&lt; &quot;\n&quot;;
+      break;
+    }
+    brace_index.pop();
+  }
+}
+</code></pre>
+<h2><a class="header" href="#queue" id="queue">queue</a></h2>
+<p>データを入れると、入れた順番でしか取り出せないコンテナ。</p>
+<p>要素は後ろから追加する。</p>
+<p>要素の取得と削除は前側からしかできない。</p>
+<p><code>#include &lt;queue&gt;</code> が必要。</p>
+<pre><code class="language-cpp">std::queue&lt;int&gt; Q;
+
+// push と pop があるけど stack とは違う
+
+Q.push(2); // {2}
+Q.pop(); // { }
+Q.push(4); // {4}
+Q.push(3); // {4, 3}
+Q.pop(); // {3}
+Q.push(1); // {3, 1}
+
+// empty で空かどうかを bool で取得
+while (!Q.empty()) {
+  // front でキューの先頭を取得
+  auto head = Q.front();
+  Q.pop();
+  std::cout &lt;&lt; head &lt;&lt; &quot; &quot;;
+}
+</code></pre>
+<h3><a class="header" href="#例題-1" id="例題-1">例題</a></h3>
+<p>それじゃあ毎度おなじみ例題だよ。</p>
+<blockquote>
+<p>入力:</p>
+<pre><code>V E S G
+src1 dst1
+src2 dst2
+:
+srcE dstE
+</code></pre>
+<ul>
+<li><code>V</code> と <code>E</code> は正の整数</li>
+<li><code>S</code> と <code>G</code> は <code>0</code> 以上 <code>E</code> 未満の整数</li>
+<li><code>srcE</code> と <code>dstE</code> は <code>0</code> 以上 <code>V</code> 未満の整数</li>
+</ul>
+<p><code>V</code> 個の異空間がある。</p>
+<p>異空間どうしの間には二つの空間をつなぐ一方通行のポータルがあり、<code>src</code> 番目の空間から <code>dst</code> 番目の空間に向かってだけ移動できる。</p>
+<p>ポータルを利用して、<code>S</code> 番目の空間から <code>G</code> 番目の空間へ移動できるかどうか求めよ。</p>
+<p>移動できる場合は <code>&quot;YES&quot;</code>、できない場合は <code>&quot;NO&quot;</code> を改行を加えて出力せよ。</p>
+<hr />
+<p>入力例1:</p>
+<pre><code>5 8 0 4
+0 1
+1 2
+2 3
+3 4
+0 2
+0 3
+1 0
+1 3
+</code></pre>
+<p>出力例1:</p>
+<pre><code>YES
+</code></pre>
+<hr />
+<p>入力例2:</p>
+<pre><code>3 4 0 1
+0 2
+0 2
+2 0
+2 2
+</code></pre>
+<p>出力例2:</p>
+<pre><code>NO
+</code></pre>
+</blockquote>
+<p>それじゃあ入力を受け付けよう。</p>
+<pre><code class="language-cpp">using std::cin;
+int V, E, S, G;
+cin &gt;&gt; V &gt;&gt; E &gt;&gt; S &gt;&gt; G;
+
+// adj[i] を i 番目の空間から入れるポータルの行き先リストとする
+std::vector&lt;std::vector&lt;size_t&gt;&gt; adj(V);
+for (int i = 0; i &lt; E; ++i) {
+  int src, dst;
+  cin &gt;&gt; src &gt;&gt; dst;
+  adj[src].push_back(dst);
+}
+</code></pre>
+<p>これでデータは用意できた。あとは、</p>
+<ol>
+<li>最初の空間である <code>S</code> をキューに <code>push</code></li>
+<li>キューが空になるまで繰り返し
+<ol>
+<li>キューの <code>front</code> を <code>now</code> として取り出し、<code>pop</code></li>
+<li><code>now</code> が <code>G</code> なら
+<ol>
+<li>到達可能なので終了</li>
+</ol>
+</li>
+<li><code>now</code> が <em>通過済み</em> なら次のキューの要素へ飛ばす</li>
+<li><code>now</code> を <em>通過済み</em> とメモする</li>
+<li><code>now</code> の <code>portals</code> の各要素を <code>next</code> として見る
+<ol>
+<li><code>next</code> が <em>通過済み</em> ではないものなら
+<ol>
+<li><code>next</code> をキューに <code>push</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>で判断できる。</p>
+<p>問題に書いてある <em>入力例1</em> でこのアルゴリズムの動作の確認をしてみる。</p>
+<blockquote>
+<ol>
+<li><code>now</code> は <code>0</code>。<em>通過済み</em> にする。
+<ol>
+<li><code>now</code> から行けるのは <code>1</code>、<code>2</code>、<code>3</code>。すべて <code>push</code>。</li>
+</ol>
+</li>
+<li><code>now</code> は <code>1</code>。<em>通過済み</em> にする。
+<ol>
+<li><code>now</code> から行けるのは <code>0</code>、<code>2</code>、<code>3</code>。このうち <code>2</code>、<code>3</code> を <code>push</code>。</li>
+</ol>
+</li>
+<li><code>now</code> は <code>2</code>。<em>通過済み</em> にする。
+<ol>
+<li><code>now</code> から行けるのは <code>3</code>。これを <code>push</code>。</li>
+</ol>
+</li>
+<li><code>now</code> は <code>3</code>。<em>通過済み</em> にする。
+<ol>
+<li><code>now</code> から行けるのは <code>4</code>。これを <code>push</code>。</li>
+</ol>
+</li>
+<li><code>now</code> は <code>2</code>。<code>push</code> できるものはない。</li>
+<li><code>now</code> は <code>3</code>。<code>push</code> できるものはない。</li>
+<li><code>now</code> は <code>3</code>。<code>push</code> できるものはない。</li>
+<li><code>now</code> は <code>4</code>。到達できちゃった。</li>
+</ol>
+</blockquote>
+<p>こういう手近な方法から幅広く探していくのを、<strong>幅優先探索</strong> (BFS、Breadth First Search) という。キューを使うことが多い。</p>
+<pre><code class="language-cpp">bool reachable = false;
+
+std::vector&lt;bool&gt; passed(E); // 通過済みかどうかのメモ用
+
+std::queue&lt;size_t&gt; bfs;
+bfs.push(S);
+
+while (!bfs.empty()) {
+  auto now = bfs.front();
+  bfs.pop();
+  
+  if (G == now) {
+    reachable = true;
+    break;
+  }
+
+  // 通過済みなので更新する必要がない場合
+  if (passed[now]) {
+    continue;
+  }
+  
+  passed[now] = true;
+  for (auto next : adj[now]) {
+    if (!passed[next]) {
+      bfs.push(next);
+    }
+  }
+}
+</code></pre>
+<p>仕上げに出力を書いて終わり。</p>
+<pre><code class="language-cpp">using std::cout;
+if (reachable) {
+  cout &lt;&lt; &quot;YES\n&quot;;
+} else {
+  cout &lt;&lt; &quot;NO\n&quot;;
+}
+</code></pre>
+<p>全体はこうなる。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+
+int main() {
+  using std::cin;
+  int V, E, S, G;
+  cin &gt;&gt; V &gt;&gt; E &gt;&gt; S &gt;&gt; G;
+
+  std::vector&lt;std::vector&lt;size_t&gt;&gt; adj(V);
+  for (int i = 0; i &lt; E; ++i) {
+    int src, dst;
+    cin &gt;&gt; src &gt;&gt; dst;
+    adj[src].push_back(dst);
+  }
+  
+  bool reachable = false;
+
+  std::vector&lt;bool&gt; passed(E); // 通過済みかどうかのメモ用
+
+  std::queue&lt;size_t&gt; bfs;
+  bfs.push(S);
+
+  while (!bfs.empty()) {
+    auto now = bfs.front();
+    bfs.pop();
+
+    if (G == now) {
+      reachable = true;
+      break;
+    }
+
+    // 通過済みなので更新する必要がない場合
+    if (passed[now]) {
+      continue;
+    }
+
+    passed[now] = true;
+    for (auto next : adj[now]) {
+      if (!passed[next]) {
+        bfs.push(next);
+      }
+    }
+  }
+
+  using std::cout;
+  if (reachable) {
+    cout &lt;&lt; &quot;YES\n&quot;;
+  } else {
+    cout &lt;&lt; &quot;NO\n&quot;;
+  }
+}
+</code></pre>
+<p>こういった幅優先探索は、迷路やパズルを解いたり、ゲームの対戦用 CPU を作ったりといったことにまで応用できるよ。</p>
+<p>ちなみに、<em>入力例2</em> のようにループする状況のために <code>passed</code> で記録する必要がある。逆にループしない場合は <code>passed</code> をチェック/記録する必要はない。</p>
+<h2><a class="header" href="#priority_queue" id="priority_queue">priority_queue</a></h2>
+<p>データを入れると自動で降順 (大きい→小さい順) にソートされて、その片端からしか取り出せないコンテナ。</p>
+<p>これは <code>#include &lt;queue&gt;</code> が必要。<code>std::queue</code> と同じ <code>queue</code> ファイルに入ってる。</p>
+<pre><code class="language-cpp">std::priority_queue&lt;int&gt; Q;
+
+// push と pop があるけど他のとはかなり違う
+
+Q.push(2); // {2}
+Q.push(4); // {2, 4}
+Q.push(3); // {2, 3, 4}
+Q.push(1); // {1, 2, 3, 4}
+
+// empty で空かどうかを bool で取得
+while(!Q.empty()) {
+  // top でキューの末尾を取得
+  auto head = Q.top();
+  // pop で末尾を削除
+  Q.pop();
+  std::cout &lt;&lt; head &lt;&lt; &quot; &quot;;
+}
+</code></pre>
+<p>ソートの順番を変えるには、テンプレート引数にソートに使う関数型も渡す。</p>
+<p>デフォルトは <code>std::less</code> になっている。これは <code>&lt;</code> 演算子の意味があり、<code>前の要素 &lt; 次の要素</code> になるようにソートする。</p>
+<p>逆に <code>std::greater</code> は <code>&gt;</code> 演算子の意味があり、<code>前の要素 &gt; 次の要素</code> になるようにソートする。</p>
+<p>基本的にこのどっちかを第三テンプレート引数に渡す。</p>
+<p>何故か第三引数だから、第二引数のコンテナ型の指定もしなきゃいけない。これは <code>std::vector</code> でいい。</p>
+<pre><code class="language-cpp">std::priority_queue&lt;
+  int, // 要素型
+  std::vector&lt;int&gt;, // std::vector&lt;要素型&gt; で OK
+  std::greater&lt;&gt; // ソートに使う関数型、テンプレート引数は空でいい
+&gt; Q;
+
+Q.push(2); // {2}
+Q.push(4); // {4, 2}
+Q.push(3); // {4, 3, 2}
+Q.push(1); // {4, 3, 2, 1}
+</code></pre>
+<h3><a class="header" href="#例題-2" id="例題-2">例題</a></h3>
+<p>それでは例題を (ry</p>
+<blockquote>
+<p>入力:</p>
+<pre><code>V E S G
+src1 dst1 duration1
+src2 dst2 duration2
+:
+srcE dstE durationE
+</code></pre>
+<ul>
+<li><code>V</code> と　<code>E</code> は正の整数</li>
+<li><code>S</code> と <code>G</code> は <code>0</code> 以上 <code>E</code> 未満の整数</li>
+<li><code>srcE</code> と <code>dstE</code> は <code>0</code> 以上 <code>V</code> 未満の整数</li>
+<li><code>durationE</code> は正の整数</li>
+</ul>
+<p><code>V</code> 個の異空間がある。</p>
+<p>異空間どうしの間には二つの空間をつなぐ一方通行のポータルがあり、<code>src</code> 番目の空間から <code>dst</code> 番目の空間に向かってだけ移動できる。</p>
+<p>この移動には、<code>duration</code> 秒時間がかかる。</p>
+<p>ポータルを利用すると、<code>S</code> 番目の空間から <code>G</code> 番目の空間へ必ず移動できる。</p>
+<p>この移動にかかる最小時間と、改行を出力せよ。</p>
+<p>入力例1:</p>
+<pre><code>3 3 0 2
+0 2 40
+0 1 10
+1 2 20
+</code></pre>
+<p>出力例1:</p>
+<pre><code>30
+</code></pre>
+<hr />
+<p>入力例2:</p>
+<pre><code>6 9 0 4
+0 1 7
+0 2 9
+0 5 14
+1 3 15
+2 3 11
+2 5 2
+5 4 9
+3 4 6
+1 2 10
+</code></pre>
+<p>出力例2:</p>
+<pre><code>20
+</code></pre>
+</blockquote>
+<p>入力の処理は、<code>durationE</code> に対応するぶんを変える。</p>
+<pre><code class="language-cpp">using std::cin;
+int V, E, S, G;
+cin &gt;&gt; V &gt;&gt; E &gt;&gt; S &gt;&gt; G;
+
+std::vector&lt;std::vector&lt;size_t&gt;&gt; adj(V);
+std::vector&lt;std::vector&lt;int&gt;&gt; cost(V, std::vector&lt;int&gt;(V));
+for (int i = 0; i &lt; E; ++i) {
+  int src, dst, duration;
+  cin &gt;&gt; src &gt;&gt; dst &gt;&gt; duration;
+  adj[src].push_back(dst);
+  cost[src][dst] = duration; // src から dst へかかる時間をこう表現することにする
+}
+</code></pre>
+<p>さっきの <code>queue</code> を使った幅優先探索と似たやり方で解ける。察していると思うけど、今回は <code>priority_queue</code> のほうがいい。</p>
+<p>これを使うと、こんなアルゴリズムになる。</p>
+<ol>
+<li>最初の空間である <code>S</code> 番目のイテレータをキューに <code>push</code></li>
+<li>キューが空になるまで繰り返し
+<ol>
+<li>キューの <code>top</code> を <code>cost</code>, <code>now</code> として取り出し、<code>pop</code></li>
+<li><code>now</code> の <code>portals</code> の各要素を <code>next</code> として見る
+<ol>
+<li><code>now</code> の <code>cost_from_S</code> と、<code>next</code> と同じインデックスの <code>portal_costs</code> を足す (見ている <code>now</code>)。これを <code>new_cost</code> とする</li>
+<li><code>new_cost</code> が <code>next</code> の <code>cost_from_S</code> より小さいい場合
+<ol>
+<li><code>next</code> の <code>cost_from_S</code> に <code>new_cost</code> を代入</li>
+<li><code>next</code> をキューに <code>push</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>このアルゴリズムを、発明者にちなんでダイクストラ法っていう。</p>
+<pre><code class="language-cpp">// 最短距離のメモ用。最大値にしておいて、これから小さくしていく
+std::vector&lt;int&gt; cost_from_S(V, 
+  std::numeric_limits&lt;int&gt;::max() // 型の最大値を取得する関数
+);
+cost_from_S[S] = 0;
+
+// pair に コストとインデックスを格納する
+std::priority_queue&lt;
+  std::pair&lt;int, size_t&gt;,
+  std::vector&lt;std::pair&lt;int, size_t&gt;&gt;,
+  std::greater&lt;&gt;
+&gt; Q;
+Q.push({0, S});
+
+while (!Q.empty()) {
+  auto pair = Q.top();
+  int now_cost = pair.first;
+  size_t now = pair.second;
+  Q.pop();
+
+  // cost_from_S[now] を更新する必要がない場合
+  if (cost_from_S[now] &lt; now_cost) {
+    continue;
+  }
+
+  for (auto next : adj[now]) {
+    auto new_cost = now_cost + cost[now][next];
+    if (new_cost &lt; cost_from_S[next]) {
+      cost_from_S[next] = new_cost;
+      Q.push({cost_from_S[next], next});
+    }
+  }
+}
+</code></pre>
+<p>あとは出力しておわり。</p>
+<pre><code class="language-cpp">std::cout &lt;&lt; cost_from_S[G] &lt;&lt; &quot;\n&quot;;
+</code></pre>
+<p>全体はこうなった。私にでも何日かかかるくらい難しかったから、サクサクできたならすごいよ。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+
+int main() {
+  using std::cin;
+  int V, E, S, G;
+  cin &gt;&gt; V &gt;&gt; E &gt;&gt; S &gt;&gt; G;
+
+  std::vector&lt;std::vector&lt;size_t&gt;&gt; adj(V);
+  std::vector&lt;std::vector&lt;int&gt;&gt; cost(V, std::vector&lt;int&gt;(V));
+  for (int i = 0; i &lt; E; ++i) {
+    int src, dst, duration;
+    cin &gt;&gt; src &gt;&gt; dst &gt;&gt; duration;
+    adj[src].push_back(dst);
+    cost[src][dst] = duration;
+  }
+
+  // 最短距離のメモ用。最大値にしておいて、これから小さくしていく
+  std::vector&lt;int&gt; cost_from_S(V, 
+    std::numeric_limits&lt;int&gt;::max() // 型の最大値を取得する関数
+  );
+  cost_from_S[S] = 0;
+
+  // pair に コストとインデックスを格納する
+  std::priority_queue&lt;
+    std::pair&lt;int, size_t&gt;,
+    std::vector&lt;std::pair&lt;int, size_t&gt;&gt;,
+    std::greater&lt;&gt;
+  &gt; Q;
+  Q.push({0, S});
+
+  while (!Q.empty()) {
+    auto pair = Q.top();
+    int now_cost = pair.first;
+    size_t now = pair.second;
+    Q.pop();
+
+    // cost_from_S[now] を更新する必要がない場合
+    if (cost_from_S[now] &lt; now_cost) {
+      continue;
+    }
+
+    for (auto next : adj[now]) {
+      auto new_cost = now_cost + cost[now][next];
+      if (new_cost &lt; cost_from_S[next]) {
+        cost_from_S[next] = new_cost;
+        Q.push({cost_from_S[next], next});
+      }
+    }
+  }
+
+  std::cout &lt;&lt; cost_from_S[G] &lt;&lt; &quot;\n&quot;;
+}
+</code></pre>
+<p>こういうふうに経路について処理する、<em>グラフ理論</em> に関する問題を章末問題に出しておくね。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../std-intermediate/algorithm.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../std-intermediate/more-it.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../std-intermediate/algorithm.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../std-intermediate/more-it.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

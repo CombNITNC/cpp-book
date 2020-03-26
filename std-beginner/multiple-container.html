@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>多重コンテナ - C/C++講座</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="../intro.html">ようこそ</a></li><li class="expanded "><a href="../setup.html"><strong aria-hidden="true">1.</strong> 環境構築</a></li><li class="expanded "><a href="../basis/intro.html"><strong aria-hidden="true">2.</strong> 基礎</a></li><li><ol class="section"><li class="expanded "><a href="../basis/minimal.html"><strong aria-hidden="true">2.1.</strong> 最小限のコード</a></li><li class="expanded "><a href="../basis/comments.html"><strong aria-hidden="true">2.2.</strong> コメント</a></li><li class="expanded "><a href="../basis/main-func.html"><strong aria-hidden="true">2.3.</strong> main 関数</a></li><li class="expanded "><a href="../basis/func-call.html"><strong aria-hidden="true">2.4.</strong> 文と関数呼び出し</a></li><li class="expanded "><a href="../basis/ops-1.html"><strong aria-hidden="true">2.5.</strong> 式と演算子 其の一</a></li><li class="expanded "><a href="../basis/compound.html"><strong aria-hidden="true">2.6.</strong> 複文とインデント</a></li><li class="expanded "><a href="../basis/cout.html"><strong aria-hidden="true">2.7.</strong> std::cout</a></li></ol></li><li class="expanded "><a href="../type-vars/intro.html"><strong aria-hidden="true">3.</strong> 型と変数</a></li><li><ol class="section"><li class="expanded "><a href="../type-vars/variables.html"><strong aria-hidden="true">3.1.</strong> 変数と識別子</a></li><li class="expanded "><a href="../type-vars/int-double.html"><strong aria-hidden="true">3.2.</strong> int / double</a></li><li class="expanded "><a href="../type-vars/init.html"><strong aria-hidden="true">3.3.</strong> 初期化</a></li><li class="expanded "><a href="../type-vars/ops-2.html"><strong aria-hidden="true">3.4.</strong> 演算子 其の二</a></li><li class="expanded "><a href="../type-vars/type-conv.html"><strong aria-hidden="true">3.5.</strong> 型変換</a></li><li class="expanded "><a href="../type-vars/scope.html"><strong aria-hidden="true">3.6.</strong> スコープ</a></li><li class="expanded "><a href="../type-vars/cin.html"><strong aria-hidden="true">3.7.</strong> std::cin</a></li><li class="expanded "><a href="../type-vars/questions.html"><strong aria-hidden="true">3.8.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../fork/intro.html"><strong aria-hidden="true">4.</strong> 分岐</a></li><li><ol class="section"><li class="expanded "><a href="../fork/bool.html"><strong aria-hidden="true">4.1.</strong> bool</a></li><li class="expanded "><a href="../fork/ops-3.html"><strong aria-hidden="true">4.2.</strong> 演算子 其の三</a></li><li class="expanded "><a href="../fork/if.html"><strong aria-hidden="true">4.3.</strong> if</a></li><li class="expanded "><a href="../fork/ops-4.html"><strong aria-hidden="true">4.4.</strong> 演算子 其の四</a></li><li class="expanded "><a href="../fork/else.html"><strong aria-hidden="true">4.5.</strong> else</a></li><li class="expanded "><a href="../fork/switch.html"><strong aria-hidden="true">4.6.</strong> switch</a></li><li class="expanded "><a href="../fork/questions.html"><strong aria-hidden="true">4.7.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../loop/intro.html"><strong aria-hidden="true">5.</strong> 反復</a></li><li><ol class="section"><li class="expanded "><a href="../loop/while.html"><strong aria-hidden="true">5.1.</strong> while</a></li><li class="expanded "><a href="../loop/do-while.html"><strong aria-hidden="true">5.2.</strong> do - while</a></li><li class="expanded "><a href="../loop/continue.html"><strong aria-hidden="true">5.3.</strong> continue</a></li><li class="expanded "><a href="../loop/break.html"><strong aria-hidden="true">5.4.</strong> break</a></li><li class="expanded "><a href="../loop/for.html"><strong aria-hidden="true">5.5.</strong> for</a></li><li class="expanded "><a href="../loop/nested.html"><strong aria-hidden="true">5.6.</strong> 多重ループ</a></li><li class="expanded "><a href="../loop/questions.html"><strong aria-hidden="true">5.7.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../func/intro.html"><strong aria-hidden="true">6.</strong> 関数を作る</a></li><li><ol class="section"><li class="expanded "><a href="../func/define.html"><strong aria-hidden="true">6.1.</strong> 関数を作る</a></li><li class="expanded "><a href="../func/args.html"><strong aria-hidden="true">6.2.</strong> 引数</a></li><li class="expanded "><a href="../func/return.html"><strong aria-hidden="true">6.3.</strong> 戻り値と return</a></li><li class="expanded "><a href="../func/pass.html"><strong aria-hidden="true">6.4.</strong> 値渡し</a></li><li class="expanded "><a href="../func/resolve.html"><strong aria-hidden="true">6.5.</strong> 名前解決</a></li></ol></li><li class="expanded "><a href="../object/intro.html"><strong aria-hidden="true">7.</strong> オブジェクトたち</a></li><li><ol class="section"><li class="expanded "><a href="../object/other-types.html"><strong aria-hidden="true">7.1.</strong> float char 16/8/2進数リテラル</a></li><li class="expanded "><a href="../object/specifier.html"><strong aria-hidden="true">7.2.</strong> long short signed unsigned</a></li><li class="expanded "><a href="../object/class-inst.html"><strong aria-hidden="true">7.3.</strong> クラスとインスタンス</a></li><li class="expanded "><a href="../object/member-func.html"><strong aria-hidden="true">7.4.</strong> メンバ関数呼び出し</a></li></ol></li><li class="expanded "><a href="../ref/intro.html"><strong aria-hidden="true">8.</strong> 参照</a></li><li><ol class="section"><li class="expanded "><a href="../ref/const.html"><strong aria-hidden="true">8.1.</strong> const</a></li><li class="expanded "><a href="../ref/ref.html"><strong aria-hidden="true">8.2.</strong> 参照型</a></li><li class="expanded "><a href="../ref/const-on-ref.html"><strong aria-hidden="true">8.3.</strong> const の参照</a></li><li class="expanded "><a href="../ref/array.html"><strong aria-hidden="true">8.4.</strong> 配列型</a></li><li class="expanded "><a href="../ref/cstring.html"><strong aria-hidden="true">8.5.</strong> 文字列</a></li><li class="expanded "><a href="../ref/range-based-for.html"><strong aria-hidden="true">8.6.</strong> 範囲for文</a></li></ol></li><li class="expanded "><a href="../std-beginner/intro.html"><strong aria-hidden="true">9.</strong> 標準ライブラリ 初級編</a></li><li><ol class="section"><li class="expanded "><a href="../std-beginner/use-namespace.html"><strong aria-hidden="true">9.1.</strong> 名前空間とusing</a></li><li class="expanded "><a href="../std-beginner/cmath-numeric.html"><strong aria-hidden="true">9.2.</strong> 数学的な関数</a></li><li class="expanded "><a href="../std-beginner/container.html"><strong aria-hidden="true">9.3.</strong> コンテナ</a></li><li class="expanded "><a href="../std-beginner/easy-it.html"><strong aria-hidden="true">9.4.</strong> かんたんイテレータ</a></li><li class="expanded "><a href="../std-beginner/multiple-container.html" class="active"><strong aria-hidden="true">9.5.</strong> 多重コンテナ</a></li><li class="expanded "><a href="../std-beginner/questions.html"><strong aria-hidden="true">9.6.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../std-intermediate/intro.html"><strong aria-hidden="true">10.</strong> 標準ライブラリ 中級編</a></li><li><ol class="section"><li class="expanded "><a href="../std-intermediate/lambda.html"><strong aria-hidden="true">10.1.</strong> ラムダ式</a></li><li class="expanded "><a href="../std-intermediate/algorithm.html"><strong aria-hidden="true">10.2.</strong> アルゴリズム関数</a></li><li class="expanded "><a href="../std-intermediate/stack-queue.html"><strong aria-hidden="true">10.3.</strong> スタックとキュー</a></li><li class="expanded "><a href="../std-intermediate/more-it.html"><strong aria-hidden="true">10.4.</strong> もっとイテレータ</a></li><li class="expanded "><a href="../std-intermediate/optimize.html"><strong aria-hidden="true">10.5.</strong> 最適化</a></li><li class="expanded "><a href="../std-intermediate/questions.html"><strong aria-hidden="true">10.6.</strong> 章末問題</a></li></ol></li><li class="expanded "><a href="../class/intro.html"><strong aria-hidden="true">11.</strong> クラス</a></li><li><ol class="section"><li class="expanded "><a href="../class/define.html"><strong aria-hidden="true">11.1.</strong> クラス定義</a></li><li class="expanded "><a href="../class/member.html"><strong aria-hidden="true">11.2.</strong> メンバ定義</a></li><li class="expanded "><a href="../class/this.html"><strong aria-hidden="true">11.3.</strong> this</a></li><li class="expanded "><a href="../class/constructor-destructor.html"><strong aria-hidden="true">11.4.</strong> コンストラクタ/デストラクタ</a></li><li class="expanded "><a href="../class/static.html"><strong aria-hidden="true">11.5.</strong> 静的メンバ</a></li><li class="expanded "><a href="../class/inherit.html"><strong aria-hidden="true">11.6.</strong> クラスの派生</a></li><li class="expanded "><a href="../class/abstract.html"><strong aria-hidden="true">11.7.</strong> 抽象クラス</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">C/C++講座</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#多重コンテナ" id="多重コンテナ">多重コンテナ</a></h1>
+<p>コンテナを開けると、そこはコンテナだった</p>
+<hr />
+<p>ここでは、<code>vector</code> の中に <code>vector</code> を入れるのをやっていくよ。</p>
+<pre><code class="language-cpp">std::vector&lt;std::vector&lt;int&gt;&gt;
+</code></pre>
+<p>このクラスを初期化するときは、こうなるよ。</p>
+<pre><code class="language-cpp">std::vector&lt;std::vector&lt;int&gt;&gt; matrix(2, // 2 個の ↓
+  std::vector&lt;int&gt;(2, 1) // 2 個の 1
+);
+</code></pre>
+<p>アクセスするときも、<code>at</code> が 2 個出てくる。</p>
+<pre><code class="language-cpp">std::vector&lt;std::vector&lt;int&gt;&gt; matrix(2,
+  std::vector&lt;int&gt;(2, 1)
+);
+
+matrix.at(0).at(0); // 1
+matrix.at(1).back(); // 1
+matrix.back().back(); // 1
+</code></pre>
+<p>こういうのを <em>多重</em>、もしくは <strong>多次元</strong> なコンテナっていう。</p>
+<h2><a class="header" href="#使い所" id="使い所">使い所</a></h2>
+<p>多次元のコンテナは、小難しい問題を速く解くプログラムを作るときに重宝する。</p>
+<p>ここではその例題をいくつか示してくよ。</p>
+<h3><a class="header" href="#動的計画法" id="動的計画法">動的計画法</a></h3>
+<p><strong>動的計画法</strong> (DP、Dyanic Programming) は、いくつかの組み合わせに関する問題で役に立つ解法だよ。</p>
+<p>まずは、<em>部分和問題</em> からいってみよう。</p>
+<p>こんな感じの問題だよ。</p>
+<blockquote>
+<p>入力:</p>
+<pre><code>N
+S
+A1 A2 A3 ... AN
+</code></pre>
+<ul>
+<li><code>N</code> は 入力 <code>A1, A2, A3, ...</code> の総数を表す整数</li>
+<li><code>S</code> はただの整数</li>
+<li><code>A1, A2, A3, ...</code> は正の整数</li>
+</ul>
+<p>問題:</p>
+<p><code>A1, A2, A3, ...</code> の中からいくつかを組み合わせて合計して、ぴったり <code>S</code> にすることができるか求める。</p>
+<p><code>S</code> にできる場合は <code>&quot;YES&quot;</code>、できない場合は <code>&quot;NO&quot;</code> に、改行を加えて出力せよ。</p>
+</blockquote>
+<p>まずは <em>入力</em> を受け取るとこを書く。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+  using std::cin;
+  using std::vector;
+  
+  int N, S;
+  cin &gt;&gt; N &gt;&gt; S;
+  
+  vector&lt;int&gt; A(N);
+  for (auto &amp;elem : A) {
+    cin &gt;&gt; elem;
+  }
+
+  // ここからは、ココに書き足すコードだけを示すよ
+}
+</code></pre>
+<p>こういうパッと見て解き方がさっぱり分からん問題は、<strong>かんたんなケースを考えてから難しくしていく</strong> のがいい。</p>
+<p><strong>一段階むずかしい問題の答え</strong> に、<strong>よりかんたんな問題の答えを使って答える</strong> 考え方が大事だよ。</p>
+<p>この問題の一番 <em>かんたん</em> なケースを考えよう。</p>
+<blockquote>
+<p>入力を <code>0</code> 個組み合わせて <code>0</code> が作れるかどうか</p>
+</blockquote>
+<p>これが一番 <em>かんたん</em> なんだけど、これは必ず <code>true</code> だよ。</p>
+<pre><code class="language-cpp">true;
+</code></pre>
+<p>虚無の合計だけど、とりあえず <code>0</code> だと考える。いいね?</p>
+<p>片方の数字を変数にして、グレードアップしよう。</p>
+<blockquote>
+<p>入力を <code>n</code> 個組み合わせで <code>0</code> が作れるかどうか</p>
+</blockquote>
+<p>この答えは、<em>かんたん</em> な問題の答えを使って求めることができる。</p>
+<ul>
+<li><code>n - 1</code> 個の組み合わせで <code>0</code> が作れるかどうか</li>
+</ul>
+<p>を満たせば、<code>n</code> 個の組み合わせでも必ず <code>0</code> が作れるよ。</p>
+<p>この答えを保存する <code>vector&lt;bool&gt; dp</code> というコンテナを用意する。</p>
+<p><code>dp[i]</code> には、「<code>i</code> 個組み合わせて <code>0</code> が作れるかどうか」を格納することにする。</p>
+<p>変数 <code>n</code> を <code>for</code> で <code>1</code> から <code>N</code> まで繰り返せば、</p>
+<ol>
+<li><code>dp[n - 1]</code> が <code>true</code> になっている</li>
+</ol>
+<p>ときに <code>dp[n]</code> に <code>true</code> を代入すると、<code>dp.back()</code> に答えが入る。</p>
+<pre><code class="language-cpp">vector&lt;bool&gt; dp(N + 1); // dp[N] までなので 1 個余分に必要
+
+// さっき求めた かんたん なやつ
+dp[0] = true;
+
+for (size_t n = 1; n &lt;= N; ++n) {
+  bool prev = dp[n - 1]; // prev は previous の略で、前のやつ って意味
+  dp[n] = prev;
+}
+
+dp.back(); // これが答え。今回は必ず true だけど
+</code></pre>
+<p>OK、もう片方の数字も変数にしよう。</p>
+<blockquote>
+<p>入力を <code>n</code> 個組み合わせて <code>sum</code> が作れるかどうか</p>
+</blockquote>
+<p>この答えは、<em>かんたん</em> な問題の答えを使って求めることができる。</p>
+<ul>
+<li><code>n - 1</code> 個の組み合わせで <code>sum</code> が作れるかどうか</li>
+<li><code>n - 1</code> 個の組み合わせで <code>sum - A[n - 1]</code> が作れるかどうか</li>
+</ul>
+<p>のどっちかを満たせば、<code>n</code> 個の組み合わせで <code>sum</code> が作れるよ。</p>
+<p>二つ目の条件は、<code>n</code> 個目の入力を選んだうえで問題の条件を満たすときを意味している。</p>
+<p>さっきの <code>dp</code> を <code>vector&lt;vector&lt;bool&gt;&gt;</code> 型に改良する。</p>
+<p><code>dp[i][j]</code> には、「<code>i</code> 個の組み合わせで <code>j</code> が作れるかどうか」を格納する。</p>
+<p>変数 <code>n</code> を <code>1</code> から <code>N</code> まで、 <code>sum</code> を <code>0</code> から <code>S</code> まで繰り返せば、</p>
+<ol>
+<li><code>dp[n - 1][sum]</code> が <code>true</code> になっている</li>
+<li><code>A[n - 1] &lt;= sum</code> の場合 (↓ の添字が 0 以上になるように範囲チェック)
+<ol>
+<li><code>dp[n - 1][sum]</code> もしくは <code>dp[n - 1][sum - A[n - 1]</code> が <code>true</code> になっている</li>
+</ol>
+</li>
+</ol>
+<p>ときに、<code>dp[n][sum]</code> に <code>true</code> を代入すると、<code>dp.back().back()</code> に答えが入るんだぜ。</p>
+<pre><code class="language-cpp">vector&lt;vector&lt;bool&gt;&gt; dp(N + 1, vector&lt;bool&gt;(S + 1));
+
+dp[0][0] = true; // かんたん なやつ
+
+for (size_t n = 1; n &lt;= N; ++n) {
+  for (size_t sum = 0; sum &lt;= S; ++sum) {
+    bool prev = dp[n - 1][sum];
+    dp[n][sum] = prev;
+    if (A[n- 1] &lt;= sum) {
+      dp[n][sum] = prev || dp[n - 1][sum - A[n - 1]];
+    }
+  }
+}
+
+dp.back().back(); // 答えじゃ!
+</code></pre>
+<p>最後の仕上げに、出力を作ってっと。</p>
+<pre><code class="language-cpp">using std::cout;
+
+if (dp.back().back()) {
+  cout &lt;&lt; &quot;YES\n&quot;;
+} else {
+  cout &lt;&lt; &quot;NO\n&quot;;
+}
+</code></pre>
+<p>これで完成。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+  using std::cin;
+  using std::vector;
+
+  int N, S;
+  cin &gt;&gt; N &gt;&gt; S;
+
+  vector&lt;int&gt; A(N);
+  for (auto &amp;elem : A) {
+    cin &gt;&gt; elem;
+  }
+
+  vector&lt;vector&lt;bool&gt;&gt; dp(N + 1, vector&lt;bool&gt;(S + 1));
+
+  dp[0][0] = true;
+
+  for (size_t n = 1; n &lt;= N; ++n) {
+    for (size_t sum = 0; sum &lt;= S; ++sum) {
+      bool prev = dp[n - 1][sum];
+      dp[n][sum] = prev;
+      if (A[n- 1] &lt;= sum) {
+        dp[n][sum] = prev || dp[n - 1][sum - A[n - 1]];
+      }
+    }
+  }
+
+  using std::cout;
+
+  if (dp.back().back()) {
+    cout &lt;&lt; &quot;YES\n&quot;;
+  } else {
+    cout &lt;&lt; &quot;NO\n&quot;;
+  }
+}
+</code></pre>
+<p>こんなふうに、動的計画法では <strong>DP テーブル</strong> と言われる多次元のコンテナを作って解くことが多いよ。</p>
+<p>DP テーブルの挙動がわかりにくかったら、中身を見たい行で、こうやって出力してみるといいかも。</p>
+<pre><code class="language-cpp">for (std::vector&lt;bool&gt; const &amp;column : dp) {
+  for (bool elem : column) {
+    std::cout &lt;&lt; elem &lt;&lt; &quot;|&quot;;
+  }
+  std::cout &lt;&lt; &quot;\n&quot;;
+}
+std::cout &lt;&lt; &quot;\n\n&quot;;
+</code></pre>
+<p>章末問題では、この応用となる <em>ナップサック問題</em> を出すから、解いてみてね。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../std-beginner/easy-it.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../std-beginner/questions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../std-beginner/easy-it.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../std-beginner/questions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
