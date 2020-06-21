@@ -1,3 +1,3 @@
 # cpp-book
 
-[View on Github Pages](https://mikuroxina.github.io/cpp-book)
+[View on Github Pages](https://combnitnc.github.io/cpp-book)
