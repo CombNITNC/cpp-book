@@ -16,7 +16,7 @@
 #include <iostream>
 int main() {
   int count = 0;
-  while(true) {
+  while (true) {
     std::cout << "カウント: " << count << "\n"
      << "1 でカウントアップ | それ以外で終了\n";
 

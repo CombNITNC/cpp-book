@@ -389,7 +389,7 @@ Q.push(3); // {2, 3, 4}
 Q.push(1); // {1, 2, 3, 4}
 
 // empty で空かどうかを bool で取得
-while(!Q.empty()) {
+while (!Q.empty()) {
   // top でキューの末尾を取得
   auto head = Q.top();
   // pop で末尾を削除

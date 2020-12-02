@@ -106,7 +106,7 @@ for (int y = -radius; y <= radius; ++y) {
 
 ```cpp
 while (true) {
-  while(true) {
+  while (true) {
     break;
   }
   // break したらここに来る

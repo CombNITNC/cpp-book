@@ -56,7 +56,7 @@ int main() {
   int input;
   std::cin >> input;
   int count = 1;
-  while(count <= input) {
+  while (count <= input) {
     std::cout << count;
     ++count;
   }
