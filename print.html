@@ -1386,7 +1386,7 @@ int main() {
 <p>それをするのが <code>do</code> - <code>while</code> 文。</p>
 <p>文法はこんな感じ。</p>
 <blockquote>
-<p>do <em>実行する文</em> while( <em>条件式</em> );</p>
+<p>do <em>実行する文</em> while ( <em>条件式</em> );</p>
 </blockquote>
 <p><strong>評価と実行の順序が逆</strong> なのが最大の特徴。</p>
 <p>つまり、最低でも一回以上は処理が実行されるということ。</p>
@@ -1401,7 +1401,7 @@ int main() {
   do {
     std::cout &lt;&lt; &quot;やあ!\n&quot;;
     --input;
-  } while(0 &lt; input);
+  } while (0 &lt; input);
 }
 </code></pre>
 <p>入力をやり直させるときに使うこともできる。</p>
@@ -1439,7 +1439,7 @@ int main() {
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 int main() {
   int count = 0;
-  while(true) {
+  while (true) {
     std::cout &lt;&lt; &quot;カウント: &quot; &lt;&lt; count &lt;&lt; &quot;\n&quot;
      &lt;&lt; &quot;1 でカウントアップ | それ以外で終了\n&quot;;
 
@@ -1600,7 +1600,7 @@ count = count * 4 ;
 <h1><a class="header" href="#多重ループのときの-break" id="多重ループのときの-break">多重ループのときの break</a></h1>
 <p>多重ループしたときの <code>break</code> は、その直近、つまり内側のループしか抜けられないので注意。</p>
 <pre><code class="language-cpp">while (true) {
-  while(true) {
+  while (true) {
     break;
   }
   // break したらここに来る
@@ -1649,7 +1649,7 @@ int main() {
   int input;
   std::cin &gt;&gt; input;
   int count = 1;
-  while(count &lt;= input) {
+  while (count &lt;= input) {
     std::cout &lt;&lt; count;
     ++count;
   }
@@ -4284,7 +4284,7 @@ Q.push(3); // {2, 3, 4}
 Q.push(1); // {1, 2, 3, 4}
 
 // empty で空かどうかを bool で取得
-while(!Q.empty()) {
+while (!Q.empty()) {
   // top でキューの末尾を取得
   auto head = Q.top();
   // pop で末尾を削除
