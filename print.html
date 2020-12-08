@@ -1186,9 +1186,7 @@ default:
   break;
 }
 </code></pre>
-<p>まぁ見ての通り、ちょっと見づらいからあまり使わない。</p>
-<p>よほどのことがない限りは普通に <code>if</code> - <code>else if</code> - <code>else if</code> - ... ってする。</p>
-<p>あと、<code>switch</code> 文は整数にしか使えない!</p>
+<p><code>switch</code> 文は整数にしか使えない! ...そういう仕様なんだ.</p>
 <p>この <code>break</code> (処理を脱出する特殊な文) が無いときは、そのまま下へ処理が流れていく。<code>break</code> を忘れないように。</p>
 <pre><code class="language-cpp">switch (input) {
 case 0: {
