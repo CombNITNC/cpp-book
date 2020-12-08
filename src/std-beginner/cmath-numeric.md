@@ -94,15 +94,15 @@ floor(-2.9); // -3
 `trunc` (truncate は日本語で切り捨て) は切り捨て関数。小数点以下を消す。
 
 ```cpp
-using std::floor;
-floor(2.0); // 2
-floor(2.1); // 2
-floor(2.5); // 2
-floor(2.9); // 2
-floor(-2.0); // -2
-floor(-2.1); // -2
-floor(-2.5); // -2
-floor(-2.9); // -2
+using std::trunc;
+trunc(2.0); // 2
+trunc(2.1); // 2
+trunc(2.5); // 2
+trunc(2.9); // 2
+trunc(-2.0); // -2
+trunc(-2.1); // -2
+trunc(-2.5); // -2
+trunc(-2.9); // -2
 ```
 
 全部覚えなくてもいいけど、小数に 4 種類の丸め方があることを知ってたら幸せになれるかも。
