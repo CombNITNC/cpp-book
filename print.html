@@ -5312,7 +5312,7 @@ public:
 </code></pre>
 <p><code>this</code> がどこから来ているのかイメージしにくかったら、こういうプログラムなんだと思ってみてね。</p>
 <pre><code class="language-cpp">struct Hoge {};
-void foo(Hoge +this) { /* ... */ }
+void foo(Hoge *this) { /* ... */ }
 
 Hoge hoge;
 foo(&amp;hoge);
