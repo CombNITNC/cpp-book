@@ -39,7 +39,7 @@ public:
 
 ```cpp
 struct Hoge {};
-void foo(Hoge +this) { /* ... */ }
+void foo(Hoge *this) { /* ... */ }
 
 Hoge hoge;
 foo(&hoge);
