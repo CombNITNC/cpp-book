@@ -11,10 +11,10 @@
 ```cpp
 int player1_x, player1_y;
 int player2_x, player2_y;
-if (player1_x < player2_x && player1_y < player2_y) { ... }
+if (player1_x < player2_x && player1_y < player2_y) { /* ... */ }
 ```
 
-**クラス** を定義することで、**変数のまとまりとそれに対する処理** をこんな感じで書くことができる。
+**クラス** を定義することで、**変数のまとまりとそれに対する処理** をこんな感じで書ける。
 
 ```cpp
 struct Point {
@@ -31,15 +31,15 @@ struct Point {
 class クラス名 {
   メンバ1;
   メンバ2;
-  :
-  :
+  // :
+  // :
 };
 // または、
 struct クラス名 {
   メンバ1;
   メンバ2;
-  :
-  :
+  // :
+  // :
 };
 ```
 
