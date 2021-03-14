@@ -156,8 +156,8 @@
 <pre><code class="language-cpp">class Position {
   int x, y;
   double norm;
-  :
-  :
+  // :
+  // :
 };
 Position p; // p は x、y、norm とかを持っている
 </code></pre>
@@ -168,11 +168,12 @@ Position p; // p は x、y、norm とかを持っている
   double abs() const {// ← の const 修飾をつけると、オブジェクトが const のときだけ呼び出せる
    // ...
   }
-  :
-  :
+  // :
+  // :
 };
 Position p; // p に add、norm などの関数がくっついている
 </code></pre>
+<p>引数リストの直後に <code>const</code> をつけると、インスタンスが <code>const</code> であっても呼び出せるようになるのでお得。逆に、これがついてないとインスタンスが <code>const</code> のときに呼び出せないので不便。</p>
 <h1><a class="header" href="#アクセス指定子-public--private" id="アクセス指定子-public--private">アクセス指定子 public / private</a></h1>
 <p>メンバには公開と非公開があって、公開されているメンバしか外部から触れない。</p>
 <p>それぞれ、<strong>アクセス指定</strong> をすることで設定できる。</p>

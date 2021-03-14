@@ -151,21 +151,20 @@
 <p>値を詰め込めー</p>
 <hr />
 <p>ここまでで計算させてきたけど、この演算結果を <strong>保存して再利用する</strong> ことはできなかった。悲しい。</p>
-<p>そこで、データを格納する <strong>変数</strong> を利用する。</p>
-<p>これは <em>データを詰め込める箱</em> や <em>データを置く床</em> のようなイメージ。</p>
+<p>そこで、<strong>変数</strong> を利用する。これは値に名前を付ける機能だよ。例えば <code>24</code> を <code>variable</code> という変数に <em>代入する</em> っていうのは、</p>
 <blockquote>
-<p>|----|<br />
-| 12 |<br />
-|----|<br />
-↑この名前を決められる、値は変更できる</p>
+<p>?「フン。<code>24</code> というのかい。贅沢な名だねぇ。」</p>
+<p>?「今からお前の名前は <code>variable</code> だ。いいかい、<code>variable</code> だよ。」</p>
+<p>?「分かったら返事をするんだ、<code>variable</code>!!」</p>
 </blockquote>
+<p>って感じ (適当)。</p>
 <h2><a class="header" href="#変数を作る" id="変数を作る">変数を作る</a></h2>
 <p>変数を作るには、</p>
 <blockquote>
 <p><em>型</em> <em>名前</em>;</p>
 </blockquote>
 <p>という文法で書くと使えるようになる。</p>
-<p>複文の中でこの変数を作ることを <strong>変数の宣言</strong> という。</p>
+<p>複文の中で変数の名前を登場させることを <strong>変数の宣言</strong> という。</p>
 <p>変数は <em>宣言した後でないと使えない</em>。</p>
 <p><em>型</em> のところには、変数に入れられるものを書く。整数なら <code>int</code> (integer - 整数の略) を書く。型について詳しくは次のページで。</p>
 <pre><code class="language-cpp">int main() {
@@ -175,7 +174,7 @@
 <p><code>variable</code> という名前の変数が生まれました!元気な男の子です!(?)</p>
 <p>変数は <code>=</code> 演算子をつかって <strong>中身を変更</strong> できる。<code>変数 = 新しい値の式</code> と書く。</p>
 <pre><code class="language-cpp">int main() {
-  variable; // C/C++ での 名前 は、宣言した後でないと使えない
+  variable; // これは NG。C/C++ での 名前 は、宣言した後でないと使えない
 
   int variable;
 
@@ -183,7 +182,7 @@
 
   variable = variable / 2; // 1。そして代入される
 
-  0 = variable; // 埋め込んだ値 0 を変更しようとしている。コンパイルできない
+  0 = variable; // これは NG。埋め込んだ値 0 を変更しようとしている
 }
 </code></pre>
 <p>右の式を左の変数に入れる演算子だから、<strong>左右逆にはできない</strong> よ。方程式とは違うからね。</p>

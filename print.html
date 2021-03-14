@@ -194,30 +194,30 @@
 <p>所要時間: 20 ~ 30 分くらい</p>
 <h1><a class="header" href="#プログラムと実行形式" id="プログラムと実行形式">プログラムと実行形式</a></h1>
 <p>私達が普段触れている電子機器――スマホ、パソコン、ゲーム機――などには必ずアプリが関わっている。……いるよね？これ過去の人が読んでないよね？</p>
-<p>そいつらはみんな、「機械に何をさせるのか」っていうのを記述したもので作られている。これを (コンピュータ) プログラム という。</p>
-<p>そして、プログラムを書くことを プログラミング、プログラムを書く人を プログラマ っていう。</p>
+<p>そいつらはみんな、<em>「機械に何をさせるのか」っていうのを記述したもの</em> で作られている。これを <strong>(コンピュータ) プログラム</strong> という。</p>
+<p>そして、プログラムを書くことを <strong>プログラミング</strong>、プログラムを書く人を <em>プログラマ</em> っていう。</p>
 <h2><a class="header" href="#アプリはすべてプログラムによって作られている" id="アプリはすべてプログラムによって作られている">アプリはすべてプログラムによって作られている。</a></h2>
 <p>特に、生産的で一般的な手法として、 プログラミング言語 という独自言語のテキストを書くやり方がある。マウスだけで作るやつとかもあるけど、作ってるうちにテキストで書いたほうが楽なことに気づく。これマジ。</p>
 <p>ここでは、そのプログラミング言語の中の一つの、それなりに強い言語 C++ を使ってく。ただ、これはまあまあレベルの高いこともできるから、この言語の元になった C 言語と共通する部分しか触れないけど。</p>
 <h2><a class="header" href="#なぜ-c-なのか" id="なぜ-c-なのか">なぜ C++ なのか</a></h2>
 <ul>
-<li>C 言語から派生した C 系言語は非常に多く、学習すると それなりに広い分野で活かせる から。</li>
-<li>他の言語より、実行速度が速い 。なぜなら、プログラムをマシンが実際に動かす符号 (機械語っていうけどこれについては詳しくないので勘弁) へと変換しているから。</li>
-<li>マシンに近いこともできて、逆に高度なこともできて、ゲームも作って、あまり目立たないけど大事なシステムも作って、理論上はなんでもできる から。(悪く言えば器用貧乏)</li>
+<li>C 言語から派生した C 系言語は非常に多く、学習すると <strong>それなりに広い分野で活かせる</strong> から。</li>
+<li>他の言語より、<strong>実行速度が速い</strong> 。なぜなら、プログラムをマシンが実際に動かす符号 (機械語っていうけどこれについては詳しくないので勘弁) へと変換しているから。</li>
+<li>マシンに近いこともできて、逆に高度なこともできて、ゲームも作って、あまり目立たないけど大事なシステムも作って、<strong>理論上はなんでもできる</strong> から。(悪く言えば器用貧乏)</li>
 <li>顔がでかくて、首が太くて、足が短くて、ちょっとずんぐりむっくりな感じする。(大嘘)</li>
 </ul>
 <h2><a class="header" href="#c-での作業の流れ" id="c-での作業の流れ">C++ での作業の流れ</a></h2>
 <ol>
-<li>プログラムを書く。コンパイル(下記) する言語ではよく (ソース)コード と呼ばれる。別に味はしない。拡張子は cpp や cxx。ホントはなんでもいいけど。</li>
-<li>コンパイル する。コンパイラ というアプリを使う。これにファイルを渡すと、プログラムから実行できるアプリを作る。有名なのは GNU C Compiler (gcc, g++) とか Clang (clang, clang++) とか Microsoft Visual C++ とか。</li>
-<li>コンパイルされた実行形式 (Windows だと exe とか) を動かす。</li>
+<li>プログラムを書く。<em>コンパイル (下記)</em> する言語ではよく <strong>(ソース) コード</strong> と呼ばれる。別に味はしない。拡張子は cpp や cxx。ホントはなんでもいいけど。</li>
+<li><strong>コンパイル</strong> する。<em>コンパイラ</em> というアプリを使う。これにファイルを渡すと、プログラムから実行できるアプリを作る。有名なのは GNU C Compiler (<code>gcc</code>, <code>g++</code>) とか Clang (<code>clang</code>, <code>clang++</code>) とか Microsoft Visual C++ (<code>cl</code>) とか。</li>
+<li>コンパイルされた実行形式 (Windows だと <code>.exe</code> とか) を動かす。</li>
 </ol>
 <h2><a class="header" href="#c-のインストール" id="c-のインストール">C++ のインストール</a></h2>
 <h3><a class="header" href="#windows-の方" id="windows-の方">Windows の方</a></h3>
 <p><a href="https://visualstudio.microsoft.com/ja/vs/community/">ここから Visual Studio 2019 for Community をインストール</a> してね。</p>
-<p>Visual Studio Installer で C++ デスクトップ開発を選択してインストールするのを忘れないように!</p>
+<p>Visual Studio Installer で「C++ デスクトップ開発」を選択してインストールするのを忘れないように!</p>
 <h2><a class="header" href="#macos-の方" id="macos-の方">macOS の方</a></h2>
-<p><a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12">Mac App Store から Xcode をインストール</a> してね。</p>
+<p><a href="https://itunes.apple.com/us/app/xcode/id497799835">Mac App Store から Xcode をインストール</a> してね。</p>
 <p>インストールできたら一回だけ起動してね。このときに必要なものがインストールされるから。</p>
 <h2><a class="header" href="#その他特殊な-os-の方" id="その他特殊な-os-の方">その他特殊な OS の方</a></h2>
 <p>Debian 系なら <code>sudo apt-get install build-essential</code></p>
@@ -225,20 +225,20 @@
 <p>それ以外は最初から入ってると思う。全部は網羅できないので勘弁してくださいφ(ﾟДﾟ )
 ……って、こういう OS 使ってる人たちは絶対インストール方法知ってるでしょ。</p>
 <h2><a class="header" href="#自分が自由に使える-pc-を持っていない方" id="自分が自由に使える-pc-を持っていない方">自分が自由に使える PC を持っていない方</a></h2>
-<p><a href="https://wandbox.org">Wandbox</a> っていうウェブコンパイラがおすすめ。</p>
-<p>左上のメニューからコンパイラを切り替えられる。C++ だと gcc と clang と zapcc が使える。ちなみに C++ 以外の言語にも対応している。</p>
-<p>実行 (Run) すると、下の黒い画面の上に Share ボタンが出てくる。これを押すとその書いたコードを保存して、そのリンクを取得できる。このリンクの URL は https://wandbox.org/permlink/~ になる。</p>
+<p><a href="https://wandbox.org">Wandbox</a> っていう <em>ウェブコンパイラ</em> がおすすめ。</p>
+<p>左上のメニューからコンパイラを切り替えられる。C++ なら <code>gcc</code> と <code>clang</code> と <code>zapcc</code> が使える。ちなみに C++ 以外の言語にも対応している。</p>
+<p>実行 (Run) すると、下の黒い画面の上に <strong>Share ボタン</strong> が出てくる。これを押すとその書いたコードを保存して、そのリンクを取得できる。このリンクの URL は https://wandbox.org/permlink/~ になる。</p>
 <p>便利だけど、そのうち自分の PC を持つべき。</p>
 <p>※自由に使えるっていうのは、えっちな画像を保存しても問題がない状態のことだよ。</p>
 <h1><a class="header" href="#hello-world" id="hello-world">Hello, World!</a></h1>
 <p>まずはインストールできているか確かめるよ。</p>
 <h2><a class="header" href="#windows-で-visual-studio-2019-を使う人" id="windows-で-visual-studio-2019-を使う人">Windows で Visual Studio 2019 を使う人</a></h2>
-<p>Visual Studio 2019 を起動して、新しいプロジェクトの作成 &gt; コンソールアプリ で プロジェクト を作成してね。</p>
-<p>そしたら出てきた画面のツールバーの 再生ボタン (Windows デバッガーとか書いているやつ) を押して実行。</p>
-<p><img src="./image/vs.png" alt="Compiling in Visual Studio 2019" /></p>
+<p>Visual Studio 2019 を起動して、新しいプロジェクトの作成 &gt; コンソールアプリ で <em>プロジェクト</em> を作成してね。</p>
+<p>そしたら出てきた画面のツールバーの <strong>再生マークのボタン</strong> (Windows デバッガーとか書いているやつ) を押して実行。</p>
+<p><img src="./image/vs.png" alt="Visual Studio 2019 で実行" /></p>
 <p>すると 黒いコンソール画面 が出てきて Hello, World! って表示される (はず)。そうなっていなかったり詰まったりしたら Slack とかで質問して。</p>
 <h2><a class="header" href="#それ以外の人" id="それ以外の人">それ以外の人</a></h2>
-<p>以下のプログラムをテキストエディタに コピペして、好きな名前で 保存して ね。拡張子 (ファイルの後ろの .txt とか .exe とかのやつ) を .cpp にしておけば、名前は何でもいいよ。 </p>
+<p>以下のプログラムをテキストエディタに コピペして、好きな名前で <em>保存して</em> ね。拡張子 (ファイルの後ろの <code>.txt</code> とか <code>.exe</code> とかのやつ) を <code>.cpp</code> にしておけば、名前は何でもいいよ。 </p>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 int main()  {
   std::cout &lt;&lt; &quot;Hello World!\n&quot;;
@@ -249,9 +249,9 @@ int main()  {
 <p>ほかは各自シェル</p>
 <p>を開いてね。</p>
 <p><code>cd フォルダ名</code> でプログラムがあるフォルダに移動してから、<code>g++ ファイル名</code> でコンパイルしてね。<code>a.out</code> って名前のファイルができるから、これをそのままタイプして実行!</p>
-<p><img src="./image/hyper.png" alt="Compiling in Hyper" /></p>
+<p><img src="./image/hyper.png" alt="ターミナルでコンパイルして実行" /></p>
 <p>ッターン! <code>Hello, World!</code> って表示される (はず)。</p>
-<p>何かうまくいかなかったら Slack か口頭で 質問 して。なんかやばいから。</p>
+<p>何かうまくいかなかったら Slack か口頭で <strong>質問</strong> して。なんかやばいから。</p>
 <h1><a class="header" href="#まとめ" id="まとめ">まとめ</a></h1>
 <p>ちゃんと準備できた?できた?次章からプログラムを書いていくから、よろしくね!</p>
 <h1><a class="header" href="#基礎" id="基礎">基礎</a></h1>
@@ -297,7 +297,7 @@ int main()  {
 <h1><a class="header" href="#コメント" id="コメント">コメント</a></h1>
 <p>機械はよき理解者ではない</p>
 <hr />
-<p>C/C++ では、好きなところに <strong>コメント</strong> を書くことができる。</p>
+<p>C/C++ では、好きなところに <strong>コメント</strong> を書ける。</p>
 <pre><code class="language-cpp">コメントじゃない
 // これが一行コメント
 コメントじゃない
@@ -311,9 +311,9 @@ int main()  {
 </code></pre>
 <p>コメントは、コードからは絶対に <strong>読み取れないような情報</strong> を書くために使う。例えば、</p>
 <ul>
-<li>プログラムの中に出てくる 数の意味 を書く</li>
-<li>プログラムを こうした理由 を書く</li>
-<li>他からコピーしてきたプログラムの コピー元 URL を書く</li>
+<li>プログラムが <strong>危なそうに見えるが問題ない理由</strong> を書く</li>
+<li>プログラムを <strong>わざわざ難解に書いた理由</strong> を書く</li>
+<li>他からコピーしてきたプログラムの <strong>コピー元 URL</strong> を書く</li>
 </ul>
 <p>という感じ。</p>
 <p><strong>自分のプログラムも日が経てば他人のコード</strong> と言われるくらい誰でも把握できなくなるから、わかりやすくするのは大事。</p>
@@ -357,7 +357,8 @@ int main() {} // コンパイラ「'main' が再定義されているよー &gt;
 }
 </code></pre>
 <p>さて、「何もしない」を学んで終わりじゃないよ。</p>
-<p><strong>関数</strong> というものがある。これは誰かさんが作ったプログラム。これを <code>関数名 ( 渡すデータ )</code> と書くと関数を使うことができる。</p>
+<p><strong>関数</strong> というものがある。これは誰かさんが作ったプログラム。これを <code>関数名 ( 渡すデータ )</code> と書くと関数を使えきる。</p>
+<p>なぜかみんな忘れるんだけど、<em><strong>関数の呼び出しは 関数 と 括弧</strong></em> だよ!</p>
 <pre><code class="language-cpp">#include &lt;cstdio&gt; // この中に std::printf 関数のプログラムが入っている
 int main() {
   std::printf(&quot; あなたのすきなことばを &quot;); // テキストは「&quot;」で囲って書く
@@ -369,9 +370,8 @@ int main() {
 <p>これを関数を <strong>呼ぶ</strong> とか <strong>呼び出す</strong> とかいう。今回は <code>std::printf</code> 関数を呼んでみた。</p>
 <p>いっしょにテキストを渡しているけれど、これを自由に書き換えてみて。黒い画面に <strong>表示されるテキストが変わる</strong> はず。</p>
 <p>ちなみに、この <code>#include &lt;~&gt;</code> は、指定したファイル (ここでは <code>cstdio</code>) をドバっと展開する。</p>
-<p>関数を呼び出すことで、世界中のいろんな人たちが作ったプログラムを使うことができる。すごい?……たぶんすごい!</p>
+<p>関数を呼び出すことで、世界中のいろんな人たちが作ったプログラムを使える。すごい?……たぶんすごい!</p>
 <p><code>main</code> 関数も関数の一つだけど、一個しか存在できないし、呼び出すことができないようになってる (実は C 言語だと呼び出せる)。</p>
-<p>召喚できない伝説級の存在ってわけ。</p>
 <h1><a class="header" href="#式と演算子-其の一" id="式と演算子-其の一">式と演算子 其の一</a></h1>
 <p>機械に頭を使ってもらうことにしよう</p>
 <hr />
@@ -516,21 +516,20 @@ int main() {
 <p>値を詰め込めー</p>
 <hr />
 <p>ここまでで計算させてきたけど、この演算結果を <strong>保存して再利用する</strong> ことはできなかった。悲しい。</p>
-<p>そこで、データを格納する <strong>変数</strong> を利用する。</p>
-<p>これは <em>データを詰め込める箱</em> や <em>データを置く床</em> のようなイメージ。</p>
+<p>そこで、<strong>変数</strong> を利用する。これは値に名前を付ける機能だよ。例えば <code>24</code> を <code>variable</code> という変数に <em>代入する</em> っていうのは、</p>
 <blockquote>
-<p>|----|<br />
-| 12 |<br />
-|----|<br />
-↑この名前を決められる、値は変更できる</p>
+<p>?「フン。<code>24</code> というのかい。贅沢な名だねぇ。」</p>
+<p>?「今からお前の名前は <code>variable</code> だ。いいかい、<code>variable</code> だよ。」</p>
+<p>?「分かったら返事をするんだ、<code>variable</code>!!」</p>
 </blockquote>
+<p>って感じ (適当)。</p>
 <h2><a class="header" href="#変数を作る" id="変数を作る">変数を作る</a></h2>
 <p>変数を作るには、</p>
 <blockquote>
 <p><em>型</em> <em>名前</em>;</p>
 </blockquote>
 <p>という文法で書くと使えるようになる。</p>
-<p>複文の中でこの変数を作ることを <strong>変数の宣言</strong> という。</p>
+<p>複文の中で変数の名前を登場させることを <strong>変数の宣言</strong> という。</p>
 <p>変数は <em>宣言した後でないと使えない</em>。</p>
 <p><em>型</em> のところには、変数に入れられるものを書く。整数なら <code>int</code> (integer - 整数の略) を書く。型について詳しくは次のページで。</p>
 <pre><code class="language-cpp">int main() {
@@ -540,7 +539,7 @@ int main() {
 <p><code>variable</code> という名前の変数が生まれました!元気な男の子です!(?)</p>
 <p>変数は <code>=</code> 演算子をつかって <strong>中身を変更</strong> できる。<code>変数 = 新しい値の式</code> と書く。</p>
 <pre><code class="language-cpp">int main() {
-  variable; // C/C++ での 名前 は、宣言した後でないと使えない
+  variable; // これは NG。C/C++ での 名前 は、宣言した後でないと使えない
 
   int variable;
 
@@ -548,7 +547,7 @@ int main() {
 
   variable = variable / 2; // 1。そして代入される
 
-  0 = variable; // 埋め込んだ値 0 を変更しようとしている。コンパイルできない
+  0 = variable; // これは NG。埋め込んだ値 0 を変更しようとしている
 }
 </code></pre>
 <p>右の式を左の変数に入れる演算子だから、<strong>左右逆にはできない</strong> よ。方程式とは違うからね。</p>
@@ -692,7 +691,7 @@ count = count + 1;
 // :
 // :
 </code></pre>
-<p>そこで、変数を作るとき、<strong>最初に入れておく値も</strong> 併せて書くことができる。</p>
+<p>そこで、変数を作るとき、<strong>最初に入れておく値も</strong> 併せて書ける。</p>
 <p>変数の後ろに <code>= 初期値</code> を付け足すだけ。</p>
 <pre><code class="language-cpp">int count = 0; // 0 から数え始めるぞ
 count = count + 1;
@@ -896,7 +895,7 @@ int main() {
 <h1><a class="header" href="#分岐" id="分岐">分岐</a></h1>
 <p>ここに線路を切り替えるレバーがあります</p>
 <hr />
-<p>この章で、機械に簡単な判断をさせることができるようになる。</p>
+<p>この章で、機械に簡単な判断をさせられるようになる。</p>
 <h1><a class="header" href="#この章のゴール-2" id="この章のゴール-2">この章のゴール</a></h1>
 <ul>
 <li>真偽値を理解する</li>
@@ -1092,7 +1091,7 @@ if (!condition) {
 <p>if ( <em>真偽値の式</em> ) <em>式が true のときの文</em></p>
 <p>else <em>式が false のときの文</em></p>
 </blockquote>
-<p>以下のように、条件を満たさないときの処理を書くことができる。</p>
+<p>以下のように、条件を満たさないときの処理を書ける。</p>
 <pre><code class="language-cpp">bool condition;
 if (condition) {
   // 満たすとき
@@ -1152,7 +1151,7 @@ if (select == 1) {
   std::cout &lt;&lt; &quot;???\n&quot;;
 }
 </code></pre>
-<p>これは <code>switch</code> 文で書き換えることができる。文法は以下の通り。</p>
+<p>これは <code>switch</code> 文で書き換えられる。文法は以下の通り。</p>
 <blockquote>
 <p>switch ( <em>整数の式</em> ) {</p>
 <p>case <em>値</em>:</p>
@@ -1282,7 +1281,7 @@ int main() {
 <h1><a class="header" href="#反復" id="反復">反復</a></h1>
 <p>なんどもなんども</p>
 <hr />
-<p>この章で、機械に繰り返しをさせることができるようになる。</p>
+<p>この章で、機械に繰り返しをさせられるようになる。</p>
 <h1><a class="header" href="#この章のゴール-3" id="この章のゴール-3">この章のゴール</a></h1>
 <ul>
 <li>反復のしくみと条件を理解する</li>
@@ -1409,7 +1408,7 @@ int main() {
 <p>また次のループで逢いましょう</p>
 <hr />
 <p>ループには <em>判断</em> と <em>処理</em> の繰り返ししかないと思った?</p>
-<p>さすがにそれだと不便だから、いくつかの <strong>制御する文</strong> があるよ。</p>
+<p>さすがにそれだと不便だから、いくつか <strong>制御する文</strong> があるよ。</p>
 <p>この <code>continue</code> 文は、処理を途中でやめて <strong>処理の最後の文の後ろに移る</strong> 文だよ。</p>
 <p>下に書いたようなプログラムを実行してみればわかると思う。</p>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
@@ -1531,7 +1530,7 @@ for (int i = 0; i &lt; 3; ++i) {
 <h1><a class="header" href="#多重ループ" id="多重ループ">多重ループ</a></h1>
 <p>繰り返しを繰り返す</p>
 <hr />
-<p>もちろん、ループ内でもループを書くことができる。</p>
+<p>もちろん、ループ内でもループを書ける。</p>
 <pre><code class="language-cpp">for ( /* ~ */ ) {
   for ( /* ~ */ ) {
 
@@ -1544,7 +1543,7 @@ for (int i = 0; i &lt; 3; ++i) {
 <p>以下、よくやる使い方を紹介しておく。</p>
 <h2><a class="header" href="#二つの値の組み合わせをすべて網羅する場合" id="二つの値の組み合わせをすべて網羅する場合">二つの値の組み合わせをすべて網羅する場合</a></h2>
 <p>ここでは、与えられた半径 <code>radius</code> に対して、その半径の円の中に、中心から敷き詰めた正方形のタイルの数を数えてみる。</p>
-<p><img src="loop/../image/tiles_and_circle.png" alt="Tiles and circle" /></p>
+<p><img src="loop/../image/tiles_and_circle.png" alt="タイルと円" /></p>
 <pre><code class="language-cpp">double radius = 1.42; // 約 √2、標準入力でもいいけど今回は決め打ち
 int count = 0;
 int limit = radius + 0.5;
@@ -1591,7 +1590,7 @@ count = count * 4 ;
 }
 </code></pre>
 <p>行を繰り返すので、外側の <code>for</code> はこれだけ。</p>
-<p>これで完成。実行してみると、<em>きれいな円</em> が見れるはず。他にもいろいろやってみてね。</p>
+<p>これで完成。実行してみると、<em>きれいな円</em> が見られるはず。他にもいろいろやってみてね。</p>
 <p>この場合は、ループの内側と外側を逆にしたりはできない。</p>
 <p>横方向 (行) の出力を縦に繰り返しているからね。</p>
 <p>順序を逆にするわかるけど、表示が崩れちゃう。</p>
@@ -1743,7 +1742,7 @@ int main() {
 <p>いんすう派は賢いな</p>
 <hr />
 <p>関数を作ったとはいえ、<em>ずっと同じ処理をするだけの関数</em> じゃいろいろ不便。でしょ?</p>
-<p>そこで、引数 (ひきすう) というものを作って、この呼び出すと同時に値を渡してもらうことができる。</p>
+<p>そこで、引数 (ひきすう) というものを作って、この呼び出すと同時に値を渡してもらえる。</p>
 <p>この引数リストは、関数の文法で、</p>
 <blockquote>
 <p>void <em>名前</em> ( <em>引数リスト</em> )</p>
@@ -1879,7 +1878,7 @@ void hey(int num) {}
 <p>みたいなエラーを吐く。</p>
 <p>C++ での名前は、すでに <strong>宣言していないと使用できない</strong>。今どきの言語では上でも下でもいいのだけれど。</p>
 <p><em>定義は宣言でもある</em> ので、main 関数より上で関数を定義していれば問題なかった。</p>
-<p>でも、どうしても下側に書きたい場合は、ちゃんと <strong>宣言</strong> だけをすることができる。</p>
+<p>でも、どうしても下側に書きたい場合は、ちゃんと <strong>宣言</strong> だけができる。</p>
 <p>文法はこんな感じ。</p>
 <blockquote>
 <p><em>戻り値の型</em> <em>関数名</em> ( <em>引数リスト</em> ) ;</p>
@@ -1905,7 +1904,7 @@ void foo(double ratio) {
 <h1><a class="header" href="#オブジェクトたち" id="オブジェクトたち">オブジェクトたち</a></h1>
 <p>データのかたまり</p>
 <hr />
-<p>この章で、多様なデータ型を扱うことができるようになる。</p>
+<p>この章で、多様なデータ型を扱えるようになる。</p>
 <h1><a class="header" href="#この章のゴール-5" id="この章のゴール-5">この章のゴール</a></h1>
 <ul>
 <li>いろいろな型に触れる</li>
@@ -1959,7 +1958,7 @@ std::cout &lt;&lt; ch; // A
 <p>長いの短いの付いてないの</p>
 <hr />
 <p>今回も、ちょっとマイナー寄りな感じ。</p>
-<p>型には、指定子というものをつけて型の性質を少し変化させることができるよ。</p>
+<p>型には、指定子というものをつけて型の性質を少し変化させられるよ。</p>
 <h1><a class="header" href="#サイズを変える指定子" id="サイズを変える指定子">サイズを変える指定子</a></h1>
 <h2><a class="header" href="#long" id="long">long</a></h2>
 <p><code>long</code> は、それなりによく使う指定子。型の扱えるサイズが元のサイズ以上になる。</p>
@@ -2214,7 +2213,7 @@ int add_const(int const left, int const right) {
 <pre><code class="language-cpp">int body = 0;
 int &amp;ref = body;
 </code></pre>
-<p>変数に対して、それを <em>参照する型</em> の変数を作ることができる。</p>
+<p>変数に対して、それを <em>参照する型</em> の変数を作れる。</p>
 <p>言い換えると、変数の純粋な別名になって、変数を間接的に変更できる。</p>
 <pre><code class="language-cpp">int body = 0;
 int &amp;ref = body;
@@ -2341,7 +2340,7 @@ int main() {
 double vertexes[20] = {1.0, 1.0, 1.0}; // 残りは 0.0
 </code></pre>
 <h2><a class="header" href="#要素にアクセス" id="要素にアクセス">要素にアクセス</a></h2>
-<p>作った配列は、ちゃんとその中身を触ることができる。</p>
+<p>作った配列は、ちゃんとその中身を触れる。</p>
 <p>配列に格納されている値のことを <strong>要素</strong> っていうよ。</p>
 <p>要素にアクセスするときは、<code>[</code> と <code>]</code> の間に <strong>インデックス</strong> を入れる。</p>
 <pre><code class="language-cpp">int nums[5] = {1, 4, 5, 7};
@@ -3027,7 +3026,7 @@ A1 A2 A3 ... AN
 <li><code>A1, A2, A3, ...</code> は正の整数</li>
 </ul>
 <p>問題:</p>
-<p><code>A1, A2, A3, ...</code> の中からいくつかを組み合わせて合計して、ぴったり <code>S</code> にすることができるか求める。</p>
+<p><code>A1, A2, A3, ...</code> の中からいくつかを組み合わせて合計して、ぴったり <code>S</code> にできるか求める。</p>
 <p><code>S</code> にできる場合は <code>&quot;YES&quot;</code>、できない場合は <code>&quot;NO&quot;</code> に、改行を加えて出力せよ。</p>
 </blockquote>
 <p>まずは <em>入力</em> を受け取るとこを書く。</p>
@@ -3063,7 +3062,7 @@ int main() {
 <blockquote>
 <p>入力を <code>n</code> 個組み合わせで <code>0</code> が作れるかどうか</p>
 </blockquote>
-<p>この答えは、<em>かんたん</em> な問題の答えを使って求めることができる。</p>
+<p>この答えは、<em>かんたん</em> な問題の答えを使って求められる。</p>
 <ul>
 <li><code>n - 1</code> 個の組み合わせで <code>0</code> が作れるかどうか</li>
 </ul>
@@ -3091,7 +3090,7 @@ dp.back(); // これが答え。今回は必ず true だけど
 <blockquote>
 <p>入力を <code>n</code> 個組み合わせて <code>sum</code> が作れるかどうか</p>
 </blockquote>
-<p>この答えは、<em>かんたん</em> な問題の答えを使って求めることができる。</p>
+<p>この答えは、<em>かんたん</em> な問題の答えを使って求められる。</p>
 <ul>
 <li><code>n - 1</code> 個の組み合わせで <code>sum</code> が作れるかどうか</li>
 <li><code>n - 1</code> 個の組み合わせで <code>sum - A[n - 1]</code> が作れるかどうか</li>
@@ -3202,7 +3201,7 @@ A1 A2 A3 ... AN
 <li><code>A1, A2, A3, ...</code> は正の整数</li>
 </ul>
 <p>問題:</p>
-<p><code>A1, A2, A3, ...</code> の中からいくつかを組み合わせて合計して、ぴったり <code>S</code> にすることができる場合の数を求める。</p>
+<p><code>A1, A2, A3, ...</code> の中からいくつかを組み合わせて合計して、ぴったり <code>S</code> にできる場合の数を求める。</p>
 <p><code>S</code> にできる場合の数を出力せよ。</p>
 </blockquote>
 <p>入力:</p>
@@ -3415,7 +3414,7 @@ acbef
 </ul>
 <p>所要時間: 80 ~ 90 分くらい</p>
 <h1><a class="header" href="#ラムダ式" id="ラムダ式">ラムダ式</a></h1>
-<p>|出口|　λ............ﾄﾎﾞﾄﾎﾞ</p>
+<p>日λ…</p>
 <hr />
 <h2><a class="header" href="#auto" id="auto"><code>auto</code></a></h2>
 <p><code>auto</code> はこれから学ぶのに必要な知識なので、一緒に解説しておく。</p>
@@ -4515,7 +4514,7 @@ it-&gt;size();
 it-&gt;substr(1, 2);
 </code></pre>
 <h2><a class="header" href="#イテレータの距離" id="イテレータの距離">イテレータの距離</a></h2>
-<p><code>std::distance</code> 関数は、同じコンテナに対するイテレータの距離を求めることができる。</p>
+<p><code>std::distance</code> 関数は、同じコンテナに対するイテレータの距離を求められる。</p>
 <pre><code class="language-cpp">std::vector&lt;int&gt; data {2, 1, 1, 4};
 
 std::distance(data.begin(), data.end()); // 4
@@ -5151,7 +5150,7 @@ maze_H_1 maze_H_2 .. maze_H_W
 <h1><a class="header" href="#クラス" id="クラス">クラス</a></h1>
 <p>プログラムはかくして分離された——</p>
 <hr />
-<p>この章で、プログラムを分けることができるようになる。</p>
+<p>この章で、プログラムを分けられるようになる。</p>
 <h1><a class="header" href="#この章のゴール-9" id="この章のゴール-9">この章のゴール</a></h1>
 <ul>
 <li>クラスをテンポよく作る</li>
@@ -5170,9 +5169,9 @@ maze_H_1 maze_H_2 .. maze_H_W
 <p>一応そういう型だけでもプログラミングできるけど、同じような変数の組み合わせに同じような処理書くことが多くなってくる。</p>
 <pre><code class="language-cpp">int player1_x, player1_y;
 int player2_x, player2_y;
-if (player1_x &lt; player2_x &amp;&amp; player1_y &lt; player2_y) { ... }
+if (player1_x &lt; player2_x &amp;&amp; player1_y &lt; player2_y) { /* ... */ }
 </code></pre>
-<p><strong>クラス</strong> を定義することで、<strong>変数のまとまりとそれに対する処理</strong> をこんな感じで書くことができる。</p>
+<p><strong>クラス</strong> を定義することで、<strong>変数のまとまりとそれに対する処理</strong> をこんな感じで書ける。</p>
 <pre><code class="language-cpp">struct Point {
   int x, y;
   bool is_upper_left(Point const &amp;p) const {
@@ -5184,15 +5183,15 @@ if (player1_x &lt; player2_x &amp;&amp; player1_y &lt; player2_y) { ... }
 <pre><code class="language-cpp">class クラス名 {
   メンバ1;
   メンバ2;
-  :
-  :
+  // :
+  // :
 };
 // または、
 struct クラス名 {
   メンバ1;
   メンバ2;
-  :
-  :
+  // :
+  // :
 };
 </code></pre>
 <p><code>class</code> と <code>struct</code> ではメンバの扱いが少し異なる。
@@ -5216,8 +5215,8 @@ struct クラス名 {
 <pre><code class="language-cpp">class Position {
   int x, y;
   double norm;
-  :
-  :
+  // :
+  // :
 };
 Position p; // p は x、y、norm とかを持っている
 </code></pre>
@@ -5228,11 +5227,12 @@ Position p; // p は x、y、norm とかを持っている
   double abs() const {// ← の const 修飾をつけると、オブジェクトが const のときだけ呼び出せる
    // ...
   }
-  :
-  :
+  // :
+  // :
 };
 Position p; // p に add、norm などの関数がくっついている
 </code></pre>
+<p>引数リストの直後に <code>const</code> をつけると、インスタンスが <code>const</code> であっても呼び出せるようになるのでお得。逆に、これがついてないとインスタンスが <code>const</code> のときに呼び出せないので不便。</p>
 <h1><a class="header" href="#アクセス指定子-public--private" id="アクセス指定子-public--private">アクセス指定子 public / private</a></h1>
 <p>メンバには公開と非公開があって、公開されているメンバしか外部から触れない。</p>
 <p>それぞれ、<strong>アクセス指定</strong> をすることで設定できる。</p>
@@ -5320,7 +5320,7 @@ foo(&amp;hoge);
 <h1><a class="header" href="#コンストラクタデストラクタ" id="コンストラクタデストラクタ">コンストラクタ/デストラクタ</a></h1>
 <p>トラクター</p>
 <hr />
-<p>クラスには <strong>コンストラクタ</strong> と <strong>デストラクタ</strong> という <em>特殊なメンバ関数</em> を定義することができる。</p>
+<p>クラスには <strong>コンストラクタ</strong> と <strong>デストラクタ</strong> という <em>特殊なメンバ関数</em> を定義できる。</p>
 <h1><a class="header" href="#コンストラクタ" id="コンストラクタ">コンストラクタ</a></h1>
 <p><strong>オブジェクトを作るときに自動で呼ばれる</strong> メンバ関数で、<strong>メンバ変数の初期化</strong> とかをする。</p>
 <pre><code class="language-cpp">struct Cons {
@@ -5391,7 +5391,7 @@ IntList list {1, 4, 2, 3, 5, 2, 3};
 </code></pre>
 <h1><a class="header" href="#デストラクタ" id="デストラクタ">デストラクタ</a></h1>
 <p><strong>オブジェクトが使えなくなるときに自動で呼ばれる</strong> メンバ関数で、<strong>リソースの解放</strong> とかをする。</p>
-<p>大抵は書かなくて良いが、コンストラクタとかでやった処理をの後始末に使う。</p>
+<p>大抵は書かなくて良いと思うけど、コンストラクタとかでやった処理の後始末が必要なときにはここでやろう。</p>
 <pre><code class="language-cpp">#include &lt;cstdio&gt;
 
 class Des {
@@ -5413,14 +5413,14 @@ class Des {
 } // ファイルが閉じられる
 </code></pre>
 <h1><a class="header" href="#静的メンバ" id="静的メンバ">静的メンバ</a></h1>
-<p>えっちではない</p>
+<p>性的コンテンツではありません</p>
 <hr />
 <p>今までのメンバはクラスのオブジェクトに関するものだった。</p>
 <p><strong>静的メンバ</strong> という、クラスの名前に所属しているメンバも定義できる。</p>
 <p>静的メンバは、<code>static</code> を前に付けて定義する。</p>
 <h1><a class="header" href="#静的メンバ関数" id="静的メンバ関数">静的メンバ関数</a></h1>
-<p>特定のオブジェクトを作る処理を静的メンバ関数にするとよい。</p>
-<p>というのも、静的メンバ関数もメンバなので作ったオブジェクトのメンバ変数をいじれるから。</p>
+<p>ただの関数がクラスに所属しているような感じ。特定のオブジェクトを作る処理を静的メンバ関数にするとよい。</p>
+<p>というのも、静的メンバ関数もメンバなので作ったオブジェクトのメンバ変数をいじれるのだ。</p>
 <pre><code class="language-cpp">class Position {
   int _x, _y;
   bool _is_null;
@@ -5443,13 +5443,13 @@ public:
 };
 </code></pre>
 <h1><a class="header" href="#静的メンバ変数" id="静的メンバ変数">静的メンバ変数</a></h1>
-<p>クラスのオブジェクト全体で共有する変数になる。</p>
+<p>インスタンス全体で共有する 1 つの変数になる。1 つしか存在してほしくない場合に使う。</p>
 <pre><code class="language-cpp">class Wood {
   static std::string texturePath = &quot;assets/wood_1.png&quot;;
 };
 
 // 静的メンバ変数はクラス内だと宣言になるので、定義が別に必要
-// クラスにある名前は クラス名::メンバ名 になる
+// クラスにある名前は クラス名::メンバ名 になるから、こう書く
 std::string Wood::texturePath = &quot;assets/wood_1.png&quot;;
 </code></pre>
 <p>以下はシングルトンパターンと言う、オブジェクトが一つしか存在しないようにする書き方。</p>
@@ -5529,7 +5529,6 @@ ref.a(); // A
 </code></pre>
 <p>うん。オブジェクトは <code>struct B</code> のものなのに、<code>struct A</code> のメンバ関数を呼び出している。</p>
 <p>これは、型が <code>struct A</code> になってるからメンバもそっちなんだと解決される。</p>
-<p>この定義の上書きを <strong>オーバーライド</strong> って言う。</p>
 <p>仮想関数でも同じことをやってみよう。</p>
 <pre><code class="language-cpp">// virtual の指定は派生元だけで OK
 struct A { virtual void a() { std::cout &lt;&lt; &quot;A\n&quot;; } };
@@ -5541,6 +5540,7 @@ ref.a(); // B
 </code></pre>
 <p>あれ、<code>struct B</code> のメンバ関数が呼ばれた。</p>
 <p>つまり、仮想関数にすると、実際のオブジェクトのメンバ関数が呼ばれるわけだ。</p>
+<p>この定義の上書きを <strong>オーバーライド</strong> って言う。</p>
 <p>ちなみに、<code>override</code> を付けるとオーバーライドできていないときにコンパイラがエラーを出してくれる。</p>
 <pre><code class="language-cpp">struct A {
   virtual void a() { std::cout &lt;&lt; &quot;A\n&quot;; }

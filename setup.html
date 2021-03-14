@@ -157,30 +157,30 @@
 <p>所要時間: 20 ~ 30 分くらい</p>
 <h1><a class="header" href="#プログラムと実行形式" id="プログラムと実行形式">プログラムと実行形式</a></h1>
 <p>私達が普段触れている電子機器――スマホ、パソコン、ゲーム機――などには必ずアプリが関わっている。……いるよね？これ過去の人が読んでないよね？</p>
-<p>そいつらはみんな、「機械に何をさせるのか」っていうのを記述したもので作られている。これを (コンピュータ) プログラム という。</p>
-<p>そして、プログラムを書くことを プログラミング、プログラムを書く人を プログラマ っていう。</p>
+<p>そいつらはみんな、<em>「機械に何をさせるのか」っていうのを記述したもの</em> で作られている。これを <strong>(コンピュータ) プログラム</strong> という。</p>
+<p>そして、プログラムを書くことを <strong>プログラミング</strong>、プログラムを書く人を <em>プログラマ</em> っていう。</p>
 <h2><a class="header" href="#アプリはすべてプログラムによって作られている" id="アプリはすべてプログラムによって作られている">アプリはすべてプログラムによって作られている。</a></h2>
 <p>特に、生産的で一般的な手法として、 プログラミング言語 という独自言語のテキストを書くやり方がある。マウスだけで作るやつとかもあるけど、作ってるうちにテキストで書いたほうが楽なことに気づく。これマジ。</p>
 <p>ここでは、そのプログラミング言語の中の一つの、それなりに強い言語 C++ を使ってく。ただ、これはまあまあレベルの高いこともできるから、この言語の元になった C 言語と共通する部分しか触れないけど。</p>
 <h2><a class="header" href="#なぜ-c-なのか" id="なぜ-c-なのか">なぜ C++ なのか</a></h2>
 <ul>
-<li>C 言語から派生した C 系言語は非常に多く、学習すると それなりに広い分野で活かせる から。</li>
-<li>他の言語より、実行速度が速い 。なぜなら、プログラムをマシンが実際に動かす符号 (機械語っていうけどこれについては詳しくないので勘弁) へと変換しているから。</li>
-<li>マシンに近いこともできて、逆に高度なこともできて、ゲームも作って、あまり目立たないけど大事なシステムも作って、理論上はなんでもできる から。(悪く言えば器用貧乏)</li>
+<li>C 言語から派生した C 系言語は非常に多く、学習すると <strong>それなりに広い分野で活かせる</strong> から。</li>
+<li>他の言語より、<strong>実行速度が速い</strong> 。なぜなら、プログラムをマシンが実際に動かす符号 (機械語っていうけどこれについては詳しくないので勘弁) へと変換しているから。</li>
+<li>マシンに近いこともできて、逆に高度なこともできて、ゲームも作って、あまり目立たないけど大事なシステムも作って、<strong>理論上はなんでもできる</strong> から。(悪く言えば器用貧乏)</li>
 <li>顔がでかくて、首が太くて、足が短くて、ちょっとずんぐりむっくりな感じする。(大嘘)</li>
 </ul>
 <h2><a class="header" href="#c-での作業の流れ" id="c-での作業の流れ">C++ での作業の流れ</a></h2>
 <ol>
-<li>プログラムを書く。コンパイル(下記) する言語ではよく (ソース)コード と呼ばれる。別に味はしない。拡張子は cpp や cxx。ホントはなんでもいいけど。</li>
-<li>コンパイル する。コンパイラ というアプリを使う。これにファイルを渡すと、プログラムから実行できるアプリを作る。有名なのは GNU C Compiler (gcc, g++) とか Clang (clang, clang++) とか Microsoft Visual C++ とか。</li>
-<li>コンパイルされた実行形式 (Windows だと exe とか) を動かす。</li>
+<li>プログラムを書く。<em>コンパイル (下記)</em> する言語ではよく <strong>(ソース) コード</strong> と呼ばれる。別に味はしない。拡張子は cpp や cxx。ホントはなんでもいいけど。</li>
+<li><strong>コンパイル</strong> する。<em>コンパイラ</em> というアプリを使う。これにファイルを渡すと、プログラムから実行できるアプリを作る。有名なのは GNU C Compiler (<code>gcc</code>, <code>g++</code>) とか Clang (<code>clang</code>, <code>clang++</code>) とか Microsoft Visual C++ (<code>cl</code>) とか。</li>
+<li>コンパイルされた実行形式 (Windows だと <code>.exe</code> とか) を動かす。</li>
 </ol>
 <h2><a class="header" href="#c-のインストール" id="c-のインストール">C++ のインストール</a></h2>
 <h3><a class="header" href="#windows-の方" id="windows-の方">Windows の方</a></h3>
 <p><a href="https://visualstudio.microsoft.com/ja/vs/community/">ここから Visual Studio 2019 for Community をインストール</a> してね。</p>
-<p>Visual Studio Installer で C++ デスクトップ開発を選択してインストールするのを忘れないように!</p>
+<p>Visual Studio Installer で「C++ デスクトップ開発」を選択してインストールするのを忘れないように!</p>
 <h2><a class="header" href="#macos-の方" id="macos-の方">macOS の方</a></h2>
-<p><a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12">Mac App Store から Xcode をインストール</a> してね。</p>
+<p><a href="https://itunes.apple.com/us/app/xcode/id497799835">Mac App Store から Xcode をインストール</a> してね。</p>
 <p>インストールできたら一回だけ起動してね。このときに必要なものがインストールされるから。</p>
 <h2><a class="header" href="#その他特殊な-os-の方" id="その他特殊な-os-の方">その他特殊な OS の方</a></h2>
 <p>Debian 系なら <code>sudo apt-get install build-essential</code></p>
@@ -188,20 +188,20 @@
 <p>それ以外は最初から入ってると思う。全部は網羅できないので勘弁してくださいφ(ﾟДﾟ )
 ……って、こういう OS 使ってる人たちは絶対インストール方法知ってるでしょ。</p>
 <h2><a class="header" href="#自分が自由に使える-pc-を持っていない方" id="自分が自由に使える-pc-を持っていない方">自分が自由に使える PC を持っていない方</a></h2>
-<p><a href="https://wandbox.org">Wandbox</a> っていうウェブコンパイラがおすすめ。</p>
-<p>左上のメニューからコンパイラを切り替えられる。C++ だと gcc と clang と zapcc が使える。ちなみに C++ 以外の言語にも対応している。</p>
-<p>実行 (Run) すると、下の黒い画面の上に Share ボタンが出てくる。これを押すとその書いたコードを保存して、そのリンクを取得できる。このリンクの URL は https://wandbox.org/permlink/~ になる。</p>
+<p><a href="https://wandbox.org">Wandbox</a> っていう <em>ウェブコンパイラ</em> がおすすめ。</p>
+<p>左上のメニューからコンパイラを切り替えられる。C++ なら <code>gcc</code> と <code>clang</code> と <code>zapcc</code> が使える。ちなみに C++ 以外の言語にも対応している。</p>
+<p>実行 (Run) すると、下の黒い画面の上に <strong>Share ボタン</strong> が出てくる。これを押すとその書いたコードを保存して、そのリンクを取得できる。このリンクの URL は https://wandbox.org/permlink/~ になる。</p>
 <p>便利だけど、そのうち自分の PC を持つべき。</p>
 <p>※自由に使えるっていうのは、えっちな画像を保存しても問題がない状態のことだよ。</p>
 <h1><a class="header" href="#hello-world" id="hello-world">Hello, World!</a></h1>
 <p>まずはインストールできているか確かめるよ。</p>
 <h2><a class="header" href="#windows-で-visual-studio-2019-を使う人" id="windows-で-visual-studio-2019-を使う人">Windows で Visual Studio 2019 を使う人</a></h2>
-<p>Visual Studio 2019 を起動して、新しいプロジェクトの作成 &gt; コンソールアプリ で プロジェクト を作成してね。</p>
-<p>そしたら出てきた画面のツールバーの 再生ボタン (Windows デバッガーとか書いているやつ) を押して実行。</p>
-<p><img src="./image/vs.png" alt="Compiling in Visual Studio 2019" /></p>
+<p>Visual Studio 2019 を起動して、新しいプロジェクトの作成 &gt; コンソールアプリ で <em>プロジェクト</em> を作成してね。</p>
+<p>そしたら出てきた画面のツールバーの <strong>再生マークのボタン</strong> (Windows デバッガーとか書いているやつ) を押して実行。</p>
+<p><img src="./image/vs.png" alt="Visual Studio 2019 で実行" /></p>
 <p>すると 黒いコンソール画面 が出てきて Hello, World! って表示される (はず)。そうなっていなかったり詰まったりしたら Slack とかで質問して。</p>
 <h2><a class="header" href="#それ以外の人" id="それ以外の人">それ以外の人</a></h2>
-<p>以下のプログラムをテキストエディタに コピペして、好きな名前で 保存して ね。拡張子 (ファイルの後ろの .txt とか .exe とかのやつ) を .cpp にしておけば、名前は何でもいいよ。 </p>
+<p>以下のプログラムをテキストエディタに コピペして、好きな名前で <em>保存して</em> ね。拡張子 (ファイルの後ろの <code>.txt</code> とか <code>.exe</code> とかのやつ) を <code>.cpp</code> にしておけば、名前は何でもいいよ。 </p>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 int main()  {
   std::cout &lt;&lt; &quot;Hello World!\n&quot;;
@@ -212,9 +212,9 @@ int main()  {
 <p>ほかは各自シェル</p>
 <p>を開いてね。</p>
 <p><code>cd フォルダ名</code> でプログラムがあるフォルダに移動してから、<code>g++ ファイル名</code> でコンパイルしてね。<code>a.out</code> って名前のファイルができるから、これをそのままタイプして実行!</p>
-<p><img src="./image/hyper.png" alt="Compiling in Hyper" /></p>
+<p><img src="./image/hyper.png" alt="ターミナルでコンパイルして実行" /></p>
 <p>ッターン! <code>Hello, World!</code> って表示される (はず)。</p>
-<p>何かうまくいかなかったら Slack か口頭で 質問 して。なんかやばいから。</p>
+<p>何かうまくいかなかったら Slack か口頭で <strong>質問</strong> して。なんかやばいから。</p>
 <h1><a class="header" href="#まとめ" id="まとめ">まとめ</a></h1>
 <p>ちゃんと準備できた?できた?次章からプログラムを書いていくから、よろしくね!</p>
 

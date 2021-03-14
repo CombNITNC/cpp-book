@@ -168,7 +168,6 @@ ref.a(); // A
 </code></pre>
 <p>うん。オブジェクトは <code>struct B</code> のものなのに、<code>struct A</code> のメンバ関数を呼び出している。</p>
 <p>これは、型が <code>struct A</code> になってるからメンバもそっちなんだと解決される。</p>
-<p>この定義の上書きを <strong>オーバーライド</strong> って言う。</p>
 <p>仮想関数でも同じことをやってみよう。</p>
 <pre><code class="language-cpp">// virtual の指定は派生元だけで OK
 struct A { virtual void a() { std::cout &lt;&lt; &quot;A\n&quot;; } };
@@ -180,6 +179,7 @@ ref.a(); // B
 </code></pre>
 <p>あれ、<code>struct B</code> のメンバ関数が呼ばれた。</p>
 <p>つまり、仮想関数にすると、実際のオブジェクトのメンバ関数が呼ばれるわけだ。</p>
+<p>この定義の上書きを <strong>オーバーライド</strong> って言う。</p>
 <p>ちなみに、<code>override</code> を付けるとオーバーライドできていないときにコンパイラがエラーを出してくれる。</p>
 <pre><code class="language-cpp">struct A {
   virtual void a() { std::cout &lt;&lt; &quot;A\n&quot;; }

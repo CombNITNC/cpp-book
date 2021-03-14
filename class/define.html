@@ -154,9 +154,9 @@
 <p>一応そういう型だけでもプログラミングできるけど、同じような変数の組み合わせに同じような処理書くことが多くなってくる。</p>
 <pre><code class="language-cpp">int player1_x, player1_y;
 int player2_x, player2_y;
-if (player1_x &lt; player2_x &amp;&amp; player1_y &lt; player2_y) { ... }
+if (player1_x &lt; player2_x &amp;&amp; player1_y &lt; player2_y) { /* ... */ }
 </code></pre>
-<p><strong>クラス</strong> を定義することで、<strong>変数のまとまりとそれに対する処理</strong> をこんな感じで書くことができる。</p>
+<p><strong>クラス</strong> を定義することで、<strong>変数のまとまりとそれに対する処理</strong> をこんな感じで書ける。</p>
 <pre><code class="language-cpp">struct Point {
   int x, y;
   bool is_upper_left(Point const &amp;p) const {
@@ -168,15 +168,15 @@ if (player1_x &lt; player2_x &amp;&amp; player1_y &lt; player2_y) { ... }
 <pre><code class="language-cpp">class クラス名 {
   メンバ1;
   メンバ2;
-  :
-  :
+  // :
+  // :
 };
 // または、
 struct クラス名 {
   メンバ1;
   メンバ2;
-  :
-  :
+  // :
+  // :
 };
 </code></pre>
 <p><code>class</code> と <code>struct</code> ではメンバの扱いが少し異なる。

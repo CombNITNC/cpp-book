@@ -148,14 +148,14 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#静的メンバ" id="静的メンバ">静的メンバ</a></h1>
-<p>えっちではない</p>
+<p>性的コンテンツではありません</p>
 <hr />
 <p>今までのメンバはクラスのオブジェクトに関するものだった。</p>
 <p><strong>静的メンバ</strong> という、クラスの名前に所属しているメンバも定義できる。</p>
 <p>静的メンバは、<code>static</code> を前に付けて定義する。</p>
 <h1><a class="header" href="#静的メンバ関数" id="静的メンバ関数">静的メンバ関数</a></h1>
-<p>特定のオブジェクトを作る処理を静的メンバ関数にするとよい。</p>
-<p>というのも、静的メンバ関数もメンバなので作ったオブジェクトのメンバ変数をいじれるから。</p>
+<p>ただの関数がクラスに所属しているような感じ。特定のオブジェクトを作る処理を静的メンバ関数にするとよい。</p>
+<p>というのも、静的メンバ関数もメンバなので作ったオブジェクトのメンバ変数をいじれるのだ。</p>
 <pre><code class="language-cpp">class Position {
   int _x, _y;
   bool _is_null;
@@ -178,13 +178,13 @@ public:
 };
 </code></pre>
 <h1><a class="header" href="#静的メンバ変数" id="静的メンバ変数">静的メンバ変数</a></h1>
-<p>クラスのオブジェクト全体で共有する変数になる。</p>
+<p>インスタンス全体で共有する 1 つの変数になる。1 つしか存在してほしくない場合に使う。</p>
 <pre><code class="language-cpp">class Wood {
   static std::string texturePath = &quot;assets/wood_1.png&quot;;
 };
 
 // 静的メンバ変数はクラス内だと宣言になるので、定義が別に必要
-// クラスにある名前は クラス名::メンバ名 になる
+// クラスにある名前は クラス名::メンバ名 になるから、こう書く
 std::string Wood::texturePath = &quot;assets/wood_1.png&quot;;
 </code></pre>
 <p>以下はシングルトンパターンと言う、オブジェクトが一つしか存在しないようにする書き方。</p>

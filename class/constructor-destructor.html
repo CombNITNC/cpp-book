@@ -150,7 +150,7 @@
                         <h1><a class="header" href="#コンストラクタデストラクタ" id="コンストラクタデストラクタ">コンストラクタ/デストラクタ</a></h1>
 <p>トラクター</p>
 <hr />
-<p>クラスには <strong>コンストラクタ</strong> と <strong>デストラクタ</strong> という <em>特殊なメンバ関数</em> を定義することができる。</p>
+<p>クラスには <strong>コンストラクタ</strong> と <strong>デストラクタ</strong> という <em>特殊なメンバ関数</em> を定義できる。</p>
 <h1><a class="header" href="#コンストラクタ" id="コンストラクタ">コンストラクタ</a></h1>
 <p><strong>オブジェクトを作るときに自動で呼ばれる</strong> メンバ関数で、<strong>メンバ変数の初期化</strong> とかをする。</p>
 <pre><code class="language-cpp">struct Cons {
@@ -221,7 +221,7 @@ IntList list {1, 4, 2, 3, 5, 2, 3};
 </code></pre>
 <h1><a class="header" href="#デストラクタ" id="デストラクタ">デストラクタ</a></h1>
 <p><strong>オブジェクトが使えなくなるときに自動で呼ばれる</strong> メンバ関数で、<strong>リソースの解放</strong> とかをする。</p>
-<p>大抵は書かなくて良いが、コンストラクタとかでやった処理をの後始末に使う。</p>
+<p>大抵は書かなくて良いと思うけど、コンストラクタとかでやった処理の後始末が必要なときにはここでやろう。</p>
 <pre><code class="language-cpp">#include &lt;cstdio&gt;
 
 class Des {
