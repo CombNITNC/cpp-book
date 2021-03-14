@@ -15,8 +15,8 @@
 class Position {
   int x, y;
   double norm;
-  :
-  :
+  // :
+  // :
 };
 Position p; // p は x、y、norm とかを持っている
 ```
@@ -32,11 +32,13 @@ class Position {
   double abs() const {// ← の const 修飾をつけると、オブジェクトが const のときだけ呼び出せる
    // ...
   }
-  :
-  :
+  // :
+  // :
 };
 Position p; // p に add、norm などの関数がくっついている
 ```
+
+引数リストの直後に `const` をつけると、インスタンスが `const` であっても呼び出せるようになるのでお得。逆に、これがついてないとインスタンスが `const` のときに呼び出せないので不便。
 
 
 # アクセス指定子 public / private
