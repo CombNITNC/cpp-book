@@ -13,7 +13,7 @@ if (condition) {
   // 満たすとき
 }
 
-if (！condition) {
+if (!condition) {
   // 満たさないとき
 }
 ```
