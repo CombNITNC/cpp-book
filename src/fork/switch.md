@@ -7,7 +7,7 @@
 整数で分岐するときに、このように **等しいかどうかの分岐を連ねる** ということをやったりする。
 
 ```cpp
-std::cout << "Select:\n  1. Hello.\n 2. Hi！\n other. ？？？\n";
+std::cout << "Select:\n  1. Hello.\n 2. Hi！\n other. ???\n";
 
 int select;
 
@@ -18,7 +18,7 @@ if (select == 1) {
 } else if (select == 2) {
   std::cout << "Hi！\n";
 } else {
-  std::cout << "？？？\n";
+  std::cout << "???\n";
 }
 ```
 
@@ -52,7 +52,7 @@ if (select == 1) {
 最初の例を `switch` に書き換えるとこうなる。どっちが見やすいと思う？どっちでもいいけど。
 
 ```cpp
-std::cout << "Select:\n  1. Hello.\n 2. Hi！\n other. ？？？\n";
+std::cout << "Select:\n  1. Hello.\n 2. Hi！\n other. ???\n";
 
 int select;
 
@@ -66,7 +66,7 @@ case 2:
   std::cout << "Hi！\n";
   break;
 default:
-  std::cout << "？？？\n";
+  std::cout << "???\n";
   break;
 }
 ```
