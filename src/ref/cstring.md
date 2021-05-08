@@ -27,7 +27,7 @@ char text[] = "BEA"; // こう見えて 4 要素ある
 
 int main() {
   char text[] = "BEA";
-  for (int i = 0; text[i] ！= '\0'; ++i) {
+  for (int i = 0; text[i] != '\0'; ++i) {
     ++text[i]; // 文字が一つ次に進む
   }
   std::cout << text; // CFB

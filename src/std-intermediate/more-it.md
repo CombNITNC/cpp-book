@@ -62,7 +62,7 @@ std::distance(it, data.begin()); // -2
 
 ## イテレータの比較
 
-イテレータにはいくつか種類があるけれど、どんなイテレータでも `==` と `！=` 演算子で同じかどうかを比較できる。
+イテレータにはいくつか種類があるけれど、どんなイテレータでも `==` と `!=` 演算子で同じかどうかを比較できる。
 
 ```cpp
 std::vector<int> data {2};
@@ -70,12 +70,12 @@ std::vector<int> data {2};
 auto it = data.begin();
 
 it == data.begin(); // true
-it ！= data.end(); // true
+it != data.end(); // true
 
 ++it;
 
 it == data.begin(); // false
-it ！= data.end(); // false
+it != data.end(); // false
 ```
 
 ## begin / end 関数
@@ -276,7 +276,7 @@ it -= 2;
 d.begin() < it; // true
 it <= d.end(); // true
 it == d.end(); // false
-it ！= d.begin(); // true
+it != d.begin(); // true
 
 it[2]; // 2。*(it + 2); と同じ
 it[-2]; // 3。*(it - 2); と同じ
