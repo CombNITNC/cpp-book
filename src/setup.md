@@ -79,7 +79,7 @@ CentOS 系なら `yum install gcc`
 ※自由に使えるっていうのは、えっちな画像を保存しても問題がない状態のことだよ。
 
 
-# Hello, World！
+# Hello, World!
 
 まずはインストールできているか確かめるよ。
 
@@ -92,7 +92,7 @@ Visual Studio 2019 を起動して、新しいプロジェクトの作成 > コ�
 
 ![Visual Studio 2019 で実行](./image/vs.png)
 
-すると 黒いコンソール画面 が出てきて Hello, World！ って表示される (はず)。そうなっていなかったり詰まったりしたら Slack とかで質問して。
+すると 黒いコンソール画面 が出てきて Hello, World! って表示される (はず)。そうなっていなかったり詰まったりしたら Slack とかで質問して。
 
 
 ## それ以外の人
@@ -102,7 +102,7 @@ Visual Studio 2019 を起動して、新しいプロジェクトの作成 > コ�
 ```cpp
 #include <iostream>
 int main()  {
-  std::cout << "Hello World！\n";
+  std::cout << "Hello World!\n";
 }
 ```
 
@@ -118,7 +118,7 @@ macOS だと アプリケーション > ユーティリティ > ターミナル 
 
 ![ターミナルでコンパイルして実行](./image/hyper.png)
 
-ッターン！ `Hello, World！` って表示される (はず)。
+ッターン！ `Hello, World!` って表示される (はず)。
 
 何かうまくいかなかったら Slack か口頭で **質問** して。なんかやばいから。
 

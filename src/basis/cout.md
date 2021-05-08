@@ -35,12 +35,12 @@ int main() {
 このファイルの中に `std::cout` が入ってるわけ。
 
 
-最初の環境構築のときの Hello, World！ もこれを使っている。
+最初の環境構築のときの Hello, World! もこれを使っている。
 
 ```cpp
 #include <iostream>
 int main() {
-  std::cout << "Hello World！\n";
+  std::cout << "Hello World!\n";
 }
 ```
 
