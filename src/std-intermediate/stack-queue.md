@@ -43,7 +43,7 @@ S.pop(); // {4}
 S.push(1); // {4, 1}
 
 // empty で空かどうかを bool で取得
-while (！S.empty()) {
+while (!S.empty()) {
   // top でスタックの一番上 (後ろ) を取得
   auto top = S.top();
   S.pop();
@@ -157,7 +157,7 @@ Q.pop(); // {3}
 Q.push(1); // {3, 1}
 
 // empty で空かどうかを bool で取得
-while (！Q.empty()) {
+while (!Q.empty()) {
   // front でキューの先頭を取得
   auto head = Q.front();
   Q.pop();
@@ -277,7 +277,7 @@ std::vector<bool> passed(E); // 通過済みかどうかのメモ用
 std::queue<size_t> bfs;
 bfs.push(S);
 
-while (！bfs.empty()) {
+while (!bfs.empty()) {
   auto now = bfs.front();
   bfs.pop();
   
@@ -293,7 +293,7 @@ while (！bfs.empty()) {
   
   passed[now] = true;
   for (auto next : adj[now]) {
-    if (！passed[next]) {
+    if (!passed[next]) {
       bfs.push(next);
     }
   }
@@ -336,7 +336,7 @@ int main() {
   std::queue<size_t> bfs;
   bfs.push(S);
 
-  while (！bfs.empty()) {
+  while (!bfs.empty()) {
     auto now = bfs.front();
     bfs.pop();
 
@@ -352,7 +352,7 @@ int main() {
 
     passed[now] = true;
     for (auto next : adj[now]) {
-      if (！passed[next]) {
+      if (!passed[next]) {
         bfs.push(next);
       }
     }
@@ -389,7 +389,7 @@ Q.push(3); // {2, 3, 4}
 Q.push(1); // {1, 2, 3, 4}
 
 // empty で空かどうかを bool で取得
-while (！Q.empty()) {
+while (!Q.empty()) {
   // top でキューの末尾を取得
   auto head = Q.top();
   // pop で末尾を削除
@@ -526,7 +526,7 @@ std::priority_queue<
 > Q;
 Q.push({0, S});
 
-while (！Q.empty()) {
+while (!Q.empty()) {
   auto pair = Q.top();
   int now_cost = pair.first;
   size_t now = pair.second;
@@ -587,7 +587,7 @@ int main() {
   > Q;
   Q.push({0, S});
 
-  while (！Q.empty()) {
+  while (!Q.empty()) {
     auto pair = Q.top();
     int now_cost = pair.first;
     size_t now = pair.second;
