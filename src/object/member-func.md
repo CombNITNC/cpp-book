@@ -28,7 +28,7 @@ int main() {
   text += ", World"; // 上と同じ (このクラスの機能)
   std::cout << text << "\n"; // Hello, World, World
 
-  text.append(2, '！'); // 2 個の '！'
+  text.append(2, '!'); // 2 個の '!'
   std::cout << text << "\n"; // Hello, World, World!!
 
 
