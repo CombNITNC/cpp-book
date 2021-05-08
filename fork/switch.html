@@ -151,7 +151,7 @@
 <p>タコ足配線</p>
 <hr />
 <p>整数で分岐するときに、このように <strong>等しいかどうかの分岐を連ねる</strong> ということをやったりする。</p>
-<pre><code class="language-cpp">std::cout &lt;&lt; &quot;Select:\n  1. Hello.\n 2. Hi!\n other. ???\n&quot;;
+<pre><code class="language-cpp">std::cout &lt;&lt; &quot;Select:\n  1. Hello.\n 2. Hi！\n other. ???\n&quot;;
 
 int select;
 
@@ -160,7 +160,7 @@ std::cin &gt;&gt; select;
 if (select == 1) {
   std::cout &lt;&lt; &quot;Hello.\n&quot;;
 } else if (select == 2) {
-  std::cout &lt;&lt; &quot;Hi!\n&quot;;
+  std::cout &lt;&lt; &quot;Hi！\n&quot;;
 } else {
   std::cout &lt;&lt; &quot;???\n&quot;;
 }
@@ -180,8 +180,8 @@ if (select == 1) {
 </blockquote>
 <p>すると、<em>case に一致する値のところ</em> まで、<strong>実行する文が飛ばされる</strong>。</p>
 <p><code>case 値</code> の後ろに付いているのは、<code>;</code> ではなく <code>:</code> だよ。間違えないように。</p>
-<p>最初の例を <code>switch</code> に書き換えるとこうなる。どっちが見やすいと思う?どっちでもいいけど。</p>
-<pre><code class="language-cpp">std::cout &lt;&lt; &quot;Select:\n  1. Hello.\n 2. Hi!\n other. ???\n&quot;;
+<p>最初の例を <code>switch</code> に書き換えるとこうなる。どっちが見やすいと思う？どっちでもいいけど。</p>
+<pre><code class="language-cpp">std::cout &lt;&lt; &quot;Select:\n  1. Hello.\n 2. Hi！\n other. ???\n&quot;;
 
 int select;
 
@@ -192,14 +192,14 @@ case 1:
   std::cout &lt;&lt; &quot;Hello.\n&quot;;
   break;
 case 2:
-  std::cout &lt;&lt; &quot;Hi!\n&quot;;
+  std::cout &lt;&lt; &quot;Hi！\n&quot;;
   break;
 default:
   std::cout &lt;&lt; &quot;???\n&quot;;
   break;
 }
 </code></pre>
-<p><code>switch</code> 文は整数にしか使えない! ...そういう仕様なんだ.</p>
+<p><code>switch</code> 文は整数にしか使えない！ ...そういう仕様なんだ.</p>
 <p>この <code>break</code> (処理を脱出する特殊な文) が無いときは、そのまま下へ処理が流れていく。<code>break</code> を忘れないように。</p>
 <pre><code class="language-cpp">switch (input) {
 case 0: {

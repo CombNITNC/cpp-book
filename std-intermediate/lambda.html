@@ -160,7 +160,7 @@ auto wonderful = 0LL; // long long 型
 auto single = 1.2f; // float 型
 auto doppio = 2.4; // double 型
 
-auto text = std::string(&quot;Hey!&quot;); // std::string 型
+auto text = std::string(&quot;Hey！&quot;); // std::string 型
 </code></pre>
 <p>戻り値型では、戻り値の型から推論される。引数の型には使えない (そのうち使えるようになるかも)。</p>
 <pre><code class="language-cpp">auto add(int a, int b) { // int add(int, int) になる
@@ -188,7 +188,7 @@ auto tail = data.end(); // 短い
 
 int main() {
   [] {
-    std::cout &lt;&lt; &quot;Hello!\n&quot;;
+    std::cout &lt;&lt; &quot;Hello！\n&quot;;
   };
 }
 </code></pre>
@@ -199,14 +199,14 @@ int main() {
 
 int main() {
   [] {
-    std::cout &lt;&lt; &quot;Hello!\n&quot;;
+    std::cout &lt;&lt; &quot;Hello！\n&quot;;
   }();
 }
 </code></pre>
 <h3><a class="header" href="#変数への代入" id="変数への代入">変数への代入</a></h3>
 <p>ラムダ式はれっきとした <strong>式</strong> であり、変数に代入できちゃう。特定の型はないけれど、<code>auto</code> 型変数は使える。</p>
 <pre><code class="language-cpp">auto func = [] {
-  std::cout &lt;&lt; &quot;wow wow! &quot;;
+  std::cout &lt;&lt; &quot;wow wow！ &quot;;
 };
 func();
 func();
@@ -222,7 +222,7 @@ func();
 show(2);
 show(40);
 </code></pre>
-<p>引数がないときは、引数リストの <code>()</code> は省略できるってだけ。その方が見やすいのかな?</p>
+<p>引数がないときは、引数リストの <code>()</code> は省略できるってだけ。その方が見やすいのかな？</p>
 <h3><a class="header" href="#値を戻す" id="値を戻す">値を戻す</a></h3>
 <p>ラムダ式で戻り値を作るときでも、特に型の指定は要らない。</p>
 <pre><code class="language-cpp">auto add = [] (int a, int b) { return a + b; };

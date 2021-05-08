@@ -159,15 +159,19 @@ bool you_are_me;
 you_are_me = false;
 </code></pre>
 <h2><a class="header" href="#整数に型変換する場合" id="整数に型変換する場合">整数に型変換する場合</a></h2>
-<p><code>false</code> =&gt; <code>0</code></p>
-<p><code>true</code> =&gt; <code>1</code></p>
+<ul>
+<li><code>false</code> =&gt; <code>0</code></li>
+<li><code>true</code> =&gt; <code>1</code></li>
+</ul>
 <p>整数と四則演算させようとすると、こんな感じの不思議な挙動になっちゃう。</p>
 <pre><code class="language-cpp">3 * false; // =&gt; 0
 4 + true; // =&gt; 5
 </code></pre>
 <h2><a class="header" href="#他の型から-bool-に型変換する場合" id="他の型から-bool-に型変換する場合">他の型から <code>bool</code> に型変換する場合</a></h2>
-<p><code>0</code> (もしくは <code>0</code> と同じ何か) は <code>false</code></p>
-<p>それ以外はすべて <code>true</code></p>
+<ul>
+<li><code>0</code> (もしくは <code>0</code> と同じ何か) は <code>false</code></li>
+<li>それ以外はすべて <code>true</code></li>
+</ul>
 <p>これはかなり直感的ではないので、使わないようにするよ。</p>
 <h2><a class="header" href="#stdcout-で出力するとき" id="stdcout-で出力するとき">std::cout で出力するとき</a></h2>
 <p><code>std::cout</code> で普通に出力しようとすると、勝手に <code>0</code> と <code>1</code> に変換されちゃう。わけがわからないよ。</p>

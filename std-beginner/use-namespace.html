@@ -148,7 +148,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#名前空間とusing" id="名前空間とusing">名前空間とusing</a></h1>
-<p>:: をぶっ壊す!</p>
+<p>:: をぶっ壊す！</p>
 <hr />
 <p>もう気づいていると思うけれど、</p>
 <p>今まで使ってきた標準ライブラリのものを見てみると、</p>
@@ -164,13 +164,13 @@
 // ちなみに、iostream ファイルの中で #include &lt;string&gt; されている
 
 int main() {
-  std::cout &lt;&lt; &quot;Hi!\n&quot;;
+  std::cout &lt;&lt; &quot;Hi！\n&quot;;
   using std::cout;
   cout &lt;&lt; &quot;Shorter.\n&quot;;
 
   std::string text(&quot;Longer.&quot;);
   using std::string;
-  cout &lt;&lt; string(&quot;Short!&quot;);
+  cout &lt;&lt; string(&quot;Short！&quot;);
 }
 </code></pre>
 <h2><a class="header" href="#using-ディレクティブ" id="using-ディレクティブ">using ディレクティブ</a></h2>
@@ -179,13 +179,13 @@ int main() {
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 
 int main() {
-  std::cout &lt;&lt; &quot;Hi!\n&quot;;
+  std::cout &lt;&lt; &quot;Hi！\n&quot;;
   using namespace std;
   cout &lt;&lt; &quot;Shorter.\n&quot;;
 
   std::string text(&quot;Longer.&quot;);
 
-  cout &lt;&lt; string(&quot;Short!&quot;);
+  cout &lt;&lt; string(&quot;Short！&quot;);
 }
 </code></pre>
 <p>こっちより using 宣言を使うべきだけど、競技プログラミングとかで少ないタイプにしたいなら使ってもいいよ。</p>

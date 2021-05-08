@@ -161,13 +161,13 @@ int fraction(int n) {
 <p>でも、変更しても外の変数の値は変わらない。</p>
 <p>これは、変数の中の値だけを渡しているから。</p>
 <pre><code class="language-cpp">void substitute2(int var) {
-  var = 2; // は?
+  var = 2; // は？
 }
 
 int main() {
   int box = 0;
   substitute2(box);
-  std::cout &lt;&lt; box; // たしかみてみろ!
+  std::cout &lt;&lt; box; // たしかみてみろ！
 }
 </code></pre>
 <p>こういう挙動を <strong>値渡し</strong> っていう。</p>

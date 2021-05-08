@@ -152,7 +152,7 @@
 <hr />
 <p>いよいよ <strong>入力</strong> を扱う時が来た。今までコンパイルする前に値を埋め込んでいたけど、プログラムを実行するタイミングで値を決められるようになるってこと。</p>
 <p>ここで使うのは <code>std::cin</code> というもので、<code>std::cout</code> と同じ <code>iostream</code> ファイルに入っている。</p>
-<p>この <code>std::cin</code> は <code>&gt;&gt;</code> 演算子 (正確には <code>std::cin</code> の <code>operator&gt;&gt;</code>  関数) を使って、いろんなデータを <strong>入力</strong> できるよ。<code>std::cin</code> から <em>取り出す</em> ようなイメージ。</p>
+<p>この <code>std::cin</code> は <code>&gt;&gt;</code> 演算子を使って、いろんなデータを <strong>入力</strong> できるよ。<code>std::cin</code> から <em>取り出す</em> ようなイメージ。</p>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 int main() {
   int input_number;
@@ -160,7 +160,7 @@ int main() {
   std::cout &lt;&lt; input_number;
 }
 </code></pre>
-<p>上の例を実行して、黒い画面で <strong>数字を入力 → Enter</strong> してみると、何が出力されるでしょうか?</p>
+<p>上の例を実行して、黒い画面で <strong>数字を入力 → Enter</strong> してみると、何が出力されるでしょうか？</p>
 <p>Wandbox の場合は、実行前に下の Stdin (標準入力 - Standard input の略) のテキスト欄に入れておくと、入力に使用されるようになってる。</p>
 <p>この <code>std::cin</code> 最大の特徴が、いろんな型でそのまま入力を受け取れるところだよ。</p>
 <pre><code class="language-cpp">#include &lt;iostream&gt;

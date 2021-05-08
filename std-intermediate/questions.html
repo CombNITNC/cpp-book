@@ -168,7 +168,6 @@
   return true;
 }
 </code></pre>
-<p><em>O</em>(n) もかかる。(正確には入力の桁数で数えるのが正しいので <em>O</em>(2^n))</p>
 <p>でも、<code>√n</code> 以下の数までで割れるかどうか調べるだけでいい。</p>
 <pre><code class="language-cpp">bool is_prime(long n) {
   for (long i = 2; i * i &lt;= n; ++i) {
@@ -179,7 +178,6 @@
   return true;
 }
 </code></pre>
-<p>これなら <em>O</em>(√n) ですむ。</p>
 <p>実際はもうちょっと効率の良いやり方もあるけれど、大抵はこのくらいで大丈夫。</p>
 <h2><a class="header" href="#問-1" id="問-1">問 1</a></h2>
 <p>こんな入力がされる。</p>
@@ -201,7 +199,7 @@ QM
 <li><code>V</code> は整数。</li>
 <li><code>Q</code> は <code>0</code> 以上 <code>N</code> 未満の整数。</li>
 </ul>
-<p><code>Q</code> 番目 (<code>0</code> 始まり) の <code>V</code> が偶数なら <code>1</code>、奇数なら <code>0</code> を、<code>Q</code> と同じ順番で出力せよ。</p>
+<p>それぞれの <code>Q</code> ごとに、<code>Q</code> 番目 (<code>0</code> 始まり) の <code>V</code> が偶数なら <code>1</code> を、奇数なら <code>0</code> を出力せよ。</p>
 <p>入力例:</p>
 <pre><code>5 8
 3
@@ -222,10 +220,7 @@ QM
 <pre><code>00101000
 </code></pre>
 <h2><a class="header" href="#問-2" id="問-2">問 2</a></h2>
-<p><code>V</code> 個の異空間どうしが、<code>E</code> 個のポータルで繋がれている。</p>
-<p><code>0</code> 番目の空間から、<code>V - 1</code> 番目の空間へ移動したい。</p>
-<p>ポータルをたくさん通ってしまうと何らかの負荷が大きいので、</p>
-<p>ポータルを通る回数をできるだけ少なくしたい。</p>
+<p><code>V</code> 個の異空間どうしが、<code>E</code> 個のポータルで繋がれている。<code>0</code> 番目の空間から、<code>V - 1</code> 番目の空間へ移動したい。でもポータルをたくさん通ってしまうと何らかの負荷が大きいので、ポータルを通る回数をできるだけ少なくしたい。</p>
 <p>最小で何回通ればいいか計算しよう。</p>
 <pre><code>E V
 src1 dst1
@@ -252,12 +247,12 @@ srcE dstE
 <p>出力例</p>
 <pre><code>4
 </code></pre>
-<h3><a class="header" href="#ヒント" id="ヒント">ヒント</a></h3>
+<details>
+<summary>クリックでヒントを見れるよ</summary>
 <p>幅優先探索をしながら、「その空間に到達できる最小の通った回数」をメモするようにしてみよう。</p>
+</details>
 <h2><a class="header" href="#問-3" id="問-3">問 3</a></h2>
-<p>なんか知らんけど迷路に迷い込んでいるみたい。</p>
-<p>都合のいいことに迷路の地図がある。</p>
-<p>お小水も近いので早く脱出したい。</p>
+<p>なんか知らんけど迷路に迷い込んでいるみたい。だが都合のいいことに迷路の地図がある。お小水も近いので早く脱出したい。</p>
 <p>現在地からゴールまでの最短経路を求めよう。</p>
 <pre><code>W H
 Ix Iy
@@ -303,10 +298,12 @@ maze_H_1 maze_H_2 .. maze_H_W
 #   # #..#
 ########.#
 </code></pre>
-<h3><a class="header" href="#ヒント-1" id="ヒント-1">ヒント</a></h3>
+<details>
+<summary>クリックでヒントを見れるよ</summary>
 <p>探索している座標を <code>(x, y)</code> とすると、</p>
 <p><code>x == 0 || y == 0 || x == W - 1 || y == H - 1</code> のときに探索が終了する。</p>
 <p>幅優先探索をしながら、「そのマスに最短で到達できるときの通ってきた方向」をするといいかも。</p>
+</details>
 
                     </main>
 

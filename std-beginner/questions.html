@@ -310,9 +310,11 @@ W1 W2 W3 ... WN
 <pre><code>91
 </code></pre>
 <p>答えは (価値, 重さ) = (6, 3), (85, 5)</p>
-<p>ヒント:</p>
+<details>
+<summary>クリックでヒントを見れるよ</summary>
 <p>DP テーブルを使うのなら、</p>
 <p><code>dp[n - 1][weight - W[n - 1]] + V[n - 1]</code> が、<code>n</code> 個目のモノを詰め込む問題での答え。</p>
+</details>
 <h2><a class="header" href="#問-2" id="問-2">問 2</a></h2>
 <p><strong>共通部分列</strong> というのがありまして、</p>
 <p>例えば <code>&quot;AGCAT&quot;</code> と <code>&quot;GAC&quot;</code> の共通部分列は、</p>
@@ -350,7 +352,8 @@ acbef
 <pre><code>3
 </code></pre>
 <p>LCS は <code>&quot;ace&quot;</code>, <code>&quot;abe&quot;</code></p>
-<p>ヒント:</p>
+<details>
+<summary>クリックでヒントを見れるよ</summary>
 <p>DP テーブルには、<code>i</code> 文字目までの <code>S</code> と <code>j</code> 文字目までの <code>T</code> の <em>LCSの長さ</em> を <code>dp[i][j]</code> で格納するといいかも。</p>
 <p>こうしておくと、</p>
 <ol>
@@ -362,6 +365,7 @@ acbef
 </li>
 </ol>
 <p>ってすれば求まる。</p>
+</details>
 
                     </main>
 

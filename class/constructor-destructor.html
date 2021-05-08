@@ -179,11 +179,11 @@ CannotCons c; // エラー
 struct SayCopy {
   SayCopy() {}
   SayCopy(SayCopy const&amp;) {
-    std::cout &lt;&lt; &quot;コピーしたぜ!\n&quot;;
+    std::cout &lt;&lt; &quot;コピーしたぜ！\n&quot;;
   }
 };
 SayCopy a;
-SayCopy b = a; // コピーしたぜ!
+SayCopy b = a; // コピーしたぜ！
 </code></pre>
 <p>定義の部分を <code>= default</code> にすれば、自動で全メンバ変数をコピーする処理にしてくれる。</p>
 <pre><code class="language-cpp">struct AutoCopy {
