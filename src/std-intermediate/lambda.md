@@ -18,7 +18,7 @@ auto wonderful = 0LL; // long long 型
 auto single = 1.2f; // float 型
 auto doppio = 2.4; // double 型
 
-auto text = std::string("Hey!"); // std::string 型
+auto text = std::string("Hey！"); // std::string 型
 ```
 
 戻り値型では、戻り値の型から推論される。引数の型には使えない (そのうち使えるようになるかも)。
@@ -58,7 +58,7 @@ auto tail = data.end(); // 短い
 
 int main() {
   [] {
-    std::cout << "Hello!\n";
+    std::cout << "Hello！\n";
   };
 }
 ```
@@ -74,7 +74,7 @@ int main() {
 
 int main() {
   [] {
-    std::cout << "Hello!\n";
+    std::cout << "Hello！\n";
   }();
 }
 ```
@@ -86,7 +86,7 @@ int main() {
 
 ```cpp
 auto func = [] {
-  std::cout << "wow wow! ";
+  std::cout << "wow wow！ ";
 };
 func();
 func();
@@ -107,7 +107,7 @@ show(2);
 show(40);
 ```
 
-引数がないときは、引数リストの `()` は省略できるってだけ。その方が見やすいのかな?
+引数がないときは、引数リストの `()` は省略できるってだけ。その方が見やすいのかな？
 
 
 ### 値を戻す

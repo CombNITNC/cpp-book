@@ -22,7 +22,7 @@ int main() {
 
     int input;
     std::cin >> input;
-    if (input != 1) { break; }
+    if (input ！= 1) { break; }
     ++count;
   }
 }

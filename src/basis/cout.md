@@ -12,7 +12,7 @@
 C/C++ でテキストを表現するときに手っ取り早いのが **文字列** だよ。`"` で囲んだ中に、ちょっと都合の悪い文字以外なら何でも書けるよ。
 
 ```cpp
-"abcABC0123あいうえお!#$%&'()@";
+"abcABC0123あいうえお！#$%&'()@";
 ```
 
 
@@ -35,12 +35,12 @@ int main() {
 このファイルの中に `std::cout` が入ってるわけ。
 
 
-最初の環境構築のときの Hello, World! もこれを使っている。
+最初の環境構築のときの Hello, World！ もこれを使っている。
 
 ```cpp
 #include <iostream>
 int main() {
-  std::cout << "Hello World!\n";
+  std::cout << "Hello World！\n";
 }
 ```
 
@@ -65,7 +65,7 @@ int main() {
 #include <iostream>
 int main() {
   std::cout << 1 << " is one\n";
-  std::cout << "8 * 2 = " << 8 * 2 << " (・▽・💠)しゅげぇ!\n";
+  std::cout << "8 * 2 = " << 8 * 2 << " (・▽・💠)しゅげぇ！\n";
 }
 ```
 

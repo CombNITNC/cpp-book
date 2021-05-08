@@ -27,9 +27,9 @@ int main() {
   do {
     std::cout << "0 よりも大きい整数を入力してね\n";
     std::cin >> input;
-  } while (!(0 < input));
+  } while (！(0 < input));
   do {
-    std::cout << "やあ!\n";
+    std::cout << "やあ！\n";
     --input;
   } while (0 < input);
 }

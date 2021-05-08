@@ -1,6 +1,6 @@
 # 名前空間とusing
 
-:: をぶっ壊す!
+:: をぶっ壊す！
 
 ---
 
@@ -29,13 +29,13 @@
 // ちなみに、iostream ファイルの中で #include <string> されている
 
 int main() {
-  std::cout << "Hi!\n";
+  std::cout << "Hi！\n";
   using std::cout;
   cout << "Shorter.\n";
 
   std::string text("Longer.");
   using std::string;
-  cout << string("Short!");
+  cout << string("Short！");
 }
 ```
 
@@ -49,13 +49,13 @@ int main() {
 #include <iostream>
 
 int main() {
-  std::cout << "Hi!\n";
+  std::cout << "Hi！\n";
   using namespace std;
   cout << "Shorter.\n";
 
   std::string text("Longer.");
 
-  cout << string("Short!");
+  cout << string("Short！");
 }
 ```
 

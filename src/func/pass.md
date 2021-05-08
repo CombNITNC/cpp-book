@@ -22,13 +22,13 @@ int fraction(int n) {
 
 ```cpp
 void substitute2(int var) {
-  var = 2; // は?
+  var = 2; // は？
 }
 
 int main() {
   int box = 0;
   substitute2(box);
-  std::cout << box; // たしかみてみろ!
+  std::cout << box; // たしかみてみろ！
 }
 ```
 
