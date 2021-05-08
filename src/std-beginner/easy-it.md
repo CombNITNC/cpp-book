@@ -118,7 +118,7 @@ for (int element : data) {
 ```
 
 ```cpp
-std::cout << "値を何個入れるの? : ";
+std::cout << "値を何個入れるの？ : ";
 int input_n = 0;
 std::cin >> input_n;
 
@@ -143,6 +143,6 @@ for (std::pair<std::string, int> element : score) {
 }
 ```
 
-イテレータの大事さがわかったかな?
+イテレータの大事さがわかったかな？
 
 ちなみに、配列にイテレータがあるわけじゃないけど、特別に同じように扱えるようになっているよ。

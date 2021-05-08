@@ -37,7 +37,7 @@ int main() {
   while (true) {
     ask_sum();
 
-    std::cout << "もうやめるかい? [y で終了]";
+    std::cout << "もうやめるかい？ [y で終了]";
     char command;
     std::cin >> command;
     if (command == 'y' || command == 'Y') {

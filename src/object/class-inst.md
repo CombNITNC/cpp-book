@@ -56,7 +56,7 @@ std::string question(); // 動くけど変数ではない
 
 ```cpp
 // 関数風
-std::string morning = std::string("Good morning!\n");
+std::string morning = std::string("Good morning！\n");
 
 // 渡す初期値が一つだけのとき使える
 std::string afternoon = "Good afternoon.\n";

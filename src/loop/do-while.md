@@ -29,7 +29,7 @@ int main() {
     std::cin >> input;
   } while (!(0 < input));
   do {
-    std::cout << "やあ!\n";
+    std::cout << "やあ！\n";
     --input;
   } while (0 < input);
 }

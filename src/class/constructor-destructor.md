@@ -52,11 +52,11 @@ CannotCons c; // エラー
 struct SayCopy {
   SayCopy() {}
   SayCopy(SayCopy const&) {
-    std::cout << "コピーしたぜ!\n";
+    std::cout << "コピーしたぜ！\n";
   }
 };
 SayCopy a;
-SayCopy b = a; // コピーしたぜ!
+SayCopy b = a; // コピーしたぜ！
 ```
 
 定義の部分を `= default` にすれば、自動で全メンバ変数をコピーする処理にしてくれる。
