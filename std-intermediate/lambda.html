@@ -4,39 +4,33 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>ラムダ式 - C/C++講座</title>
-        
-
+        <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
-
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -89,7 +83,6 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -106,11 +99,9 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">C/C++講座</h1>
@@ -119,14 +110,12 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -134,8 +123,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -147,10 +134,10 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#ラムダ式" id="ラムダ式">ラムダ式</a></h1>
+                        <h1 id="ラムダ式"><a class="header" href="#ラムダ式">ラムダ式</a></h1>
 <p>日λ…</p>
 <hr />
-<h2><a class="header" href="#auto" id="auto"><code>auto</code></a></h2>
+<h2 id="auto"><a class="header" href="#auto"><code>auto</code></a></h2>
 <p><code>auto</code> はこれから学ぶのに必要な知識なので、一緒に解説しておく。</p>
 <p><code>auto</code> は、少し特殊な型だよ。変数ではその初期値から、その型を推論するんだ。</p>
 <pre><code class="language-cpp">auto number = 0; // int 型
@@ -177,7 +164,7 @@ auto sub(int a, int b) -&gt; int { // auto と書いても、-&gt; の後に明�
 std::vector&lt;int&gt;::iterator head = data.begin(); // 長い
 auto tail = data.end(); // 短い
 </code></pre>
-<h2><a class="header" href="#ラムダ式-1" id="ラムダ式-1">ラムダ式</a></h2>
+<h2 id="ラムダ式-1"><a class="header" href="#ラムダ式-1">ラムダ式</a></h2>
 <p>いままでの関数は <code>main</code> 関数の外にぽつぽつと書いてた。</p>
 <p>ラムダ式を使うと、<code>main</code> 関数といった <strong>関数の中ででも関数が作れる</strong>。</p>
 <p>文法はこう。</p>
@@ -192,7 +179,7 @@ int main() {
   };
 }
 </code></pre>
-<h3><a class="header" href="#呼び出し" id="呼び出し">呼び出し</a></h3>
+<h3 id="呼び出し"><a class="header" href="#呼び出し">呼び出し</a></h3>
 <p>これは関数を作っただけで特に実行していない。</p>
 <p>普通の関数と同じように、後ろに <code>()</code> をつけて呼び出せば実行できる。</p>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
@@ -203,7 +190,7 @@ int main() {
   }();
 }
 </code></pre>
-<h3><a class="header" href="#変数への代入" id="変数への代入">変数への代入</a></h3>
+<h3 id="変数への代入"><a class="header" href="#変数への代入">変数への代入</a></h3>
 <p>ラムダ式はれっきとした <strong>式</strong> であり、変数に代入できちゃう。特定の型はないけれど、<code>auto</code> 型変数は使える。</p>
 <pre><code class="language-cpp">auto func = [] {
   std::cout &lt;&lt; &quot;wow wow！ &quot;;
@@ -211,7 +198,7 @@ int main() {
 func();
 func();
 </code></pre>
-<h3><a class="header" href="#引数を受け取る" id="引数を受け取る">引数を受け取る</a></h3>
+<h3 id="引数を受け取る"><a class="header" href="#引数を受け取る">引数を受け取る</a></h3>
 <p>ラムダ式で引数を受け取るときは、<code>[]</code> と <code>{}</code> の間に、普通の関数と同じように引数リストを書く。</p>
 <blockquote>
 <p>[] ( <em>引数リスト</em> ) { <em>0 個以上の文</em> }</p>
@@ -223,7 +210,7 @@ show(2);
 show(40);
 </code></pre>
 <p>引数がないときは、引数リストの <code>()</code> は省略できるってだけ。その方が見やすいのかな？</p>
-<h3><a class="header" href="#値を戻す" id="値を戻す">値を戻す</a></h3>
+<h3 id="値を戻す"><a class="header" href="#値を戻す">値を戻す</a></h3>
 <p>ラムダ式で戻り値を作るときでも、特に型の指定は要らない。</p>
 <pre><code class="language-cpp">auto add = [] (int a, int b) { return a + b; };
 add(2, 4);
@@ -234,11 +221,11 @@ add(3, add(5, 8));
 sub(4, 2);
 sub(sub(8, 5), 1);
 </code></pre>
-<h3><a class="header" href="#ラムダキャプチャ" id="ラムダキャプチャ">ラムダキャプチャ</a></h3>
+<h3 id="ラムダキャプチャ"><a class="header" href="#ラムダキャプチャ">ラムダキャプチャ</a></h3>
 <p>ラムダ式が書いてあるスコープと同じところの変数にアクセスする場合は、</p>
 <p><strong>ラムダキャプチャ</strong> を書くことで、使用できるようになる。</p>
 <p>ラムダキャプチャを書くのは、<code>[]</code> の中だよ。そのためにあるからね。</p>
-<h4><a class="header" href="#コピーキャプチャ" id="コピーキャプチャ">コピーキャプチャ</a></h4>
+<h4 id="コピーキャプチャ"><a class="header" href="#コピーキャプチャ">コピーキャプチャ</a></h4>
 <p><code>[]</code> の中に変数名をそのまま書くと、</p>
 <p>その変数の数値をコピーして <em>ラムダ式で作った関数が値を保持する</em>。</p>
 <pre><code class="language-cpp">auto adder(int a) { // 関数を返す関数
@@ -257,7 +244,7 @@ int main() {
   add10(4); // 14
 }
 </code></pre>
-<h4><a class="header" href="#参照キャプチャ" id="参照キャプチャ">参照キャプチャ</a></h4>
+<h4 id="参照キャプチャ"><a class="header" href="#参照キャプチャ">参照キャプチャ</a></h4>
 <p>コピーキャプチャの文法で、変数名の前に <code>&amp;</code> をつけると参照キャプチャになる。</p>
 <p>コピーキャプチャとは違って変数の値を変えられる。</p>
 <pre><code class="language-cpp">int count = 0;
@@ -289,67 +276,38 @@ int main() {
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../std-intermediate/intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="../std-intermediate/algorithm.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../std-intermediate/intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="../std-intermediate/algorithm.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-        
-        
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

@@ -4,39 +4,33 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>コンテナ - C/C++講座</title>
-        
-
+        <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
-
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -89,7 +83,6 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -106,11 +99,9 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">C/C++講座</h1>
@@ -119,14 +110,12 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -134,8 +123,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -147,7 +134,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#コンテナ" id="コンテナ">コンテナ</a></h1>
+                        <h1 id="コンテナ"><a class="header" href="#コンテナ">コンテナ</a></h1>
 <p>みんなコンテナは持ったな!!</p>
 <hr />
 <p>今までの入力では、繰り返したとしても一つずつしか扱えなかった。</p>
@@ -195,7 +182,7 @@ int main() {
 <p><strong>コンテナ</strong> っていうのは、いくらでも値を詰め込めるクラスのこと。</p>
 <p><code>std::string</code> もコンテナの一種といえるよ。</p>
 <p>よく使う <code>std::vector</code> から見ていこう。</p>
-<h2><a class="header" href="#stdvector" id="stdvector">std::vector</a></h2>
+<h2 id="stdvector"><a class="header" href="#stdvector">std::vector</a></h2>
 <p>同じ型のデータを大量に格納するクラス。サイズを増やせる配列みたいな感じ。</p>
 <p>使うには、<code>#include &lt;vector&gt;</code> が必要。</p>
 <pre><code class="language-cpp">#include &lt;vector&gt;
@@ -215,7 +202,7 @@ int main() {
 <li><code>std::vector&lt;double&gt;</code> は <code>double</code> が格納できるクラス</li>
 </ul>
 <p>ってこと。</p>
-<h3><a class="header" href="#末尾へ追加" id="末尾へ追加">末尾へ追加</a></h3>
+<h3 id="末尾へ追加"><a class="header" href="#末尾へ追加">末尾へ追加</a></h3>
 <p><code>push_back</code> メンバ関数は、リストの後ろに値を一つ追加する。<code>std::vector</code> が最も得意な操作。</p>
 <pre><code class="language-cpp">std::vector&lt;int&gt; data;
 
@@ -225,9 +212,9 @@ data.push_back(1);
 data.push_back(0);
 data.push_back(5);
 </code></pre>
-<h3><a class="header" href="#初期化" id="初期化">初期化</a></h3>
+<h3 id="初期化"><a class="header" href="#初期化">初期化</a></h3>
 <p>このクラスの初期化は二種類ある。</p>
-<h4><a class="header" href="#サイズ指定" id="サイズ指定">サイズ指定</a></h4>
+<h4 id="サイズ指定"><a class="header" href="#サイズ指定">サイズ指定</a></h4>
 <p>予め必要なサイズとその中を埋める値を指定するやり方。</p>
 <pre><code class="language-cpp">std::vector&lt;int&gt; stat(20); // 20 個の 0 (正確には int{})
 std::vector&lt;double&gt; data(15, 5.0); // 15 個の 5.0
@@ -240,14 +227,14 @@ for (int i = 0; i &lt; 20; ++i) {
 }
 </code></pre>
 <p>※イテレータを学ぶともっと楽できるけれど、それはまた別のお話。</p>
-<h4><a class="header" href="#リスト" id="リスト">リスト</a></h4>
+<h4 id="リスト"><a class="header" href="#リスト">リスト</a></h4>
 <p>中に格納するデータをそのまま書く。</p>
 <pre><code class="language-cpp">std::vector&lt;int&gt; stat = {2, 4, 0, 3};
 std::vector&lt;double&gt; data = {1.0};
 </code></pre>
-<h3><a class="header" href="#取得" id="取得">取得</a></h3>
+<h3 id="取得"><a class="header" href="#取得">取得</a></h3>
 <p>丹精込めて詰め込んだ値を取り出そう。</p>
-<h4><a class="header" href="#サイズ" id="サイズ">サイズ</a></h4>
+<h4 id="サイズ"><a class="header" href="#サイズ">サイズ</a></h4>
 <p><code>size</code> メンバ関数で詰め込んだ値の数を取得できる。</p>
 <pre><code class="language-cpp">// 何も入れていないと 0
 std::vector&lt;int&gt;().size(); // 0
@@ -255,7 +242,7 @@ std::vector&lt;int&gt;().size(); // 0
 std::vector&lt;int&gt; data(4);
 data.size(); // 4
 </code></pre>
-<h4><a class="header" href="#要素" id="要素">要素</a></h4>
+<h4 id="要素"><a class="header" href="#要素">要素</a></h4>
 <p><code>at</code> メンバ関数で要素の参照を取得できる。</p>
 <p>配列と同じで最初の要素は <code>0</code> 番目。</p>
 <pre><code class="language-cpp">std::vector&lt;int&gt; data = {4, 3, 1, 0, 5};
@@ -282,7 +269,7 @@ data.at[6]; // 値は不定
 data.at[-1] = 5; // 強制終了するかも
 </code></pre>
 <p><code>at</code> は安全だから、<code>[]</code> を使うのは実行速度が必要なときだけにしてね。</p>
-<h4><a class="header" href="#末尾要素" id="末尾要素">末尾要素</a></h4>
+<h4 id="末尾要素"><a class="header" href="#末尾要素">末尾要素</a></h4>
 <pre><code class="language-cpp">std::vector&lt;int&gt; data = {2, 4, 5};
 </code></pre>
 <p>↑ の最後の要素にアクセスするときは、</p>
@@ -292,13 +279,13 @@ data.at[-1] = 5; // 強制終了するかも
 <pre><code class="language-cpp">data.back();
 </code></pre>
 <p>でできる。</p>
-<h3><a class="header" href="#末尾から削除" id="末尾から削除">末尾から削除</a></h3>
+<h3 id="末尾から削除"><a class="header" href="#末尾から削除">末尾から削除</a></h3>
 <p><code>pop_back</code> で、リストの後ろから値を一つ削除する。</p>
 <pre><code class="language-cpp">std::vector&lt;int&gt; data = {4, 6, 8};
 
 data.pop_back();
 </code></pre>
-<h2><a class="header" href="#stdmap" id="stdmap">std::map</a></h2>
+<h2 id="stdmap"><a class="header" href="#stdmap">std::map</a></h2>
 <p><code>std::map</code> を使うには、<code>#include &lt;map&gt;</code> が必要。</p>
 <p>これは、値と、それを表すキー値、二つのセットをたくさん格納するクラス。</p>
 <p>キーの値を渡せば値が取得できるってしくみ。</p>
@@ -308,7 +295,7 @@ data.pop_back();
 </code></pre>
 <p>1 つ目のテンプレート引数が <em>キーの型</em> で、2 つ目のテンプレート引数が <em>対応する値の型</em>。</p>
 <p>↑ の型は、<code>std::string</code> をキーとして <code>int</code> を格納するクラス。</p>
-<h3><a class="header" href="#初期化-1" id="初期化-1">初期化</a></h3>
+<h3 id="初期化-1"><a class="header" href="#初期化-1">初期化</a></h3>
 <p>このクラスにはリスト初期化しかない。</p>
 <pre><code class="language-cpp">std::map&lt;int, int&gt; integer = { // 初期化リストの中に
   {0, 1}, // 初期化リストたち
@@ -322,9 +309,9 @@ std::map&lt;std::string, int&gt; score = {
   {&quot;Toko&quot;, 540}
 };
 </code></pre>
-<h3><a class="header" href="#取得-1" id="取得-1">取得</a></h3>
+<h3 id="取得-1"><a class="header" href="#取得-1">取得</a></h3>
 <p>要素の取得には二通りの方法があって、それぞれ性質が異なる。</p>
-<h4><a class="header" href="#サイズ-1" id="サイズ-1">サイズ</a></h4>
+<h4 id="サイズ-1"><a class="header" href="#サイズ-1">サイズ</a></h4>
 <p>こっちも、格納している要素の数は <code>size</code> で取得できる。</p>
 <pre><code class="language-cpp">std::map&lt;int, int&gt; data = {
   {0, 1},
@@ -334,7 +321,7 @@ std::map&lt;std::string, int&gt; score = {
 
 data.size(); // 3
 </code></pre>
-<h4><a class="header" href="#" id="">[]</a></h4>
+<h4 id=""><a class="header" href="#">[]</a></h4>
 <p>配列のように <code>[ キー ]</code> で取得できる。</p>
 <p>まだそのキーの値がないときは、<code>値の型{}</code> (0 に相当するもの) が入る。</p>
 <pre><code class="language-cpp">std::map&lt;int, int&gt; matrix = {{1, 2}};
@@ -353,7 +340,7 @@ word[&quot;Hello&quot;]; // 無いので追加。std::string{} が入る
 word[&quot;Good morning&quot;] = &quot;こんばんは&quot;; // 文字列が std::string になって入る
 </code></pre>
 <p>こんな感じで、要素の挿入もこれでできちゃう。</p>
-<h4><a class="header" href="#at" id="at">at</a></h4>
+<h4 id="at"><a class="header" href="#at">at</a></h4>
 <p><code>at</code> も取得するメンバ関数。</p>
 <p><code>std::vector</code> のように、存在しないときはエラーで止まる。</p>
 <pre><code class="language-cpp">std::map&lt;char, int&gt; hex = {
@@ -364,7 +351,7 @@ word[&quot;Good morning&quot;] = &quot;こんばんは&quot;; // 文字列が st
 hex.at('A'); // 10
 hex.at('C'); // エラーで止まる
 </code></pre>
-<h3><a class="header" href="#要素の確認" id="要素の確認">要素の確認</a></h3>
+<h3 id="要素の確認"><a class="header" href="#要素の確認">要素の確認</a></h3>
 <p><code>contains</code> は指定のキーが格納されているかどうかを <code>bool</code> で返す。</p>
 <pre><code class="language-cpp">std::map&lt;char, int&gt; hex = {
   {'D', 13}
@@ -390,7 +377,7 @@ if (has_d) {
 
 }
 </code></pre>
-<h3><a class="header" href="#削除" id="削除">削除</a></h3>
+<h3 id="削除"><a class="header" href="#削除">削除</a></h3>
 <p><code>erase</code> で指定したキーの要素を削除する。</p>
 <pre><code class="language-cpp">std::map&lt;std::string, long&gt; record = {
   {&quot;0d5e3&quot;, 4000},
@@ -409,67 +396,38 @@ record.erase(&quot;0d5e3&quot;);
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../std-beginner/cmath-numeric.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="../std-beginner/easy-it.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../std-beginner/cmath-numeric.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="../std-beginner/easy-it.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-        
-        
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

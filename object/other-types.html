@@ -4,39 +4,33 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>float char 16/8/2進数リテラル - C/C++講座</title>
-        
-
+        <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
-
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -89,7 +83,6 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -106,11 +99,9 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">C/C++講座</h1>
@@ -119,14 +110,12 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -134,8 +123,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -147,11 +134,11 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#float-char-1682進数リテラル" id="float-char-1682進数リテラル">float char 16/8/2進数リテラル</a></h1>
+                        <h1 id="float-char-1682進数リテラル"><a class="header" href="#float-char-1682進数リテラル">float char 16/8/2進数リテラル</a></h1>
 <p>たまに使うやつら</p>
 <hr />
 <p>ここでは、絶対に必要ではないけれどたまに使う型やリテラルを紹介する。</p>
-<h2><a class="header" href="#float" id="float">float</a></h2>
+<h2 id="float"><a class="header" href="#float">float</a></h2>
 <p>単精度浮動小数点数 (float、floating-point value の略) は、昔からある小数とかを表す型。精度が低いけれど、ごく一部の環境では稀に速く動くことがあったりするかもしれない。</p>
 <p><code>double</code> のリテラルの後ろに、<code>f</code> か <code>F</code> をつけると <code>float</code> のリテラルになる。</p>
 <pre><code class="language-cpp">float a = 1.2f;
@@ -159,7 +146,7 @@ float b = 3.F;
 float c = .5f;
 </code></pre>
 <p>前にも言ったけど、<code>double</code> は倍精度浮動小数点数。フツーはこっちを使う。</p>
-<h2><a class="header" href="#char" id="char">char</a></h2>
+<h2 id="char"><a class="header" href="#char">char</a></h2>
 <p><code>char</code> は文字を表現するのに使われる <strong>整数</strong> 型。といっても、英文字や一部半角記号 (詳しくは <a href="https://ja.wikipedia.org/wiki/ASCII">ASCII</a> を参照) を表す数字しか格納できない。</p>
 <pre><code class="language-cpp">char ch = 65; // ASCII で A にあたる数
 std::cout &lt;&lt; ch; // A
@@ -171,7 +158,7 @@ std::cout &lt;&lt; ch; // A
 </code></pre>
 <p>日本語の一文字とかは容量が足りなくて単体で格納できない。</p>
 <p>一応そのための別の型や表現手段はあるけれど、かなり複雑なやつなのに役に立たないので説明しないよ。</p>
-<h2><a class="header" href="#1682進数リテラル" id="1682進数リテラル">16/8/2進数リテラル</a></h2>
+<h2 id="1682進数リテラル"><a class="header" href="#1682進数リテラル">16/8/2進数リテラル</a></h2>
 <p>コンピュータで扱う数字は、よく <strong>2進数</strong> を扱う。これをプログラム中に直接書くときに、もっと見やすくするためのもの。</p>
 <p><em>進数</em> というのは、桁上りする数のこと。例えば普段使っている <em>10進数</em> だと、<code>0 1 2 ... 9</code> まで行って <code>10 11 ...</code> ってなる。<code>9</code> の次で桁が上がっているわけね。</p>
 <p>これが <em>16進数</em> だと、<code>0 1 2 ... 9 a b c d e f</code> までの数字があって、<code>10 11 ... 1a 1b ... 1f 20</code> となっていく。</p>
@@ -193,67 +180,38 @@ std::cout &lt;&lt; ch; // A
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../object/intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="../object/specifier.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../object/intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="../object/specifier.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-        
-        
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

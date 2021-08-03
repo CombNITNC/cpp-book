@@ -4,39 +4,33 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>スタックとキュー - C/C++講座</title>
-        
-
+        <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
-
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -89,7 +83,6 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -106,11 +99,9 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">C/C++講座</h1>
@@ -119,14 +110,12 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -134,8 +123,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -147,11 +134,11 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#スタックとキュー" id="スタックとキュー">スタックとキュー</a></h1>
+                        <h1 id="スタックとキュー"><a class="header" href="#スタックとキュー">スタックとキュー</a></h1>
 <p>L！ I！ F！ O！</p>
 <hr />
 <p>ここでは、ちょっと変わったコンテナとその使い道を紹介していく。</p>
-<h2><a class="header" href="#stack" id="stack">stack</a></h2>
+<h2 id="stack"><a class="header" href="#stack">stack</a></h2>
 <p>データを後ろからのみ入れることができて、後ろから逆の順序でしか取り出せないコンテナ。</p>
 <p>データを皿のように積み上げていくイメージ。</p>
 <p>ここでのスタックは MTG の用語じゃないよ。</p>
@@ -188,7 +175,7 @@ while (!S.empty()) {
 }
 </code></pre>
 <p>これは、やることを積んでおいて逆順に解決していくのに使うよ。</p>
-<h3><a class="header" href="#例題" id="例題">例題</a></h3>
+<h3 id="例題"><a class="header" href="#例題">例題</a></h3>
 <p>例題をやってみる。</p>
 <blockquote>
 <p>入力:</p>
@@ -266,7 +253,7 @@ int main() {
   }
 }
 </code></pre>
-<h2><a class="header" href="#queue" id="queue">queue</a></h2>
+<h2 id="queue"><a class="header" href="#queue">queue</a></h2>
 <p>データを入れると、入れた順番でしか取り出せないコンテナ。</p>
 <p>要素は後ろから追加する。</p>
 <p>要素の取得と削除は前側からしかできない。</p>
@@ -290,7 +277,7 @@ while (!Q.empty()) {
   std::cout &lt;&lt; head &lt;&lt; &quot; &quot;;
 }
 </code></pre>
-<h3><a class="header" href="#例題-1" id="例題-1">例題</a></h3>
+<h3 id="例題-1"><a class="header" href="#例題-1">例題</a></h3>
 <p>それじゃあ毎度おなじみ例題だよ。</p>
 <blockquote>
 <p>入力:</p>
@@ -497,7 +484,7 @@ int main() {
 </code></pre>
 <p>こういった幅優先探索は、迷路やパズルを解いたり、ゲームの対戦用 CPU を作ったりといったことにまで応用できるよ。</p>
 <p>ちなみに、<em>入力例2</em> のようにループする状況のために <code>passed</code> で記録する必要がある。逆にループしない場合は <code>passed</code> をチェック/記録する必要はない。</p>
-<h2><a class="header" href="#priority_queue" id="priority_queue">priority_queue</a></h2>
+<h2 id="priority_queue"><a class="header" href="#priority_queue">priority_queue</a></h2>
 <p>データを入れると自動で降順 (大きい→小さい順) にソートされて、その片端からしか取り出せないコンテナ。</p>
 <p>これは <code>#include &lt;queue&gt;</code> が必要。<code>std::queue</code> と同じ <code>queue</code> ファイルに入ってる。</p>
 <pre><code class="language-cpp">std::priority_queue&lt;int&gt; Q;
@@ -534,7 +521,7 @@ Q.push(4); // {4, 2}
 Q.push(3); // {4, 3, 2}
 Q.push(1); // {4, 3, 2, 1}
 </code></pre>
-<h3><a class="header" href="#例題-2" id="例題-2">例題</a></h3>
+<h3 id="例題-2"><a class="header" href="#例題-2">例題</a></h3>
 <p>それでは例題を (ry</p>
 <blockquote>
 <p>入力:</p>
@@ -715,67 +702,38 @@ int main() {
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../std-intermediate/algorithm.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="../std-intermediate/more-it.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../std-intermediate/algorithm.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="../std-intermediate/more-it.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-        
-        
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

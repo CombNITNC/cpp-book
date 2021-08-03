@@ -4,39 +4,33 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>最適化 - C/C++講座</title>
-        
-
+        <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
-
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -89,7 +83,6 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -106,11 +99,9 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">C/C++講座</h1>
@@ -119,14 +110,12 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -134,8 +123,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -147,12 +134,12 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#最適化" id="最適化">最適化</a></h1>
+                        <h1 id="最適化"><a class="header" href="#最適化">最適化</a></h1>
 <p>クリア・マインド</p>
 <hr />
 <p>ここでは、書いたプログラムの実行効率と、その改善に必要な前提知識をやっていくよ。</p>
 <p>速いプログラムが書けるようになろう。</p>
-<h2><a class="header" href="#アルゴリズムの優劣" id="アルゴリズムの優劣">アルゴリズムの優劣</a></h2>
+<h2 id="アルゴリズムの優劣"><a class="header" href="#アルゴリズムの優劣">アルゴリズムの優劣</a></h2>
 <p>まず簡単な例として、<code>1</code> から <code>n</code> までの総和を求める関数を考えよう。</p>
 <p>言われたとおりに <code>1</code> から <code>n</code> まで足すのであれば、こうすることになる。</p>
 <pre><code class="language-cpp">int sum_from_1_to(int n) {
@@ -172,7 +159,7 @@
 <p>上のプログラムは <code>n</code> 回ループをしているので、<code>n</code> が大きくなるほど計算に時間がかかる。</p>
 <p>下のプログラムは <code>n</code> がどれだけ大きくなっても、同じ計算しかしないので計算にかかる時間は変わらない。</p>
 <p>下のプログラムの方が優れているのは、言うまでもないよね？</p>
-<h2><a class="header" href="#入力で爆発する計算量" id="入力で爆発する計算量">入力で爆発する計算量</a></h2>
+<h2 id="入力で爆発する計算量"><a class="header" href="#入力で爆発する計算量">入力で爆発する計算量</a></h2>
 <p>もう少し、入力の大きさがより計算する量に影響を及ぼす例を見ていこう。</p>
 <p><code>n</code> 番目の <a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A3%E3%83%9C%E3%83%8A%E3%83%83%E3%83%81%E6%95%B0">フィボナッチ数</a> を計算する関数を作ってみる。</p>
 <pre><code class="language-cpp">long fibonacci(int n) {
@@ -290,7 +277,7 @@ long fibonacci(int n) {
 }
 </code></pre>
 <p>さすがに ↑ のコードは Wikipedia 見て書いたよ。数学者じゃないし……。</p>
-<h2><a class="header" href="#ランダウの記号" id="ランダウの記号">ランダウの記号</a></h2>
+<h2 id="ランダウの記号"><a class="header" href="#ランダウの記号">ランダウの記号</a></h2>
 <p>こういう計算にかかる時間を表す記号として、<em>O</em> を使った記法がある。</p>
 <p><em>O</em> のあとに続く括弧の中身でその計算の複雑さを示すものさしだよ。</p>
 <p><em>O</em>(1) みたいに書く。</p>
@@ -307,7 +294,7 @@ long fibonacci(int n) {
 </tbody></table>
 <p>他にも呼び方はあるけれど、あんまり出てこないので省略。</p>
 <p>それでは、書いたプログラムがどの <em>O</em> なのか見ていこう。</p>
-<h3><a class="header" href="#定数時間" id="定数時間">定数時間</a></h3>
+<h3 id="定数時間"><a class="header" href="#定数時間">定数時間</a></h3>
 <p><code>n</code> が偶数かどうか <code>bool</code> で返す関数。処理は一定。</p>
 <pre><code class="language-cpp">bool is_even(long n) {
   return n % 2 == 0;
@@ -327,7 +314,7 @@ long fibonacci(int n) {
 </code></pre>
 <hr />
 <p>こういうのは <em>O</em>(1) だよ。</p>
-<h3><a class="header" href="#線形時間" id="線形時間">線形時間</a></h3>
+<h3 id="線形時間"><a class="header" href="#線形時間">線形時間</a></h3>
 <p><code>1</code> から <code>n</code> までをすべて足す関数。</p>
 <p>これは必ず <code>n</code> 回の足し算をする。</p>
 <pre><code class="language-cpp">int sum_from_1_to(int n) {
@@ -366,7 +353,7 @@ void print_even(int end) {
 </code></pre>
 <hr />
 <p>だから、こいつらは <em>O</em>(n) にあたるよ。</p>
-<h3><a class="header" href="#平方-二乗-時間" id="平方-二乗-時間">平方 (二乗) 時間</a></h3>
+<h3 id="平方-二乗-時間"><a class="header" href="#平方-二乗-時間">平方 (二乗) 時間</a></h3>
 <p><code>n</code> × <code>n</code> の掛け算表を出力する関数。</p>
 <p><code>9</code> を渡せば九九表になる。</p>
 <p><code>n^2</code> の計算と出力をしてる。</p>
@@ -406,13 +393,13 @@ void print_mul_table(int n) {
 </code></pre>
 <hr />
 <p>こういうのは <em>O</em>(n^2) だね。</p>
-<h2><a class="header" href="#主張なアルゴリズムの計算量" id="主張なアルゴリズムの計算量">主張なアルゴリズムの計算量</a></h2>
+<h2 id="主張なアルゴリズムの計算量"><a class="header" href="#主張なアルゴリズムの計算量">主張なアルゴリズムの計算量</a></h2>
 <p>最近のコンピュータは、だいたい 1 秒間で 10 の 7~8 乗 (<code>1e7~8</code>) 回の計算ができる。</p>
 <p>競技プログラミングの問題には以下のように入力の制約が書かれているので、それで試算できる。</p>
 <blockquote>
 <p>実行時間制限: 2 sec / メモリ制限: 1024MB</p>
 <p>(中略)</p>
-<h2><a class="header" href="#問題文" id="問題文">問題文</a></h2>
+<h2 id="問題文"><a class="header" href="#問題文">問題文</a></h2>
 <p>英小文字からなる文字列 <code>S</code> が与えられます。以下の条件をみたす最大の正整数 <code>K</code> を求めてください。</p>
 <ul>
 <li><code>S</code> の空でない <code>K</code> 個の文字列への分割 <code>S = S_1 S_2 ... S_K</code> で
@@ -420,7 +407,7 @@ void print_mul_table(int n) {
 </ul>
 <p>ただし、<code>S_1, S_2, ..., S_K</code> をこの順に連結して得られる文字列のことを
 <code>S_1 S_2 ... S_K</code> によって表しています。</p>
-<h2><a class="header" href="#制約" id="制約">制約</a></h2>
+<h2 id="制約"><a class="header" href="#制約">制約</a></h2>
 <ul>
 <li><code>1 ≦ |S| ≦ 2 × 10^5</code></li>
 <li><code>S</code> は英小文字からなる</li>
@@ -438,67 +425,38 @@ void print_mul_table(int n) {
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../std-intermediate/more-it.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="../std-intermediate/questions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../std-intermediate/more-it.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="../std-intermediate/questions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-        
-        
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

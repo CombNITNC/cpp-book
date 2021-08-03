@@ -4,39 +4,33 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>配列型 - C/C++講座</title>
-        
-
+        <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
-
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -89,7 +83,6 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -106,11 +99,9 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">C/C++講座</h1>
@@ -119,14 +110,12 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -134,8 +123,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -147,7 +134,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#配列型" id="配列型">配列型</a></h1>
+                        <h1 id="配列型"><a class="header" href="#配列型">配列型</a></h1>
 <p>一列に並べ〜！</p>
 <hr />
 <p>今までの型だと、一つの値を一つづつ丁寧に扱うことしかできなかった。</p>
@@ -159,10 +146,10 @@
 </blockquote>
 <pre><code class="language-cpp">int array[10]; // int が 10 個分
 </code></pre>
-<h2><a class="header" href="#初期化" id="初期化">初期化</a></h2>
+<h2 id="初期化"><a class="header" href="#初期化">初期化</a></h2>
 <p>この型で初期化するときには、<strong>リスト初期化</strong> が使える。</p>
 <p>これは以下のように、<code>{</code> から <code>}</code> の間に、<code>,</code> で区切って値を入れたものを初期値にする書き方だよ。</p>
-<h3><a class="header" href="#要素数を指定して同じ長さのリストを用意する場合" id="要素数を指定して同じ長さのリストを用意する場合">要素数を指定して、同じ長さのリストを用意する場合</a></h3>
+<h3 id="要素数を指定して同じ長さのリストを用意する場合"><a class="header" href="#要素数を指定して同じ長さのリストを用意する場合">要素数を指定して、同じ長さのリストを用意する場合</a></h3>
 <p>その長さぴったりの配列型の変数が作られる。</p>
 <pre><code class="language-cpp">int nums[5] = {0, 2, 4, 8, 1};
 </code></pre>
@@ -175,17 +162,17 @@
 <tr><td>4</td><td>1</td></tr>
 </tbody></table>
 <p><strong>インデックス</strong> (位置を表す数字) は <code>0</code> から始まる。これ大事。</p>
-<h3><a class="header" href="#要素数を指定しない場合" id="要素数を指定しない場合">要素数を指定しない場合</a></h3>
+<h3 id="要素数を指定しない場合"><a class="header" href="#要素数を指定しない場合">要素数を指定しない場合</a></h3>
 <p>リスト側と同じ要素数になる。</p>
 <pre><code class="language-cpp">int nums[] = {0, 4, 5};
 //       ↑ に 3 を入れたのと同じ
 </code></pre>
-<h3><a class="header" href="#要素数よりリストの数が少ない場合" id="要素数よりリストの数が少ない場合">要素数より、リストの数が少ない場合</a></h3>
+<h3 id="要素数よりリストの数が少ない場合"><a class="header" href="#要素数よりリストの数が少ない場合">要素数より、リストの数が少ない場合</a></h3>
 <p>リスト側で足りない部分には、<code>0</code> に相当するものが入る。</p>
 <pre><code class="language-cpp">int buffer[15] = {}; // 残りすべては 0
 double vertexes[20] = {1.0, 1.0, 1.0}; // 残りは 0.0
 </code></pre>
-<h2><a class="header" href="#要素にアクセス" id="要素にアクセス">要素にアクセス</a></h2>
+<h2 id="要素にアクセス"><a class="header" href="#要素にアクセス">要素にアクセス</a></h2>
 <p>作った配列は、ちゃんとその中身を触れる。</p>
 <p>配列に格納されている値のことを <strong>要素</strong> っていうよ。</p>
 <p>要素にアクセスするときは、<code>[</code> と <code>]</code> の間に <strong>インデックス</strong> を入れる。</p>
@@ -219,67 +206,38 @@ double b = {2.0};
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../ref/const-on-ref.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="../ref/cstring.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../ref/const-on-ref.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="../ref/cstring.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-        
-        
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

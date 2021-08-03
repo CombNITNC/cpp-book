@@ -4,39 +4,33 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>long short signed unsigned - C/C++講座</title>
-        
-
+        <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
-
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -89,7 +83,6 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -106,11 +99,9 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">C/C++講座</h1>
@@ -119,14 +110,12 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -134,8 +123,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -147,13 +134,13 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#long-short-signed-unsigned" id="long-short-signed-unsigned">long short signed unsigned</a></h1>
+                        <h1 id="long-short-signed-unsigned"><a class="header" href="#long-short-signed-unsigned">long short signed unsigned</a></h1>
 <p>長いの短いの付いてないの</p>
 <hr />
 <p>今回も、ちょっとマイナー寄りな感じ。</p>
 <p>型には、指定子というものをつけて型の性質を少し変化させられるよ。</p>
-<h1><a class="header" href="#サイズを変える指定子" id="サイズを変える指定子">サイズを変える指定子</a></h1>
-<h2><a class="header" href="#long" id="long">long</a></h2>
+<h1 id="サイズを変える指定子"><a class="header" href="#サイズを変える指定子">サイズを変える指定子</a></h1>
+<h2 id="long"><a class="header" href="#long">long</a></h2>
 <p><code>long</code> は、それなりによく使う指定子。型の扱えるサイズが元のサイズ以上になる。</p>
 <p>だいたいの環境だと、<code>int</code> は <code>±2 の 31 乗 (約21億)</code> まで扱えるんだけれど、<code>long int</code> は <code>±2 の 63 乗 (約922京)</code> まで扱えちゃう。</p>
 <p>前にやった <em>階乗の計算</em> みたいな、<strong>大きい数値の計算だと必須</strong>。</p>
@@ -172,7 +159,7 @@ long double big = 1e60l;
 double long huge = 1e1200L;
 </code></pre>
 <p><code>long</code> をつけられるのは、<code>int</code> と <code>double</code> だけ。</p>
-<h2><a class="header" href="#short" id="short">short</a></h2>
+<h2 id="short"><a class="header" href="#short">short</a></h2>
 <p>これは本当にめったに使わない。型の扱えるサイズが元のサイズ以下になる。</p>
 <p>だいたいの環境だと、<code>-32768</code> ~ <code>32767</code> まで扱える。</p>
 <p><code>short</code> にリテラル用の記法は無い。悲しいね。</p>
@@ -183,7 +170,7 @@ int short tiny = 3;
 // short だけだと shor int とみなされる
 short bit = 1;
 </code></pre>
-<h2><a class="header" href="#long-long" id="long-long">long long</a></h2>
+<h2 id="long-long"><a class="header" href="#long-long">long long</a></h2>
 <p>頭悪い書き方だけど、<code>long</code> 以上のサイズになる <code>long long</code> もある。これも環境によっては動かない。</p>
 <p>だいたいの環境だと、<code>約 ±9.22 × 10 の 18 乗</code> まで扱える。</p>
 <p>リテラルの後ろに <code>ll</code> か <code>LL</code> をつけると、<code>long</code> なリテラルになる。</p>
@@ -194,8 +181,8 @@ int long long scaled = 20000000000LL;
 // long long だけだと long long int とみなされる
 long long large = 1;
 </code></pre>
-<h1><a class="header" href="#符号を操作する指定子" id="符号を操作する指定子">符号を操作する指定子</a></h1>
-<h2><a class="header" href="#unsigned" id="unsigned">unsigned</a></h2>
+<h1 id="符号を操作する指定子"><a class="header" href="#符号を操作する指定子">符号を操作する指定子</a></h1>
+<h2 id="unsigned"><a class="header" href="#unsigned">unsigned</a></h2>
 <p><code>unsigned</code> (日本語で符号なし) は、型が <strong>プラスしか表現できなくなる</strong>。<em>整数型にだけ</em> 付けられる。</p>
 <p>その代わりに、マイナスに使っていたサイズがプラスに使われるので、二倍の数値が扱える。</p>
 <p>……まぁ二倍くらいの差しかないので、なにか別のこと (後の章でやるビット演算とか) くらいにしか使わない。</p>
@@ -205,7 +192,7 @@ unsigned int c;
 unsigned long d;
 unsigned long long e;
 </code></pre>
-<h2><a class="header" href="#signed" id="signed">signed</a></h2>
+<h2 id="signed"><a class="header" href="#signed">signed</a></h2>
 <p><code>signed</code> (日本語で符号あり) は、普通のときと変わらない。指定はしなくてもいい。</p>
 <pre><code class="language-cpp">signed int a;
 </code></pre>
@@ -218,67 +205,38 @@ unsigned char b = 255;
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="../object/other-types.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="../object/class-inst.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="../object/other-types.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="../object/class-inst.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-        
-        
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>

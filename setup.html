@@ -4,39 +4,33 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>環境構築 - C/C++講座</title>
-        
-
+        <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
         <link rel="stylesheet" href="css/print.css" media="print">
-
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -89,7 +83,6 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -106,11 +99,9 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">C/C++講座</h1>
@@ -119,14 +110,12 @@
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -134,8 +123,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -147,60 +134,60 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#環境構築" id="環境構築">環境構築</a></h1>
+                        <h1 id="環境構築"><a class="header" href="#環境構築">環境構築</a></h1>
 <p>何も用意してなかったら、何もできないよ</p>
-<h1><a class="header" href="#今回のゴール" id="今回のゴール">今回のゴール</a></h1>
+<h1 id="今回のゴール"><a class="header" href="#今回のゴール">今回のゴール</a></h1>
 <ul>
 <li>C/C++ について少し触れる</li>
 <li>C/C++ プログラムを書いて実行できる環境を作る</li>
 </ul>
 <p>所要時間: 20 ~ 30 分くらい</p>
-<h1><a class="header" href="#プログラムと実行形式" id="プログラムと実行形式">プログラムと実行形式</a></h1>
+<h1 id="プログラムと実行形式"><a class="header" href="#プログラムと実行形式">プログラムと実行形式</a></h1>
 <p>私達が普段触れている電子機器――スマホ、パソコン、ゲーム機――などには必ずアプリが関わっている。……いるよね？これ過去の人が読んでないよね？</p>
 <p>そいつらはみんな、<em>「機械に何をさせるのか」っていうのを記述したもの</em> で作られている。これを <strong>(コンピュータ) プログラム</strong> という。</p>
 <p>そして、プログラムを書くことを <strong>プログラミング</strong>、プログラムを書く人を <em>プログラマ</em> っていう。</p>
-<h2><a class="header" href="#アプリはすべてプログラムによって作られている" id="アプリはすべてプログラムによって作られている">アプリはすべてプログラムによって作られている。</a></h2>
+<h2 id="アプリはすべてプログラムによって作られている"><a class="header" href="#アプリはすべてプログラムによって作られている">アプリはすべてプログラムによって作られている。</a></h2>
 <p>特に、生産的で一般的な手法として、 プログラミング言語 という独自言語のテキストを書くやり方がある。マウスだけで作るやつとかもあるけど、作ってるうちにテキストで書いたほうが楽なことに気づく。これマジ。</p>
 <p>ここでは、そのプログラミング言語の中の一つの、それなりに強い言語 C++ を使ってく。ただ、これはまあまあレベルの高いこともできるけど、最初はこの言語の元になった C 言語と共通する部分しか触らないことにする。</p>
-<h2><a class="header" href="#なぜ-c-なのか" id="なぜ-c-なのか">なぜ C++ なのか</a></h2>
+<h2 id="なぜ-c-なのか"><a class="header" href="#なぜ-c-なのか">なぜ C++ なのか</a></h2>
 <ul>
 <li>C 言語から派生した C 系言語は非常に多く、学習すると <strong>それなりに広い分野で活かせる</strong> から。</li>
 <li>他の言語より、<strong>実行速度が速い</strong>。なぜなら、プログラムをマシンが実際に動かす符号 (機械語っていうけどこれについては詳しくないので勘弁) へと変換しているから。</li>
 <li>マシンに近いこともできて、逆に高度なこともできて、ゲームも作って、あまり目立たないけど大事なシステムも作って、<strong>理論上はなんでもできる</strong> から。(悪く言えば器用貧乏)</li>
 <li>顔がでかくて、首が太くて、足が短くて、ちょっとずんぐりむっくりな感じする。(大嘘)</li>
 </ul>
-<h2><a class="header" href="#c-での作業の流れ" id="c-での作業の流れ">C++ での作業の流れ</a></h2>
+<h2 id="c-での作業の流れ"><a class="header" href="#c-での作業の流れ">C++ での作業の流れ</a></h2>
 <ol>
 <li>プログラムを書く。<em>コンパイル (下記)</em> する言語ではよく <strong>(ソース) コード</strong> と呼ばれる。別に味はしない。拡張子は cpp や cxx。ホントはなんでもいいけど。</li>
 <li><strong>コンパイル</strong> する。<em>コンパイラ</em> というアプリを使う。これにファイルを渡すと、プログラムから実行できるアプリを作る。有名なのは GNU C Compiler (<code>gcc</code>, <code>g++</code>) とか Clang (<code>clang</code>, <code>clang++</code>) とか Microsoft Visual C++ (<code>cl</code>) とか。</li>
 <li>コンパイルされた実行形式 (Windows だと <code>.exe</code> とか) を動かす。</li>
 </ol>
-<h2><a class="header" href="#c-のインストール" id="c-のインストール">C++ のインストール</a></h2>
-<h3><a class="header" href="#windows-の方" id="windows-の方">Windows の方</a></h3>
+<h2 id="c-のインストール"><a class="header" href="#c-のインストール">C++ のインストール</a></h2>
+<h3 id="windows-の方"><a class="header" href="#windows-の方">Windows の方</a></h3>
 <p><a href="https://visualstudio.microsoft.com/ja/vs/community/">ここから Visual Studio 2019 for Community をインストール</a> してね。</p>
 <p>Visual Studio Installer で「C++ デスクトップ開発」を選択してインストールするのを忘れないように！</p>
-<h2><a class="header" href="#macos-の方" id="macos-の方">macOS の方</a></h2>
+<h2 id="macos-の方"><a class="header" href="#macos-の方">macOS の方</a></h2>
 <p><a href="https://itunes.apple.com/us/app/xcode/id497799835">Mac App Store から Xcode をインストール</a> してね。</p>
 <p>インストールできたら一回だけ起動してね。このときに必要なものがインストールされるから。</p>
-<h2><a class="header" href="#その他特殊な-os-の方" id="その他特殊な-os-の方">その他特殊な OS の方</a></h2>
+<h2 id="その他特殊な-os-の方"><a class="header" href="#その他特殊な-os-の方">その他特殊な OS の方</a></h2>
 <p>Debian 系なら <code>sudo apt-get install build-essential</code></p>
 <p>CentOS 系なら <code>yum install gcc</code></p>
 <p>それ以外は最初から入ってると思う。全部は網羅できないので勘弁してくださいφ(ﾟДﾟ )
 ……って、こういう OS 使ってる人たちは絶対インストール方法知ってるでしょ。</p>
-<h2><a class="header" href="#自分が自由に使える-pc-を持っていない方" id="自分が自由に使える-pc-を持っていない方">自分が自由に使える PC を持っていない方</a></h2>
+<h2 id="自分が自由に使える-pc-を持っていない方"><a class="header" href="#自分が自由に使える-pc-を持っていない方">自分が自由に使える PC を持っていない方</a></h2>
 <p><a href="https://wandbox.org">Wandbox</a> っていう <em>ウェブコンパイラ</em> がおすすめ。</p>
 <p>左上のメニューからコンパイラを切り替えられる。C++ なら <code>gcc</code> と <code>clang</code> と <code>zapcc</code> が使える。ちなみに C++ 以外の言語にも対応している。</p>
 <p>実行 (Run) すると、下の黒い画面の上に <strong>Share ボタン</strong> が出てくる。これを押すとその書いたコードを保存して、そのリンクを取得できる。このリンクの URL は <code>https://wandbox.org/permlink/~</code> になる。</p>
 <p>便利だけど、そのうち自分の PC を持つべき。</p>
 <p>※自由に使えるっていうのは、えっちな画像を保存しても問題がない状態のことだよ。</p>
-<h1><a class="header" href="#hello-world" id="hello-world">Hello, World!</a></h1>
+<h1 id="hello-world"><a class="header" href="#hello-world">Hello, World!</a></h1>
 <p>まずはインストールできているか確かめるよ。</p>
-<h2><a class="header" href="#windows-で-visual-studio-2019-を使う人" id="windows-で-visual-studio-2019-を使う人">Windows で Visual Studio 2019 を使う人</a></h2>
+<h2 id="windows-で-visual-studio-2019-を使う人"><a class="header" href="#windows-で-visual-studio-2019-を使う人">Windows で Visual Studio 2019 を使う人</a></h2>
 <p>Visual Studio 2019 を起動して、新しいプロジェクトの作成 &gt; コンソールアプリ で <em>プロジェクト</em> を作成してね。</p>
 <p>そしたら出てきた画面のツールバーの <strong>再生マークのボタン</strong> (Windows デバッガーとか書いているやつ) を押して実行。</p>
 <p><img src="./image/vs.png" alt="Visual Studio 2019 で実行" /></p>
 <p>すると 黒いコンソール画面 が出てきて Hello, World! って表示される (はず)。そうなっていなかったり詰まったりしたら Slack とかで質問して。</p>
-<h2><a class="header" href="#それ以外の人" id="それ以外の人">それ以外の人</a></h2>
+<h2 id="それ以外の人"><a class="header" href="#それ以外の人">それ以外の人</a></h2>
 <p>以下のプログラムをテキストエディタに コピペして、好きな名前で <em>保存して</em> ね。拡張子 (ファイルの後ろの <code>.txt</code> とか <code>.exe</code> とかのやつ) を <code>.cpp</code> にしておけば、名前は何でもいいよ。 </p>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 int main()  {
@@ -215,74 +202,45 @@ int main()  {
 <p><img src="./image/hyper.png" alt="ターミナルでコンパイルして実行" /></p>
 <p>ッターン！ <code>Hello, World!</code> って表示される (はず)。</p>
 <p>何かうまくいかなかったら Slack か口頭で <strong>質問</strong> して。なんかやばいから。</p>
-<h1><a class="header" href="#まとめ" id="まとめ">まとめ</a></h1>
+<h1 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h1>
 <p>ちゃんと準備できた？できた？次章からプログラムを書いていくから、よろしくね！</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="intro.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-
-                        
                             <a rel="next" href="basis/intro.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="intro.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-
-                
                     <a rel="next" href="basis/intro.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-        
-        
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-
     </body>
 </html>
