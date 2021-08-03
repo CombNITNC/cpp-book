@@ -15,7 +15,7 @@ jobs:
         uses: actions-rs/install@v0.1.2
         with:
           crate: mdbook
-          version: ^0.3
+          version: ^0.4
           use-tool-cache: true
           use-cache: true
       - name: Build by mdbook
